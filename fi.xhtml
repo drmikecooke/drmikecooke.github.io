@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="GENERATOR" content="LyX 2.2.4" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>Infection delays</title>
+<style type='text/css'>
+/* LyX Provided Styles */
+table { border-collapse: collapse; display: inline-block; }
+td { border: 1px solid black; padding: 0.5ex; }
+
+/* Layout-provided Styles */
+h1.title {
+font-size: x-large;
+margin-bottom: 1ex;
+text-align: center;
+
+}
+div.standard {
+margin-bottom: 2ex;
+}
+h2.section_ {
+font-weight: bold;
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: left;
+
+}
+h3.subsection_ {
+font-weight: bold;
+font-size: large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: left;
+
+}
+div.plain_layout {
+text-align: left;
+
+}
+
+
+</style>
+</head>
+<body dir="auto">
+<h1 class="title"><a id='magicparlabel-1' />Infection delays</h1>
+<div class="standard"><a id='magicparlabel-2' />In the current covid-19 pandemic, people are interested in projecting forward in time to assess the efficacy of various techniques to control, or even better eliminate, the infection. The simplest models tend to be dominated by exponential behaviour, where the infected population tomorrow is related to today's infection by (roughly) a constant factor. If the factor is greater than 1, the infection grows; less than 1, the infection is fading, and happiness breaks out across the land. We come out of our prison blocks, blinking and shading our eyes from the sun.</div>
+
+<div class="standard"><a id='magicparlabel-3' />Of course, the infection numbers tomorrow aren't simply related to what is happening today: in the case of covid-19 the infection takes up to two weeks to manifest, if at all in some cases. How come a simple constant factor works?</div>
+
+<div class="standard"><a id='magicparlabel-4' />A reasonably simple model for infection delay (i.e. what has crossed what passes for my mind) would have today's newly infected population to be a function of the newly infected populations on previous days. To make life extra simple, we also use a linear function - a sum of the previous populations multiplied by various constant factors:</div>
+
+<div class="standard"><a id='magicparlabel-5' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mn>0</mn>
+    </mrow>
+   </msub><mo>=</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mn>3</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <mi>&hellip;
+   </mi>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-6' />Using fancy maths notation, with the Greek capital sigma character (Σ) indicating a sum between limits, with D being the length of time the infection lasts in the average person (or at least stops creating new infections):</div>
+
+<div class="standard"><a id='magicparlabel-7' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mn>0</mn>
+    </mrow>
+   </msub><mo>=</mo><munderover><mo> &sum; </mo>
+   <msub><mrow />
+    <mrow>
+     <mrow><mi>d</mi><mo>=</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub><mrow />
+    <mrow><mi>D</mi>
+    </mrow>
+   </msub></munderover>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mi>d</mi>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mi>d</mi>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-8' />Tomorrow's new infections would then be expected to be:</div>
+
+<div class="standard"><a id='magicparlabel-9' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>=</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mn>0</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <mi>&hellip;
+   </mi><mo>=</mo><munderover><mo> &sum; </mo>
+   <msub><mrow />
+    <mrow>
+     <mrow><mi>d</mi><mo>=</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub><mrow />
+    <mrow><mi>D</mi>
+    </mrow>
+   </msub></munderover>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mi>d</mi>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mo>-</mo><mi>d</mi><mo>+</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-10' />And on day n:</div>
+
+<div class="standard"><a id='magicparlabel-11' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msub><mo>=</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>3</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <mi>&hellip;
+   </mi><mo>=</mo><munderover><mo> &sum; </mo>
+   <msub><mrow />
+    <mrow>
+     <mrow><mi>d</mi><mo>=</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub><mrow />
+    <mrow><mi>D</mi>
+    </mrow>
+   </msub></munderover>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mi>d</mi>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mi>d</mi>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-12' />There are known to be a number of (characteristic) solutions of these equations that have a simple power form:</div>
+
+<div class="standard"><a id='magicparlabel-13' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msub><mo>=</mo>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-14' />This only works for specific values of <i>a</i>. To find these values we pop the proposed solution into one of the equations:</div>
+
+<div class="standard"><a id='magicparlabel-15' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msup><mo>=</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>3</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <mi>&hellip;
+   </mi><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mi>D</mi>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mi>D</mi>
+     </mrow>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-16' />If we divide through by <i><math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>a</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>n</mi><mo>-</mo><mi>D</mi>
+    </mrow>
+   </mrow>
+  </msup>
+ </mrow></math>:</i></div>
+
+<div class="standard"><a id='magicparlabel-17' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mi>D</mi>
+    </mrow>
+   </msup><mo>=</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>D</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>D</mi><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msub>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>D</mi><mo>-</mo><mn>3</mn>
+     </mrow>
+    </mrow>
+   </msup><mo>+</mo>
+   <mi>&hellip;
+   </mi><mo>+</mo>
+   <msub>
+    <mrow><mi>g</mi>
+    </mrow>
+    <mrow><mi>D</mi>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-18' />This is a <i>D</i>-order polynomial. Note that <i>n</i> has dropped out, since it is not really relevant (and shouldn't be, that's the point) to the value of <i>a</i>. In theory, this equation can have up to <i>D</i> solutions. Allowing complex number solutions, there are exactly D solutions, possibly including multiple roots.</div>
+<h2 class="section_"><a id='magicparlabel-19' />Examples</h2>
+<h3 class="subsection_"><a id='magicparlabel-20' />Two-day infection</h3>
+<div class="standard"><a id='magicparlabel-21' />Let's imagine the simplest non-trivial example - a 2-day infection: you, M. Average, pick up a mild cold virus at the supermarket, go around for a couple of days unaware that you are sub-par, then sniffles strike and you stay home and hopefully beat off the virus in short order. On the first day after the supermarketing you infect 0.25 of a person (as M. Average); day two comes, and, with the virus settled in and happily reproducing wildly, you infect 1.5 people. This would give:</div>
+
+<div class="standard"><a id='magicparlabel-22' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msub><mo>=</mo><mn>0.25</mn>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo><mn>1.5</mn>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-23' />The characteristic polynomial is then a quadratic:</div>
+
+<div class="standard"><a id='magicparlabel-24' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup><mo>=</mo><mn>0.25</mn><mi>a</mi><mo>+</mo><mn>1.5</mn>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-25' />This is satisfied by real <i>a</i> values of about 1.36 and -1.11 (more accurate values in spreadsheet):</div>
+
+<div class="standard"><a id='magicparlabel-212' /><img src='0_home_mike_Infection_delays_character.svg' alt='image: 0_home_mike_Infection_delays_character.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-26' />Let's imagine the cold virus initially infected one person on day 0, &ldquo;patient zero&rdquo;. Before that the infection was at zero (it didn't exist). On day 1, there is a quarter (0.25) of a person newly infected. On day 2, the newly infected are 0.25×0.25+1.5×1, or approximately 1.56. And so on. I have put this into a spreadsheet, and used the graph features to produce the following images with new infections plotted on linear and logarithmic scales:</div>
+
+<div class="standard"><a id='magicparlabel-216' /><img src='1_home_mike_Infection_delays_2dlin.png' alt='image: 1_home_mike_Infection_delays_2dlin.png' />
+<img src='2_home_mike_Infection_delays_2dlog.svg' alt='image: 2_home_mike_Infection_delays_2dlog.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-27' />We note that the logarithmic image shows initial wobbling, but eventually tends to a straight line. In the spreadsheet there is an additional &ldquo;Factor&rdquo; column where I have taken the ratio of new infections for &ldquo;today&rdquo; and &ldquo;yesterday&rdquo;. I have created a graph of this too:</div>
+
+<div class="standard"><a id='magicparlabel-317' /><img src='3_home_mike_Infection_delays_2dfor.svg' alt='image: 3_home_mike_Infection_delays_2dfor.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-28' />If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident - the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.</div>
+
+<div class="standard"><a id='magicparlabel-29' />What does the other solution represent? We will show that it gives the wobbles in the initial stages of the infection. In fact we try a solution:</div>
+
+<div class="standard"><a id='magicparlabel-30' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msub><mo>=</mo><mi>A</mi><mo>(</mo><mn>1.36</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msup><mo>+</mo><mi>B</mi><mo>(</mo><mo>-</mo><mn>1.11</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-31' />On day 0, we have:</div>
+
+<div class="standard"><a id='magicparlabel-32' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mn>1</mn><mo>=</mo><mi>A</mi><mo>(</mo><mn>1.36</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mn>0</mn>
+    </mrow>
+   </msup><mo>+</mo><mi>B</mi><mo>(</mo><mo>-</mo><mn>1.11</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mn>0</mn>
+    </mrow>
+   </msup><mo>=</mo><mi>A</mi><mo>+</mo><mi>B</mi>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-33' />Day 1:</div>
+
+<div class="standard"><a id='magicparlabel-34' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mn>0.25</mn><mo>=</mo><mi>A</mi><mo>(</mo><mn>1.36</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msup><mo>+</mo><mi>B</mi><mo>(</mo><mo>-</mo><mn>1.11</mn>
+   <msup>
+    <mrow><mo>)</mo>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msup><mo>=</mo><mn>1.36</mn><mi>A</mi><mo>-</mo><mn>1.11</mn><mi>B</mi>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-35' />This is enough for us to solve for <i>A</i> and <i>B</i>, giving roughly 0.55 and 0.45, respectively. Since these are only accurate to two significant figures the deviation from the true solution is quite rapid:</div>
+
+
+
+<div class="standard"><a id='magicparlabel-36' /><table><tbody><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-82' />Day</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-85' />New infections (I<sub class="script_subscript">n</sub>)</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-92' />I<sub class="script_subscript">n</sub> prediction</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-99' />0</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-102' />1</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-105' />1</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-108' />1</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-111' />0.25</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-114' />0.2485</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-117' />2</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-120' />1.5625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-123' />1.571725</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-126' />3</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-129' />0.765625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-132' />0.76806685</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-135' />4</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-138' />2.53515625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-141' />2.5646927725</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-144' />5</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-147' />1.7822265625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-150' />1.800646909885</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-153' />6</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-156' />4.248291015625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-159' />4.32182193683725</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-162' />7</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-165' />3.73541259765625</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-168' />3.79871205937171</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-171' />8</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-174' />7.30628967285156</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-177' />7.47390041069244</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-180' />9</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-183' />7.42969131469727</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-186' />7.60301082750063</div>
+</td>
+</tr><tr><td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-189' />10</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-192' />12.8168573379517</div>
+</td>
+<td align='left' valign='top'>
+<div class="plain_layout"><a id='magicparlabel-195' />13.1833527668565</div>
+</td>
+</tr></tbody>
+</table>
+</div>
+
+<div class="standard"><a id='magicparlabel-196' />As the process repeats, the rounding errors become more and more severe. If one is minded, one can increase the precision of the arithmetic, and the solution of the sum of two powers multiplied by factors becomes exact in the limit of infinite precision. A better comparison is available in the spreadsheet.</div>
+
+<div class="standard"><a id='magicparlabel-197' />With a more extended infection period, more solutions need to be added to give the initial wobbles. If there are D different roots of the characteristic equation, then you can again &ldquo;solve&rdquo; the progression with sums of powers that fits an initial infection pattern spread over D days. If some of the roots are multiple, the solution becomes more complicated, but not intractible. In real life, other factors come into play, such as the gathering of data being sporadic, hampered by political considerations, butt covering, and so on. One is then largely restricted to, hopefully intelligent, guesswork.</div>
+
+<div class="standard"><a id='magicparlabel-198' />Being a bit bonkers, I decided to run the prediction backwards in time (<i>I</i><sub class="script_subscript"><i>-n</i></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (-<i>n</i>). We note that this tends to -1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it &ldquo;dominates&rdquo; the negative time behaviour:</div>
+
+<div class="standard"><a id='magicparlabel-323' /><img src='4_home_mike_Infection_delays_2dback.svg' alt='image: 4_home_mike_Infection_delays_2dback.svg' />
+</div>
+<h3 class="subsection_"><a id='magicparlabel-203' />Three-day infection</h3>
+<div class="standard"><a id='magicparlabel-204' />As the infection period extends, life gets more complicated since we don't have simple solutions like the quadratics we learned in school. For cubics and quartics (up to fourth power), there are non-obvious solutions, which seem to have been found more by luck than judgement during the Italian Renaissance, and kept secret for a time, giving advantage to the knowers in maths competitions. Quintics (fifth power) and beyond don't even have a general solution, as shown by Galois before dying in a duel. These equations can be treated numerically, which is how we will treat a three-day example, although in principle one could find a solution. I studied:</div>
+
+<div class="standard"><a id='magicparlabel-205' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow><mi>n</mi>
+    </mrow>
+   </msub><mo>=</mo><mn>0.25</mn>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo><mn>0.75</mn>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>I</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>n</mi><mo>-</mo><mn>3</mn>
+     </mrow>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-206' />giving a characteristic:</div>
+
+<div class="standard"><a id='magicparlabel-207' /><math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mn>3</mn>
+    </mrow>
+   </msup><mo>=</mo><mn>0.25</mn>
+   <msup>
+    <mrow><mi>a</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup><mo>+</mo><mn>0.75</mn><mi>a</mi><mo>+</mo><mn>1</mn>
+  </mrow>
+ </mrow></math></div>
+
+<div class="standard"><a id='magicparlabel-327' /><img src='5_home_mike_Infection_delays_c3.svg' alt='image: 5_home_mike_Infection_delays_c3.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-208' />As it happens, the real solution is about 1.35. There are also two complex solutions, roughly -0.55±0.66i. The absolute value of the complex solutions is about 0.86, less than the real solution. Having absolute values less than 1, means the complex solutions are damped, tending to zero. I initially tried working wholly on a spreadsheet, but in this case a python 3 script (below, as a txt file, since this site prohibits py files) enabled me to match the sum of powers predicition to the recurrence calculation. The script references scipy/numpy modules that you might need to install using pip3 or whatever. The script is also adaptable to work out the characteristic solutions for longer infection periods. The output is a csv file with the brute force calculation and a &ldquo;patient zero&rdquo; fit to the characteristic solutions:</div>
+
+<div class="standard"><a id='magicparlabel-331' /><img src='6_home_mike_Infection_delays_3dfor.svg' alt='image: 6_home_mike_Infection_delays_3dfor.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-209' />The backwards behaviour (retrodiction), also included, is even more bonkers since the two complex solutions play off each other, giving oscillations with a growing amplitude.</div>
+
+<div class="standard"><a id='magicparlabel-335' /><img src='7_home_mike_Infection_delays_3dback.svg' alt='image: 7_home_mike_Infection_delays_3dback.svg' />
+</div>
+
+<div class="standard"><a id='magicparlabel-337' />This is better understood by putting the various complex bits in polar form. The real characteristic solution is damped in the backward direction. A simple-minded yesterday/today ratio comparison is not much use for relating the behavior to the these roots. In the context of infections, the negative time solution is of little practical interest, since it didn't exist before &ldquo;patient zero&rdquo;, who is assumed to come from nothing (or <i>ex nihilo</i>, as Boris Johnson would say).</div>
+</body>
+</html>
