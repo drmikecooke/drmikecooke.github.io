@@ -534,7 +534,7 @@ text-align: left;
 
 <div class="standard"><a id='magicparlabel-27' />We note that the logarithmic image shows initial wobbling, but eventually tends to a straight line. In the spreadsheet there is an additional &ldquo;Factor&rdquo; column where I have taken the ratio of new infections for &ldquo;today&rdquo; and &ldquo;yesterday&rdquo;. I have created a graph of this too:</div>
 
-<div class="standard"><a id='magicparlabel-317' /><img src='3_home_mike_Infection_delays_2dfor.svg' alt='image: 3_home_mike_Infection_delays_2dfor.svg' />
+<div class="standard"><a id='magicparlabel-317' /><img src='2dfor.svg' alt='image: 2dfor.svg' />
 </div>
 
 <div class="standard"><a id='magicparlabel-28' />If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident - the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.</div>
@@ -727,7 +727,7 @@ text-align: left;
 
 <div class="standard"><a id='magicparlabel-198' />Being a bit bonkers, I decided to run the prediction backwards in time (<i>I</i><sub class="script_subscript"><i>-n</i></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (-<i>n</i>). We note that this tends to -1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it &ldquo;dominates&rdquo; the negative time behaviour:</div>
 
-<div class="standard"><a id='magicparlabel-323' /><img src='4_home_mike_Infection_delays_2dback.svg' alt='image: 4_home_mike_Infection_delays_2dback.svg' />
+<div class="standard"><a id='magicparlabel-323' /><img src='2dback.svg' alt='image: 2dback.svg' />
 </div>
 <h3 class="subsection_"><a id='magicparlabel-203' />Three-day infection</h3>
 <div class="standard"><a id='magicparlabel-204' />As the infection period extends, life gets more complicated since we don't have simple solutions like the quadratics we learned in school. For cubics and quartics (up to fourth power), there are non-obvious solutions, which seem to have been found more by luck than judgement during the Italian Renaissance, and kept secret for a time, giving advantage to the knowers in maths competitions. Quintics (fifth power) and beyond don't even have a general solution, as shown by Galois before dying in a duel. These equations can be treated numerically, which is how we will treat a three-day example, although in principle one could find a solution. I studied:</div>
