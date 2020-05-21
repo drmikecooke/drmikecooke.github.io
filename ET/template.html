@@ -12,6 +12,11 @@ body {
   background: #f1f1f1;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 /* Header/Blog Title */
 .header {
   padding: 10px;
@@ -20,7 +25,6 @@ body {
 }
 
 .header h1 {
-font-family: Arial Black;
   font-size: 80px;
 }
 
@@ -39,11 +43,6 @@ font-family: Arial Black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-a {
-	text-decoration: none;
-	color: black;
 }
 
 /* Change color on hover */
@@ -116,39 +115,54 @@ a {
 <body>
 
 <div class="header">
-  <h1>Mike Cooke’s projects</h1>
+  <h1><font face="Liberation Serif">e<sup><i>x</i></sup>ponential</font> <font face="Arial Black">Times</font></h1>
 </div>
 
 <div class="topnav">
-  <a href="#">Home</a>
-  <a href="fi/fi.html">Infection delays</a>
-  <a href="ET/template.html"><font face="Liberation Serif"><b>e<sup><i>x</i></sup>ponential</font></b> <font face="Arial Black">Times</font></a>
-  <a href="SIR/SIR.html">SIR model and covid-19</a>
-  <a href="#">Other stuff by me</a>
-  <a href="#" style="float:right">More about me</a>
+  <a href="#">Prospectus</a>
+  <a href="#">Contents</a>
+  <a href="#">Link</a>
+  <a href="../index.html" style="float:right">About me</a>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-		<table>
-		<tr>
-		<td><a href = "fi/fi.html"><h2>Infection delays</h2> <br/> <img src="fi/2dlog.svg" alt="2dlog.svg" width="320"></a></td>
-		<td><a href = "SIR/SIR.html"><h2>SIR model and covid-19</h2> <br/> <img src="SIR/images/SIR.svg" alt="SIR.svg" width="320"></a></td>
-		<td><a href = "ET/template.html"><h2><font face="Liberation Serif">e<sup><i>x</i></sup>ponential</font> <font face="Arial Black">Times</font></h2> <br/> <img src="ET/burn.jpg" alt="environment" width="320"></a></td>
-		</tr>
-		</table>
+      <h2>Prospectus</h2>      
+      <img src="burn.jpg" alt="" width="31%"> <img src="pretty.jpg" alt="" width="37.75%"> <img src="garbage.jpg" alt="" width="30.5%">
+      <p>We humans are making exponential demands on ourselves and our
+      environment. What I want to do here is explore this thought – the
+      ways in which it is true and not true. Is it a good thing or bad? Can
+      we step off the exponential treadmill?</p>
+      <p>Part of this will be to show how we recognize exponential
+      behaviour – growth and decay – through specific examples. Also, I
+      will explore some of the mathematical background and history of how
+      exponential behaviour was discovered and wider uses. Almost all
+      mathematics involves exponential or exponential-like objects.</p>
+      <p>Although the work will have some blogish features, it will not be
+      a linear stream of consciousness. I will feel free to go back and
+      revise and add to stuff that has already been written.</p>
+      <p>Feel free to comment kindly, and politely. But if this is not for
+      you, never mind. In a way it is more for self-clarification than for
+      seeking fame and fortune.</p>
+    </div>
+     <div class="card">
+      <table>
+      <tr>
+      <td><a href = "../fi/fi.html"><h3>Infection delays</h3> <br/> <img src="../fi/2dlog.svg" alt="2dlog.svg" width="40%"></a></td>
+		<td><a href = "../SIR/SIR.html"><h3>SIR model and covid-19</h3> <br/> <img src="../SIR/images/SIR.svg" alt="SIR.svg" width="40%"></a></td>
+      </tr>
+      </table>
      </div>
-    
-    
   </div>
   <div class="rightcolumn">
     <div class="card">
       <h2>Who am I?</h2>
-      <img src="mike.jpg" alt="" width="90%">
-      <p>I am a freelance technology journalist who has worked in the semiconductor and advanced technology sectors since 1997.</p>
+      <img src="../mike.jpg" alt="My ugly bonce" width="90%">
+      <p>My name is Mike Cooke, a freelance technology journalist who has worked in the semiconductor and advanced technology sectors since 1997.</p>
     </div>
     
+   
      
     <div class="card">
       <h3>Other stuff by me</h3>
