@@ -3,9 +3,8 @@
 }
 
 figure {
-float: left;
-font-size: 1.3em;
 display: inline-block;
+font-size: 1.3em;
 background-color: white;
 height: 250px;
 padding: 20px;
@@ -43,8 +42,7 @@ body {
 
 /* Style the topnav links */
 .topnav a {
-  float: left;
-  display: block;
+  display: inline-block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -65,7 +63,7 @@ a {
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {   
-  float: left;
+  display: block;
 /*  width: 85%;*/
 }
 
@@ -81,6 +79,7 @@ a {
 /* Add a card effect for articles */
 .card {
   background-color: white;
+  width: 250px;
   padding: 20px;
   margin-top: 20px;
 }
@@ -103,6 +102,8 @@ a {
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {   
+  float: none;
+  
     width: 100%;
     padding: 0;
   }
