@@ -21,8 +21,20 @@ a {
 	color: black;
 }
 
+img {
+	width: 45%;
+}
+
+table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+  }
+
 .header h1 {
   font-size: 10vw;
+}
+
+.footer h2 {
+	font-size: 3vw;
 }
 
 /* Style the top navigation bar */
@@ -68,10 +80,14 @@ a {
   margin-top: 0.25em;
 }
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .topnav a {
     float: none;
     width: 100%;
+  }
+  
+  img {
+  	width: 90%;
   }
 }
   </style>
@@ -162,20 +178,22 @@ The characteristic polynomial is then a quadratic:
 This is satisfied by real <em>a</em> values of about 1.36 and -1.11 (more accurate values in spreadsheet):
 </div>
 <div class="image">
-<img src="character.svg" alt="image: character.svg" width=45%/>
-<font face="Arial Black">Download:</font> <a href='two-day combined.xlsx'>xlsx</a>
+<img src="character.svg" alt="image: character.svg" />
+</div>
+<div class="image">
+<span style="font-family: Arial Black;">Download:</span> <a href='two-day combined.xlsx'>xlsx</a>
 </div>
 <div class="indent">
 Let's imagine the cold virus initially infected one person on day 0, “patient zero”. Before that the infection was at zero (it didn't exist). On day 1, there is a quarter (0.25) of a person newly infected. On day 2, the newly infected are 0.25×0.25+1.5×1, or approximately 1.56. And so on. I have put this into a spreadsheet, and used the graph features to produce the following images with new infections plotted on linear and logarithmic scales:
 </div>
 <div class="image">
-<img src="2dlin.svg" alt="image: 2dlin.svg" width=45%/> <img src="2dlog.svg" alt="image: 2dlog.svg" width=45%/>
+<img src="2dlin.svg" alt="image: 2dlin.svg" /> <img src="2dlog.svg" alt="image: 2dlog.svg" />
 </div>
 <div class="indent">
 We note that the logarithmic image shows initial wobbling, but eventually tends to a straight line. In the spreadsheet there is an additional “Factor” column where I have taken the ratio of new infections for “today” and “yesterday”. I have created a graph of this too:
 </div>
 <div class="image">
-<img src="2dfor.svg" alt="image: 2dfor.svg" width=45%/>
+<img src="2dfor.svg" alt="image: 2dfor.svg" />
 </div>
 <div class="indent">
 If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident - the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.
@@ -201,12 +219,12 @@ Day 1:
 <div class="indent">
 This is enough for us to solve for <em>A</em> and <em>B</em>, giving roughly 0.55 and 0.45, respectively. Since these are only accurate to two significant figures the deviation from the true solution is quite rapid:
 </div>
-<div class="indent">
+<div class="noindent">
 <table>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="5%" />
+<col width="45%" />
+<col width="45%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -354,7 +372,7 @@ With a more extended infection period, more solutions need to be added to give t
 Being a bit bonkers, I decided to run the prediction backwards in time (<em>I</em><sub><em>-n</em></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (-<em>n</em>). We note that this tends to -1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it “dominates” the negative time behaviour:
 </div>
 <div class="image">
-<img src="2dback.svg" alt="image: 2dback.svg" width=45%/>
+<img src="2dback.svg" alt="image: 2dback.svg" />
 </div>
 <h3 id="three-day-infection" class="subsection_">Three-day infection</h3>
 <div class="noindent">
@@ -370,20 +388,21 @@ giving a characteristic:
 <span class="math display">\[a^{3} = 0.25a^{2} + 0.75a + 1\]</span>
 </div>
 <div class="image">
-<img src="c3.svg" alt="image: c3.svg" width=45%/>
+<img src="c3.svg" alt="image: c3.svg" />
 </div>
 <div class="indent">
 As it happens, the real solution is about 1.35. There are also two complex solutions, roughly -0.55±0.66i. The absolute value of the complex solutions is about 0.86, less than the real solution. Having absolute values less than 1, means the complex solutions are damped, tending to zero. I initially tried working wholly on a spreadsheet, but in this case a python 3 script enabled me to match the sum of powers predicition to the recurrence calculation. The script references scipy/numpy modules that you might need to install using pip3 or whatever. The script is also adaptable to work out the characteristic solutions for longer infection periods. The output is a csv file with the brute force calculation and a “patient zero” fit to the characteristic solutions:
 </div>
 <div class="image">
-<img src="3dfor.svg" alt="image: 3dfor.svg" width=45%/>
-<font face="Arial Black">Downloads:</font> <a href='fi.py'>python</a>, <a href='fi.csv'>csv</a>, <a href='fi.xlsx'>xlsx</a>
+<img src="3dfor.svg" alt="image: 3dfor.svg" />
+</div>
+<div class="image"><span style="font-family: Arial Black;">Downloads:</span> <a href='fi.py'>python</a>, <a href='fi.csv'>csv</a>, <a href='fi.xlsx'>xlsx</a>
 </div>
 <div class="indent">
 The backwards behaviour (retrodiction), also included, is even more bonkers since the two complex solutions play off each other, giving oscillations with a growing amplitude.
 </div>
 <div class="image">
-<img src="3dback.svg" alt="image: 3dback.svg" width=45%/>
+<img src="3dback.svg" alt="image: 3dback.svg" />
 </div>
 <div class="indent">
 This is better understood by putting the various complex bits in polar form. The real characteristic solution is damped in the backward direction. A simple-minded yesterday/today ratio comparison is not much use for relating the behavior to the these roots. In the context of infections, the negative time solution is of little practical interest, since it didn't exist before “patient zero”, who is assumed to come from nothing (or <em>ex nihilo</em>, as Boris Johnson would say).
