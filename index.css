@@ -79,7 +79,7 @@ a {
 /* Add a card effect for articles */
 .card {
   background-color: white;
-  width: 250px;
+  width: 100%;
   padding: 20px;
   margin-top: 20px;
 }
