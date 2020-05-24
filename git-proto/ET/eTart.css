@@ -1,0 +1,46 @@
+body {
+  font-family: Times;
+font-size: 1.2em;  
+  background: #f1f1f1;
+}
+
+h1.part_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.4em;
+margin-top: 2ex;
+margin-bottom: 1.5ex;
+text-align: center;
+}
+
+	div.noindent {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+	}
+		div.indent {
+		margin-bottom: 0.25em;
+		text-indent: 2em;
+	}
+			div.image {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+		text-align: center;
+	}
+
+h2.section_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.1em;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+}
+
+h4.subsubsection_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 1.8em;
+margin-top: 0.7ex;
+margin-bottom: 0.4ex;
+text-align: center;
+}
