@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+font-family: Arial;
+}
+table td, table td * {
+    vertical-align: top;
+}
+</style>
+</head>
+<body>
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>December 2018</strong></caption>
+<tr>
+<td>1 Lateral graphene/hexagonal boron nitride heterostructures<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/xu_201218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/xu_201218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/xu_201218.shtml"><img src="2018img/12/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Quantum dot laser diodes on CMOS-compatible on-axis silicon substrates<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/hkust_271218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/hkust_271218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/xu_201218.shtml"><img src="2018img/12/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Improving ohmic contacts in III-nitride high-electron-mobility transistors<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/iit_281218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/iit_281218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/iit_281218.shtml"><img src="2018img/12/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Increasing current performance in III-nitride p-channel transistors<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/cornell_311218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/cornell_311218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/cornell_311218.shtml"><img src="2018img/12/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Mid-infrared aluminium gallium nitride quantum cascade detector on silicon<br/><a href="http://www.semiconductor-today.com/news_items/2019/jan/technion_090119.shtml"><em>http://www.semiconductor-today.com/news_items/2019/jan/technion_090119.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2019/jan/technion_090119.shtml"><img src="2018img/12/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Diamond thermal management boosts output power of InAlGaN transistor<br/><a href="http://www.semiconductor-today.com/news_items/2019/jan/fujitsu_100119.shtml"><em>http://www.semiconductor-today.com/news_items/2019/jan/fujitsu_100119.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2019/jan/fujitsu_100119.shtml"><img src="2018img/12/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>November 2018</strong></caption>
+<tr>
+<td>1 Monolithic near-ultraviolet optoelectronics systems on silicon<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/nupt_141118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/nupt_141118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/nupt_141118.shtml"><img src="2018img/11/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Laser annealing enables gate-first fabrication of III-nitride transistors<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/scut_221118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/scut_221118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/scut_221118.shtml"><img src="2018img/11/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Gallium nitride vertical-channel junction field-effect transistors<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/rwth_301118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/rwth_301118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/rwth_301118.shtml"><img src="2018img/11/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Gallium nitride microwire arrays on silicon for ultraviolet photodetection<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/scnu_281118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/scnu_281118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/scnu_281118.shtml"><img src="2018img/11/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Gallium oxide trench Schottky barrier diodes with ultra-low leakage<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/cornell_051218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/cornell_051218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/cornell_051218.shtml"><img src="2018img/11/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Powering up gallium oxide metal-oxide-semiconductor field-effect transistors<br/><a href="http://www.semiconductor-today.com/news_items/2018/dec/hebei_121218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/dec/hebei_121218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/hebei_121218.shtml"><img src="2018img/11/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>October 2018</strong></caption>
+<tr>
+<td>1 Orienting quantum cascade lasers to higher efficiency and lower threshold<br/><a href="http://www.semiconductor-today.com/news_items/2018/oct/humboldt_171018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/humboldt_171018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/humboldt_171018.shtml"><img src="2018img/10/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 High-performance light emission from III-nitride stress/dislocation control<br/><a href="http://www.semiconductor-today.com/news_items/2018/oct/scu_191018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/scu_191018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/scu_191018.shtml"><img src="2018img/10/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Large-area silicon carbide ultraviolet visible-blind avalanche photodiode<br/><a href="http://www.semiconductor-today.com/news_items/2018/oct/hebei_241018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/hebei_241018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/hebei_241018.shtml"><img src="2018img/10/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Quantum cascade superluminescent arrays for mid-infrared applications<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/sinano_011118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/sinano_011118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/sinano_011118.shtml"><img src="2018img/10/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 III-V heterojunction bipolar transistor MOCVD on 200mm (001) silicon<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/ntu_061118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/ntu_061118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/dec/cornell_051218.shtml"><img src="2018img/10/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Lateral epitaxial overgrowth on silicon to boost ultraviolet output power<br/><a href="http://www.semiconductor-today.com/news_items/2018/nov/nu_071118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/nov/nu_071118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/nov/nu_071118.shtml"><img src="2018img/10/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>September 2018</strong></caption>
+<tr>
+<td>1 Magnetic sensing with gallium nitride high-electron-mobility transistors<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/sep/swansea-university_130918.shtml"><em>http://www.semiconductor-today.com/news_items/2018/sep/swansea-university_130918.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/sep/swansea-university_130918.shtml"><img src="2018img/09/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Vertical-cavity resonant near-green lasing of indium gallium nitride<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/sep/sinano_210918.shtml"><em>http://www.semiconductor-today.com/news_items/2018/sep/sinano_210918.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/sep/sinano_210918.shtml"><img src="2018img/09/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Thin gallium nitride on silicon carbide high-power and high-frequency electronics<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/sep/swegan_270918.shtml"><em>http://www.semiconductor-today.com/news_items/2018/sep/swegan_270918.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/sep/swegan_270918.shtml"><img src="2018img/09/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Black phosphorus photodiode for mid-wavelength infrared detection<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/oct/lbnl_041018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/lbnl_041018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/lbnl_041018.shtml"><img src="2018img/09/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Silicon monoxide gate dielectric for gallium nitride transistors<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/oct/shandong_091018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/shandong_091018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/shandong_091018.shtml"><img src="2018img/09/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Argon-ion-enhanced room-temperature bonding with low resistance<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/oct/sinano_101018.shtml"><em>http://www.semiconductor-today.com/news_items/2018/oct/sinano_101018.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/oct/sinano_101018.shtml"><img src="2018img/09/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>August 2018</strong></caption>
+<tr>
+<td>1 Integrating capacitors into p-gallium nitride gate transistors on silicon<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/hkust_090818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/hkust_090818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/hkust_090818.shtml"><img src="2018img/08/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 III-nitride solar cells on hexagonal boron nitride separation layer<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/git_160818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/git_160818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/git_160818.shtml"><img src="2018img/08/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Gallium oxide transistors increase breakdown voltage to 1.8kV<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/buffalo_240818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/buffalo_240818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/buffalo_240818.shtml"><img src="2018img/08/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Atomic-layer sidewall passivation of indium gallium nitride μLEDs<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/ucsb_290818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/ucsb_290818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/ucsb_290818.shtml"><img src="2018img/08/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Photo-electro-chemical deep trench etching in gallium nitride<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/hosei_230818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/hosei_230818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/hosei_230818.shtml"><img src="2018img/08/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Activating buried p-type gallium nitride for power electronics<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/sep/cornell_060918.shtml"><em>http://www.semiconductor-today.com/news_items/2018/sep/cornell_060918.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/sep/cornell_060918.shtml"><img src="2018img/08/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>July 2018</strong></caption>
+<tr>
+<td>1 Undoped gallium nitride upper waveguide for reduced laser threshold<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/ucas_050718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/ucas_050718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/ucas_050718.shtml"><img src="2018img/07/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Speeding oscillation of double heterojunction bipolar transistors<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/eth_0120718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/eth_0120718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/eth_0120718.shtml"><img src="2018img/07/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Improving aluminium gallium nitride transistor channel performance<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/xu_180718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/xu_180718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/xu_180718.shtml"><img src="2018img/07/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Plasmon-enhanced mid-infrared photodetection at room temperature<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/ntu_250718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/ntu_250718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/ntu_250718.shtml"><img src="2018img/07/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Structures to enhance light extraction in indium gallium nitride LEDs<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/ncku_300718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/ncku_300718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/ncku_300718.shtml"><img src="2018img/07/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Amber light for zinc tin nitride boost from indium gallium nitride wells<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/aug/osu_020818.shtml"><em>http://www.semiconductor-today.com/news_items/2018/aug/osu_020818.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/aug/osu_020818.shtml"><img src="2018img/07/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>June 2018</strong></caption>
+<tr>
+<td>1 Aluminium indium nitride as interlayer for green-emitting multi-quantum wells<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/lehigh_070618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/lehigh_070618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/lehigh_070618.shtml"><img src="2018img/06/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Gallium nitride tunnel junctions from pure MOCVD process for VCSELs<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/ucsb_130618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/ucsb_130618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/ucsb_130618.shtml"><img src="2018img/06/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Lateral epitaxial overgrowth on silicon to boost ultraviolet output power<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/toyota_210618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/toyota_210618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/toyota_210618.shtml"><img src="2018img/06/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Monolithic indium phosphide on silicon growth for optoelectronics<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/hkust_270618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/hkust_270618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/hkust_270618.shtml"><img src="2018img/06/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Schottky diodes integrated in vertical gallium nitride transistors on silicon<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/epfl_290618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/epfl_290618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/epfl_290618.shtml"><img src="2018img/06/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Hole gas boost for deep ultraviolet diode wall-plug efficiency<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jul/bolb_040718.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jul/bolb_040718.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jul/bolb_040718.shtml"><img src="2018img/06/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>May 2018</strong></caption>
+<tr>
+<td>1. Normally-off gallium nitride nanowire transistors with inverted p-channel<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/tub_110518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/tub_110518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/tub_110518.shtml"><img src="2018img/05/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Lowering thresholds for III-nitride vertical-cavity surface emitting lasers<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/xiamen_150518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/xiamen_150518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/xiamen_150518.shtml"><img src="2018img/05/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 High-voltage gallium oxide transistors with more than 1kV breakdown<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/cornell_160518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/cornell_160518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/cornell_160518.shtml"><img src="2018img/05/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Strain engineering higher hole density in N-polar aluminium gallium nitride<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/kaust_250518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/kaust_250518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/kaust_250518.shtml"><img src="2018img/05/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Room-temperature photoluminescence from III-IV-V semiconductor alloys<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/mit_300518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/mit_300518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/mit_300518.shtml"><img src="2018img/05/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Expanding the application potential of hydride vapor phase epitaxy<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jun/sciocs_080618.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jun/sciocs_080618.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jun/sciocs_080618.shtml"><img src="2018img/05/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>April 2018</strong></caption>
+<tr>
+<td>1 Near-ultraviolet aluminium gallium nitride laser diode on silicon<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/suzhou_110418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/suzhou_110418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/suzhou_110418.shtml"><img src="2018img/04/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Combining boron nitride and gallium oxide to boost power transistor<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/keri_160418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/keri_160418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/keri_160418.shtml"><img src="2018img/04/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Electro-absorption modulators for vertical-cavity surface-emitting lasers<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/udt_180418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/udt_180418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/udt_180418.shtml"><img src="2018img/04/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Platform for fully vertical gallium nitride on silicon power devices<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/mit_260418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/mit_260418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/mit_260418.shtml"><img src="2018img/04/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Near-ultraviolet optoelectronic transmitter/receiver system<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/nagoya_020518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/nagoya_020518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/nagoya_020518.shtml"><img src="2018img/04/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Indium arsenide quantum dot laser on silicon from molecular beam epitaxy<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/may/uot_090518.shtml"><em>http://www.semiconductor-today.com/news_items/2018/may/uot_090518.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/may/uot_090518.shtml"><img src="2018img/04/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>March 2018</strong></caption>
+<tr>
+<td>1 Semi-polar III-nitride integration for visible light communication<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/kaust_190318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/kaust_190318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/kaust_190318.shtml"><img src="2018img/03/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Indium arsenide channel transistors for mm-wave and high-speed applications<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/ucsb_200318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/ucsb_200318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/ucsb_200318.shtml"><img src="2018img/03/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Silicon hole injector for deep ultraviolet aluminium gallium nitride diodes<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/hexatech_210318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/hexatech_210318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/hexatech_210318.shtml"><img src="2018img/03/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Tunneling to green light emission with improved efficiency performance<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/kacst_280318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/kacst_280318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/kacst_280318.shtml"><img src="2018img/03/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Improving magnesium doping of aluminium gallium nitride<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/cmu_040418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/cmu_040418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/cmu_040418.shtml"><img src="2018img/03/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Silicon carbide superjunction Schottky junction diodes<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/apr/zhejiang_090418.shtml"><em>http://www.semiconductor-today.com/news_items/2018/apr/zhejiang_090418.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/apr/zhejiang_090418.shtml"><img src="2018img/03/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>February 2018</strong></caption>
+<tr>
+<td>1 Opening up bandwidth for visible light communication technology<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/feb/unm_090218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/feb/unm_090218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/feb/unm_090218.shtml"><img src="2018img/02/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Continuous-wave operation of semi-polar blue laser diodes<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/feb/ucsb_140218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/feb/ucsb_140218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/feb/ucsb_140218.shtml"><img src="2018img/02/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 III-nitride microphotodetector for visible light communication<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/feb/kaust_220218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/feb/kaust_220218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/feb/kaust_220218.shtml"><img src="2018img/02/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Tri-anode/slant-gate gallium nitride Schottky barrier diode on silicon<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/feb/epfl_280218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/feb/epfl_280218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/feb/epfl_280218.shtml"><img src="2018img/02/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Vanadium dioxide enables III-nitride phase-transition field-effect transistor<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/cornell_070318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/cornell_070318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/cornell_070318.shtml"><img src="2018img/02/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Room-temperature electrically pumped indium gallium nitride microdisk laser<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/mar/sin_120318.shtml"><em>http://www.semiconductor-today.com/news_items/2018/mar/sin_120318.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/mar/sin_120318.shtml"><img src="2018img/02/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+<col style="width:700px">
+<col style="width:100px">
+</colgroup>
+<caption><strong>January 2018</strong></caption>
+<tr>
+<td>1 ‘First’ quasi-vertical gallium nitride trench MOSFET on six-inch silicon<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jan/epfl_160118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jan/epfl_160118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jan/epfl_160118.shtml"><img src="2018img/02/1.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>2 Reducing dislocations in gallium arsenide on silicon templates<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jan/ucsb_230118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jan/ucsb_230118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jan/ucsb_230118.shtml"><img src="2018img/02/2.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>3 Questioning carrier distributions in III-nitride light-emitting diodes<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jan/unibath_290118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jan/unibath_290118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jan/unibath_290118.shtml"><img src="2018img/02/3.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>4 Boosting indium gallium nitride LEDs on silicon with tensile stress<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jan/scut_300118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jan/scut_300118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jan/scut_300118.shtml"><img src="2018img/02/4.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>5 Stacking III-nitride laser diodes with tunnel junction connections<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/jan/hamamatsu_310118.shtml"><em>http://www.semiconductor-today.com/news_items/2018/jan/hamamatsu_310118.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/jan/hamamatsu_310118.shtml"><img src="2018img/02/5.jpg" width="100"></a></td>
+</tr>
+<tr>
+<td>6 Microwave deposition of gallium oxide on III-nitride on silicon substrate<br/>
+<a href="http://www.semiconductor-today.com/news_items/2018/feb/indian-institute_070218.shtml"><em>http://www.semiconductor-today.com/news_items/2018/feb/indian-institute_070218.shtml</em></a></td>
+<td><a href="http://www.semiconductor-today.com/news_items/2018/feb/indian-institute_070218.shtml"><img src="2018img/02/6.jpg" width="100"></a></td>
+</tr>
+</table>
+
+</body>
+</html>
