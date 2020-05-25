@@ -93,10 +93,10 @@ a {
 
 /* Footer */
 .footer {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   background: #ddd;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .footer h2 a {

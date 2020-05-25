@@ -49,7 +49,7 @@ font-size: 14pt;
   margin-top: 10px;
 }
 
-.footer h2, a {
+.footer h2 a {
 font-family: Arial;
   font: bold;
   font-size: 21px;

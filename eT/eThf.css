@@ -46,16 +46,13 @@ font-size: 14pt;
   padding: 5px;
   text-align: center;
   background: #ddd;
-  margin: 5px;
+  margin-top: 5px;
 }
 
-.footer h2 {
+.footer h2 a {
 font-family: Arial;
-	font-size: 3vw;
-}
-
-.footer a {
-font-family: Arial;
+  font: bold;
+  font-size: 21px;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the navigation links stack on top of each other instead of next to each other */

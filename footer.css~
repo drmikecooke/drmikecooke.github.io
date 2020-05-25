@@ -93,13 +93,13 @@ a {
 
 /* Footer */
 .footer {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   background: #ddd;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-.footer h2 a {
+.footer h2 {
 font-family: Arial;
   font: bold;
   font-size: 21px;
