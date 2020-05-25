@@ -1,1 +1,0 @@
-# drmikecooke.github.io
