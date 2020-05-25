@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Header/Blog Title */
+.header {
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 10vw;
+}
+
+/* Style the top navigation bar */
+.topnav {
+	font-family: Arial Black;
+font-size: 14pt;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Footer */
+.footer {
+  padding: 5px;
+  text-align: center;
+  background: #ddd;
+  margin: 5px;
+}
+
+.footer h2 {
+font-family: Arial;
+	font-size: 3vw;
+}
+
+.footer a {
+font-family: Arial;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
