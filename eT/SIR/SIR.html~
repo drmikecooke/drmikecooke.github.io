@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>SIR models and Covid-19 spread</title>
-  <link rel="stylesheet" href="../EThf.css">
+  <link rel="stylesheet" href="../eThf.css">
   <link rel="stylesheet" href="../eTart.css">
   <style>
 .collapsible {
@@ -39,9 +39,9 @@
 </head>
 <body>
 
-<div class="header">
+<header>
   <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
-</div>
+</header>
 
 <div class="topnav">
   <a href="../eTP.html">Prospectus</a>

@@ -8,17 +8,17 @@ a {
 }
 
 /* Header/Blog Title */
-.header {
+header {
   text-align: center;
   background: white;
 }
 
-.header h1 {
+header h1 {
   font-size: 10vw;
 }
 
 /* Style the top navigation bar */
-.topnav {
+nav {
 	font-family: Arial Black;
 font-size: 14pt;
   overflow: hidden;
@@ -26,7 +26,7 @@ font-size: 14pt;
 }
 
 /* Style the topnav links */
-.topnav a {
+nav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -36,7 +36,7 @@ font-size: 14pt;
 }
 
 /* Change color on hover */
-.topnav a:hover {
+nav a:hover {
   background-color: #ddd;
   color: black;
 }
@@ -57,7 +57,7 @@ font-family: Arial;
 
 /* Responsive layout - when the screen is less than 600px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .topnav a {
+  nav a {
     float: none;
     width: 100%;
   }
