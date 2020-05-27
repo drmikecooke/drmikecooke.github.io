@@ -86,7 +86,7 @@ nav a:hover {
 
 article {
 font-family: Times;
-font-size: 1.5vw;  
+font-size: 1.7vw;  
 }
 
 article a {
@@ -182,8 +182,11 @@ font-family: Arial;
 
 table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
-    vertical-align: baseline;
   }
+
+tr {
+	vertical-align: baseline;
+	}
 
 h1.part_ {
 	font-family: Arial;

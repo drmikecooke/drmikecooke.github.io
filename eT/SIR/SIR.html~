@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../eT.css">
-  <title>SIR models and Covid-19 spread</title>
+  <title>eT: SIR models and Covid-19 spread</title>
   
  
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
@@ -81,7 +81,8 @@ For the purpose of this article, my main concern is to show how one might get a 
 </div>
 <h2 id="exponential-growth" class="section_">Exponential growth</h2>
 <div class="noindent">
-I used data from this website: https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases - I assume other countries have something similar [May update: this site became increasingly difficult to use as the developers made it more “user-friendly”. https://github.com/tomwhite/covid-19-uk-data may be useful to others.]. When this is all over, this link will presumably be retired at some point in the future. The “daily confirmed cases” link leads to a page where a xlsx table can be downloaded, updated daily.
+I used data from this website:
+<a href="https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases"><span style="font-family: Arial; font-size: 0.9em;">https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases</span></a> &mdash; I assume other countries have something similar [May update: this site became increasingly difficult to use as the developers made it more “user-friendly”. <a href="https://github.com/tomwhite/covid-19-uk-data"><span style="font-family: Arial;">https://github.com/tomwhite/covid-19-uk-data</span></a> may be useful to others.]. When this is all over, this link will presumably be retired at some point in the future. The “daily confirmed cases” link leads to a page where a xlsx table can be downloaded, updated daily.
 </div>
 <div class="indent">
 The present version allowed me to construct this graph:
@@ -268,7 +269,7 @@ The problem now is to find the initial values and then let our spreadsheet progr
 <img src="images/SIR.svg" alt="image: SIR.svg" />
 </div>
 <div class="indent">
-The peak can be expected in about 25 days. Given the infection and disease presentation progress over a similar length of time, the model is clearly inadequate. Even so, the model suggests there may be about 10% of the population uninfected at the end of this. We have an “at risk” population of over 60s (including me) of around 20%. Other at-risk factors, “pre-existing conditions” in health business-speak, will add to this. Also note that the peak reaches more than 20% of the population - a level that would probably break the health system, particularly that many of the health professionals exposed early on will be among the patients at that time.
+The peak can be expected in about 25 days. Given the infection and disease presentation progress over a similar length of time, the model is clearly inadequate. Even so, the model suggests there may be about 10% of the population uninfected at the end of this. We have an “at risk” population of over 60s (including me) of around 20%. Other at-risk factors, “pre-existing conditions” in health business-speak, will add to this. Also note that the peak reaches more than 20% of the population &mdash; a level that would probably break the health system, particularly that many of the health professionals exposed early on will be among the patients at that time.
 </div>
 <div class="indent">
 Of course, the UK has instituted partial lock-downs of work and “social distancing”. Let us assume this halves the reproduction number. Here we have to be careful and fix <em>β</em> rather than <em>γ</em>, since we expect the disease to progress to recovery as before. This makes a dramatic difference:

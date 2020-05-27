@@ -6,243 +6,6 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <link rel="stylesheet" href="../eT.css">
   <title>eT: Infection delays</title>
-
-  <style type="text/css">
-
-
-* {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        background: transparent;
-        box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  background: #f1f1f1;
-}
-
-p {
-	font-size: 12pt;
-	line-height: 140%;
-	margin-top: 10px;
-}
-
-h2 {
-margin-bottom: 10px;
-}
-
-/* Header/Blog Title */
-header {
-  text-align: center;
-  background: white;
-}
-
-header h1 {
-  font-size: 10vw;
-  padding: 10px;
-}
-
-/* Style the top navigation bar */
-nav {
-	font-family: Arial Black;
-font-size: 14pt;
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 0.5em 0.5em;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-article {
-font-family: Times;
-font-size: 1.2em;  
-}
-
-.container {
-  display: flex;
-  background-color: #ddd;
-  padding: 10px;
-  }
-
-
-.item { 
-  flex-grow: 1;
-  margin: 0px;
-  vertical-align: top;
-  padding: 0px;
-}
-
-/* Add a card effects for left and right columns */
-.right-card {
-  background-color: white;
-  width: 250px;
-  padding: 20px;
-  margin: 10px;
-}
-
-.left-card {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-}
-
-.strip {
-display: block;
-width: 100%;
-padding: 0px;
-margin: 0px;
-}
-
-.stripimg {
-width: 32%;
-}
-
-
-figure {
-display: inline-block;
-font-size: 1.3em;
-background-color: white;
-height: 250px;
-padding: 20px;
-margin: 10px;
-vertical-align: top;
-}
-
-
-figcaption {
-	text-align: top;
-	margin-bottom: 10px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-/* Footer */
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  margin-top: 5px;
-}
-
-footer h2 a {
-font-family: Arial;
-  font: bold;
-  font-size: 21px;
-}
-
-/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-  nav a {
-    float: none;
-    width: 100%;
-  }
-  .container {
-  	display: flex;
-  	background-color: #ddd;
-  padding: 0px;
-  flex-direction: column;
-  }
-  .left-card {
-  background-color: white;
-  width: 100%;
-  padding: 20px;
-  margin: 10px;
-}
-.stripimg {
-width: 98%;
-}
-}
-
-
-article a {
-	text-decoration: none;
-	font-family: Arial Black;
-	color: black;
-}
-
-article img {
-	width: 45%;
-margin: 0.25em;
-}
-
-table {
-    margin: 0 auto; /* or margin: 0 auto 0 auto */
-    vertical-align: baseline;
-  }
-
-h1.part_ {
-font-family: Arial;
-font-weight: bold;
-font-size: 2.4em;
-margin-top: 2ex;
-margin-bottom: 1.5ex;
-text-align: center;
-}
-
-	div.noindent {
-		margin-bottom: 0.25em;
-		text-indent: 0em;
-	}
-		div.indent {
-		margin-bottom: 0.25em;
-		text-indent: 2em;
-	}
-			div.image {
-		margin-bottom: 0.25em;
-		text-indent: 0em;
-		text-align: center;
-	}
-
-h2.section_ {
-font-family: Arial;
-font-weight: bold;
-font-size: 2.1em;
-margin-top: 1.3ex;
-margin-bottom: 0.7ex;
-text-align: center;
-}
-
-h4.subsubsection_ {
-font-family: Arial;
-font-weight: bold;
-font-size: 1.8em;
-margin-top: 0.7ex;
-margin-bottom: 0.4ex;
-text-align: center;
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  
- article img {
-  	width: 90%;
-margin:0.25em;
-  }
-}
-  </style>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
@@ -270,7 +33,7 @@ In the current covid-19 pandemic, people are interested in projecting forward in
 Of course, the infection numbers tomorrow aren't simply related to what is happening today: in the case of covid-19 the infection takes up to two weeks to manifest, if at all in some cases. How come a simple constant factor works?
 </div>
 <div class="indent">
-A reasonably simple model for infection delay (i.e. what has crossed what passes for my mind) would have today's newly infected population to be a function of the newly infected populations on previous days. To make life extra simple, we also use a linear function - a sum of the previous populations multiplied by various constant factors:
+A reasonably simple model for infection delay (i.e. what has crossed what passes for my mind) would have today's newly infected population to be a function of the newly infected populations on previous days. To make life extra simple, we also use a linear function &mdash; a sum of the previous populations multiplied by various constant factors:
 </div>
 <div class="indent">
 <span class="math display">\[I_{0} = g_{1}I_{- 1} + g_{2}I_{- 2} + g_{3}I_{- 3} + \ldots\]</span>
@@ -318,7 +81,7 @@ This is a <em>D</em>-order polynomial. Note that <em>n</em> has dropped out, sin
 
 <h4 class="subsubsection_">Two-day infection</h4>
 <div class="noindent">
-Let's imagine the simplest non-trivial example - a 2-day infection: you, M. Average, pick up a mild cold virus at the supermarket, go around for a couple of days unaware that you are sub-par, then sniffles strike and you stay home and hopefully beat off the virus in short order. On the first day after the supermarketing you infect 0.25 of a person (as M. Average); day two comes, and, with the virus settled in and happily reproducing wildly, you infect 1.5 people. This would give:
+Let's imagine the simplest non-trivial example &mdash; a 2-day infection: you, M. Average, pick up a mild cold virus at the supermarket, go around for a couple of days unaware that you are sub-par, then sniffles strike and you stay home and hopefully beat off the virus in short order. On the first day after the supermarketing you infect 0.25 of a person (as M. Average); day two comes, and, with the virus settled in and happily reproducing wildly, you infect 1.5 people. This would give:
 </div>
 <div class="indent">
 <span class="math display">\[I_{n} = 0.25I_{n - 1} + 1.5I_{n - 2}\]</span>
@@ -330,7 +93,7 @@ The characteristic polynomial is then a quadratic:
 <span class="math display">\[a^{2} = 0.25a + 1.5\]</span>
 </div>
 <div class="indent">
-This is satisfied by real <em>a</em> values of about 1.36 and -1.11 (more accurate values in spreadsheet):
+This is satisfied by real <em>a</em> values of about 1.36 and &ndash;1.11 (more accurate values in spreadsheet):
 </div>
 <div class="image">
 <img src="images/character.svg" alt="image: character.svg" />
@@ -351,7 +114,7 @@ We note that the logarithmic image shows initial wobbling, but eventually tends 
 <img src="images/2dfor.svg" alt="image: 2dfor.svg" />
 </div>
 <div class="indent">
-If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident - the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.
+If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident &mdash; the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.
 </div>
 <div class="indent">
 What does the other solution represent? We will show that it gives the wobbles in the initial stages of the infection. In fact we try a solution:
@@ -377,9 +140,9 @@ This is enough for us to solve for <em>A</em> and <em>B</em>, giving roughly 0.5
 <div class="noindent">
 <table>
 <colgroup>
-<col width="50px" />
-<col width="200px" />
-<col width="200px" />
+<col width="10%" />
+<col width="40%" />
+<col width="40%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -524,7 +287,7 @@ As the process repeats, the rounding errors become more and more severe. If one 
 With a more extended infection period, more solutions need to be added to give the initial wobbles. If there are D different roots of the characteristic equation, then you can again “solve” the progression with sums of powers that fits an initial infection pattern spread over D days. If some of the roots are multiple, the solution becomes more complicated, but not intractible. In real life, other factors come into play, such as the gathering of data being sporadic, hampered by political considerations, butt covering, and so on. One is then largely restricted to, hopefully intelligent, guesswork.
 </div>
 <div class="indent">
-Being a bit bonkers, I decided to run the prediction backwards in time (<em>I</em><sub><em>-n</em></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (-<em>n</em>). We note that this tends to -1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it “dominates” the negative time behaviour:
+Being a bit bonkers, I decided to run the prediction backwards in time (<em>I</em><sub><em>&ndash;n</em></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (<em>&ndash;n</em>). We note that this tends to &ndash;1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it “dominates” the negative time behaviour:
 </div>
 <div class="image">
 <img src="images/2dback.svg" alt="image: 2dback.svg" />
@@ -546,7 +309,7 @@ giving a characteristic:
 <img src="images/c3.svg" alt="image: c3.svg" />
 </div>
 <div class="indent">
-As it happens, the real solution is about 1.35. There are also two complex solutions, roughly -0.55±0.66i. The absolute value of the complex solutions is about 0.86, less than the real solution. Having absolute values less than 1, means the complex solutions are damped, tending to zero. I initially tried working wholly on a spreadsheet, but in this case a python 3 script enabled me to match the sum of powers predicition to the recurrence calculation. The script references scipy/numpy modules that you might need to install using pip3 or whatever. The script is also adaptable to work out the characteristic solutions for longer infection periods. The output is a csv file with the brute force calculation and a “patient zero” fit to the characteristic solutions:
+As it happens, the real solution is about 1.35. There are also two complex solutions, roughly &ndash;0.55±0.66i. The absolute value of the complex solutions is about 0.86, less than the real solution. Having absolute values less than 1, means the complex solutions are damped, tending to zero. I initially tried working wholly on a spreadsheet, but in this case a python 3 script enabled me to match the sum of powers predicition to the recurrence calculation. The script references scipy/numpy modules that you might need to install using pip3 or whatever. The script is also adaptable to work out the characteristic solutions for longer infection periods. The output is a csv file with the brute force calculation and a “patient zero” fit to the characteristic solutions:
 </div>
 <div class="image">
 <img src="images/3dfor.svg" alt="image: 3dfor.svg" />
