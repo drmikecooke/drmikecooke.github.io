@@ -86,7 +86,7 @@ nav a:hover {
 
 article {
 font-family: Times;
-font-size: 21px;  
+font-size: 1.7vw;  
 }
 
 article a {
@@ -231,12 +231,12 @@ h4.subsubsection_ {
 	.container {	display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
 	.left-card { background-color: white; width: 100%; padding: 20px; margin: 10px; }
 	.stripimg { width: 98%; }
-	article { font-size: 14px; }
+	article { font-size: 16px; }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
 	nav a { float: none; width: 100%; }
-	article { font-size: 12px; }
+	article { font-size: 14px; }
 	article img { width: 90%; margin:0.25em; }
 	}
