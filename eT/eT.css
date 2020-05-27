@@ -1,3 +1,4 @@
+
 .collapsible {
   background-color: #777;
   color: white;
@@ -8,7 +9,7 @@
   text-align: left;
   outline: none;
   font-size: 15px;
-  margin-bottom: 2ex;
+  margin-bottom: 0px;
 }
 
 .active, .collapsible:hover {
@@ -16,14 +17,13 @@
 }
 
 .content {
-  padding: 10px;
+  padding: 9px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
-
 
 * {
         margin: 0;
