@@ -40,7 +40,7 @@ body {
 }
 
 p {
-	font-size: 12pt;
+	font-size: 18px;
 	line-height: 140%;
 	margin-top: 10px;
 }
@@ -63,9 +63,9 @@ header h1 {
 /* Style the top navigation bar */
 nav {
 	font-family: Arial Black;
-font-size: 14pt;
-  overflow: hidden;
-  background-color: #333;
+	font-size: 18px;
+	overflow: hidden;
+	background-color: #333;
 }
 
 /* Style the topnav links */
@@ -86,7 +86,18 @@ nav a:hover {
 
 article {
 font-family: Times;
-font-size: 12pt;  
+font-size: 21px;  
+}
+
+article a {
+	text-decoration: none;
+	font-family: Arial Black;
+	color: black;
+}
+
+article img {
+	width: 45%;
+margin: 0.25em;
 }
 
 .container {
@@ -170,41 +181,14 @@ font-family: Arial;
 
 /* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {
-  nav a {
-    float: none;
-    width: 100%;
-  }
-  .container {
-  	display: flex;
-  	background-color: #ddd;
-  padding: 0px;
-  flex-direction: column;
-  }
-  .left-card {
-  background-color: white;
-  width: 100%;
-  padding: 20px;
-  margin: 10px;
-}
-.stripimg {
-width: 98%;
-}
-article {
-font-size: 8pt;
-}
+	nav a { float: none; width: 100%; }
+	.container {	display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
+	.left-card { background-color: white; width: 100%; padding: 20px; margin: 10px; }
+	.stripimg { width: 98%; }
+	article { font-size: 18px; }
 }
 
 
-article a {
-	text-decoration: none;
-	font-family: Arial Black;
-	color: black;
-}
-
-article img {
-	width: 45%;
-margin: 0.25em;
-}
 
 table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
