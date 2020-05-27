@@ -39,7 +39,7 @@ A reasonably simple model for infection delay (i.e. what has crossed what passes
 <span class="math display">\[I_{0} = g_{1}I_{- 1} + g_{2}I_{- 2} + g_{3}I_{- 3} + \ldots\]</span>
 </div>
 <div class="indent">
-</span>Using fancy maths notation, with the Greek capital sigma character (Σ) indicating a sum between limits, with D being the length of time the infection lasts in the average person (or at least stops creating new infections):
+</span>Using fancy maths notation, with the Greek capital sigma character (Σ) indicating a sum between limits, with <em>D</em> being the length of time the infection lasts in the average person (or at least stops creating new infections):
 </div>
 <div class="indent">
 <span class="math display">\[I_{0} = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{- d}\]</span>
@@ -75,7 +75,7 @@ If we divide through by <em><span class="math inline">\(a^{n - D}\)</span>:</em>
 <span class="math display">\[a^{D} = g_{1}a^{D - 1} + g_{2}a^{D - 2} + g_{3}a^{D - 3} + \ldots + g_{D}\]</span>
 </div>
 <div class="indent">
-This is a <em>D</em>-order polynomial. Note that <em>n</em> has dropped out, since it is not really relevant (and shouldn't be, that's the point) to the value of <em>a</em>. In theory, this equation can have up to <em>D</em> solutions. Allowing complex number solutions, there are exactly D solutions, possibly including multiple roots.
+This is a <em>D</em>-order polynomial. Note that <em>n</em> has dropped out, since it is not really relevant (and shouldn't be, that's the point) to the value of <em>a</em>. In theory, this equation can have up to <em>D</em> solutions. Allowing complex number solutions, there are exactly <em>D</em> solutions, possibly including multiple roots.
 </div>
 <h2 id="examples" class="section_">Examples</h2>
 
@@ -284,7 +284,7 @@ I<sub>n</sub> prediction
 As the process repeats, the rounding errors become more and more severe. If one is minded, one can increase the precision of the arithmetic, and the solution of the sum of two powers multiplied by factors becomes exact in the limit of infinite precision. A better comparison is available in the spreadsheet.
 </div>
 <div class="indent">
-With a more extended infection period, more solutions need to be added to give the initial wobbles. If there are D different roots of the characteristic equation, then you can again “solve” the progression with sums of powers that fits an initial infection pattern spread over D days. If some of the roots are multiple, the solution becomes more complicated, but not intractible. In real life, other factors come into play, such as the gathering of data being sporadic, hampered by political considerations, butt covering, and so on. One is then largely restricted to, hopefully intelligent, guesswork.
+With a more extended infection period, more solutions need to be added to give the initial wobbles. If there are <em>D</em> different roots of the characteristic equation, then you can again “solve” the progression with sums of powers that fits an initial infection pattern spread over <em>D</em> days. If some of the roots are multiple, the solution becomes more complicated, but not intractible. In real life, other factors come into play, such as the gathering of data being sporadic, hampered by political considerations, butt covering, and so on. One is then largely restricted to, hopefully intelligent, guesswork.
 </div>
 <div class="indent">
 Being a bit bonkers, I decided to run the prediction backwards in time (<em>I</em><sub><em>&ndash;n</em></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (<em>&ndash;n</em>). We note that this tends to &ndash;1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it “dominates” the negative time behaviour:
