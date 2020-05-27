@@ -1,5 +1,10 @@
 * {
-  box-sizing: border-box;
+          margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        box-sizing: border-box;
 }
 
 figure {
@@ -95,7 +100,7 @@ nav a:hover {
 footer {
   padding: 5px;
   text-align: center;
-  background: #ddd;
+  background: #ccc;
   margin-top: 5px;
 }
 

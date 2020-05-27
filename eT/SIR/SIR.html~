@@ -4,36 +4,10 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../eT.css">
   <title>SIR models and Covid-19 spread</title>
-  <link rel="stylesheet" href="../eThf.css">
-  <link rel="stylesheet" href="../eTart.css">
-  <style>
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-bottom: 2ex;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-  margin-bottom: 2ex;
-}
-</style>
+  
+ 
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   
 </head>
@@ -43,14 +17,17 @@
   <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
 </header>
 
-<div class="topnav">
+<nav>
   <a href="../eTP.html">Prospectus</a>
   <a href="#">Contents</a>
   <a href="../fi/fi.html">Infection delays</a>
   <a href="../SIR/SIR.html">SIR model and covid-19</a>
   <a href="../../index.html" style="float:right">About me</a>
-</div>
+</nav>
 
+<div class="container">
+<div class="item">
+<article class="left-card">
 <h1 class="part_">SIR models and Covid-19 spread</h1>
 <div class="noindent">
 This is being written in early April 2020 from the United Kingdom (UK). A few weeks ago a friend sent me theoretical material on a model often used to understand the spread of disease. I had already done some preliminary spreadsheet presentations on UK data and extracted a rough idea of the rate of spread, using an exponential model. At that time, mid-March 2020, I had found that an exponential model would have the entire UK population infected by the virus within 40 days. That's less than 20 days from now.
@@ -305,13 +282,14 @@ The peak of the population with the infection comes after about 60 days at the 3
 <div class="noindent">
 
 </div>
-<div class="noindent">
-<font face="Arial Black">Downloads: <a href="downloads/SIR200407.xlsx">SIR200407.xlsx</a> <a href="downloads/SIR.xlsx">SIR.xlsx</a> <a href="downloads/SIRb.xlsx">SIRb.xlsx</a></font>
+<div class="image">
+<font face="Arial Black"><em>Downloads:</em> <a href="downloads/SIR200407.xlsx">SIR200407.xlsx</a> <a href="downloads/SIR.xlsx">SIR.xlsx</a> <a href="downloads/SIRb.xlsx">SIRb.xlsx</a></font>
 </div>
-
-<div class="footer">
+</article>
+</div></div>
+<footer>
   <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
-</div>
+</footer>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");

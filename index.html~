@@ -14,12 +14,12 @@
 	<a href="#" style="float:right">More about me</a>
   <a href="#">Home</a>
   <a href="eT/fi/fi.html">Infection delays</a>
-  <a href="eT/eTP.html"><span style="font-family: Times;"><strong>e<sup><i>x</i></sup>ponential</font></span> <span style="font-family: Arial black;">Times</span></strong></a>
+  <a href="eT/eTP.html"><span style="font-family: Times;"><strong>e<i><sup>x</sup>ponential</i></strong></span> <span style="font-family: Arial Black;">Times</span></strong></a>
   <a href="eT/SIR/SIR.html">SIR model and covid-19</a>
   <a href="#">Other stuff by me</a>  
 </nav>
 
-<div class="row" style="border-color: black; border-width: 10pt;">
+<div class="row">
 
 <div class="rightcolumn">
     <div class="card">
@@ -53,7 +53,7 @@
 
 <figure>
 <a href = "eT/eTP.html">
-<figcaption><span style="font-family: Times;"><strong>e<sup><i>x</i></sup>ponential</font></span> <span style="font-family: Arial Black;">Times</span></strong></figcaption>
+<figcaption><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></figcaption>
 <img src="eT/burn.jpg" alt="environment" height="180px">
 </a>
 </figure>

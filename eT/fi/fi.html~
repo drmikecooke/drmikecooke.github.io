@@ -4,34 +4,240 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="Content-Style-Type" content="text/css" />
+  <link rel="stylesheet" href="../eT.css">
   <title>eT: Infection delays</title>
-<link rel="stylesheet" href="../eThf.css">
-<link rel="stylesheet" href="../eTart.css">
+
   <style type="text/css">
 
 
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background: #f1f1f1;
+}
+
+p {
+	font-size: 12pt;
+	line-height: 140%;
+	margin-top: 10px;
+}
+
+h2 {
+margin-bottom: 10px;
+}
+
+/* Header/Blog Title */
+header {
+  text-align: center;
+  background: white;
+}
+
+header h1 {
+  font-size: 10vw;
+  padding: 10px;
+}
+
+/* Style the top navigation bar */
+nav {
+	font-family: Arial Black;
+font-size: 14pt;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+article {
+font-family: Times;
+font-size: 1.2em;  
+}
+
+.container {
+  display: flex;
+  background-color: #ddd;
+  padding: 10px;
+  }
+
+
+.item { 
+  flex-grow: 1;
+  margin: 0px;
+  vertical-align: top;
+  padding: 0px;
+}
+
+/* Add a card effects for left and right columns */
+.right-card {
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.left-card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+}
+
+.strip {
+display: block;
+width: 100%;
+padding: 0px;
+margin: 0px;
+}
+
+.stripimg {
+width: 32%;
+}
+
+
+figure {
+display: inline-block;
+font-size: 1.3em;
+background-color: white;
+height: 250px;
+padding: 20px;
+margin: 10px;
+vertical-align: top;
+}
+
+
+figcaption {
+	text-align: top;
+	margin-bottom: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Footer */
+footer {
+  padding: 5px;
+  text-align: center;
+  background: #ccc;
+  margin-top: 5px;
+}
+
+footer h2 a {
+font-family: Arial;
+  font: bold;
+  font-size: 21px;
+}
+
+/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+  nav a {
+    float: none;
+    width: 100%;
+  }
+  .container {
+  	display: flex;
+  	background-color: #ddd;
+  padding: 0px;
+  flex-direction: column;
+  }
+  .left-card {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+}
+.stripimg {
+width: 98%;
+}
+}
+
+
+article a {
 	text-decoration: none;
 	font-family: Arial Black;
 	color: black;
 }
 
-img {
+article img {
 	width: 45%;
 margin: 0.25em;
 }
 
 table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
+    vertical-align: baseline;
   }
 
+h1.part_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.4em;
+margin-top: 2ex;
+margin-bottom: 1.5ex;
+text-align: center;
+}
 
+	div.noindent {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+	}
+		div.indent {
+		margin-bottom: 0.25em;
+		text-indent: 2em;
+	}
+			div.image {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+		text-align: center;
+	}
+
+h2.section_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.1em;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+}
+
+h4.subsubsection_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 1.8em;
+margin-top: 0.7ex;
+margin-bottom: 0.4ex;
+text-align: center;
+}
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   
-  img {
+ article img {
   	width: 90%;
 margin:0.25em;
   }
@@ -52,9 +258,9 @@ margin:0.25em;
   <a href="../SIR/SIR.html">SIR model and covid-19</a>
   <a href="../../index.html" style="float:right">About me</a>
 </nav>
-
-
-
+<div class="container">
+<div class="item">
+<article class="left-card">
 <h1 class="part_">Infection delays</h1>
 
 <div class="noindent">
@@ -130,7 +336,7 @@ This is satisfied by real <em>a</em> values of about 1.36 and -1.11 (more accura
 <img src="images/character.svg" alt="image: character.svg" />
 </div>
 <div class="image">
-<span style="font-family: Arial Black;">Download:</span> <a href='downloads/2dcombined.xlsx'>xlsx</a>
+<span style="font-family: Arial Black;"><em>Download:</em></span> <a href='downloads/2dcombined.xlsx'>xlsx</a>
 </div>
 <div class="indent">
 Let's imagine the cold virus initially infected one person on day 0, “patient zero”. Before that the infection was at zero (it didn't exist). On day 1, there is a quarter (0.25) of a person newly infected. On day 2, the newly infected are 0.25×0.25+1.5×1, or approximately 1.56. And so on. I have put this into a spreadsheet, and used the graph features to produce the following images with new infections plotted on linear and logarithmic scales:
@@ -171,9 +377,9 @@ This is enough for us to solve for <em>A</em> and <em>B</em>, giving roughly 0.5
 <div class="noindent">
 <table>
 <colgroup>
-<col width="5%" />
-<col width="45%" />
-<col width="45%" />
+<col width="50px" />
+<col width="200px" />
+<col width="200px" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -345,7 +551,7 @@ As it happens, the real solution is about 1.35. There are also two complex solut
 <div class="image">
 <img src="images/3dfor.svg" alt="image: 3dfor.svg" />
 </div>
-<div class="image"><span style="font-family: Arial Black;">Downloads:</span> <a href='downloads/fi.py'>python</a>, <a href='downloads/fi.csv'>csv</a>, <a href='downloads/fi.xlsx'>xlsx</a>
+<div class="image"><span style="font-family: Arial Black;"><em>Downloads:</em></span> <a href='downloads/fi.py'>python</a>, <a href='downloads/fi.csv'>csv</a>, <a href='downloads/fi.xlsx'>xlsx</a>
 </div>
 <div class="indent">
 The backwards behaviour (retrodiction), also included, is even more bonkers since the two complex solutions play off each other, giving oscillations with a growing amplitude.
@@ -356,10 +562,11 @@ The backwards behaviour (retrodiction), also included, is even more bonkers sinc
 <div class="indent">
 This is better understood by putting the various complex bits in polar form. The real characteristic solution is damped in the backward direction. A simple-minded yesterday/today ratio comparison is not much use for relating the behavior to the these roots. In the context of infections, the negative time solution is of little practical interest, since it didn't exist before “patient zero”, who is assumed to come from nothing (or <em>ex nihilo</em>, as Boris Johnson would say).
 </div>
-
-<div class="footer">
+</article>
+</div></div>
+<footer>
   <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
-</div>
+</footer>
 
 </body>
 </html>

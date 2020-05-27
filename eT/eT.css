@@ -1,29 +1,133 @@
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 2ex;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  margin-bottom: 2ex;
+}
+
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        box-sizing: border-box;
+}
+
 body {
-  font-family: Arial;  
+  font-family: Arial;
   background: #f1f1f1;
 }
 
-/* Left column */
-.leftcolumn {
-	display: block;
+p {
+	font-size: 12pt;
+	line-height: 140%;
+	margin-top: 10px;
+}
+
+h2 {
+margin-bottom: 10px;
+}
+
+/* Header/Blog Title */
+header {
+  text-align: center;
+  background: white;
+}
+
+header h1 {
+  font-size: 10vw;
+  padding: 10px;
+}
+
+/* Style the top navigation bar */
+nav {
+	font-family: Arial Black;
+font-size: 14pt;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+article {
+font-family: Times;
+font-size: 1.2em;  
+}
+
+.container {
+  display: flex;
+  background-color: #ddd;
+  padding: 10px;
   }
 
-/* Right column */
-.rightcolumn {
-	display: block;
-  float: right;
-  width: 250px;
-  background-color: #f1f1f1;
+
+.item { 
+  flex-grow: 1;
+  margin: 0px;
+  vertical-align: top;
+  padding: 0px;
 }
 
-/* Add a card effect for articles */
-.card {
-	display: block;
+/* Add a card effects for left and right columns */
+.right-card {
   background-color: white;
-  width: 100%;
-  padding: 10pt;
-  margin: 10pt;
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
 }
+
+.left-card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+}
+
+.strip {
+display: block;
+width: 100%;
+padding: 0px;
+margin: 0px;
+}
+
+.stripimg {
+width: 32%;
+}
+
 
 figure {
 display: inline-block;
@@ -31,20 +135,125 @@ font-size: 1.3em;
 background-color: white;
 height: 250px;
 padding: 20px;
-margin: 20px;
+margin: 10px;
+vertical-align: top;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+
+figcaption {
+	text-align: top;
+	margin-bottom: 10px;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
+* {
+  box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Footer */
+footer {
+  padding: 5px;
+  text-align: center;
+  background: #ccc;
+  margin-top: 5px;
+}
+
+footer h2 a {
+font-family: Arial;
+  font: bold;
+  font-size: 21px;
+}
+
+/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+  nav a {
+    float: none;
     width: 100%;
-    padding: 0;
+  }
+  .container {
+  	display: flex;
+  	background-color: #ddd;
+  padding: 0px;
+  flex-direction: column;
+  }
+  .left-card {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+}
+.stripimg {
+width: 98%;
+}
+}
+
+
+article a {
+	text-decoration: none;
+	font-family: Arial Black;
+	color: black;
+}
+
+article img {
+	width: 45%;
+margin: 0.25em;
+}
+
+table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+    vertical-align: baseline;
+  }
+
+h1.part_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.4em;
+margin-top: 2ex;
+margin-bottom: 1.5ex;
+text-align: center;
+}
+
+	div.noindent {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+	}
+		div.indent {
+		margin-bottom: 0.25em;
+		text-indent: 2em;
+	}
+			div.image {
+		margin-bottom: 0.25em;
+		text-indent: 0em;
+		text-align: center;
+	}
+
+h2.section_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 2.1em;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+}
+
+h4.subsubsection_ {
+font-family: Arial;
+font-weight: bold;
+font-size: 1.8em;
+margin-top: 0.7ex;
+margin-bottom: 0.4ex;
+text-align: center;
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  
+ article img {
+  	width: 90%;
+margin:0.25em;
   }
 }

@@ -4,163 +4,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="Content-Style-Type" content="text/css" />
-<style>
+  <link rel="stylesheet" href="../eT.css">
+  <title>eT: Prospectus</title>
 
-* {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        background: transparent;
-        box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  background: #f1f1f1;
-}
-
-p {
-	font-size: 12pt;
-	line-height: 140%;
-	margin-top: 10px;
-}
-
-h2 {
-margin-bottom: 10px;
-}
-
-/* Header/Blog Title */
-header {
-  text-align: center;
-  background: white;
-}
-
-header h1 {
-  font-size: 10vw;
-  padding: 10px;
-}
-
-/* Style the top navigation bar */
-nav {
-	font-family: Arial Black;
-font-size: 14pt;
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 0.5em 0.5em;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.container {
-  display: flex;
-  background-color: #ddd;
-  padding: 10px;
-  }
-
-
-.main { 
-  flex-grow: 1;
-  margin: 0px;
-  vertical-align: top;
-  padding: 0px;
-}
-
-.side { 
-  flex-grow: 1;
-  margin: 0px;
-  vertical-align: top;
-  padding: 0px;
-}
-
-/* Add a card effects for left and right columns */
-.right-card {
-  background-color: white;
-  width: 250px;
-  padding: 20px;
-  margin: 10px;
-}
-
-.left-card {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-}
-
-
-figure {
-display: inline-block;
-font-size: 1.3em;
-background-color: white;
-height: 250px;
-padding: 20px;
-margin: 10px;
-vertical-align: top;
-}
-
-
-figcaption {
-	text-align: top;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-/* Footer */
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  margin-top: 5px;
-}
-
-footer h2 a {
-font-family: Arial;
-  font: bold;
-  font-size: 21px;
-}
-
-/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-  nav a {
-    float: none;
-    width: 100%;
-  }
-  .container {
-  	display: flex;
-  	background-color: #ddd;
-  padding: 10px;
-  flex-direction: column;
-  }
-  .left-card {
-  background-color: white;
-  width: 100px
-  padding: 20px;
-  margin: 10px;
-}
-}
-
-
-</style>
 </head>
 <body>
   <header>
@@ -174,11 +20,13 @@ font-family: Arial;
 
 <div class="container">
   
-   <div class="main">
+   <div class="item">
     <div class="left-card">
         <h2>Prospectus</h2>
-        <img src="burn.jpg" alt="" width="450vw"> <img src="pretty.jpg" alt="" width="546vw">
-        <img src="garbage.jpg" alt="" width="443vw">
+        <div class="strip">
+        <img src="burn.jpg" alt="burn" class="stripimg"> <img src="pretty.jpg" alt="pretty" class="stripimg">
+        <img src="garbage.jpg" alt="garbage" class="stripimg">
+        </div>
         <p>We humans are making exponential demands on ourselves and our environment. What I want to do here is explore
         this thought – the ways in which it is true and not true. Is it a good thing or bad? Can we step off the
         exponential treadmill?</p>
@@ -206,7 +54,7 @@ font-family: Arial;
 
   </div>
   
-  <div class="side">
+  <div class="item">
   <div class="right-card">
         <h2>Who am I?</h2><img src="../mike.jpg" alt="My ugly bonce" width="90%">
         <p>My name is Mike Cooke, a freelance technology journalist who has worked in the semiconductor and advanced
