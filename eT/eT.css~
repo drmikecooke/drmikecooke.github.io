@@ -16,12 +16,12 @@
 }
 
 .content {
-  padding: 0 18px;
+  padding: 10px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
-  margin-bottom: 2ex;
+  margin-bottom: 10px;
 }
 
 
@@ -74,7 +74,7 @@ nav a {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 0.5em 0.5em;
+  padding: 0.5em;
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ article a {
 
 article img {
 	width: 45%;
-margin: 0.25em;
+margin: 10px;
 }
 
 .container {
@@ -192,7 +192,7 @@ h1.part_ {
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 2.4em;
-	margin-top: 2ex;
+	margin-top: 10px;
 	margin-bottom: 1.5ex;
 	text-align: center;
 	}
@@ -231,15 +231,15 @@ h4.subsubsection_ {
 	
 /* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {
-	.container {	display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
-	.left-card { background-color: white; width: 100%; padding: 20px; margin: 10px; }
+	.container {	display: flex;	background-color: #ddd; padding: 0px; margin: 0px; flex-direction: column; }
+	.left-card { background-color: white; width: 100%; padding: 0px; margin: 0px; }
 	.stripimg { width: 98%; }
+	nav a { float: none; width: 100%; }
 	article img { width: 90%; margin:0.25em; }
 	article { font-size: 18px; }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
-	nav a { float: none; width: 100%; }
 	article { font-size: 12px; }
 	}
