@@ -179,16 +179,6 @@ font-family: Arial;
   font-size: 21px;
 }
 
-/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-	nav a { float: none; width: 100%; }
-	.container {	display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
-	.left-card { background-color: white; width: 100%; padding: 20px; margin: 10px; }
-	.stripimg { width: 98%; }
-	article { font-size: 18px; }
-}
-
-
 
 table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
@@ -235,9 +225,18 @@ h4.subsubsection_ {
 	margin-bottom: 0.4ex;
 	text-align: center;
 	}
+	
+/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+	.container {	display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
+	.left-card { background-color: white; width: 100%; padding: 20px; margin: 10px; }
+	.stripimg { width: 98%; }
+	article { font-size: 10px; }
+}
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-	article { font-size: 18px; }
+	nav a { float: none; width: 100%; }
+	article { font-size: 8px; }
 	article img { width: 90%; margin:0.25em; }
 	}
