@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eT.css">
   <title>eT: SIR models and Covid-19 spread</title>
   
  
@@ -25,10 +25,15 @@
   <a href="../../index.html" style="float:right">About me</a>
 </nav>
 
+<div class="tabstrip"><button id="sA" onclick="showAll()">Show all mathematical details</button> <button id="hA" onclick="hideAll()">Hide all mathematical details</button></div>
+
+
 <div class="container">
 <div class="item">
 <article class="left-card">
 <h1 class="part_">SIR models and Covid-19 spread</h1>
+
+
 <div class="noindent">
 This is being written in early April 2020 from the United Kingdom (UK). A few weeks ago a friend sent me theoretical material on a model often used to understand the spread of disease. I had already done some preliminary spreadsheet presentations on UK data and extracted a rough idea of the rate of spread, using an exponential model. At that time, mid-March 2020, I had found that an exponential model would have the entire UK population infected by the virus within 40 days. That's less than 20 days from now.
 </div>
@@ -39,7 +44,9 @@ In real life, exponential growth does not continue for ever. More sophisticated 
 Here, we look at a discretized form of a compartmentalized deterministic model that splits the population into three parts: susceptible (<em>S</em>), infected (<em>I</em>), and recovered (<em>R</em>). Collecting the three parts as “SIR” gives the name to the model. On any given day, some susceptible people become infected and some infected people recover (hopefully). For simplicity, we also include death as a form of “recovery”, although to the victim or their family it is not. [Wondering here if a fourth compartment “(<em>L</em>)oss” could be set up, which would account for overwhelmed health services, or “businesses” in some countries.]
 </div>
 
-<button class="collapsible">Mathematical details (click to reveal)</button>
+<details id="maths1">
+<summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
+
 <div class="content">
 <div class="indent">
 So how does the SIR model work? The proportion of susceptible people who become infected on a day depends on the number of infected people they are likely to contact. This reduces the pool of susceptibles. Using the common symbol “Δ” to represent the change we have:
@@ -72,6 +79,7 @@ Notice that if we add up all the changes:
 The total number of people (<em>S</em>+<em>I</em>+<em>R</em>) doesn't change, just their assignments to the compartments.
 </div>
 </div>
+</details>
 
 <div class="indent">
 There are a number of valid criticisms of the model. The most obvious to me is that the disease doesn't act on a day-to-day timetable, but its action is spread over a period of around two weeks: a latent period where the victim doesn't have enough viral load to infect others (significantly?), the most dangerous infectious period where they don't appear sick, then the sickness itself, which also appears to have stages, before, hopefully, recovery. During the sick period, those at risk are family carers or, if necessary, hosptial staff, so there is a different infection dynamics. All these factors mean the daily data put out by government contain all sorts of the delay factors in terms of the spread dynamics.
@@ -118,7 +126,8 @@ Hopefully you don't need me to tell you which version has a logarithmic scale. T
 For what it's worth, the daily death “<em>x</em>-factor” is about 0.18, and the cumulative 0.24. These are more reflective of my mid-March figures for infection with a two-three week delay in response.
 </div>
 
-<button class="collapsible">Mathematical details (click to reveal)</button>
+<details id="maths2">
+<summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
 <div class="content">
 <div class="indent">
 Why am I just slapping the same process on different sets of figures. The first point is that different ways of dicing up the exponential growth should lead to similar <em>x</em>-factors, and largely they do, except for the cumulative death's 0.24. When you are dealing with the early stages of an infection (and other exponential-type processes), the initial form for the daily infection reports should go as:
@@ -139,6 +148,7 @@ In our SIR model, the <em>γ</em>-factor is:
 Assuming that we know “<em>S</em>”, we need another piece of information to tie down the <em>α</em> and <em>β</em> parameters.
 </div>
 </div>
+</details>
 
 <h2 id="reproduction-number" class="section_">Reproduction number</h2>
 <div class="noindent">
@@ -154,7 +164,8 @@ When <em>R</em><sub>0</sub> (no relation to <em>R</em>) is greater than 1, the n
 I have also seen the reproduction number described as the average number of new infections created by an infected person. Let's see how that joins up with the formula above. There is a differential calculus route, which if you know what you're doing is simpler. But I am assuming many people are not comfortable with such things, and it all seems to be a bit hocus-pocus. To some, even what I've done above will be like that, but they probably won't be reading this sentence. However, if the discrete approach used seems reasonable, maybe we can go forward.
 </div>
 
-<button class="collapsible">Mathematical details (click to reveal)</button>
+<details id="maths3">
+<summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
 <div class="content">
 <div class="indent">
 So what are we attempting? We start with 1 infected person and assume <em>S</em> doesn't change much as they progress through the disease. Each day the infected person of interest is less likely to have the disease, since they may recover. We model the infected person as a fraction indicating the probability that they still have the disease. The parameter controlling this is <em>β</em>. The fraction of the person still infectious after <em>d</em> days is:
@@ -215,6 +226,7 @@ Hence:
 We have used a standard notation for average with the angled brackets around the letter representing the averaged entity:<span class="math inline">\(\left\langle d \right\rangle\)</span>. There are other ways, such as an overbar and so on.
 </div>
 </div>
+</details>
 
 <h2 id="estimating-the-parameters" class="section_">Estimating the parameters</h2>
 <div class="noindent">
@@ -242,7 +254,8 @@ Feeding back the <em>β</em> value one gets:
 <span class="math display">\[\alpha S = 2.5\beta = \frac{1}{3} = 0.3333\ldots\]</span>
 </div>
 
-<button class="collapsible">Mathematical details (click to reveal)</button>
+<details id="maths4">
+<summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
 <div class="content">
 <div class="indent">
 For general values of <em>γ</em> and <em>R</em><sub>0</sub>, more abstract algebra gives:
@@ -254,6 +267,7 @@ For general values of <em>γ</em> and <em>R</em><sub>0</sub>, more abstract alge
 <span class="math display">\[\alpha S = \frac{\gamma R_{0}}{R_{0} - 1}\]</span>
 </div>
 </div>
+</details>
 
 <h2 id="implementing-the-model" class="section_">Implementing the model</h2>
 <div class="noindent">
@@ -284,29 +298,45 @@ The peak of the population with the infection comes after about 60 days at the 3
 
 </div>
 <div class="image">
-<font face="Arial Black"><em>Downloads:</em> <a href="downloads/SIR200407.xlsx">SIR200407.xlsx</a> <a href="downloads/SIR.xlsx">SIR.xlsx</a> <a href="downloads/SIRb.xlsx">SIRb.xlsx</a></font>
+<span style="font-family: Arial Black;"><em>Downloads:</em>
+<a href="downloads/SIR200407.xlsx">SIR200407.xlsx</a> <a href="downloads/SIR.xlsx">SIR.xlsx</a> <a href="downloads/SIRb.xlsx">SIRb.xlsx</a></span>
 </div>
 </article>
 </div></div>
+
 <footer>
   <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
 </footer>
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
+function showAll() {
+  document.getElementById("maths1").open = true;
+  document.getElementById("maths2").open = true;
+  document.getElementById("maths3").open = true;
+  document.getElementById("maths4").open = true;
+  document.getElementById("sA").style.backgroundColor = "white";
+  document.getElementById("sA").style.color = "#555";
+  document.getElementById("hA").style.backgroundColor = "#555";
+  document.getElementById("hA").style.color = "white";
+}
+function hideAll() {
+document.getElementById("maths1").open = false;
+  document.getElementById("maths2").open = false;
+  document.getElementById("maths3").open = false;
+  document.getElementById("maths4").open = false;
+  document.getElementById("hA").style.backgroundColor = "white";
+  document.getElementById("hA").style.color = "#555";
+  document.getElementById("sA").style.backgroundColor = "#555";
+  document.getElementById("sA").style.color = "white";
+}
+function resetAll() {
+document.getElementById("sA").style.backgroundColor = "#555";
+  document.getElementById("sA").style.color = "white";
+  document.getElementById("hA").style.backgroundColor = "#555";
+  document.getElementById("hA").style.color = "white";
 }
 </script>
+
 </body>
 </html>
