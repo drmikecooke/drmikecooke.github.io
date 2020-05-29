@@ -7,12 +7,22 @@
         box-sizing: border-box;
 }
 
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+h2 {
+	margin: 20px;
+}
+
 figure {
 display: inline-block;
 font-size: 1.3em;
 background-color: white;
 height: 250px;
-padding: 20px;
+padding: 10px;
 margin: 10px;
 vertical-align: top;
 }
@@ -23,11 +33,6 @@ figcaption {
 
 figure img {height: 180px;}
 
-body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
-}
 
 /* Header/Blog Title */
 header {
@@ -115,7 +120,7 @@ font-family: Arial;
 	figure img {width: 100%;}
 	.lcolumn { width: 100%; padding: 0; }
 	nav a { float: none; width: 100%; }
-	footer { font-size: 18px; }
+	footer h2 a { font-size: 18px; }
 }
 
 }

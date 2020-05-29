@@ -1,0 +1,92 @@
+* {
+          margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+header {
+  padding: 10px;
+  text-align: center;
+  background: white;
+}
+
+header h1 {
+	font-family: Arial black;
+	font-size: 7vw;
+}
+
+/* Style the top navigation bar */
+nav {
+	font-family: Arial Black;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+nav a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h1 {
+	margin-top: 10px;
+}
+
+h2 {
+	margin: 10px;
+}
+
+figure {
+display: inline-block;
+text-align: center;
+vertical-align: top;
+background-color: white;
+height: 220px;
+width: 210px;
+padding: 10px;
+margin: 10px
+}
+
+figcaption {
+font-size: 1em;
+text-align: center;
+padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+img {
+max-height: 50%;
+max-width: 75%;
+padding: 10px;
+}
+
+/* Footer */
+footer {
+  padding: 5px;
+  text-align: center;
+  background: #ccc;
+  margin-top: 5px;
+}
+
+footer h2 a {
+font-family: Arial;
+  font: bold;
+  font-size: 21px;
+}
