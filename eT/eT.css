@@ -249,7 +249,7 @@ h4.subsubsection_ {
 	nav a { float: none; width: 100%; }
 	article img { width: 90%; margin:0.25em; }
 	article { font-size: 18px; }
-	footer { font-size: 18px; }
+	footer h2 a { font-size: 18px; }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
