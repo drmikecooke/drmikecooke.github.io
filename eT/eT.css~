@@ -242,7 +242,9 @@ h4.subsubsection_ {
 /* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {
 	.container {	display: flex;	background-color: #ddd; padding: 0px; margin: 0px; flex-direction: column; }
-	.left-card { background-color: white; width: 100%; padding: 0px; margin: 0px; }
+	.left-card { background-color: white; width: 100%; padding: 5px; margin: 0px; }
+	figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
+	figure img {width: 100%;}
 	.stripimg { width: 98%; }
 	nav a { float: none; width: 100%; }
 	article img { width: 90%; margin:0.25em; }
@@ -253,9 +255,3 @@ h4.subsubsection_ {
 @media screen and (max-width: 400px) {
 	article { font-size: 12px; }
 	}
-
-@media print {
-	body * { visibility: hidden; }
-    
-    article { font-size: 12px; visibility: visible; overflow: visible; }
-}
