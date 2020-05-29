@@ -1,7 +1,7 @@
 
 .content {
-  padding: 20px;
-  background-color: #f1f1f1;
+  padding: 0px;
+  background-color: white;
 }
 
 details {
@@ -18,17 +18,7 @@ summary {
 	font-size: 18px;
 }
 
-summary:hover {
-	background-color: #555;
-}
-
-button {
-	font-family: Arial;
-	font-size: 1em;
-	font-weight: bold;
-	padding: 10px;
-	color: white;
-	background-color: #555;}
+button {	display: none; }
 
 .tabstrip {
 
@@ -45,11 +35,11 @@ button {
 
 body {
   font-family: Arial;
-  background: #f1f1f1;
+  background: white;
 }
 
 p {
-	font-size: 18px;
+	font-size: 12px;
 	line-height: 140%;
 	margin-top: 10px;
 }
@@ -60,42 +50,24 @@ margin-bottom: 10px;
 
 /* Header/Blog Title */
 header {
-  text-align: center;
+  text-align: left;
   background: white;
 }
 
 header h1 {
-  font-size: 10vw;
+  font-size: 36px;
   padding: 10px;
 }
 
 /* Style the top navigation bar */
 nav {
-	font-family: Arial Black;
-	font-size: 18px;
-	overflow: hidden;
-	background-color: #333;
-}
-
-/* Style the topnav links */
-nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 0.5em;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-nav a:hover {
-  background-color: #ddd;
-  color: black;
+	display: none;
 }
 
 article {
+	display: block;
 font-family: Times;
-font-size: 24px;  
+font-size: 12px;  
 }
 
 article a {
@@ -110,9 +82,9 @@ margin: 10px;
 }
 
 .container {
-  display: flex;
+  display: block;
   background-color: #ddd;
-  padding: 10px;
+  padding: 0px;
   }
 
 
@@ -127,14 +99,14 @@ margin: 10px;
 .right-card {
   background-color: white;
   width: 250px;
-  padding: 20px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .left-card {
   background-color: white;
-  padding: 20px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .strip {
@@ -159,7 +131,9 @@ margin: 10px;
 vertical-align: top;
 }
 
-
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+    
 figcaption {
 	text-align: top;
 	margin-bottom: 10px;
@@ -237,25 +211,4 @@ h4.subsubsection_ {
 	margin-top: 0.7ex;
 	margin-bottom: 0.4ex;
 	text-align: center;
-	}
-	
-/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-	.container {	display: flex;	background-color: #ddd; padding: 0px; margin: 0px; flex-direction: column; }
-	.left-card { background-color: white; width: 100%; padding: 0px; margin: 0px; }
-	.stripimg { width: 98%; }
-	nav a { float: none; width: 100%; }
-	article img { width: 90%; margin:0.25em; }
-	article { font-size: 18px; }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-	article { font-size: 12px; }
-	}
-
-@media print {
-	nav * {
-		display: none !important;
-	}
 	}
