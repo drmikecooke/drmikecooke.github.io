@@ -39,7 +39,7 @@ body {
 }
 
 p {
-	font-size: 12px;
+	font-size: 18px;
 	line-height: 140%;
 	margin-top: 10px;
 }
@@ -67,7 +67,7 @@ nav {
 article {
 	display: block;
 font-family: Times;
-font-size: 12px;  
+font-size: 18px;  
 }
 
 article a {
@@ -131,7 +131,7 @@ margin: 10px;
 vertical-align: top;
 }
 
-table { page-break-inside:auto }
+table { margin: 0 auto; /* or margin: 0 auto 0 auto */ page-break-inside:auto; }
 tr    { page-break-inside:avoid; page-break-after:auto }
     
 figcaption {
@@ -194,7 +194,11 @@ div.image {
 	text-indent: 0em;
 	text-align: center;
 	}
-
+div.label {
+	font-family: Arial;
+	font-size: 1em;
+	margin-bottom: 0.25em;
+}
 h2.section_ {
 	font-family: Arial;
 	font-weight: bold;
@@ -203,12 +207,27 @@ h2.section_ {
 	margin-bottom: 0.7ex;
 	text-align: center;
 	}
-
-h4.subsubsection_ {
+h3.subsection_ {
 	font-family: Arial;
 	font-weight: bold;
 	font-size: 1.8em;
+	margin-top: 1ex;
+	margin-bottom: 0.5ex;
+	text-align: center;
+}
+h4.subsubsection_ {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 1.5em;
 	margin-top: 0.7ex;
 	margin-bottom: 0.4ex;
 	text-align: center;
 	}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}	

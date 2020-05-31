@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eTp.css">
+  <title>eT: Powering up</title>
+  
+ 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+ <script src="js/inflation.js" type="text/javascript"></script>
+ <script src="js/setup.js" type="text/javascript"></script>
+</head>
+<body>
+
+<header>
+  <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
+</header>
+
+<nav>
+  <a href="../eTP.html">Prospectus</a>
+  <a href="../fi/fi.html">Infection delays</a>
+  <a href="../SIR/SIR.html">SIR model and covid-19</a>
+  <a href="../Power/Power.html">Powering<span class="sup">up</span></a>
+  <a href="../../index.html" style="float: right;">About me</a>
+</nav>
+
+<div class="container">
+<div class="item">
+<article class="left-card">
+
+<h1 class="part_">Powering<sup>up</sup></h1>
+
+<div class="noindent">
+<span id="magicparlabel-2"></span>The exponential is a standardized and generalized form of the <em>power</em> concept. Here we will look first at whole number powers, following that with the extension to negative numbers. Just as multiplication can be viewed as repeated addition of the same number, powers consist of repeated multiplication:
+</div>
+<div class="standard" style="text-align: center;">
+<span id="magicparlabel-4"></span>Multiplication: <span class="math inline">\(2 \times 3 = 2 + 2 + 2 = 6\)</span>
+</div>
+<div class="standard" style="text-align: center;">
+<span id="magicparlabel-5"></span>Power: <span class="math inline">\(2^{3} = 2 \times 2 \times 2 = 8\)</span>
+</div>
+<div class="indent">
+<span id="magicparlabel-6"></span>The power formula consists of two terms. In the above power, <span class="math inline">\(2^{3}\)</span>, the power/exponent 3 has base 2. The concept generalizing to other bases, including fractions and real numbers, would seem straightforward (tell me if you don't think this is so). However, the generalization of the exponent to non whole numbers — non-fractions/-irrationals greater than zero — is more involved.
+</div>
+
+<h2 class="section_">Inflation</h2>
+<div class="noindent">
+<span id="magicparlabel-102"></span>Perhaps it would be useful at this point to see how powers are used. Imagine a government sets an inflation target of 2% each year. That means that something (like bread?) that costs $1 (or whatever currency) this year, will cost $1.02 next year — the original $1 plus 2¢. If the inflation continues at 2%, the next year the item will cost 1.02×$1.02=$1.0404. So if you rounded the value to whole numbers of cents, it would appear that the increase was just double at 4% after two years. But for a $100 product (a TV?) the price will have increased to $104.04, 4.04% up. The extra 4¢ does not appear much, but these extras eventually add up over longer periods.
+</div>
+<div class="indent">
+<span id="magicparlabel-119"></span>To make life easy so far, I have used products with $1 and $100 initial value. Let's imagine instead a cheap Android pad costing $80. After two years with 2% inflation, the cost would rise to 1.02×1.02×$80=1.022×$80=$83.232 — rounding, of course, gives $83.23. I have put in the power form with two years as the exponent at the intermediate stage. One could write this as a formula:
+</div>
+<div class="standard">
+<span id="magicparlabel-132"></span><span class="math display">\[price\left( {year} \right) = \left( 1 + inflation)^{year}price\left( 0 \right) \right.\]</span>
+</div>
+<div class="indent">
+<span id="magicparlabel-129"></span>The price at year zero is the current cost.
+</div>
+
+<h3 id="graph" class="subsection_"><span id="magicparlabel-150"></span>Graph</h3>
+<div class="noindent">
+<span id="magicparlabel-155"></span>The following gives an idea of how the inflation function works. Try playing around with the inputs: in particular, a higher inflation rate (e.g. 20%), and even negative rates (e.g.  &ndash;20%, &ndash;100%,  &ndash;120%,  &ndash;200%,  &ndash;220%).
+</div>
+<div class="image">
+<h4 class="subsubsection_">Inflation graph</h4>
+<div class="label">
+<table>
+<tr><td style="text-align: right;">Inflation: </td><td><input id="inflation" class="label" size="1" type="number" value="2" style="font-size: 1em; text-align: right;">%</td><tr>
+<tr><td style="text-align: right;">Initial cost: </td><td>$<input id="icost" size="1" type="number" value="80" style="font-size: 1em"></td><tr>
+</tr></table>
+</div>
+<button type="button" onclick="myGraph()" style="margin-bottom: 20px">Make<br>graph</button>
+<div id="variables"></div>
+<div class="label">
+<table id="costtable" style="display: inline-block; vertical-align: middle;"></table>
+<svg id = "svg" height="350" width="600" style="display: inline-block; vertical-align: middle;"></svg>
+</div>
+
+</div>
+
+<h1 id="setup" class="part_"><span id="magicparlabel-122"></span>Set<sup>up</sup></h1>
+<div class="noindent">
+<span id="magicparlabel-125"></span>Powers are also useful in counting possibilities. We’ve all had to create passwords, which are based on combinations of characters from a set of possibilities — an “alphabet”. Let us imagine the passwords have a fixed length, 16 characters for example. If we avoid accents, punctuation marks, don't distinguish between upper- (capitals) and lower- (small) case letters, and such, there are 26 letters in the English alphabet. A given password can be viewed as a function between the place and a letter.
+</div>
+<div class="indent">
+<span id="magicparlabel-167"></span>I’ve just generated a password “jxndhoiigvsinmie”. Let us represent it as a letter <em>p</em>. As a function, in the first place is the letter “j” — or <em>p</em>(1) = ”j”. In a similar way, we have <em>p</em>(7) = <em>p</em>(8) = <em>p</em>(12) = <em>p</em>(15) = “i”. There seem to be a lot of “i”s, but there you go. The point is, the letters in the different places are not necessarily unique:
+</div>
+<div class="standard" style="text-align: center; display: block;">
+<span id="magicparlabel-1257" style="display: inline-block; vertical-align: middle;"></span><span class="math inline">\(p =\)</span>
+<table style="table-layout: fixed; width: 40%; display: inline-table; vertical-align: middle;">
+<tbody>
+<tr class="odd">
+<td><div class="plain_layout">
+<span id="magicparlabel-1225"></span>1
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1226"></span>2
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1227"></span>3
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1228"></span>4
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1229"></span>5
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1230"></span>6
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1231"></span>7
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1232"></span>8
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1233"></span>9
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1234"></span>10
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1235"></span>11
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1236"></span>12
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1237"></span>13
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1238"></span>14
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1239"></span>15
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1240"></span>16
+</div></td>
+</tr>
+<tr>
+<td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td>
+</tr>
+<tr class="even">
+<td><div class="plain_layout">
+<span id="magicparlabel-1241"></span>j
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1242"></span>x
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1243"></span>n
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1244"></span>d
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1245"></span>h
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1246"></span>o
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1247"></span>i
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1248"></span>i
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1249"></span>g
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1250"></span>v
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1251"></span>s
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1252"></span>i
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1253"></span>n
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1254"></span>m
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1255"></span>i
+</div></td>
+<td><div class="plain_layout">
+<span id="magicparlabel-1256"></span>e
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<table table style="table-layout: fixed; width: 10%; display: inline-table; vertical-align: middle;">
+<tr><td><div class="plain_layout">Domain (D)</div></td></tr>
+<tr><td><div class="plain_layout">↓</div></td></tr>
+<tr><td><div class="plain_layout">Range (R)</div></td></tr>
+</table>
+</div>
+<div class="indent">
+<span id="magicparlabel-170"></span>The more possible passwords there are, the more difficult it is hoped will be a malicious attempt to guess it. Hence, it is of interest to count the number of possibilities. With a 1-letter password, there would just be 26 possibilities. As we increase the password length by 1, we increase the number of possibilities by a factor of 26. So with our 16-letter password, the number of possibilities is 26<sup>16</sup>, a very long number involving 23 digits that I won’t write out.
+</div>
+<div class="indent">
+<span id="magicparlabel-1789"></span>Let us view the places and alphabet as two sets: P = {1 . . . 16} and A = {“a” . . . “z”}. The sizes of these sets are represented as |P| and |A|, so we have the possibility count |A|<sup>|P|</sup>. First, this formulation allows us to generalize to other sets/functions with different domains (password places in this case) and ranges (alphabet). In set theory, the set of functions is represented as A<sup>P</sup>, without the vertical bars, representing the set size. The size of the set of functions is |A<sup>P</sup>| = |A|<sup>|P|</sup>. Expanding the set of letters in the alphabet, distinguishing between small and captial letters, adding in number digits, punctuation, etc., pushes the number of possible passwords up — for a 16-letter password with upper/lower case distinctions (52-letter alphabet) we get 52<sup>16</sup>passwords, a number with 28 digits.
+</div>
+<div class="indent">
+<span id="magicparlabel-7128"></span>We can generalize to arbitrary functions from a domain to a range:
+</div>
+<div class="image">
+<span id="magicparlabel-7143"></span>
+<h4 class="subsubsection_">Functions</h4>
+
+<div class="label">
+<table>
+<tr><td style="text-align: right;">Domain (D):</td><td>{<input id="domain" size="1" style="font-size: 1em;" type="text" value="A, B, C">}</td></tr>
+<tr><td style="text-align: right;">Range (R): </td><td>{<input id="range" size="1" style="font-size: 1em;" type="text" value="0, 1">}</td></tr>
+</table>
+</div>
+<div>
+<button type="button" onclick="makeSizeText('D',document.getElementById('domain').value, 'R', document.getElementById('range').value, 'nfunctions')">Calculate function list size</button>
+<button type="button" onclick="removeText('nfunctions')">Remove</button> 
+</div>
+<div id="nfunctions" style="padding: 10px;"></div>
+<div>
+<button type="button" onclick="createTable(document.getElementById('domain').value, document.getElementById('range').value, 'functions')">Generate function list</button>
+<button type="button" onclick="removeText('functions')">Remove</button> 
+</div>
+<table id="functions" width="50%" style="margin: 10px; display: inline-table;"></table>
+
+</div>
+<div class="indent">
+<span id="magicparlabel-7371"></span>The calculation button allows you to assess whether you want to generate the table.
+You can input different domains and ranges with the objects separated by commas.
+The function number is just an arbitrary enumeration label. If the number of possibilities gets too large, your system will slow to a crawl — you have been warned!
+</div>
+
+<h3 id="power-set" class="subsection_"><span id="magicparlabel-7118"></span>Power set</h3>
+<div class="noindent">
+<span id="magicparlabel-182"></span>A further particular application of the power concept to sets is the set of subsets — indeed this is often called the power set. To see how this arises we imagine the set of functions from the set of interest, X, to the 2-element set {0, 1}. Given such a function you can construct a subset consisting of all the elements that are mapped to 1. Each such subset has a unique function that describes it in this way. We can view this as a set of labels: if the label is “1”, the item is in the subset; if “0”, not. The number of subsets is thus 2<sup>|X|</sup>. Further in some developments of set theory, numbers are built up from the empty set 0 = ∅ = {}, 1 = {0}={∅}, 2 = {0, 1}={0,{0}}. Thus the set of subsets is represented as 2<sup>X</sup>:
+</div>
+<div class="image">
+<h4 class="subsubsection_">Power sets</h4>
+
+<div class="label">
+<table>
+<tr><td>Set:</td><td>{<input id="set" size="1" style="font-size: 1em;" type="text" value="A,B,C">}</td></tr>
+</table>
+</div>
+<div>
+<button type="button" onclick="makeSizeText('Set', document.getElementById('set').value, '2', '0, 1', 'nsubsets')">Calculate subset list size</button>
+<button type="button" onclick="removeText('nsubsets')">Remove</button>
+</div>
+<div id="nsubsets" style="padding: 10px;"></div>
+<div>
+<button type="button" onclick="createTable(document.getElementById('set').value, '', 'subsets')">Generate subset list</button>
+<button type="button" onclick="removeText('subsets')">Remove</button>
+</div>
+
+<table id="subsets" style="padding: 10px; margin: 10px; display: inline-table;"></table>
+
+</div>
+<div class="indent">
+<span id="magicparlabel-7422"></span>I have reused the structures of the previous functions with a bit of a trick, which you may want to work out.
+</div>
+</article>
+</div></div>
+
+<footer>
+  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
+</footer>
+
+</body>
+</html>
