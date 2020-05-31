@@ -21,7 +21,6 @@
 
 <nav>
   <a href="../eTP.html">Prospectus</a>
-  <a href="#">Contents</a>
   <a href="../fi/fi.html">Infection delays</a>
   <a href="../SIR/SIR.html">SIR model and covid-19</a>
   <a href="../Power/Power.html">Powering<span class="sup">up</span></a>
@@ -77,7 +76,7 @@
 <div id="variables"></div>
 <div class="label">
 <table id="costtable" style="display: inline-block; vertical-align: middle;"></table>
-<svg id = "svg" height="350" width="600" style="display: inline-block; vertical-align: middle;"></svg>
+<svg id = "svg" viewBox="0 0 600 350" width="40%" style="display: inline-block; vertical-align: middle;"></svg>
 </div>
 
 </div>

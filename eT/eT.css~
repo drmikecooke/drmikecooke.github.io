@@ -59,7 +59,7 @@ margin-bottom: 10px;
 }
 
 input {
-	background-color: #eee;
+	background-color: #ddd;
 }
 
 /* Header/Blog Title */
