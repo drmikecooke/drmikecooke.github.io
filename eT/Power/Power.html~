@@ -76,7 +76,7 @@
 <div id="variables"></div>
 <div class="label">
 <table id="costtable" style="display: inline-block; vertical-align: middle;"></table>
-<svg id = "svg" viewBox="0 0 600 350" width="40%" style="display: inline-block; vertical-align: middle;"></svg>
+<svg id = "svg" viewBox="0 0 600 350" width="50%" style="display: inline-block; vertical-align: middle;"></svg>
 </div>
 
 </div>
@@ -88,122 +88,10 @@
 <div class="indent">
 <span id="magicparlabel-167"></span>I’ve just generated a password “jxndhoiigvsinmie”. Let us represent it as a letter <em>p</em>. As a function, in the first place is the letter “j” — or <em>p</em>(1) = ”j”. In a similar way, we have <em>p</em>(7) = <em>p</em>(8) = <em>p</em>(12) = <em>p</em>(15) = “i”. There seem to be a lot of “i”s, but there you go. The point is, the letters in the different places are not necessarily unique:
 </div>
-<div class="standard" style="text-align: center; display: block;">
-<span id="magicparlabel-1257" style="display: inline-block; vertical-align: middle;"></span><span class="math inline">\(p =\)</span>
-<table style="table-layout: fixed; width: 40%; display: inline-table; vertical-align: middle;">
-<tbody>
-<tr class="odd">
-<td><div class="plain_layout">
-<span id="magicparlabel-1225"></span>1
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1226"></span>2
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1227"></span>3
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1228"></span>4
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1229"></span>5
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1230"></span>6
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1231"></span>7
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1232"></span>8
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1233"></span>9
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1234"></span>10
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1235"></span>11
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1236"></span>12
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1237"></span>13
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1238"></span>14
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1239"></span>15
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1240"></span>16
-</div></td>
-</tr>
-<tr>
-<td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td><td>↓</td>
-</tr>
-<tr class="even">
-<td><div class="plain_layout">
-<span id="magicparlabel-1241"></span>j
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1242"></span>x
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1243"></span>n
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1244"></span>d
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1245"></span>h
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1246"></span>o
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1247"></span>i
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1248"></span>i
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1249"></span>g
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1250"></span>v
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1251"></span>s
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1252"></span>i
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1253"></span>n
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1254"></span>m
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1255"></span>i
-</div></td>
-<td><div class="plain_layout">
-<span id="magicparlabel-1256"></span>e
-</div></td>
-</tr>
-</tbody>
-</table>
-
-<table table style="table-layout: fixed; width: 10%; display: inline-table; vertical-align: middle;">
-<tr><td><div class="plain_layout">Domain (D)</div></td></tr>
-<tr><td><div class="plain_layout">↓</div></td></tr>
-<tr><td><div class="plain_layout">Range (R)</div></td></tr>
-</table>
+<div class="image">
+<embed id="pwd" src="pwd.svg" width="7500px"/>
 </div>
+
 <div class="indent">
 <span id="magicparlabel-170"></span>The more possible passwords there are, the more difficult it is hoped will be a malicious attempt to guess it. Hence, it is of interest to count the number of possibilities. With a 1-letter password, there would just be 26 possibilities. As we increase the password length by 1, we increase the number of possibilities by a factor of 26. So with our 16-letter password, the number of possibilities is 26<sup>16</sup>, a very long number involving 23 digits that I won’t write out.
 </div>
