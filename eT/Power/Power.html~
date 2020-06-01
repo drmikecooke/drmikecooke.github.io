@@ -89,7 +89,7 @@
 <span id="magicparlabel-167"></span>I’ve just generated a password “jxndhoiigvsinmie”. Let us represent it as a letter <em>p</em>. As a function, in the first place is the letter “j” — or <em>p</em>(1) = ”j”. In a similar way, we have <em>p</em>(7) = <em>p</em>(8) = <em>p</em>(12) = <em>p</em>(15) = “i”. There seem to be a lot of “i”s, but there you go. The point is, the letters in the different places are not necessarily unique:
 </div>
 <div class="image">
-<embed id="pwd" src="pwd.svg" width="7500px"/>
+<embed id="pwd" src="pwd.svg" width="750px"/>
 </div>
 
 <div class="indent">
