@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eTp.css">
+  <title>eT: Bugs, bunnies, bombs and branches</title>
+   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  
+  <script src="Branching.js"></script>
+<script src="Fission.js"></script>
+
+</head>
+<body>
+
+<header>
+  <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
+</header>
+
+<nav>
+  <a href="../eTP.html">Prospectus</a>
+  <a href="../fi/fi.html">Infection delays</a>
+  <a href="../SIR/SIR.html">SIR model and covid-19</a>
+  <a href="../Power/Power.html">Powering<span class="sup">up</span></a>
+  <a href="../Branching/Branching.html">Bugs, bunnies . . .</a>
+  <a href="../../index.html" style="float: right;">About me</a>
+</nav>
+
+<div class="container">
+<div class="item">
+<article class="left-card">
+
+<div id="header">
+<h1 class="title">Bugs, bunnies, bombs and branches</h1>
+</div>
+<h2 id="branching" class="section_"><span id="magicparlabel-14"></span>Branching</h2>
+<div class="standard">
+<span id="magicparlabel-9"></span>Many growth processes proceed by ‘branching’. For example, bacteria split in two (‘binary fission’) at regular or irregular intervals, depending on the environmental conditions. Let us imagine a lonely bacterium with an infinite supply of all the nutrients it needs to grow and become two after about 20 minutes (e.g. E coli). In an hour there are three splittings and our bacterium has become 2×2×2 = 2<sup>3</sup> = 8 bacteria. In 24 hours there have been 3×24 = 72 splittings, giving 272, or around 4.7 sextillion (4.7×10<sup>21</sup> according to my calculator; sextillion is the name for 10<sup>21</sup>, according to most dictionaries) bacteria. That seems a lot, but bacteria are very small, usually of the order of 1 micrometre (1µm = 10<sup>−6</sup>m). So let’s imagine that our bacteria has a volume 1µm<sup>3</sup> = 10<sup>−18</sup>m<sup>3</sup>. So in volume terms we have 4722m<sup>3</sup> of bacteria. If the infinite source of nutrients was your body, it would be gone. Fortunately for most humans, biology has evolved mechanisms to fight back against unfriendly bacteria, and control the ‘friendly’ ones we’re told about in TV adverts (at least in the UK).
+</div>
+<div class="image">
+<h4 class="subsubsection_">Branching demo</h4>
+<div class="label">
+<table>
+<tr><td style="text-align: right;">Branches:</td><td><input id="branches" type="number" class="label" size="1" value="2" style="font-size: 1em; text-align: right;"></td></tr>
+<tr><td style="text-align: right;">Generations: </td><td><input id="generations" class="label" size="1" type="number" value="3" style="font-size: 1em; text-align: right;"></td></tr>
+</tr></table>
+</div>
+
+<button type="button" onclick="tree()" style="margin-bottom: 20px">Tree</button>
+
+<p id="variables" style="margin-bottom: 10px"></p>
+
+<svg id="svg" width="50%" style="display: inline-block; vertical-align: middle;"></svg>
+
+</div>
+<h2 id="wascally-wabbits" class="section_"><span id="magicparlabel-35"></span>Wascally wabbits</h2>
+<div class="noindent">
+<span id="magicparlabel-38"></span>Rabbits also have a reputation for reproducing at a high, but less fearsome rate. I’ve never kept rabbits, so I had to do a bit of crawling around the web to find out some basic facts. In rough terms, I found out that female rabbits (‘does’) take about six months or so to become fertile. Pregnancy is about a month long. Almost immediately after the birth of a litter (giving around three new does), a doe can become pregnant again. There is no particular breeding season, although temperature and such does affect propensities to breed. The breeding life of a doe is up to around six years old.
+</div>
+<div class="indent">
+<span id="magicparlabel-43"></span>There are many possible models and parameter sets one could apply. This is also a very variable situation with undetermined outcomes. However, we will look at it as a deterministic branching process. One doe over 5.5 years (she takes six months to become fertile) gives birth every month to three does: 5.5×12×3=198. These 198 give rise to 198 each, resulting in 39204. The next generation goes on to produce 7762392. The exact values are of course nonsense, given all the variations.
+</div>
+<div class="indent">
+<span id="magicparlabel-58"></span>Further, one might be tempted to associate the third generation value with 18 years after the initial bunny. In reality, the births are staggered over the period. In fact, after 18 years you will have around does who are part of the 36th generation, the ones resulting from six months after birth in all the first pregnancies in series. So the number of rabbits would be much more than 8 million, or 16 million, if we add on an equal number of males. At this stage we don’t want to get bogged down in perfecting the model. The main point is that the dynamics of branching leads to power law behaviour that is associated with “exponential growth”.
+</div>
+<h2 id="boom" class="section_"><span id="magicparlabel-25"></span>Boom!</h2>
+<div class="noindent">
+<span id="magicparlabel-28"></span>Nuclear fission is another process that has a branching character: a neutron is absorbed the 235-atomic mass isotope of uranium, converting it to an extremely unstable 236-mass isotope, which splits giving off more neutrons among other fragments. The products move very fast and transfer a lot of energy to their surroundings (the uranium) as heat. Depending on the conditions, these neutrons can trigger further fissions, leave the fissile material, or be absorbed by non-fissile materials (graphite control rods and such). As with the rabbits, the branching number is variable. If we take averages, which we can handle by countenancing fractional branching numbers.
+</div>
+<div class="indent">
+<span id="magicparlabel-32"></span>The factor that evil geniuses have to work out to create a nuclear bomb is having enough of the 235, rather than the more common 238, isotope close enough together so the branching is more than 1 on average. This is what the gas centrifuges are designed to achieve in uranium enrichment. The heat from the exponentially proliferating fission processes explosively expand the material.
+</div>
+<div class="indent">
+<span id="magicparlabel-22"></span>For the less evil geniuses wanting to make nuclear power stations, the trick is to also have control mechanisms (‘negative feedback’) to keep the branching around 1. If the branching goes higher than 1, control rods are positioned to absorb neutrons to push the branching down to 1; lower than 1, and the rods are withdrawn to promote fission and bring the branching up to 1. If the branching is less than 1, and nothing is done to change it, the fission process fizzles out. The branching value of 1 constitute the transition point between fizzling out and devastation. A similar dynamic have been in operation with attempts to cope with the <a href="../SIR/SIR.html">2020 Covid-19 crisis</a>.
+</div>
+<div class="indent">
+<span id="magicparlabel-19"></span>There is a fossil deposit from a “natural nuclear fission reactor” in Oklo, Gabon, which is thought to have run for a few hundred thousand years about 1.7 billion years ago. The thermal power output during the reaction is estimated at 100kW. The fissile material is believed to have been 235-isotope uranium.
+</div>
+
+<div class="image">
+<h4 class="subsubsection_">Fission graph</h4>
+<div class="label">
+<table>
+<tr><td style="text-align: right;">Average branching:</td><td><input id="fbranching" type="number" class="label" size="1" value="2" style="font-size: 1em; text-align: right;"></td></tr>
+<tr><td style="text-align: right;">Generations:</td><td><input id="fgenerations" class="label" size="1" type="number" value="10" style="font-size: 1em; text-align: right;"></td></tr>
+</tr></table>
+</div>
+
+<button type="button" onclick="fissionGraph()" style="margin-bottom: 20px">Graph</button>
+
+<div id="fvariables" style="margin-bottom: 10px"></div>
+
+<div class="label">
+<table id="neutable" style="display: inline-block; vertical-align: middle;"></table>
+<svg id="svgf" width="50%" style="display: inline-block; vertical-align: middle;"></svg>
+</div>
+
+</div>
+
+</article>
+
+</div>
+</div>
+
+
+<footer>
+  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
+</footer>
+
+</body>
+</html>
