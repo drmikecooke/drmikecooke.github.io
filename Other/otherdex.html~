@@ -38,7 +38,7 @@
 <button type="button" style="margin-bottom: 20px;">
 Width x height.</button>
 
-<h4 style="margin-bottom: 20px;">The viewport dimensions in pixels<br/>
+<h4 style="margin-bottom: 20px;">Viewport dimensions in pixels<br/>
 [Useful for troubleshooting<br/>
 (un)responsive layouts.]</h4>
 </a>
@@ -46,8 +46,12 @@ Width x height.</button>
 
 <figure>
 <a href = "tests/AJAX/cd.html">
-<figcaption>Test of AJAX functionality on github</figcaption>
-<iframe src="tests/AJAX/cd.html"></iframe>
+<figcaption><strong>Test of AJAX functionality on github</strong></figcaption>
+<h3 style="margin-bottom: 20px;">XMLHttpRequest Object</h3>
+
+<button type="button"  style="margin-bottom: 20px;">Get my CD collection</button>
+<br><br>
+<table id="demo" style="margin-bottom: 20px;"></table>
 </a>
 </figure>
 </div>
