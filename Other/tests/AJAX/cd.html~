@@ -38,11 +38,11 @@ th,td {
 
 <body>
 
-<h2 style="margin-bottom: 20px;">The XMLHttpRequest Object</h2>
+<h2>The XMLHttpRequest Object</h2>
 
-<button type="button"  style="margin-bottom: 20px;"onclick="loadDoc()">Get my CD collection</button>
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
 <br><br>
-<table id="demo" style="margin-bottom: 20px;"></table>
+<table id="demo"></table>
 
 <script>
 function loadDoc() {

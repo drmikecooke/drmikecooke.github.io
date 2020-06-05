@@ -38,7 +38,7 @@
 <button type="button" style="margin-bottom: 20px;">
 Width x height.</button>
 
-<h4 style="margin-bottom: 20px;">Viewport dimensions in pixels<br/>
+<h4 style="margin-bottom: 20px;">The viewport dimensions in pixels<br/>
 [Useful for troubleshooting<br/>
 (un)responsive layouts.]</h4>
 </a>
