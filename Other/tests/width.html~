@@ -31,7 +31,7 @@
 onclick="document.getElementById('demo').innerHTML = document.documentElement.clientWidth +'x'+document.documentElement.clientHeight">
 Width x height.</button>
 
-<h3 style="margin-bottom: 20px;">The viewport dimensions in pixels (on click of button above):</h3>
+<h3 style="margin-bottom: 20px;">Viewport dimensions in pixels (on click of button above):</h3>
 
 <h2 id="demo" style="margin-bottom: 20px;"></h2>
 

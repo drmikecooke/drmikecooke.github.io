@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="../otherdex.css" />
+<script type="text/javascript" src="csieve.js"></script>
+
+<title>Other: Prime factor js</title>
+</head>
+<body>
+
+<header>
+  <h1>Mike Cooke other</h1>
+</header>
+
+<nav>
+	<a href="../../index.html" style="float:right">More about me</a>
+  <a href="../otherdex.html">Home</a>
+  <a href="../ST/2020.html">Semiconductor Today</a>
+  <a href="../tests/width.html">View report</a>
+  <a href="../tests/AJAX/cd.html">AJAX</a>
+  <a href="Factor.html">Factorization js</a>
+</nav>
+
+<div class="container">
+<div class="item">
+<article class="left-card" style="background-color: white; text-align: center;">
+
+<button type="button" style="margin-bottom: 20px; float: left;"
+onclick="document.getElementById('demo').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table(Number(document.getElementById('colnum').value))">
+Generate prime<br/>factor table.</button>
+
+<h1 style="margin-bottom: 20px;">Prime factorisation</h1>
+
+<table style="margin-left: auto; margin-right: auto; margin-bottom: 20px; font-size: 1em;">
+<tr><td style="display: block; text-align: right;">Maximum number for sieving:</td>
+<td><input id="nmax" class="label" type="number" size="1" value="10" style="font-size: 1em; text-align: right;"></td></tr>
+<tr><td style="display: block; text-align: right;">Number of columns:</td>
+<td><input id="colnum" class="label" type="number" size="1" value="5" style="font-size: 1em; text-align: right;"></td></tr>
+</table>
+
+
+
+<div id="demo" style="margin-bottom: 20px; column-count: 5"></div>
+</article>
+</div>
+</div>
+
+<footer>
+  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
+</footer>
+
+</body>

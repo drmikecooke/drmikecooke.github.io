@@ -19,6 +19,7 @@
   <a href="ST/2020.html">Semiconductor Today</a>
   <a href="tests/width.html">View report</a>
   <a href="tests/AJAX/cd.html">AJAX</a>
+  <a href="Factor.html">Factorization js</a>
 </nav>
 
 <div class="row">
@@ -46,8 +47,8 @@ Width x height.</button>
 
 <figure>
 <a href = "tests/AJAX/cd.html">
-<figcaption><strong>Test of AJAX functionality on github</strong></figcaption>
-<h3 style="margin-bottom: 20px;">XMLHttpRequest Object</h3>
+<figcaption><strong>AJAX functionality test<br/>on github</strong></figcaption>
+<h4 style="margin-bottom: 20px;">XMLHttpRequest Object</h4>
 
 <button type="button"  style="margin-bottom: 20px;">Get my CD collection</button>
 <br><br>
