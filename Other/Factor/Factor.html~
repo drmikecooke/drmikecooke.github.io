@@ -29,7 +29,7 @@
 <article class="left-card" style="background-color: white; text-align: center;">
 
 <button type="button" style="margin-bottom: 20px; float: left;"
-onclick="document.getElementById('demo').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table()">
+onclick="document.getElementById('demo').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table(Number(document.getElementById('colnum').value))">
 Generate prime<br/>factor table.</button>
 
 <h1 style="margin-bottom: 20px;">Prime factorisation</h1>
