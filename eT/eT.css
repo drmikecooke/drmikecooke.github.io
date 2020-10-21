@@ -28,7 +28,8 @@ button {
 	font-weight: bold;
 	padding: 10px;
 	color: white;
-	background-color: #555;}
+	background-color: #555;
+}
 
 .tabstrip {
 
@@ -104,6 +105,10 @@ font-family: Times;
 font-size: 24px;  
 }
 
+th, td {
+padding: 3px;
+}
+
 article a {
 	text-decoration: none;
 	font-family: Arial Black;
@@ -154,6 +159,13 @@ margin: 0px;
 width: 32%;
 }
 
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 figure {
 display: inline-block;
@@ -179,6 +191,8 @@ a {
 	text-decoration: none;
 	color: black;
 }
+
+sup, sub {font-size:75%;}
 
 /* Footer */
 footer {
