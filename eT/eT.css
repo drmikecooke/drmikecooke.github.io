@@ -168,7 +168,7 @@ blockquote {
 }
 
 figure {
-display: inline-block;
+display: block;
 font-size: 1.3em;
 background-color: white;
 height: 250px;
@@ -176,7 +176,6 @@ padding: 20px;
 margin: 10px;
 vertical-align: top;
 }
-
 
 figcaption {
 	text-align: top;
@@ -251,9 +250,17 @@ div.image {
 	font-family: Arial;
 	font-size: 1em;
 	margin-bottom: 0.25em;
-	text-indent: 0em;
+	width: 50%;
+	margin: auto;
 	text-align: center;
 	}
+
+div.image figure {
+	display: float;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
 div.label {
 	font-family: Arial;
 	font-size: 1em;
