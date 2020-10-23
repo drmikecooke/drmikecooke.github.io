@@ -135,7 +135,6 @@ table { margin: 0 auto; /* or margin: 0 auto 0 auto */ page-break-inside:auto; }
 tr    { page-break-inside:avoid; page-break-after:auto }
     
 figcaption {
-	text-align: top;
 	margin-bottom: 10px;
 }
 
@@ -158,7 +157,7 @@ footer {
 
 footer h2 a {
 font-family: Arial;
-  font: bold;
+  font-weight: bold;
   font-size: 21px;
 }
 
