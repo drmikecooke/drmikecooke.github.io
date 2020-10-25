@@ -7,9 +7,12 @@
   <link rel="stylesheet" media="screen" href="../eT.css" />
   <link rel="stylesheet" media="print" href="../eTp.css" />
   <title>Logjam</title>
+  <link rel="stylesheet" href="dragrule.css">
+  
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <script src="log10.js"></script>
   <script src="exp.js" type="text/javascript"></script>
+  <script src="dragrule.js"></script>
 </head>
 <body>
 
@@ -195,7 +198,7 @@ Or more usefully:
 This allows easy conversion from one base to another.
 </div>
 <h2 class="section"><span class="section_label">3</span> Tabling some vulgarity</h2>
-<div class="noindent">Armed with the knowledge of the previous section, I made code to generate a crude table for base-10 logarithms (click on "Make table") and compared the values with what the computer came up with (obviously much more accurate).</div>
+<div class="noindent">Armed with the knowledge of the previous section, I made code to generate a crude table for base-10 logarithms (click on “Make table") and compared the values with what the computer came up with (obviously much more accurate).</div>
 
 <div class="image">
 <h4 class="subsubsection_">Generate log<sub>10</sub><em>x</em> estimates</h4>
@@ -361,9 +364,69 @@ This allows easy conversion from one base to another.
 <span class="math display">\[\log v = \log (v_1 t^n) = \log v_1 + n \log t\]</span>
 </div>
 
-<div class="indent">The terms <span class="math inline">\(\log v_1\)</span> and <span class="math inline">\(n\)</span> are constant, and <span class="math inline">\(\log t\)</span> varies. For those still reading, I assume some familiarity with linear graphs, often traditionally cast as <span class="math inline">\(y = m x + c\)</span> with <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> being the "gradient" and "constant" terms, respectively. This is the form of our log-log graph if we cast <span class="math inline">\(\log v\)</span> onto <span class="math inline">\(y\)</span>, <span class="math inline">\(\log v_1\)</span> onto <span class="math inline">\(c\)</span>, <span class="math inline">\(n\)</span> onto <span class="math inline">\(m\)</span>, and finally our <span class="math inline">\(\log t\)</span> scale onto the variable <span class="math inline">\(x\)</span> (reversing the order of the sum).</div>
+<div class="indent">The terms <span class="math inline">\(\log v_1\)</span> and <span class="math inline">\(n\)</span> are constant, and <span class="math inline">\(\log t\)</span> varies. For those still reading, I assume some familiarity with linear graphs, often traditionally cast as <span class="math inline">\(y = m x + c\)</span> with <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> being the “gradient” and “constant” terms, respectively. This is the form of our log-log graph if we cast <span class="math inline">\(\log v\)</span> onto <span class="math inline">\(y\)</span>, <span class="math inline">\(\log v_1\)</span> onto <span class="math inline">\(c\)</span>, <span class="math inline">\(n\)</span> onto <span class="math inline">\(m\)</span>, and finally our <span class="math inline">\(\log t\)</span> scale onto the variable <span class="math inline">\(x\)</span> (reversing the order of the sum).</div>
 
 <h2 class="section"><span class="section_label">7</span> What the frack is a slide-rule?</h2>
+<div class="noindent">To get an understanding of how a slide-rule works, we present a gizmo below, which allows you to slide two bits: the top part with numbers, and the box with the vertical red line in it. The results can be interpreted either as an addition or a subtraction. You may need to be careful where you grab the bits — there is a dead zone around the vertical red line indicating the zero position of the top rule. Also clicking (I haven't tried touch manipulation on a mobile device yet) within the box should move the “runner/glass” part, which gives the result of the calculation (or brackets the two terms of the subtraction). The number results presented below the respectively vertical red lines are derived from the relative positions of the bits, along with the scaling factors. I am hoping the principle is “obvious". Assuming so, I will move on below to the slide-rule proper, with logarithmic scales enabling “easy” multiplication.</div>
+
+<div class="image"><h4>Adder/subtractor</h4></div>
+
+<div style="position:relative;height:400px;font-size:12pt">
+
+<br /><br />
+<div class="strip">
+<div id="mydiv">
+<div id="ruler"></div>
+</div>
+</div>
+
+<div class="strip">
+<div id="ref">
+<div id="fixed"></div>
+</div>
+</div>
+
+<div id="zblk"><div class="zl"></div><div id="info"></div></div>
+
+<div id="rblk"></div>
+
+<div id="textinfo"></div>
+
+<script>
+document.getElementById("ruler").innerHTML = rule();
+document.getElementById("fixed").innerHTML = rule();
+document.getElementById("rblk").innerHTML = '<div class="zl"></div><div id="add"></div>';
+var slide = document.getElementById("mydiv");
+var fixed = document.getElementById("ref");
+
+
+//Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
+dragElement(document.getElementById("rblk"));
+
+
+
+slide.style.left = fixed.offsetLeft +"px";
+
+var zero = document.getElementById("zblk");
+var runner = document.getElementById("rblk");
+
+zero.style.left = fixed.offsetLeft+"px";
+
+zero.style.top = (slide.offsetTop-10)+"px";
+
+runner.style.left = (fixed.offsetLeft+340)+"px";
+
+runner.style.top = (slide.offsetTop-10)+"px";
+
+readings();
+//document.getElementById("textinfo").innerHTML = runner.offsetTop;
+
+</script>
+
+</div>
+
+<div class="image"><h4>Multiplier/divider</h4></div>
 
 <div class="standard">. . . [more to come]</div>
 
