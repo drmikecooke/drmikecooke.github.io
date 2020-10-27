@@ -43,6 +43,8 @@
 #fixed {
   margin: auto;
   background-color: #f1f1f1;
+  text-align: center;
+  user-select: none;
 }
 
 #mydiv {

@@ -375,52 +375,52 @@ This allows easy conversion from one base to another.
 
 <br /><br />
 <div class="strip">
-<div id="mydiv">
-<div id="ruler"></div>
-</div>
+<div id="mydiv"></div>
 </div>
 
 <div class="strip">
-<div id="ref">
-<div id="fixed"></div>
-</div>
+<div id="ref"></div>
 </div>
 
 <div id="zblk"><div class="zl"></div><div id="info"></div></div>
 
-<div id="rblk"></div>
+<div id="rblk"><div class="zl"></div><div id="add"></div></div>
 
 <div id="textinfo"></div>
 
 <script>
-document.getElementById("ruler").innerHTML = rule();
-document.getElementById("fixed").innerHTML = rule();
-document.getElementById("rblk").innerHTML = '<div class="zl"></div><div id="add"></div>';
-var slide = document.getElementById("mydiv");
-var fixed = document.getElementById("ref");
+    // build rules
+    var slide = document.getElementById("mydiv");
+    var fixed = document.getElementById("ref");
+    slide.innerHTML = rule();
+    fixed.innerHTML = rule();
+    slide.style.left = fixed.offsetLeft + "px"; // line up slide with fixed rule
 
+    var zero = document.getElementById("zblk"); // set up zero line
+    zero.style.left = fixed.offsetLeft + "px";
+    zero.style.top = (slide.offsetTop - 10) + "px";
 
-//Make the DIV element draggable:
-dragElement(document.getElementById("mydiv"));
-dragElement(document.getElementById("rblk"));
+    var runner = document.getElementById("rblk"); // set up runner/glass
+    runner.style.left = (fixed.offsetLeft + 340) + "px";
+    runner.style.top = (slide.offsetTop - 10) + "px";
 
+    readings(); // initial data for zero and runnerStart
 
+    var active = false;
+    var activeItem = slide;
+    var currentX = 0;
+    var currentY = 0;
+    var initialX, initialS, initialR;
 
-slide.style.left = fixed.offsetLeft +"px";
+    slide.addEventListener("touchstart", slideStart, false);
+    runner.addEventListener("touchstart", runnerStart, false);
+    document.addEventListener("touchend", dragEnd, false);
+    document.addEventListener("touchmove", drag, false);
 
-var zero = document.getElementById("zblk");
-var runner = document.getElementById("rblk");
-
-zero.style.left = fixed.offsetLeft+"px";
-
-zero.style.top = (slide.offsetTop-10)+"px";
-
-runner.style.left = (fixed.offsetLeft+340)+"px";
-
-runner.style.top = (slide.offsetTop-10)+"px";
-
-readings();
-//document.getElementById("textinfo").innerHTML = runner.offsetTop;
+    slide.addEventListener("mousedown", slideStart, false);
+    runner.addEventListener("mousedown", runnerStart, false);
+    document.addEventListener("mouseup", dragEnd, false);
+    document.addEventListener("mousemove", drag, false);
 
 </script>
 
