@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -8,435 +9,670 @@
   <link rel="stylesheet" media="print" href="../eTp.css" />
   <title>Logjam</title>
   <link rel="stylesheet" href="dragrule.css">
-  
+
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <script src="log10.js"></script>
   <script src="exp.js" type="text/javascript"></script>
   <script src="dragrule.js"></script>
 </head>
+
 <body>
 
 
-<header>
-  <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
-</header>
+  <header>
+    <h1><span style="font-family: Times;">e<i><sup>x</sup>ponential</i></span> <span style="font-family: Arial Black;">Times</span></h1>
+  </header>
 
-<nav>
-  <a href="../eTP.html">Prospectus</a>
-  <a href="../fi/fi.html">Infection delays</a>
-  <a href="../SIR/SIR.html">SIR model and covid-19</a>
-  <a href="../Power/Power.html">Powering<span class="sup">up</span></a>
-  <a href="../Branching/Branching.html">Bugs, bunnies . . .</a>
-  <a href="../Logjam/logjam.html">Logjam</a>
-  <a href="../../index.html" style="float: right;">About me</a>
-</nav>
+  <nav>
+    <a href="../eTP.html">Prospectus</a>
+    <a href="../fi/fi.html">Infection delays</a>
+    <a href="../SIR/SIR.html">SIR model and covid-19</a>
+    <a href="../Power/Power.html">Powering<span class="sup">up</span></a>
+    <a href="../Branching/Branching.html">Bugs, bunnies . . .</a>
+    <a href="../Logjam/logjam.html">Logjam</a>
+    <a href="../../index.html" style="float: right;">About me</a>
+  </nav>
 
-<div class="container">
-<div class="item">
-<article class="left-card">
+  <div class="container">
+    <div class="item">
+      <article class="left-card">
 
-<h1 class="title">Logjam</h1>
+        <h1 class="title">Logjam</h1>
 
-<div class="standard">I was once sitting in a pub talking to a woman who was proud not to understand mathematics and decried an education system that required her to study it at school and a particular example she chose of useless knowledge was logarithms (or “logs”). She claimed (I expect she still does) that nobody uses them except for passing exams. I often think of this, and on a immediate level I am kind of annoyed with myself that I just listened and didn't come up with examples of their practical use, such as for deriving and working with compound growth/interest rates and such (see below).</div>
-<div class="indent">This was from an ordinary person, but I suspect many from the high-arty and humanities side of the upper echelons of life would agree with the spirit of what she was saying. “We’ve had enough of ‘experts’,” as one UK politician famously said during the Brexit referendum. [This may be an England thing, where there is a certain culture of celebrating contempt for and ignorance of science and engineering, also known as STEM (“science, technology, engineering, and mathematics”).] In the present 2020 Covid pandemic the complaint is often made that graphs presented with a log-scale “don’t give the real picture”. Not quite as sweeping as “nobody uses them”, but in the same spiritual space. Yet what is often not realised is that in many cases our real experience is of multiplication factors, and logarithms are a perfect way of translating that to our linear visual perception. Let’s just mention hearing — musical pitch relates notes an octave apart; an octave means a factor of 2 in frequency of the pressure oscillation we perceive as “sound”. Further, our loudness perception is measured in “decibels”, a logarithmic scale.</div>
+        <div class="standard">I was once sitting in a pub talking to a woman who was proud not to understand mathematics and decried an education system that required her to study it at school and a particular example she chose of useless knowledge
+          was logarithms (or “logs”). She claimed (I expect she still does) that nobody uses them except for passing exams. I often think of this, and on a immediate level I am kind of annoyed with myself that I just listened and didn't come up with
+          examples of their practical use, such as for deriving and working with compound growth/interest rates and such (see below).</div>
+        <div class="indent">This was from an ordinary person, but I suspect many from the high-arty and humanities side of the upper echelons of life would agree with the spirit of what she was saying. “We’ve had enough of ‘experts’,” as one UK
+          politician famously said during the Brexit referendum. [This may be an England thing, where there is a certain culture of celebrating contempt for and ignorance of science and engineering, also known as STEM (“science, technology,
+          engineering, and mathematics”).] In the present 2020 Covid pandemic the complaint is often made that graphs presented with a log-scale “don’t give the real picture”. Not quite as sweeping as “nobody uses them”, but in the same spiritual
+          space. Yet what is often not realised is that in many cases our real experience is of multiplication factors, and logarithms are a perfect way of translating that to our linear visual perception. Let’s just mention hearing — musical pitch
+          relates notes an octave apart; an octave means a factor of 2 in frequency of the pressure oscillation we perceive as “sound”. Further, our loudness perception is measured in “decibels”, a logarithmic scale.</div>
 
-<div class="image">
-<figure>
-<img src="tags.jpg" alt="Pre-cuneiform tags" style="width:100%;margin:0;">
-<figcaption style="font-size:16px">Pre-cuneiform tags, with drawing of goat or sheep and number (probably “10”), Al-Hasakah, 3300-3100 BCE, Uruk culture.</figcaption>
-</figure>
-</div>
+        <div class="image">
+          <figure>
+            <img src="tags.jpg" alt="Pre-cuneiform tags" style="width:100%;margin:0;">
+            <figcaption style="font-size:16px">Pre-cuneiform tags, with drawing of goat or sheep and number (probably “10”), Al-Hasakah, 3300-3100 BCE, Uruk culture.</figcaption>
+          </figure>
+        </div>
 
-<div class="indent">I guess another level of self-annoyance with the pub experience is that mathematics doesn’t need to be defended on purely utilitarian grounds. Not that it can’t make that case (our interaction with electronics devices is packed with mathematical knowledge constantly running in the background as you watch your cat videos). No, mathematics is just as much part of human culture as poetry and the visual arts. After all, writing arose from the accounting needs of complex (probably oppressive) societies. That is, from the dawn of history. Of course, poetry and visual art reach back further into pre-history in oral traditions, and cave and rock paintings and scratchings. I suspect primitive mathematical concepts like number and shape do too.</div>
+        <div class="indent">I guess another level of self-annoyance with the pub experience is that mathematics doesn’t need to be defended on purely utilitarian grounds. Not that it can’t make that case (our interaction with electronics devices is
+          packed with mathematical knowledge constantly running in the background as you watch your cat videos). No, mathematics is just as much part of human culture as poetry and the visual arts. After all, writing arose from the accounting needs
+          of complex (probably oppressive) societies. That is, from the dawn of history. Of course, poetry and visual art reach back further into pre-history in oral traditions, and cave and rock paintings and scratchings. I suspect primitive
+          mathematical concepts like number and shape do too.</div>
 
-<h2 class="section"><span class="section_label">1</span> So what are logarithms?</h2>
-<div class="standard">From the Covid example given above, one could say that logarithms straighten out exponential behavior, so that a log-scale graph of an exponential process appears as a straight line. This is useful for distinguishing such behavior from others such as quadratic, cubic, etc. A less transparent way of putting this is to say that the logarithm is the inverse to an exponential.</div>
+        <h2 class="section"><span class="section_label">1</span> So what are logarithms?</h2>
+        <div class="standard">From the Covid example given above, one could say that logarithms straighten out exponential behavior, so that a log-scale graph of an exponential process appears as a straight line. This is useful for distinguishing
+          such behavior from others such as quadratic, cubic, etc. A less transparent way of putting this is to say that the logarithm is the inverse to an exponential.</div>
 
-<div class="indent">You may have noticed that a lot of computer quantities are expressed as “k”, “M”, “G”, or even “T”, apparently representing the metric scaling factors kilo-, mega-, giga-, and tera-. In the metric system these mean factors of a thousand (10<sup>3</sup>), million (10<sup>6</sup>), billion (10<sup>9</sup>), and trillion (10<sup>12</sup>). A base-10 logarithm (log<sub>10</sub>) converts these to 3, 6, 9, and 12. Going a bit deeper, in computer contexts the meaning of these pre-factor names is often slightly modified to fit in with the binary basis of the mass of electronic machinery. In particular “kilo” becomes 2<sup>10</sup>, which works out at 1024, close to the traditional 1000. In computing, a base-2 logarithm is often the default (log<sub>2</sub>) with “k”, “M”, “G”, and “T”, translating to 10, 20, 30, and 40, respectively. These translate to 1024, 1,048,576, 1,073,741,824, and 1,099,511,627,776.</div>
+        <div class="indent">You may have noticed that a lot of computer quantities are expressed as “k”, “M”, “G”, or even “T”, apparently representing the metric scaling factors kilo-, mega-, giga-, and tera-. In the metric system these mean factors
+          of a thousand (10<sup>3</sup>), million (10<sup>6</sup>), billion (10<sup>9</sup>), and trillion (10<sup>12</sup>). A base-10 logarithm (log<sub>10</sub>) converts these to 3, 6, 9, and 12. Going a bit deeper, in computer contexts the
+          meaning of these pre-factor names is often slightly modified to fit in with the binary basis of the mass of electronic machinery. In particular “kilo” becomes 2<sup>10</sup>, which works out at 1024, close to the traditional 1000. In
+          computing, a base-2 logarithm is often the default (log<sub>2</sub>) with “k”, “M”, “G”, and “T”, translating to 10, 20, 30, and 40, respectively. These translate to 1024, 1,048,576, 1,073,741,824, and 1,099,511,627,776.</div>
 
-<div class="indent">Manufacturers often use the base-10 designations, and operating systems base-2. I guess the smaller base-10 version allows marketing teams to trumpet a “larger” capacity for hard disks and flash cards. I’ve often wondered why I only seem to be able to burn up to around 4.2GB on a DVD that is marked 4.7GB. This is presumably part of the reason why. Not the full reason, however, since it should still have more than 4.3GB capacity in operating system terms. Probably, some of the space is reserved for directories, housekeeping, etc. On wikipedia, the operating system/base-2 versions are given the names “kibi”, “mebi”, “gibi”, and “tebi”, according to the IEC [International Electrotechnical Commission] standard, but I had never seen these terms until I looked at <a href="https://en.wikipedia.org/wiki/Terabyte">https://en.wikipedia.org/wiki/Terabyte</a> some minutes ago. JEDEC [name originally derived from Joint Electron Device Engineering Council] uses the metric (SI [International System of Units]) names, but only up to giga.</div>
+        <div class="indent">Manufacturers often use the base-10 designations, and operating systems base-2. I guess the smaller base-10 version allows marketing teams to trumpet a “larger” capacity for hard disks and flash cards. I’ve often wondered
+          why I only seem to be able to burn up to around 4.2GB on a DVD that is marked 4.7GB. This is presumably part of the reason why. Not the full reason, however, since it should still have more than 4.3GB capacity in operating system terms.
+          Probably, some of the space is reserved for directories, housekeeping, etc. On wikipedia, the operating system/base-2 versions are given the names “kibi”, “mebi”, “gibi”, and “tebi”, according to the IEC [International Electrotechnical
+          Commission] standard, but I had never seen these terms until I looked at <a href="https://en.wikipedia.org/wiki/Terabyte">https://en.wikipedia.org/wiki/Terabyte</a> some minutes ago. JEDEC [name originally derived from Joint Electron Device
+          Engineering Council] uses the metric (SI [International System of Units]) names, but only up to giga.</div>
 
-<div class="indent">Yeah, whatevah! So what old man?</div>
+        <div class="indent">Yeah, whatevah! So what old man?</div>
 
-<div class="indent">Get off my lawn, you young whippersnappers!</div>
+        <div class="indent">Get off my lawn, you young whippersnappers!</div>
 
-<div class="image">
-<figure>
-<img src="IBM1130.jpg" alt="IBM 1130" style="width:100%;margin:0;">
-<figcaption style="font-size:16px">IBM 1130 with peripherals</figcaption>
-</figure>
-</div>
+        <div class="image">
+          <figure>
+            <img src="IBM1130.jpg" alt="IBM 1130" style="width:100%;margin:0;">
+            <figcaption style="font-size:16px">IBM 1130 with peripherals</figcaption>
+          </figure>
+        </div>
 
-<div class="indent">Back in the 1970s when I was going through school there were no laptops or smartphones. A computer was a big box larger than a sofa with flashing lights and a few k of memory if you were lucky. The input device was a card or tape reader, and output was through another large machine called a “line printer”. You might have magnetic tape or disk storage systems attached for longer term projects. The magnetic tape was contained in a large glass-fronted cabinet with whizzing spools, while the disk system was top-loaded into a mechanism that was the size of a washing machine. Most of the time a user didn’t interact directly with the computer equipment, but rather through a human operator. You had to wait for results. Most people did not have access to such machinery, and probably felt no great desire for such.</div>
+        <div class="indent">Back in the 1970s when I was going through school there were no laptops or smartphones. A computer was a big box larger than a sofa with flashing lights and a few k of memory if you were lucky. The input device was a card
+          or tape reader, and output was through another large machine called a “line printer”. You might have magnetic tape or disk storage systems attached for longer term projects. The magnetic tape was contained in a large glass-fronted cabinet
+          with whizzing spools, while the disk system was top-loaded into a mechanism that was the size of a washing machine. Most of the time a user didn’t interact directly with the computer equipment, but rather through a human operator. You had
+          to wait for results. Most people did not have access to such machinery, and probably felt no great desire for such.</div>
 
-<div class="indent">So back to my school classroom — you didn’t have computers (except the one in your head) — electronic calculators were beginning to appear, but were only available to the well-off. I think towards the end of my schooling calculators were allowed in exams, but we were given to understand that only three significant figures at most were expected in calculations. That is about the level of accuracy of a slide-rule (<a href="http://www.sliderules.info">http://www.sliderules.info</a>), which was allowed, or from using four-figure log tables, as supplied alongside the exam paper. I used a slide rule, while most of my contemporaries opted for tables or a calculator when allowed.</div>
+        <div class="indent">So back to my school classroom — you didn’t have computers (except the one in your head) — electronic calculators were beginning to appear, but were only available to the well-off. I think towards the end of my schooling
+          calculators were allowed in exams, but we were given to understand that only three significant figures at most were expected in calculations. That is about the level of accuracy of a slide-rule (<a
+            href="http://www.sliderules.info">http://www.sliderules.info</a>), which was allowed, or from using four-figure log tables, as supplied alongside the exam paper. I used a slide rule, while most of my contemporaries opted for tables or a
+          calculator when allowed.</div>
 
-<div class="indent">Clearly using log tables you are using logarithms for something. For anyone who can remember slide-rules, it may not be obvious, but their operation is also based on logarithms. But what then, was the purpose of logs? The most common operation in the classroom and exams was for multiplying numbers more quickly. You would convert the numbers you wanted multiplied into logs, <i>add them together</i>, and then “antilog” the result. The logarithm avoiding the need for all the shifting and carrying involved in the usual multiplication algorithm of decimal (or binary) numbers. Since division is a sort of inverse multiplication (and even more of a pain to calculate on paper), you might suspect that logarithms can help there too. You would be right — instead of adding you <i>subtract</i> the divisor from the dividend.</div>
+        <div class="indent">Clearly using log tables you are using logarithms for something. For anyone who can remember slide-rules, it may not be obvious, but their operation is also based on logarithms. But what then, was the purpose of logs? The
+          most common operation in the classroom and exams was for multiplying numbers more quickly. You would convert the numbers you wanted multiplied into logs, <i>add them together</i>, and then “antilog” the result. The logarithm avoiding the
+          need for all the shifting and carrying involved in the usual multiplication algorithm of decimal (or binary) numbers. Since division is a sort of inverse multiplication (and even more of a pain to calculate on paper), you might suspect that
+          logarithms can help there too. You would be right — instead of adding you <i>subtract</i> the divisor from the dividend.</div>
 
-<div class="indent">But how can that be? You’ve only shown the logarithms for numbers with whole number results like 10<sup>3</sup> → 3 in base-10. There is a consistent and continuous way to fill in the gaps so all positive real numbers map onto a real number. What you find is that:</div>
+        <div class="indent">But how can that be? You’ve only shown the logarithms for numbers with whole number results like 10<sup>3</sup> → 3 in base-10. There is a consistent and continuous way to fill in the gaps so all positive real numbers map
+          onto a real number. What you find is that:</div>
 
-<div class="standard">
-<span class="math display">\[\log\left( {xy} \right) = \log x + \log y\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[\log\left( {xy} \right) = \log x + \log y\]</span>
+        </div>
 
-<div class="indent">I haven't given the base, since this equation true whatever the base, so long as you stick to one. To get your answer you need to know your base, say <i>b</i>, and then:</div>
+        <div class="indent">I haven't given the base, since this equation true whatever the base, so long as you stick to one. To get your answer you need to know your base, say <i>b</i>, and then:</div>
 
-<div class="standard">
-<span class="math display">\[b^{\log_{b}x} = x\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[b^{\log_{b}x} = x\]</span>
+        </div>
 
-<div class="indent">So <i>b</i> to the power of your logarithm is the antilog function. There is also the relation:</div>
+        <div class="indent">So <i>b</i> to the power of your logarithm is the antilog function. There is also the relation:</div>
 
-<div class="standard">
-<span class="math display">\[\log_{b}\left( b^{x} \right) = x\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[\log_{b}\left( b^{x} \right) = x\]</span>
+        </div>
 
-<div class="indent">These functions mutually invert each other.</div>
+        <div class="indent">These functions mutually invert each other.</div>
 
-<h2 class="section"><span class="section_label">2</span> Power relations</h2>
-<div class="standard">The logarithmic conversion of multiplication into addition is based on the formula:</div>
+        <h2 class="section"><span class="section_label">2</span> Power relations</h2>
+        <div class="standard">The logarithmic conversion of multiplication into addition is based on the formula:</div>
 
-<div class="standard">
-<span class="math display">\[b^{m}b^{n} = b^{m + n}\]</span>
-</div>
-<div class="standard">
-<span class="math display">\[\begin{matrix}
-m \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix} \times \begin{matrix}
-n \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix} = \begin{matrix}
-{m + n} \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix}\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[b^{m}b^{n} = b^{m + n}\]</span>
+        </div>
+        <div class="standard">
+          <span class="math display">\[\begin{matrix}
+            m \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix} \times \begin{matrix}
+            n \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix} = \begin{matrix}
+            {m + n} \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix}\]</span>
+        </div>
 
-<div class="indent">This says that product of the products of <i>m</i> and <i>n</i> <i>b</i>s is the product of (<i>m</i> + <i>n</i>) <i>b</i>s. It is an expression of the associativity of multiplication, for those who know what that means:</div>
+        <div class="indent">This says that product of the products of <i>m</i> and <i>n</i> <i>b</i>s is the product of (<i>m</i> + <i>n</i>) <i>b</i>s. It is an expression of the associativity of multiplication, for those who know what that means:
+        </div>
 
-<div class="standard">
-<span class="math display">\[\left( {ab} \right)c = a\left( {bc} \right)\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[\left( {ab} \right)c = a\left( {bc} \right)\]</span>
+        </div>
 
-<div class="indent">Another important formula:</div>
+        <div class="indent">Another important formula:</div>
 
-<div class="standard">
-<span class="math display">\[\left( b^{m} \right)^{n} = b^{mn}\]</span>
-</div>
-<div class="standard">
-<span class="math display">\[\begin{matrix}
-n \\
-\overbrace{\begin{matrix}
-\begin{matrix}
-m \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix} &amp; \begin{matrix}
-m \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix} &amp; \cdots &amp; \begin{matrix}
-m \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix} \\
-\end{matrix}} \\
-\end{matrix} = \begin{matrix}
-{mn} \\
-\overbrace{\begin{matrix}
-b b \cdots b \\
-\end{matrix}} \\
-\end{matrix}\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[\left( b^{m} \right)^{n} = b^{mn}\]</span>
+        </div>
+        <div class="standard">
+          <span class="math display">\[\begin{matrix}
+            n \\
+            \overbrace{\begin{matrix}
+            \begin{matrix}
+            m \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix} &amp; \begin{matrix}
+            m \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix} &amp; \cdots &amp; \begin{matrix}
+            m \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix} \\
+            \end{matrix}} \\
+            \end{matrix} = \begin{matrix}
+            {mn} \\
+            \overbrace{\begin{matrix}
+            b b \cdots b \\
+            \end{matrix}} \\
+            \end{matrix}\]</span>
+        </div>
 
-<div class="indent">This says that the <i>n</i>-th power of the <i>m</i>-th power of <i>b</i> is the product of <i>mn</i> <i>b</i>s.</div>
+        <div class="indent">This says that the <i>n</i>-th power of the <i>m</i>-th power of <i>b</i> is the product of <i>mn</i> <i>b</i>s.</div>
 
-<div class="indent">So far we have only looked at whole number powers. However the last formula will lead the way to defining fractional powers, while the formula for addition of powers will lead to a meaning for negative powers. The extension to real numbers depends on “continuity” with respect to powers — this means that as fractions approach closer to a real number the power approaches or “coverges” to a single well-defined real number.</div>
+        <div class="indent">So far we have only looked at whole number powers. However the last formula will lead the way to defining fractional powers, while the formula for addition of powers will lead to a meaning for negative powers. The
+          extension to real numbers depends on “continuity” with respect to powers — this means that as fractions approach closer to a real number the power approaches or “coverges” to a single well-defined real number.</div>
 
-<div class="indent">So let's try to find a fractional power:</div>
+        <div class="indent">So let's try to find a fractional power:</div>
 
-<div class="standard">
-<span class="math display">\[\left( b^{1/m} \right)^{m} = b^{m/m} = b^{1} = b\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[\left( b^{1/m} \right)^{m} = b^{m/m} = b^{1} = b\]</span>
+        </div>
 
-<div class="indent">So <span class="math inline">\(b^{1/m}\)</span> is the <em>m</em>-th root of <em>b</em> or <span class="math inline">\(\sqrt[m]{b}\)</span>. So a definition consistent with the power of a power formula is:</div>
+        <div class="indent">So <span class="math inline">\(b^{1/m}\)</span> is the <em>m</em>-th root of <em>b</em> or <span class="math inline">\(\sqrt[m]{b}\)</span>. So a definition consistent with the power of a power formula is:</div>
 
-<div class="standard">
-<span class="math display">\[b^{n/m} = \left( b^{1/m} \right)^{n} = \left( \sqrt[m]{b} \right)^{n}\]</span>
-</div>
+        <div class="standard">
+          <span class="math display">\[b^{n/m} = \left( b^{1/m} \right)^{n} = \left( \sqrt[m]{b} \right)^{n}\]</span>
+        </div>
 
-<div class="indent">A similar process from the product of two powers formula gives:</div>
+        <div class="indent">A similar process from the product of two powers formula gives:</div>
 
-<div class="standard">
-<span class="math display">\[b^{- m} = 1/b^{m}\]</span>
-</div>
-<div class="indent">[Remembering/defining that <span class="math inline">\(b^{0} = 1\)</span>.]</div>
-<div class="indent">These considerations, along with the logarithm concept, allow us to make even more connections. Since <span class="math inline">\(b^{\prime} = b^{\log_{b}b^{\prime}}\)</span> and <span class="math inline">\(b^{\log_{b}x} = x\)</span>:</div>
-<div class="standard">
-<span class="math display">\[b^{\log_{b}x} = x = {b^{\prime}}^{\log_{b^{\prime}}x} = \left( b^{\log_{b}b^{\prime}} \right){}^{\log_{b^{\prime}}x} = b^{\log_{b}b^{\prime}\log_{b^{\prime}}x}\]</span>
-</div>
-<div class="indent">Equating the ends and antilogging:</div>
-<div class="standard">
-<span class="math display">\[\log_{b}b^{\prime}\log_{b^{\prime}}x = \log_{b}x\]</span>
-</div>
-<div class="indent">
-Or more usefully:
-</div>
-<div class="standard">
-<span class="math display">\[\log_{b^{\prime}}x = \frac{\log_{b}x}{\log_{b}b^{\prime}}\]</span>
-</div>
-<div class="indent">
-This allows easy conversion from one base to another.
-</div>
-<h2 class="section"><span class="section_label">3</span> Tabling some vulgarity</h2>
-<div class="noindent">Armed with the knowledge of the previous section, I made code to generate a crude table for base-10 logarithms (click on “Make table") and compared the values with what the computer came up with (obviously much more accurate).</div>
+        <div class="standard">
+          <span class="math display">\[b^{- m} = 1/b^{m}\]</span>
+        </div>
+        <div class="indent">[Remembering/defining that <span class="math inline">\(b^{0} = 1\)</span>.]</div>
+        <div class="indent">These considerations, along with the logarithm concept, allow us to make even more connections. Since <span class="math inline">\(b^{\prime} = b^{\log_{b}b^{\prime}}\)</span> and <span class="math inline">\(b^{\log_{b}x} =
+            x\)</span>:</div>
+        <div class="standard">
+          <span class="math display">\[b^{\log_{b}x} = x = {b^{\prime}}^{\log_{b^{\prime}}x} = \left( b^{\log_{b}b^{\prime}} \right){}^{\log_{b^{\prime}}x} = b^{\log_{b}b^{\prime}\log_{b^{\prime}}x}\]</span>
+        </div>
+        <div class="indent">Equating the ends and antilogging:</div>
+        <div class="standard">
+          <span class="math display">\[\log_{b}b^{\prime}\log_{b^{\prime}}x = \log_{b}x\]</span>
+        </div>
+        <div class="indent">
+          Or more usefully:
+        </div>
+        <div class="standard">
+          <span class="math display">\[\log_{b^{\prime}}x = \frac{\log_{b}x}{\log_{b}b^{\prime}}\]</span>
+        </div>
+        <div class="indent">
+          This allows easy conversion from one base to another.
+        </div>
+        <h2 class="section"><span class="section_label">3</span> Tabling some vulgarity</h2>
+        <div class="noindent">Armed with the knowledge of the previous section, I made code to generate a crude table for base-10 logarithms (click on “Make table") and compared the values with what the computer came up with (obviously much more
+          accurate).</div>
 
-<div class="image">
-<h4 class="subsubsection_">Generate log<sub>10</sub><em>x</em> estimates</h4>
-<div class="label">
-<table>
-<tr><td style="text-align: right;">Base (<em>b</em>):</td><td><input id="base" type="number" class="label" size="5" value="1.1" style="font-size: 1em; text-align: right;"></td></tr>
-</table>
-</div>
-<button type="button" onclick="setLog10Table()">Make<br /> table</button>
-<div id="log10table" style="margin-bottom: 10px"></div>
+        <div class="image">
+          <h4 class="subsubsection_">Generate log<sub>10</sub><em>x</em> estimates</h4>
+          <div class="label">
+            <table>
+              <tr>
+                <td style="text-align: right;">Base (<em>b</em>):</td>
+                <td><input id="base" type="number" class="label" size="5" value="1.1" style="font-size: 1em; text-align: right;"></td>
+              </tr>
+            </table>
+          </div>
+          <button type="button" onclick="setLog10Table()">Make<br /> table</button>
+          <div id="log10table" style="margin-bottom: 10px"></div>
 
-</div>
+        </div>
 
-<div class="indent">The javascript code generates a list of powers of the given base (initially 1.1) up to and just beyond 10, and then uses linear interpolation between the whole number values to give an estimate for <span class="math inline">\(\log_{b}\)</span> for any value of <em>x</em>. To translate to base-10, one just needs to calculate the scaling factor to give <span class="math inline">\(\log_{10}10 = 1\)</span>. Looking at the two result columns, I see that my effort achieves 3-figure accuracy for <span class="math inline">\(b = 1.1\)</span>. Using 1.01 instead of 1.1 gives 5-figure accuracy for the vaules of <em>x</em> listed above, and I expect more generally for the range 1–10. Some improvement might be expected from higher order (quadratic or cubic) interpolation methods, but my purpose is not to create great tables, but rather to see how they might be derived without resorting to calculus, power series and so on.</div>
+        <div class="indent">The javascript code generates a list of powers of the given base (initially 1.1) up to and just beyond 10, and then uses linear interpolation between the whole number values to give an estimate for <span
+            class="math inline">\(\log_{b}\)</span> for any value of <em>x</em>. To translate to base-10, one just needs to calculate the scaling factor to give <span class="math inline">\(\log_{10}10 = 1\)</span>. Looking at the two result columns,
+          I see that my effort achieves 3-figure accuracy for <span class="math inline">\(b = 1.1\)</span>. Using 1.01 instead of 1.1 gives 5-figure accuracy for the vaules of <em>x</em> listed above, and I expect more generally for the range 1–10.
+          Some improvement might be expected from higher order (quadratic or cubic) interpolation methods, but my purpose is not to create great tables, but rather to see how they might be derived without resorting to calculus, power series and so
+          on.</div>
 
-<div class="indent">The logarithms as mathematical objects trace back to John Napier (1550–1617), a Scots aristocrat. From English translations of a posthumous publication in Latin (1619), I surmise that his main focus was providing means to ease trigonometric calculations, but the text is quite difficult to follow. Napier did publish tables, with instructions for use, before he died (1614), also in Latin. On the tricentenary of this publication (1914), E.W. Hobson gave a lecture on the discovery, claiming that Napier's description of the construction was “clear”. To him, maybe. I don't remember any celebrations in 2014. Perhaps, this has to do with the rise of electronic devices making logarithms “useless”. Intel's technique for calculating logaithms and so on in its IA-64 chips is at <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.5177">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.5177</a></div>
+        <div class="indent">The logarithms as mathematical objects trace back to John Napier (1550–1617), a Scots aristocrat. From English translations of a posthumous publication in Latin (1619), I surmise that his main focus was providing means to
+          ease trigonometric calculations, but the text is quite difficult to follow. Napier did publish tables, with instructions for use, before he died (1614), also in Latin. On the tricentenary of this publication (1914), E.W. Hobson gave a
+          lecture on the discovery, claiming that Napier's description of the construction was “clear”. To him, maybe. I don't remember any celebrations in 2014. Perhaps, this has to do with the rise of electronic devices making logarithms “useless”.
+          Intel's technique for calculating logaithms and so on in its IA-64 chips is at <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.5177">http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.5177</a></div>
 
-<h2 class="section"><span class="section_label">4</span> Compound uselessness</h2>
-<div class="standard">Elsewhere [<a href="../Power/Power.html">Powering<sup>up</sup></a>] I have elaborated how compound interest arises and how it relates to exponential behaviour. Here I will look at problems such as: If I want a 30% yield on an investment after 10 years, what sort of annual interest rate should I set or seek? In mathematical terms we a looking for a solution <em>x</em> to:</div>
-<div class="standard">
-<span class="math display">\[\left( {1 + x} \right)^{10} = 1 + 30 = 1.3\]</span>
-</div>
-<div class="indent">Well you could just try a series of values for <em>x</em>, hopefully using ones intelligence to get closer and closer. This is called “shooting”, and is a respectable method in the absence of anything better. As part of shooting you might apply a bracketing method along with some interpolation, guessing lower and upper bounds (1%? and 3%) and zeroing in.</div>
-<div class="indent">However, here logarithms can save us all that. We have from applying logarithms to both sides:</div>
-<div class="standard">
-<span class="math display">\[\left. 10\log\left( {1 + x} \right) = \log 1.3\Longrightarrow\log\left( {1 + x} \right) = \frac{\log 1.3}{10} \right.\]</span>
-</div>
-<div class="indent">Antilogging in whatever base gives:</div>
-<div class="standard">
-<span class="math display">\[1 + x = 1.02658\ldots\]</span>
-</div>
-<div class="indent">So the desired interest rate would be around 2.7%, not much different from the upper bound of 3%. However, the difference is more significant if you want to double your money - i.e. 100% yield:</div>
-<div class="standard">
-<span class="math display">\[\left. \log\left( {1 + x} \right) = \frac{\log 2}{10}\Longrightarrow 1 + x = 1.0718 \right.\]</span>
-</div>
-<div class="indent">You can reduce the annual rate to 7.2%, rather than the naive 100%/10=10%. For a bank's PR/advertising, this looks far less menacing to the intended victims.</div>
+        <h2 class="section"><span class="section_label">4</span> Compound uselessness</h2>
+        <div class="standard">Elsewhere [<a href="../Power/Power.html">Powering<sup>up</sup></a>] I have elaborated how compound interest arises and how it relates to exponential behaviour. Here I will look at problems such as: If I want a 30% yield
+          on an investment after 10 years, what sort of annual interest rate should I set or seek? In mathematical terms we a looking for a solution <em>x</em> to:</div>
+        <div class="standard">
+          <span class="math display">\[\left( {1 + x} \right)^{10} = 1 + 30 = 1.3\]</span>
+        </div>
+        <div class="indent">Well you could just try a series of values for <em>x</em>, hopefully using ones intelligence to get closer and closer. This is called “shooting”, and is a respectable method in the absence of anything better. As part of
+          shooting you might apply a bracketing method along with some interpolation, guessing lower and upper bounds (1%? and 3%) and zeroing in.</div>
+        <div class="indent">However, here logarithms can save us all that. We have from applying logarithms to both sides:</div>
+        <div class="standard">
+          <span class="math display">\[\left. 10\log\left( {1 + x} \right) = \log 1.3\Longrightarrow\log\left( {1 + x} \right) = \frac{\log 1.3}{10} \right.\]</span>
+        </div>
+        <div class="indent">Antilogging in whatever base gives:</div>
+        <div class="standard">
+          <span class="math display">\[1 + x = 1.02658\ldots\]</span>
+        </div>
+        <div class="indent">So the desired interest rate would be around 2.7%, not much different from the upper bound of 3%. However, the difference is more significant if you want to double your money - i.e. 100% yield:</div>
+        <div class="standard">
+          <span class="math display">\[\left. \log\left( {1 + x} \right) = \frac{\log 2}{10}\Longrightarrow 1 + x = 1.0718 \right.\]</span>
+        </div>
+        <div class="indent">You can reduce the annual rate to 7.2%, rather than the naive 100%/10=10%. For a bank's PR/advertising, this looks far less menacing to the intended victims.</div>
 
-<h2 class="section"><span class="section_label">5</span> I hear you</h2>
-<div class="standard">At first sight it may appear strange that “an octave” describes a factor of two, since “octo” in Latin and similar sounds in derived languages (e.g. Italian, “otto”) means “eight”. The reason is somewhat obscure and historical, as usual, but relates to a series of musical “intervals” — factors/ratios — between notes: 1:1, 9:8, 5:4, 4:3, 3:2, 5:3, 15:8, 2:1, giving the scale from C: C, D, E, F, G, A, B, C. [In the key of C major.] The last C is the eighth in the sequence. In musical terms the intervals with smaller integers in the ratio are more “perfect”. So 2:1 is a “perfect eighth”. The “fourth” (4:3) and “fifth” (3:2) are also considered “perfect”, along with “unison” (1:1). There are the less perfect “major” intervals of 5:4 (“third”) and 5:3 (“sixth”), or even 9:8 (“second”) and 15:8 (“seventh”).</div>
+        <h2 class="section"><span class="section_label">5</span> I hear you</h2>
+        <div class="standard">At first sight it may appear strange that “an octave” describes a factor of two, since “octo” in Latin and similar sounds in derived languages (e.g. Italian, “otto”) means “eight”. The reason is somewhat obscure and
+          historical, as usual, but relates to a series of musical “intervals” — factors/ratios — between notes: 1:1, 9:8, 5:4, 4:3, 3:2, 5:3, 15:8, 2:1, giving the scale from C: C, D, E, F, G, A, B, C. [In the key of C major.] The last C is the
+          eighth in the sequence. In musical terms the intervals with smaller integers in the ratio are more “perfect”. So 2:1 is a “perfect eighth”. The “fourth” (4:3) and “fifth” (3:2) are also considered “perfect”, along with “unison” (1:1). There
+          are the less perfect “major” intervals of 5:4 (“third”) and 5:3 (“sixth”), or even 9:8 (“second”) and 15:8 (“seventh”).</div>
 
-<div class="indent">There are three ratios between steps in the given sequence 10:9 (e.g. E:D), 9:8 (e.g. D:C), and 16:15 (F:E). The last ratio is significantly smaller (1.066 . . .) than the first two (1.11 . . . and 1.125). The gaps between the larger steps are filled with “minor” intervals, giving a 12-tone scale. There are a large number of methods to do this and a bewildering array of designations and meanings. The note inserted between F and G can be referred to as F-sharp (F♯) or G-flat (G♭), and depending on how it is done, may refer to a slightly different frequency.</div>
+        <div class="indent">There are three ratios between steps in the given sequence 10:9 (e.g. E:D), 9:8 (e.g. D:C), and 16:15 (F:E). The last ratio is significantly smaller (1.066 . . .) than the first two (1.11 . . . and 1.125). The gaps between
+          the larger steps are filled with “minor” intervals, giving a 12-tone scale. There are a large number of methods to do this and a bewildering array of designations and meanings. The note inserted between F and G can be referred to as F-sharp
+          (F♯) or G-flat (G♭), and depending on how it is done, may refer to a slightly different frequency.</div>
 
-<div class="indent">This “just” or “pure” intonation tuning is fine for ensembles with a few players and instruments. However, in large orchestras there is a wide range of sounds that can be produced. Generally tuning is done according to the “chromatic” scale with the octave divided into twelve “semi-tone” steps with constant ratios. We need to find the 12-th root of 2. This can be done with logarithms, or with a calculator/computer. The answer comes out at 1.059. . . .</div>
+        <div class="indent">This “just” or “pure” intonation tuning is fine for ensembles with a few players and instruments. However, in large orchestras there is a wide range of sounds that can be produced. Generally tuning is done according to the
+          “chromatic” scale with the octave divided into twelve “semi-tone” steps with constant ratios. We need to find the 12-th root of 2. This can be done with logarithms, or with a calculator/computer. The answer comes out at 1.059. . . .</div>
 
-<div class="indent">Putting it all together we get the comparison:</div>
-<div class="standard">
-<table>
-<tbody>
-<tr><th>Note</th><th>m:n</th><th>m/n</th><th>delta</th><th>Semi-tone</th><th>12-tone ratio</th></tr>
-<tr><td>C</td><td>1:1</td><td>1</td><td></td><td></td><td>1</td></tr>
-<tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.059</td></tr>
-<tr><td>D</td><td>9:8</td><td>1.125</td><td>1.125</td><td>1.059</td><td>1.122</td></tr>
-<tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.189</td></tr>
-<tr><td>E</td><td>5:4</td><td>1.25</td><td>1.111</td><td>1.059</td><td>1.260</td></tr>
-<tr><td>F</td><td>4:3</td><td>1.333</td><td>1.067</td><td>1.059</td><td>1.335</td></tr>
-<tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.414</td></tr>
-<tr><td>G</td><td>3:2</td><td>1.5</td><td>1.125</td><td>1.059</td><td>1.498</td></tr>
-<tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.587</td></tr>
-<tr><td>A</td><td>5:3</td><td>1.667</td><td>1.111</td><td>1.059</td><td>1.682</td></tr>
-<tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.782</td></tr>
-<tr><td>B</td><td>15:8</td><td>1.875</td><td>1.125</td><td>1.059</td><td>1.888</td></tr>
-<tr><td>C</td><td>2:1</td><td>2</td><td>1.067</td><td>1.059</td><td>2</td></tr>
-</tbody>
-</table>
-</div>
+        <div class="indent">Putting it all together we get the comparison:</div>
+        <div class="standard">
+          <table>
+            <tbody>
+              <tr>
+                <th>Note</th>
+                <th>m:n</th>
+                <th>m/n</th>
+                <th>delta</th>
+                <th>Semi-tone</th>
+                <th>12-tone ratio</th>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>1:1</td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>♯/♭</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1.059</td>
+                <td>1.059</td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>9:8</td>
+                <td>1.125</td>
+                <td>1.125</td>
+                <td>1.059</td>
+                <td>1.122</td>
+              </tr>
+              <tr>
+                <td>♯/♭</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1.059</td>
+                <td>1.189</td>
+              </tr>
+              <tr>
+                <td>E</td>
+                <td>5:4</td>
+                <td>1.25</td>
+                <td>1.111</td>
+                <td>1.059</td>
+                <td>1.260</td>
+              </tr>
+              <tr>
+                <td>F</td>
+                <td>4:3</td>
+                <td>1.333</td>
+                <td>1.067</td>
+                <td>1.059</td>
+                <td>1.335</td>
+              </tr>
+              <tr>
+                <td>♯/♭</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1.059</td>
+                <td>1.414</td>
+              </tr>
+              <tr>
+                <td>G</td>
+                <td>3:2</td>
+                <td>1.5</td>
+                <td>1.125</td>
+                <td>1.059</td>
+                <td>1.498</td>
+              </tr>
+              <tr>
+                <td>♯/♭</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1.059</td>
+                <td>1.587</td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>5:3</td>
+                <td>1.667</td>
+                <td>1.111</td>
+                <td>1.059</td>
+                <td>1.682</td>
+              </tr>
+              <tr>
+                <td>♯/♭</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1.059</td>
+                <td>1.782</td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td>15:8</td>
+                <td>1.875</td>
+                <td>1.125</td>
+                <td>1.059</td>
+                <td>1.888</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>2:1</td>
+                <td>2</td>
+                <td>1.067</td>
+                <td>1.059</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<div class="indent">The reason for the perfect and major intervals being more “musical” is presumably related to how sound resonates in most instruments and the inner ear canal. There is a fundamental tone and then a series of overtones, which makes instruments playing the same “note” sound different. The overtones are close to a multiple of the fundamental frequency, determined by the size and material of the resonating object. The strength of the overtones tends to be less than the fundamental and die out more rapidly. The perfect intervals create more possibilities for overlapping and reinforcement of overtones, and hence a more “pleasing” sound, unless you are an awkward bastard like me that enjoys a good bit of dischordant music (e.g. the end of Mozart's “Ein musikalischer Spaß”/“A Musical Joke”, or perhaps “Trout Mask Replica”?).</div>
+        <div class="indent">The reason for the perfect and major intervals being more “musical” is presumably related to how sound resonates in most instruments and the inner ear canal. There is a fundamental tone and then a series of overtones,
+          which makes instruments playing the same “note” sound different. The overtones are close to a multiple of the fundamental frequency, determined by the size and material of the resonating object. The strength of the overtones tends to be
+          less than the fundamental and die out more rapidly. The perfect intervals create more possibilities for overlapping and reinforcement of overtones, and hence a more “pleasing” sound, unless you are an awkward bastard like me that enjoys a
+          good bit of dischordant music (e.g. the end of Mozart's “Ein musikalischer Spaß”/“A Musical Joke”, or perhaps “Trout Mask Replica”?).</div>
 
-<div class="indent">Wikipedia informs me about why we relate octave intervals:</div>
+        <div class="indent">Wikipedia informs me about why we relate octave intervals:</div>
 
-<blockquote cite="https://en.wikipedia.org/wiki/Octave">“Monkeys experience octave equivalence, and its biological basis apparently is an octave mapping of neurons in the auditory thalamus of the mammalian brain. Studies have also shown the perception of octave equivalence in rats (Blackwell &amp; Schlosberg 1943), human infants (Demany &amp; Armand 1984), and musicians (Allen 1967) but not starlings (Cynx 1993), 4–9 year old children (Sergeant 1983), or nonmusicians (Allen 1967).” [<a href="https://en.wikipedia.org/wiki/Octave">https://en.wikipedia.org/wiki/Octave</a>]</blockquote>
+        <blockquote cite="https://en.wikipedia.org/wiki/Octave">“Monkeys experience octave equivalence, and its biological basis apparently is an octave mapping of neurons in the auditory thalamus of the mammalian brain. Studies have also shown the
+          perception of octave equivalence in rats (Blackwell &amp; Schlosberg 1943), human infants (Demany &amp; Armand 1984), and musicians (Allen 1967) but not starlings (Cynx 1993), 4–9 year old children (Sergeant 1983), or nonmusicians (Allen
+          1967).” [<a href="https://en.wikipedia.org/wiki/Octave">https://en.wikipedia.org/wiki/Octave</a>]</blockquote>
 
-<div class="indent">These statements seem somewhat at odds with each other. Maybe “human infants” refers to exclusively to babies? How does bird song fit into this? I am sure experts in music and biology would find many imperfections and errors in the account I have given of these matters. I leave it to readers to check the veracity or not of what I have written.</div>
+        <div class="indent">These statements seem somewhat at odds with each other. Maybe “human infants” refers to exclusively to babies? How does bird song fit into this? I am sure experts in music and biology would find many imperfections and
+          errors in the account I have given of these matters. I leave it to readers to check the veracity or not of what I have written.</div>
 
-<div class="indent">Moving on, sound intensity/loudness is measured using logarithmic concepts. Generally a “decade”/base-10 scale is used — the “bel” or more precisely the decibel (a ratio <em>x</em> in dB <span class="math inline">\(= 10\log_{10}x\)</span>), thus 1dB represents a ratio of 1.258 . . . , the 10-th root of 10. But ratio of what? To have meaning beyond ratios, dBs need some reference level for the 0dB value. For sound, a reference “sound intensity level” (SIL) of 1pW/m<sup>2</sup> is often used, being close to what is barely detectable by a healthy (young?) ear.</div>
+        <div class="indent">Moving on, sound intensity/loudness is measured using logarithmic concepts. Generally a “decade”/base-10 scale is used — the “bel” or more precisely the decibel (a ratio <em>x</em> in dB <span class="math inline">\(=
+            10\log_{10}x\)</span>), thus 1dB represents a ratio of 1.258 . . . , the 10-th root of 10. But ratio of what? To have meaning beyond ratios, dBs need some reference level for the 0dB value. For sound, a reference “sound intensity level”
+          (SIL) of 1pW/m<sup>2</sup> is often used, being close to what is barely detectable by a healthy (young?) ear.</div>
 
-<div class="indent">In engineering, powers are also often described using dBs, but with an added letter: dBm. In this case, 0dBm represents 1mW. One might be misled by the fact that 10dBm = 10mW to guess that 20dBm is 20mW, but in fact 20dBm = 100mW (20dB is a factor of 10<sup>2</sup> = 100).</div>
+        <div class="indent">In engineering, powers are also often described using dBs, but with an added letter: dBm. In this case, 0dBm represents 1mW. One might be misled by the fact that 10dBm = 10mW to guess that 20dBm is 20mW, but in fact 20dBm
+          = 100mW (20dB is a factor of 10<sup>2</sup> = 100).</div>
 
-<div class="indent">Further confusion can arise when energy is related to the square of some quantity — e.g. kinetic energy to square velocities or sound intensity to the square of pressure fluctuation. This can lead to 20, rather than 10 appearing in a definition.</div>
+        <div class="indent">Further confusion can arise when energy is related to the square of some quantity — e.g. kinetic energy to square velocities or sound intensity to the square of pressure fluctuation. This can lead to 20, rather than 10
+          appearing in a definition.</div>
 
-<div class="indent">In electronics, amplifiers usually have some cut-off frequency beyond which the gain falls off, often by a factor that goes as one over the square of the frequency (<span class="math inline">\(1/f^{2}\)</span>). This behavior is expressed in models that posit parisitic resistance and capacitance in the circuit, along with components put in to ensure stability and so on. Anyway an increase in frequency by a factor of 10 (a decade), leads to a reduction in gain by a factor of 100 (20dB), giving 20dB/decade “roll-off”. Sometimes, rather than a decade, an octave (2×) increase in frequency is used as the measure, giving a 4× reduction in power (6.02 . . . dB), and hence a 6dB/octave roll-off.</div>
+        <div class="indent">In electronics, amplifiers usually have some cut-off frequency beyond which the gain falls off, often by a factor that goes as one over the square of the frequency (<span class="math inline">\(1/f^{2}\)</span>). This
+          behavior is expressed in models that posit parisitic resistance and capacitance in the circuit, along with components put in to ensure stability and so on. Anyway an increase in frequency by a factor of 10 (a decade), leads to a reduction
+          in gain by a factor of 100 (20dB), giving 20dB/decade “roll-off”. Sometimes, rather than a decade, an octave (2×) increase in frequency is used as the measure, giving a 4× reduction in power (6.02 . . . dB), and hence a 6dB/octave roll-off.
+        </div>
 
-<h2 class="section"><span class="section_label">6</span> Graph-o-log-y or log-graph-y?</h2>
-<div class="standard">I have already hinted how logs can be used to straighten out exponential behaviour. Here we allow an exponential progression of values (<em>y</em>) to be compared on lin-lin or lin-log scales:</div>
+        <h2 class="section"><span class="section_label">6</span> Graph-o-log-y or log-graph-y?</h2>
+        <div class="standard">I have already hinted how logs can be used to straighten out exponential behaviour. Here we allow an exponential progression of values (<em>y</em>) to be compared on lin-lin or lin-log scales:</div>
 
-<div class="image">
-<br /> 
-    <h4>Exponential table/graphs</h4>
+        <div class="image">
+          <br />
+          <h4>Exponential table/graphs</h4>
 
-<div class="standard">
-<span class="math display">\[v = v_0 r^t\]</span>
-</div>
-	<div class="label">
-    <table>
-        <tr>
-            <td style="text-align: right;">Interation factor (<em>r</em>): </td>
-            <td><input id="iteration" class="label" size="2" type="number" value="2" style="font-size: 1em; text-align: right;"></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">Initial value (<em>v</em><sub>0</sub>): </td>
-            <td><input id="init" size="2" type="number" value="80" style="font-size: 1em"></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">Duration (max <em>t</em>): </td>
-            <td><input id="dur" size="2" type="number" value="20" style="font-size: 1em"></td>
-        </tr>
-    </table>
-	</div>
-        <div class="label">
+          <div class="standard">
+            <span class="math display">\[v = v_0 r^t\]</span>
+          </div>
+          <div class="label">
+            <table>
+              <tr>
+                <td style="text-align: right;">Interation factor (<em>r</em>): </td>
+                <td><input id="iteration" class="label" size="2" type="number" value="2" style="font-size: 1em; text-align: right;"></td>
+              </tr>
+              <tr>
+                <td style="text-align: right;">Initial value (<em>v</em><sub>0</sub>): </td>
+                <td><input id="init" size="2" type="number" value="80" style="font-size: 1em"></td>
+              </tr>
+              <tr>
+                <td style="text-align: right;">Duration (max <em>t</em>): </td>
+                <td><input id="dur" size="2" type="number" value="20" style="font-size: 1em"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="label">
             <button type="button" onclick="displayTable(eData(), 'edisplay')">Show<br>table</button>
             <button type="button" onclick="displayGraph(lin,lin,eData(), 'edisplay')">Lin-lin<br>graph</button>
             <button type="button" onclick="displayGraph(lin,log,eData(), 'edisplay')">Lin-log<br>graph</button>
+          </div>
+
+          <div class="standard">
+            <div id="evariables" style="text-align:center;"></div>
+          </div>
+          <div id="edisplay"></div>
+
         </div>
- 
-<div class="standard">       
-    <div id="evariables" style="text-align:center;"></div>
-</div>
-    <div id="edisplay"></div>  
 
-</div>
+        <div class="indent">But there is more. Logarithms also allow power law behaviours to be seen. Here the various possible scales can be seen:</div>
 
-<div class="indent">But there is more. Logarithms also allow power law behaviours to be seen. Here the various possible scales can be seen:</div>
-
-<div class="image">
-    <h4>Power law table/graphs</h4>
-<div class="standard">
-<span class="math display">\[v = v_1 t^n\]</span>
-</div>
- <div class="label">
-    <table>
-        <tr>
-            <td style="text-align: right;">Constant (<em>v</em><sub>1</sub>): </td>
-            <td><input id="constant" class="label" size="2" type="number" value="3" style="font-size: 1em; text-align: right;"></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">Exponent (<em>n</em>): </td>
-            <td><input id="exponent" size="2" type="number" value="2" style="font-size: 1em"></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">Range (min,max <em>t</em>): </td>
-            <td><input id="range" size="4" type="string" value="2,5" style="font-size: 1em"></td>
-        </tr>
-    </table>
-</div>    
-        <div class="label">
+        <div class="image">
+          <h4>Power law table/graphs</h4>
+          <div class="standard">
+            <span class="math display">\[v = v_1 t^n\]</span>
+          </div>
+          <div class="label">
+            <table>
+              <tr>
+                <td style="text-align: right;">Constant (<em>v</em><sub>1</sub>): </td>
+                <td><input id="constant" class="label" size="2" type="number" value="3" style="font-size: 1em; text-align: right;"></td>
+              </tr>
+              <tr>
+                <td style="text-align: right;">Exponent (<em>n</em>): </td>
+                <td><input id="exponent" size="2" type="number" value="2" style="font-size: 1em"></td>
+              </tr>
+              <tr>
+                <td style="text-align: right;">Range (min,max <em>t</em>): </td>
+                <td><input id="range" size="4" type="string" value="2,5" style="font-size: 1em"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="label">
             <button type="button" onclick="displayTable(pData(), 'pdisplay')">Show<br>table</button>
             <button type="button" onclick="displayGraph(lin,lin,pData(), 'pdisplay')">Lin-lin<br>graph</button>
             <button type="button" onclick="displayGraph(lin,log,pData(), 'pdisplay')">Lin-log<br>graph</button>
             <button type="button" onclick="displayGraph(log,lin,pData(), 'pdisplay')">Log-lin<br>graph</button>
             <button type="button" onclick="displayGraph(log,log,pData(), 'pdisplay')">Log-log<br>graph</button>
+          </div>
+
+
+          <div id="pvariables" style="text-align:center;"></div>
+          <div id="pdisplay"></div>
         </div>
 
-        
-    <div id="pvariables" style="text-align:center;"></div>
-    <div id="pdisplay"></div>    
+        <div class="indent">The log-log combination gives straight line! The others are not so useful in this case. Also try changing the exponent (even negative values like for the <span class="math inline">\(1/f^{2}\)</span> behaviour described
+          earlier, corresponding with <span class="math inline">\(n = -2\)</span>).</div>
+
+        <div class="indent">We can understand what the log scales are doing here, if we apply logs to the equation <span class="math inline">\(v = v_1 t^n\)</span>:</div>
+
+        <div class="standard">
+          <span class="math display">\[\log v = \log (v_1 t^n) = \log v_1 + n \log t\]</span>
+        </div>
+
+        <div class="indent">The terms <span class="math inline">\(\log v_1\)</span> and <span class="math inline">\(n\)</span> are constant, and <span class="math inline">\(\log t\)</span> varies. For those still reading, I assume some familiarity with linear graphs, often traditionally cast as <span class="math inline">\(y = m x + c\)</span> with <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> being the “gradient” and “constant” terms, respectively. This is the form of our log-log graph if we cast <span class="math inline">\(\log v\)</span> onto <span class="math inline">\(y\)</span>, <span class="math inline">\(\log v_1\)</span> onto <span class="math inline">\(c\)</span>, <span class="math inline">\(n\)</span> onto <span class="math inline">\(m\)</span>, and finally our <span class="math inline">\(\log t\)</span> scale onto the variable <span class="math inline">\(x\)</span> (reversing the order of the sum).</div>
+
+        <h2 class="section"><span class="section_label">7</span> What the frack is a slide-rule?</h2>
+        <div class="noindent">To get an understanding of how a slide-rule works, we present a gizmo below, which allows you to slide two bits: the top part with numbers, and the box with the vertical red line in it. The results can be interpreted either as an addition or a subtraction. You may need to be careful where you grab the bits — there is a dead zone around the vertical red line indicating the zero position of the top rule. Also clicking (or touch manipulation on mobile devices, which works on some better than others, depending on device and/or browser) within the box should move the “runner/glass” part, which gives the result of the calculation (or brackets the two terms of the subtraction). The number results presented below the vertical red lines are derived from the relative positions of the bits, along with the scaling factors. I am hoping the principle is “obvious". Assuming so, I will move on below to the slide-rule proper, with logarithmic scales enabling “easy” multiplication.</div>
+        <br />
+        <div class="image">
+          <h4>Adder/subtractor</h4>
+        </div>
+
+        <div id="addsub" style="position:relative;height:300px;font-size:12pt">
+
+          <br /><br />
+          <div class="strip">
+            <div id="mydiv" class="slide rule"></div>
+          </div>
+
+          <div class="strip">
+            <div id="ref" class="rule"></div>
+          </div>
+
+          <div id="zblk" class="zotblk">
+            <div class="zl"></div>
+            <div id="info"></div>
+          </div>
+
+          <div id="rblk" class="run">
+            <div class="zl"></div>
+            <div id="add"></div>
+          </div>
+
+           <script>
+            // build rules
+            var slide = document.getElementById("mydiv");
+            var fixed = document.getElementById("ref");
+            var addsub = document.getElementById("addsub")
+            slide.innerHTML = rule();
+            fixed.innerHTML = rule();
+            slide.style.left = fixed.offsetLeft + "px"; // line up slide with fixed rule
+
+            var zero = document.getElementById("zblk"); // set up zero line
+            zero.style.top = (slide.offsetTop - 10) + "px";
+
+            var runner = document.getElementById("rblk"); // set up runner/glass
+            runner.style.left = (fixed.offsetLeft + 340) + "px";
+            runner.style.top = (slide.offsetTop - 10) + "px";
+
+            readings(); // initial data for zero and runnerStart
+
+            var active = false;
+            var activeItem = slide;
+            var refItem = fixed;
+            var currentX = 0;
+            var currentY = 0;
+            var initialX, initialS;
+
+            slide.addEventListener("touchstart", slideStart, false);
+            runner.addEventListener("touchstart", runnerStart, false);
+            addsub.addEventListener("touchend", dragEnd, false);
+            addsub.addEventListener("touchmove", drag, false);
+
+            slide.addEventListener("mousedown", slideStart, false);
+            runner.addEventListener("mousedown", runnerStart, false);
+            addsub.addEventListener("mouseup", dragEnd, false);
+            addsub.addEventListener("mousemove", drag, false);
+          </script>
+
+        </div>
+<div class="indent">Below we present a “proper” slide-rule with logarithmic scales to give multiplication/division rather than addition/substrtaction. Notice first that there are two vertical red lines at 1 and 10. There is no 0 value. On a logarithmic scale, 0 is at minus infinity (far away to the left, if you believe in such things as infinity) on the rule. Next line up 1 on the top scale with 2 on the fixed scale: notice that the distance between 1 and 2 on the top scale is the same as between 2 and 4 on the bottom. Move the runner to 2 on the top scale, if you feel the need. So we have both 2 × 2 = 4 and 4 ÷ 2 = 2 represented. But what about 5 × 5 = 25? Yes, the runner shows the calculation, but the calculation has run off the end of the bottom rule. How can you get the runner back to the bottom scale? This is the reason I have included the line on 10. Lining it up with 5 on the bottom scale, and then the runner with 5 on the top scale gives the calculation we need up to a factor of 10 (0.500 × 5.00 = 2.50.</div>
+        <div class="image">
+          <h4>Multiplier/divider</h4>
+        </div>
+
+<div id="muldiv" style="position:relative;height:300px;font-size:12pt">
+          <br /><br />
+          <div class="strip">
+            <div id="slog" class="slide rule"></div>
+          </div>
+
+          <div class="strip">
+            <div id="flog" class="rule"></div>
+          </div>
+
+          <div id="onelog" class="zotblk">
+            <div class="zl"></div>
+            <div id="oneloginfo"></div>
+          </div>
+
+           <div id="tenlog" class="zotblk">
+            <div class="zl"></div>
+            <div id="tenloginfo"></div>
+          </div>
+
+         <div id="rlog" class="run">
+            <div class="zl"></div>
+            <div id="mulinfo"></div>
+          </div>
+
+          <script>
+            var slog = document.getElementById("slog");
+            var flog = document.getElementById("flog");
+            var muldiv = document.getElementById("muldiv");
+            slog.innerHTML = logrule();
+            flog.innerHTML = logrule();
+            slog.style.left = flog.offsetLeft + "px"; // line up slide with fixed rule
+
+            var one = document.getElementById("onelog"); // set up one line
+            one.style.top = (slog.offsetTop - 10) + "px";
+
+            var ten = document.getElementById("tenlog"); // set up one line
+            ten.style.top = (slog.offsetTop - 10) + "px";
+
+            var rlog = document.getElementById("rlog"); // set up runner/glass
+            rlog.style.left = (slog.offsetLeft + 340) + "px";
+            rlog.style.top = (slog.offsetTop - 10) + "px";
+
+            logreadings(); // initial position and data for one ten and rlog
+
+            active = false;
+            activeItem = slog;
+            refItem = flog;
+
+            slog.addEventListener("touchstart", slogStart, false);
+            rlog.addEventListener("touchstart", rlogStart, false);
+            muldiv.addEventListener("touchend", dragEnd, false);
+            muldiv.addEventListener("touchmove", drag, false);
+
+            slog.addEventListener("mousedown", slogStart, false);
+            rlog.addEventListener("mousedown", rlogStart, false);
+            muldiv.addEventListener("mouseup", dragEnd, false);
+            muldiv.addEventListener("mousemove", drag, false);
+
+          </script>
+
+
 </div>
 
-<div class="indent">The log-log combination gives straight line! The others are not so useful in this case. Also try changing the exponent (even negative values like for the <span class="math inline">\(1/f^{2}\)</span> behaviour described earlier, corresponding with <span class="math inline">\(n = -2\)</span>).</div>
+        <div class="standard">. . . [more to come, including circular slide-rules]</div>
 
-<div class="indent">We can understand what the log scales are doing here, if we apply logs to the equation <span class="math inline">\(v = v_1 t^n\)</span>:</div>
+      </article>
 
-<div class="standard">
-<span class="math display">\[\log v = \log (v_1 t^n) = \log v_1 + n \log t\]</span>
-</div>
+    </div>
+  </div>
 
-<div class="indent">The terms <span class="math inline">\(\log v_1\)</span> and <span class="math inline">\(n\)</span> are constant, and <span class="math inline">\(\log t\)</span> varies. For those still reading, I assume some familiarity with linear graphs, often traditionally cast as <span class="math inline">\(y = m x + c\)</span> with <span class="math inline">\(m\)</span> and <span class="math inline">\(c\)</span> being the “gradient” and “constant” terms, respectively. This is the form of our log-log graph if we cast <span class="math inline">\(\log v\)</span> onto <span class="math inline">\(y\)</span>, <span class="math inline">\(\log v_1\)</span> onto <span class="math inline">\(c\)</span>, <span class="math inline">\(n\)</span> onto <span class="math inline">\(m\)</span>, and finally our <span class="math inline">\(\log t\)</span> scale onto the variable <span class="math inline">\(x\)</span> (reversing the order of the sum).</div>
-
-<h2 class="section"><span class="section_label">7</span> What the frack is a slide-rule?</h2>
-<div class="noindent">To get an understanding of how a slide-rule works, we present a gizmo below, which allows you to slide two bits: the top part with numbers, and the box with the vertical red line in it. The results can be interpreted either as an addition or a subtraction. You may need to be careful where you grab the bits — there is a dead zone around the vertical red line indicating the zero position of the top rule. Also clicking (I haven't tried touch manipulation on a mobile device yet) within the box should move the “runner/glass” part, which gives the result of the calculation (or brackets the two terms of the subtraction). The number results presented below the respectively vertical red lines are derived from the relative positions of the bits, along with the scaling factors. I am hoping the principle is “obvious". Assuming so, I will move on below to the slide-rule proper, with logarithmic scales enabling “easy” multiplication.</div>
-
-<div class="image"><h4>Adder/subtractor</h4></div>
-
-<div style="position:relative;height:400px;font-size:12pt">
-
-<br /><br />
-<div class="strip">
-<div id="mydiv"></div>
-</div>
-
-<div class="strip">
-<div id="ref"></div>
-</div>
-
-<div id="zblk"><div class="zl"></div><div id="info"></div></div>
-
-<div id="rblk"><div class="zl"></div><div id="add"></div></div>
-
-<div id="textinfo"></div>
-
-<script>
-    // build rules
-    var slide = document.getElementById("mydiv");
-    var fixed = document.getElementById("ref");
-    slide.innerHTML = rule();
-    fixed.innerHTML = rule();
-    slide.style.left = fixed.offsetLeft + "px"; // line up slide with fixed rule
-
-    var zero = document.getElementById("zblk"); // set up zero line
-    zero.style.left = fixed.offsetLeft + "px";
-    zero.style.top = (slide.offsetTop - 10) + "px";
-
-    var runner = document.getElementById("rblk"); // set up runner/glass
-    runner.style.left = (fixed.offsetLeft + 340) + "px";
-    runner.style.top = (slide.offsetTop - 10) + "px";
-
-    readings(); // initial data for zero and runnerStart
-
-    var active = false;
-    var activeItem = slide;
-    var currentX = 0;
-    var currentY = 0;
-    var initialX, initialS, initialR;
-
-    slide.addEventListener("touchstart", slideStart, false);
-    runner.addEventListener("touchstart", runnerStart, false);
-    document.addEventListener("touchend", dragEnd, false);
-    document.addEventListener("touchmove", drag, false);
-
-    slide.addEventListener("mousedown", slideStart, false);
-    runner.addEventListener("mousedown", runnerStart, false);
-    document.addEventListener("mouseup", dragEnd, false);
-    document.addEventListener("mousemove", drag, false);
-
-</script>
-
-</div>
-
-<div class="image"><h4>Multiplier/divider</h4></div>
-
-<div class="standard">. . . [more to come]</div>
-
-</article>
-
-</div>
-</div>
-
-<footer>
-  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
-</footer>
+  <footer>
+    <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
+  </footer>
 </body>
+
 </html>
