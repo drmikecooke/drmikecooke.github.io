@@ -40,9 +40,6 @@
 .slide {
   position: absolute;
   z-index: 9;
-  text-align: center;
-  white-space: nowrap;
-  user-select: none;
 }
 
 .strip {
@@ -56,10 +53,39 @@
 .rule {
   display: inline-block;
   background-color: #f1f1f1;
-  text-align: center;
+  white-space: nowrap;
   user-select: none;
 }
 
-#info {
-  display: block;
+.circlearea {
+  position: relative;
+  width: 510px;
+  height: 510px;
+  margin: auto;
+}
+
+.circlefixed {
+  position:relative;
+  width: 510px;
+  height: 510px;
+  border: 5px solid green;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: inline-block;
+  user-select: none;
+}
+.circleslide {
+  position:relative;
+  z-index: 30;
+  width: 380px;
+  height: 380px;
+  background-color: lightblue;
+  border-radius: 50%;
+  user-select: none;
+}
+.rulearea {
+  position:relative;
+  height:300px;
+  text-align:center;
+  font-size:12pt;
 }
