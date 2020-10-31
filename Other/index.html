@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <link rel="stylesheet" href="otherdex.css">
+  <title>Mike Cooke other</title>
+</head>
+<body>
+
+  <header>
+    <h1>Mike Cooke other</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html" style="float:right">More about me</a>
+    <a href="../index.html">Home</a>
+    <a href="ST/2020.html">Semiconductor Today</a>
+    <a onclick="loadDoc('tests/width_content.html','demo');document.title='Other: View report'">View report</a>
+    <a href="tests/AJAX/cd.html">AJAX cd</a>
+    <a onclick="loadDoc('tests/AJAX/info_content.html','demo');document.title='Other: AJAX info'">AJAX info</a>
+    <a href="Factor/Factor.html">Factorization js</a>
+  </nav>
+
+  <div class="row">
+
+    <div class="lcolumn">
+      <div id="demo">
+     <script>
+      loadDoc("tease.html","demo");
+
+      function loadDoc(file,div) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById(div).innerHTML =
+            this.responseText;
+          }
+        };
+        xhttp.open("GET", file, true);
+        xhttp.send();
+      }
+    </script>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
+</footer>
+
+</body>
