@@ -144,7 +144,7 @@ function rule() {
     function relXY(e) {
       var rect = circle.getBoundingClientRect();
       var X,Y;
-      if(e.type=="touchstart" || e.type=="touchmove") { [X, Y] = [e.touches[0].offsetX, e.touches[0].offsetY] } else { [X,Y] = [e.clientX, e.clientY] }
+      if(e.type=="touchstart" || e.type=="touchmove") { [X, Y] = [e.touches[0].clientX, e.touches[0].clientY] } else { [X,Y] = [e.clientX, e.clientY] }
       return [X - rect.left, Y - rect.top];  // [x, y] position within the element.
    }
 
