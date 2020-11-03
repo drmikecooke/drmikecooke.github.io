@@ -26,7 +26,7 @@ body {
 }
 
 .left-card {
-  background-color: white;
+  background-color: beige;
   padding: 20px;
   margin: 10px;
 }
@@ -44,6 +44,7 @@ height: 250px;
 padding: 20px;
 margin: 10px;
 vertical-align: top;
+text-align: center;
 }
 
 figcaption {
@@ -116,12 +117,6 @@ nav a:hover {
 .right-card {
   background-color: white;
   width: 250px;
-  padding: 20px;
-  margin: 10px;
-}
-
-.left-card {
-  background-color: #ccc;
   padding: 20px;
   margin: 10px;
 }

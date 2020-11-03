@@ -75,10 +75,12 @@ class pflist {
     }
     
     table(numcol) {
-    	var dslice = Math.ceil(this.nlist.length/numcol), tspread='', i;
+    	var dslice = Math.ceil(this.nlist.length/numcol), tspread='<div style="display:inline-block;margin:auto;">', i;
     	for (i= 0; i < this.nlist.length; i=i+dslice) {
+                tspread += "<div style='float:left;padding:6px;'>";
     		tspread += tcol(this.nlist.slice(i,i+dslice),this.plist.slice(i,i+dslice),this.ilist.slice(i,i+dslice));
+                tspread += "</div>"
     	}    	
-    	return tspread;       
+    	return tspread+"</div>";       
     }
 }

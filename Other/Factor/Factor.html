@@ -16,7 +16,7 @@
 </header>
 
 <nav>
-	<a href="../../index.html" style="float:right">More about me</a>
+  <a href="../../index.html" style="float:right">More about me</a>
   <a href="../otherdex.html">Home</a>
   <a href="../ST/2020.html">Semiconductor Today</a>
   <a href="../tests/width.html">View report</a>
@@ -28,10 +28,6 @@
 <div class="item">
 <article class="left-card" style="background-color: white; text-align: center;">
 
-<button type="button" style="margin-bottom: 20px; float: left;"
-onclick="document.getElementById('demo').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table(Number(document.getElementById('colnum').value))">
-Generate prime<br/>factor table.</button>
-
 <h1 style="margin-bottom: 20px;">Prime factorisation</h1>
 
 <table style="margin-left: auto; margin-right: auto; margin-bottom: 20px; font-size: 1em;">
@@ -41,9 +37,11 @@ Generate prime<br/>factor table.</button>
 <td><input id="colnum" class="label" type="number" size="1" value="5" style="font-size: 1em; text-align: right;"></td></tr>
 </table>
 
+<button type="button" style="margin-bottom: 20px;"
+onclick="document.getElementById('factors').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table(Number(document.getElementById('colnum').value))">
+Generate prime<br/>factor table.</button>
 
-
-<div id="demo" style="margin-bottom: 20px;"></div>
+<div id="factors" style="margin-bottom: 20px;"></div>
 </article>
 </div>
 </div>

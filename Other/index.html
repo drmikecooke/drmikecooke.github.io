@@ -4,32 +4,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="Content-Style-Type" content="text/css" />
-  <link rel="stylesheet" href="otherdex.css">
+  <link id="otherdex.css" rel="stylesheet" href="otherdex.css">
   <title>Mike Cooke other</title>
-</head>
-<body>
-
-  <header>
-    <h1>Mike Cooke other</h1>
-  </header>
-
-  <nav>
-    <a href="../index.html" style="float:right">More about me</a>
-    <a href="../index.html">Home</a>
-    <a href="ST/2020.html">Semiconductor Today</a>
-    <a onclick="loadDoc('tests/width_content.html','demo');document.title='Other: View report'">View report</a>
-    <a href="tests/AJAX/cd.html">AJAX cd</a>
-    <a onclick="loadDoc('tests/AJAX/info_content.html','demo');document.title='Other: AJAX info'">AJAX info</a>
-    <a href="Factor/Factor.html">Factorization js</a>
-  </nav>
-
-  <div class="row">
-
-    <div class="lcolumn">
-      <div id="demo">
-     <script>
-      loadDoc("tease.html","demo");
-
+<script id="index.js">
       function loadDoc(file,div) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -39,10 +16,64 @@
           }
         };
         xhttp.open("GET", file, true);
+        xhttp.setRequestHeader('Cache-Control', 'no-cache');
         xhttp.send();
       }
+function loadError(oError) {
+  throw new URIError("The file " + oError.target.id + " didn't load correctly.");
+}
+
+function headScript(url) {
+  var id = url.split( "/" ).pop();
+  if (!document.getElementById(id)) {
+    var newScript = document.createElement("script");
+    document.head.appendChild(newScript);
+    newScript.onerror = loadError;
+    newScript.type = 'text/javascript';
+    newScript.async = true;  
+    newScript.src = url;
+    newScript.id = id;
+  }
+}
+
+function css(url) {
+  var id = url.split( "/" ).pop();
+  if (!document.getElementById(id)) {
+    var link  = document.createElement('link');
+    link.onerror = loadError;
+    link.id   = id;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = url;
+    link.media = 'all';
+    document.head.appendChild(link);
+  }
+}  
+</script>
+</head>
+<body>
+
+  <header>
+    <h1>Mike Cooke other</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html" style="float:right">More about me</a>
+    <a onclick="loadDoc('tease.html','article')">Home</a>
+    <a onclick="headScript('tests/width.js');loadDoc('tests/width_content.html','article');document.title='Other: View report'">View report</a>
+    <a onclick="css('tests/AJAX/cd.css');headScript('tests/AJAX/cda.js');loadDoc('tests/AJAX/cd_content.html','article');document.title='Other: AJAX cd'">AJAX cd</a>
+    <a onclick="loadDoc('tests/AJAX/info_content.html','article');document.title='Other: AJAX info'">AJAX info</a>
+    <a onclick="headScript('Factor/csieve.js');loadDoc('Factor/Factor_content.html','article');document.title='Other: Factorization js'">Factorization js</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="item">
+     <article id="article" class="left-card">
+     <script>
+      loadDoc("tease.html","article");
     </script>
-    </div>
+    </article>
   </div>
 
 </div>

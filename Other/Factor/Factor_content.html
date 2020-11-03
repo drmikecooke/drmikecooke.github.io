@@ -1,0 +1,16 @@
+<div style="background-color: white; text-align: center;">
+<h1 style="margin-bottom: 20px;">Prime factorisation</h1>
+
+<table style="margin: auto; margin-bottom: 20px; font-size: 1em;border:0;">
+<tr><td style="display: block; text-align: right;">Maximum number for sieving:</td>
+<td><input id="nmax" class="label" type="number" size="1" value="10" style="font-size: 1em; text-align: right;"></td></tr>
+<tr><td style="display: block; text-align: right;">Number of columns:</td>
+<td><input id="colnum" class="label" type="number" size="1" value="5" style="font-size: 1em; text-align: right;"></td></tr>
+</table>
+
+<button type="button" style="margin-bottom: 20px;"
+onclick="document.getElementById('factors').innerHTML = (new pflist(Number(document.getElementById('nmax').value))).table(Number(document.getElementById('colnum').value))">
+Generate prime<br/>factor table.</button>
+
+<div id="factors" style="margin-bottom: 20px;"></div>
+</div>
