@@ -1,85 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Other: Index</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="Content-Style-Type" content="text/css" />
-  <link id="otherdex.css" rel="stylesheet" href="otherdex.css">
-  <title>Mike Cooke other</title>
-<script id="index.js">
-      function loadDoc(file,div) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById(div).innerHTML =
-            this.responseText;
-          }
-        };
-        xhttp.open("GET", file, true);
-        xhttp.setRequestHeader('Cache-Control', 'no-cache');
-        xhttp.send();
-      }
-function loadError(oError) {
-  throw new URIError("The file " + oError.target.id + " didn't load correctly.");
-}
-
-function headScript(url) {
-  var id = url.split( "/" ).pop();
-  if (!document.getElementById(id)) {
-    var newScript = document.createElement("script");
-    document.head.appendChild(newScript);
-    newScript.onerror = loadError;
-    newScript.type = 'text/javascript';
-    newScript.async = true;  
-    newScript.src = url;
-    newScript.id = id;
-  }
-}
-
-function css(url) {
-  var id = url.split( "/" ).pop();
-  if (!document.getElementById(id)) {
-    var link  = document.createElement('link');
-    link.onerror = loadError;
-    link.id   = id;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = url;
-    link.media = 'all';
-    document.head.appendChild(link);
-  }
-}  
-</script>
+  <link id="index.css" rel="stylesheet" href="index.css">
+  <script id="index.js" src="index.js"></script>
 </head>
 <body>
-
-  <header>
-    <h1>Mike Cooke other</h1>
-  </header>
+  <header>Mike Cooke other</header>
 
   <nav>
-    <a href="../index.html" style="float:right">More about me</a>
-    <a onclick="loadDoc('tease.html','article')">Home</a>
-    <a onclick="headScript('tests/width.js');loadDoc('tests/width_content.html','article');document.title='Other: View report'">View report</a>
-    <a onclick="css('tests/AJAX/cd.css');headScript('tests/AJAX/cda.js');loadDoc('tests/AJAX/cd_content.html','article');document.title='Other: AJAX cd'">AJAX cd</a>
-    <a onclick="loadDoc('tests/AJAX/info_content.html','article');document.title='Other: AJAX info'">AJAX info</a>
-    <a onclick="headScript('Factor/csieve.js');loadDoc('Factor/Factor_content.html','article');document.title='Other: Factorization js'">Factorization js</a>
+    <a href="../index.html" style="float:right">Back to base</a>
+    <a onclick="goto('index.json')">Index</a>
+    <a onclick="goto('tests/width.json')">View report</a>
+    <a onclick="goto('tests/AJAX/cd.json')">AJAX XML</a>
+    <a onclick="goto('tests/AJAX/info.json')">AJAX text</a>
+    <a onclick="goto('json/json.json')">AJAX JSON</a>
+    <a onclick="goto('Factor/Factor.json')">Factorization js</a>
   </nav>
 
   <div class="container">
-
     <div class="item">
      <article id="article" class="left-card">
      <script>
-      loadDoc("tease.html","article");
+      loadDoc("tease.htm","article");
     </script>
     </article>
   </div>
 
 </div>
 
-<footer>
-  <h2><a href="mailto:mike@mikecookefreelance.com">mike@mikecookefreelance.com</a></h2>
-</footer>
+<footer><script src="/footer.js"></script></footer>
 
 </body>

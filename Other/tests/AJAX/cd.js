@@ -1,16 +1,9 @@
 function loadTable() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xhttp.open("GET", "tests/AJAX/cd_catalog.xml", true);
-  xhttp.send();
+  loadAJAX("tests/AJAX/cd_catalog.xml", cbXML, 'document');
 }
-function myFunction(xml) {
+function cbXML(e) {
   var i;
-  var xmlDoc = xml.responseXML;
+  var xmlDoc = e.target.response;
   var table="<tr><th class='border'>Artist</th><th class='border'>Title</th></tr>";
   var x = xmlDoc.getElementsByTagName("CD");
   for (i = 0; i <x.length; i++) { 
