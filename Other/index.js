@@ -13,9 +13,10 @@ function goto(file) {
 function cbGoto(e) {
   var loads = e.target.response;
   document.title = "Other: " + loads.title;
-  if(loads.htm) {loadDoc(loads.htm,'article')}
-  if(loads.css) {css(loads.css)}
-  if(loads.js) {script(loads.js)}
+  document.getElementById("atitle").innerHTML = "<h3>" + loads.title + "</h3>";
+  if(loads.htm) {loadDoc(loads.htm,'abody')}
+  if(loads.css) {css(loads.css)+'?'+(new Date()).getTime()}
+  if(loads.js) {script(loads.js+'?'+(new Date()).getTime())}
 }
 
 function makeCbDiv(div) {
@@ -53,4 +54,20 @@ function css(url) {
   link.href = url;
   link.media = 'all';
   document.head.appendChild(link);
+}
+
+function addNav(url) {
+  loadAJAX(url, cbAddNav, 'json');
+}
+
+function cbAddNav(e) {
+  var loads = e.target.response;
+  var url = e.target.responseURL;
+  document.getElementsByTagName("nav")[0].innerHTML += '<a onclick="goto(\''+ url +'\')">' + loads.title + '</a>';
+}
+
+function addNavs(array) {
+  for(var i=0; i<array.length; i++) {
+    addNav(array[i]);
+  }
 }

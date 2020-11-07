@@ -3,22 +3,18 @@ function myFunction(arr) {
   var i;
   for(i = 0; i < arr.length; i++) {
     out += '<a href="' + arr[i].url + '">' + 
-    arr[i].display + '</a><br>';
+    arr[i].display + '</a><br/>';
   }
-  document.getElementById("id01").innerHTML = out;
-}
-function getJSON() {
-var xmlhttp = new XMLHttpRequest();
-var url = "json/myTutorials.txt";
-
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-    myFunction(myArr);
-  }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+  document.getElementById("abody").innerHTML = out;
 }
 
-getJSON();
+function getJSON1() {
+  loadAJAX("json/myTutorials.txt", cbJSON, 'json')
+}
+
+function cbJSON(e) {
+  var response = e.target.response;
+  myFunction(response);
+}
+
+getJSON1();
