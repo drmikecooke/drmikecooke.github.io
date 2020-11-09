@@ -109,6 +109,7 @@ h3 {
 
 th,td {
   padding: 5px;
+  vertical-align: baseline;
 }
 
 table {
