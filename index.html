@@ -1,81 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-<link rel="stylesheet" href="index.css">
- <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16"> 
-<title>Mike Cooke’s projects</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16"> 
+  <title>Mike Cooke’s projects</title>
+  <script src="/lcard.js"></script>
 </head>
 <body>
-
-<header>
-  <h1>Mike Cooke’s projects</h1>
-</header>
-
-<nav>
-	<a href="#" style="float:right">More about me</a>
-  <a href="#">Home</a>
-  <a href="eT/fi/fi.html">Infection delays</a>
-  <a href="eT/eTP.html"><span style="font-family: Times;"><strong>e<i><sup>x</sup>ponential</i></strong></span> <span style="font-family: Arial Black;">Times</span></strong></a>
-  <a href="eT/SIR/SIR.html">SIR model and covid-19</a>
-  <a href="ST/2020.html">Semiconductor Today</a>
-  <a href="Other">Other stuff by me</a>  
-</nav>
+<header>Mike Cooke’s projects</header>
+<nav><script src="/nav.js"></script></nav>
 
 <div class="row">
 
  <div class="lcolumn">
 
-<figure>
-<a href = "eT/fi/fi.html">
-<figcaption><strong>Infection delays</strong></figcaption>
-<img src="eT/fi/images/2dlog.svg" alt="2dlog.svg">
-</a>
-</figure>
-
-<figure>
-<a href = "eT/SIR/SIR.html">
-<figcaption><strong>SIR model and covid-19</strong></figcaption>
-<img src="eT/SIR/images/SIR.svg" alt="SIR.svg">
-</a>
-</figure>
-
-<figure>
-<a href = "eT/eTP.html">
-<figcaption><span style="font-family: Times;"><strong>e<i><sup>x</sup>ponential</i></strong></span> <span style="font-family: Arial Black;">Times</span></figcaption>
-<img src="eT/burn.jpg" alt="environment">
-</a>
-</figure>
-
-<figure>
-<a href = "ST/2020.html">
-<figcaption><strong>My writing at</strong></figcaption>
-<img src="ST/STbanner.svg" alt="STbanner.svg">
-</a>
-</figure>
+   <script>
+     lcard("/eT/fi/fi.html", "Infection delays", "/eT/fi/images/2dlog.svg");
+     lcard("/eT/SIR/SIR.html", "SIR model and covid-19", "/eT/SIR/images/SIR.svg");
+     lcard("/eT/eTP.html", '<span class="exponential">e<em><sup>x</sup>ponential</em></span> <span class="arialblack">Times</span>', "eT/burn.jpg");
+     lcard("ST/2020.html", "My writing at", "/ST/STbanner.svg");
+   </script>
 
 </div>
 
 <div class="rcolumn">
-    <div class="right-card">
+    <div class="cardw-250px">
       <h2>Who am I?</h2>
-      <img src="mike.jpg" alt="" width="100%">
+      <img src="mike.jpg" alt="" style="width:100%;">
       <p>I am a freelance technology journalist who has worked in the semiconductor and advanced technology sectors since 1997.</p>
     </div>
     
      
-    <div class="right-card">
+    <div class="cardw-250px">
       <h3>Other stuff by me</h3>
-      <p>I frequently contribute to the online magazine <a href="http://www.semiconductor-today.com/"><em>Semiconductor Today</em></a>.      
-	 </div>
+      <p>I frequently contribute to the online magazine <a href="http://www.semiconductor-today.com/"><em>Semiconductor Today</em></a>.</p>
+    </div>
   </div>
-  
- 
-
 </div>
 
 <footer><script src="/footer.js"></script></footer>
-
+    
 </body>
