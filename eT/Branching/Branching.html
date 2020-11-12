@@ -27,7 +27,7 @@
 <div class="standard">
 <span id="magicparlabel-9"></span>Many growth processes proceed by ‘branching’. For example, bacteria split in two (‘binary fission’) at regular or irregular intervals, depending on the environmental conditions. Let us imagine a lonely bacterium with an infinite supply of all the nutrients it needs to grow and become two after about 20 minutes (e.g. E coli). In an hour there are three splittings and our bacterium has become 2×2×2 = 2<sup>3</sup> = 8 bacteria. In 24 hours there have been 3×24 = 72 splittings, giving 272, or around 4.7 sextillion (4.7×10<sup>21</sup> according to my calculator; sextillion is the name for 10<sup>21</sup>, according to most dictionaries) bacteria. That seems a lot, but bacteria are very small, usually of the order of 1 micrometre (1µm = 10<sup>−6</sup>m). So let’s imagine that our bacteria has a volume 1µm<sup>3</sup> = 10<sup>−18</sup>m<sup>3</sup>. So in volume terms we have 4722m<sup>3</sup> of bacteria. If the infinite source of nutrients was your body, it would be gone. Fortunately for most humans, biology has evolved mechanisms to fight back against unfriendly bacteria, and control the ‘friendly’ ones we’re told about in TV adverts (at least in the UK).
 </div>
-<div class="image">
+<div class="arial">
 <h4 class="subsubsection_">Branching demo</h4>
 <div class="label">
 <table>
@@ -35,12 +35,11 @@
 <tr><td style="text-align: right;">Generations: </td><td><input id="generations" class="label" size="1" value="3" style="font-size: 1em; text-align: right;"></td></tr>
 </table>
 </div>
+<div class="text-center"><button type="button" onclick="tree()">Tree</button></div>
 
-<button type="button" onclick="tree()" style="margin-bottom: 20px">Tree</button>
 
-<div id="variables" style="margin-bottom: 10px"></div>
-
-<svg id="svg" width="50%" style="display: inline-block; vertical-align: middle;"></svg>
+<div id="variables" class="text-center"></div>
+<div class="text-center"><svg id="svg" width="50%"></svg></div>
 </div>
 
 <h2 id="wascally-wabbits" class="section_"><span id="magicparlabel-35"></span>Wascally wabbits</h2>
@@ -67,8 +66,8 @@
 <span id="magicparlabel-19"></span>There is a fossil deposit from a “natural nuclear fission reactor” in Oklo, Gabon, which is thought to have run for a few hundred thousand years about 1.7 billion years ago. The thermal power output during the reaction is estimated at 100kW. The fissile material is believed to have been 235-isotope uranium.
 </div>
 
-<div class="image">
-<h4 class="subsubsection_">Fission graph</h4>
+<div class="arial">
+<h4>Fission graph</h4>
 <div class="label">
 <table>
 <tr><td style="text-align: right;">Average branching:</td><td><input id="fbranching" class="label" size="1" value="2" style="font-size: 1em; text-align: right;"></td></tr>
@@ -76,15 +75,18 @@
 </table>
 </div>
 
-<button type="button" onclick="fissionGraph()" style="margin-bottom: 20px">Graph</button>
+<div class="text-center">
+  <button type="button" onclick="fissionGraph()" style="margin-bottom: 20px">Graph</button>
+  <div id="fvariables" style="margin-bottom: 10px"></div>
 
-<div id="fvariables" style="margin-bottom: 10px"></div>
+
+
 
 <div class="label">
 <table id="neutable" style="display: inline-block; vertical-align: middle;"></table>
 <svg id="svgf" width="50%" style="display: inline-block; vertical-align: middle;"></svg>
 </div>
-
+</div>
 </div>
 
 </article>

@@ -1,19 +1,3 @@
-.container {
-  display: flex;
-  background-color: #ddd;
-  padding: 10px;
-}
-
-
-.item { 
-  flex-grow: 1;
-  margin: 0px;
-  vertical-align: top;
-  padding: 0px;
-}
-
-.card { background-color: white; padding: 20px; margin: 10px; }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" media="screen" href="../eT.css">
   <link rel="stylesheet" media="print" href="../eTp.css">
+  <link rel="stylesheet" media="screen" href="../hidden.css">
   <title>eT: SIR models and Covid-19 spread</title>
   <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -30,8 +15,7 @@
   <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header> 
   <nav><script src="/eT/nav.js"></script></nav>
 
-<button id="sA" onclick="showAll()">Show all mathematical details</button> <button id="hA" onclick="hideAll()">Hide all mathematical details</button>
-
+  <button id="sA" onclick="showAll()" class="tabbutton">Show all mathematical details</button> <button id="hA" onclick="hideAll()" class="tabbutton">Hide all mathematical details</button></div>
 
 <div class="container">
 <div class="item">

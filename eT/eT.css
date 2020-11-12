@@ -77,20 +77,6 @@ sub { top: 0.4em; }
 
 .content { padding: 20px; background-color: #f1f1f1; }
 
-/* css for hidden regions */
-details { background-color: #f1f1f1; margin-bottom: 10px; }
-
-summary {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background-color: #777;
-  color: white;
-  padding: 10px;
-  font-size: 18px;
-}
-
-summary:hover { background-color: #555; }
-
 button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -98,6 +84,8 @@ button {
   padding: 10px;
   color: white;
   background-color: #555;
+  text-align: center;
+  margin: 10px;
 }
 
 p { font-size: 18px; line-height: 1.4em; margin-top: 10px; }
@@ -122,7 +110,7 @@ article h1, h2, h3, h4 {
 article h1 { font-size: 2.4em; text-align: center; }
 article h2 { font-size: 1.8em; text-align: left; }
 article h3 { font-size: 1.5em; text-align: center; }
-article h4 { font-size: 1.3em; text-align: left; }
+article h4 { font-size: 1.3em; text-align: center; }
 
 article th, td {
   padding: 3px;
@@ -149,9 +137,9 @@ article div.text-center {
   text-align: center;
 }
 
-article .arialblack {
-  font-family: "Arial Black", Gadget, sans-serif;
-}
+article .arialblack { font-family: "Arial Black", Gadget, sans-serif; }
+
+article .arial { font-family: Arial, Helvetica, sans-serif; }
 
 .strip { display: block; width: 100%; padding: 0px; margin: 0px; }
 
