@@ -1,26 +1,43 @@
 function Description(listName,listString) {
-    this.n = listName;
-    this.l = setList(listString);
+	this.n = listName;
+	this.l = setList(listString);	
 }
 
-function setList(string) { return Array.from(new Set(string.split(","))) }
+function removeDuplicateUsingSet(arr) {
+    let unique_array = Array.from(new Set(arr))
+    return unique_array
+}
 
-function makeSizeText(dn, ds, rn, rs) {
+function setList(string) {
+	let list = removeDuplicateUsingSet(string.split(","));
+	return list
+}
+
+function sizeText(dn,rn,tn) {
+
+}
+
+function removeText(t) {
+	document.getElementById(t).innerHTML = "";
+}
+
+function makeSizeText(dn, ds, rn, rs, tn) {
   let d = new Description (dn, ds);
   let dsize = d.l.length;
 
   let r = new Description(rn, rs);
   let rsize = r.l.length;
   
-  let fsize = Math.pow(rsize, dsize);
+  fsize = Math.pow(rsize, dsize);
      
-  // Assemble html string
+  // Assemble string
   
-  return "|" + d.n + "| = " + dsize + ", |" + r.n + "| = " + rsize +
-      ", |" + r.n + "<sup>" + d.n + "</sup>| = |" + r.n + "|<sup>|" + d.n +"|</sup> = " +
-      rsize + "<sup>" + dsize + "</sup> = " + fsize;
+  vartext = "|" + d.n + "| = " + dsize.toString() + ", |" + r.n + "| = " + rsize.toString() + ", |" + r.n + "<sup>" + d.n + "</sup>| = |"+ r.n + "|<sup>|" + d.n +"|</sup> = ";
+  vartext += rsize.toString() + "<sup>" + dsize.toString() + "</sup> = " + fsize.toString();
+  
+  document.getElementById(tn).innerHTML = vartext;
+	
 }
-
 
 function headText(hname, habbr, dlist) {
 	let t = "<caption>"+ hname + "</caption>" + "<tr><th>" + habbr + "</th>";

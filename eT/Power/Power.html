@@ -82,13 +82,13 @@
             </table>
           </div>
           <div class="text-center">
-            <button type="button" onclick="makeSizeText('D',document.getElementById('domain').value, 'R', document.getElementById('range').value, 'nfunctions')">Calculate function list size</button>
-            <button type="button" onclick="removeText('nfunctions')">Remove</button> 
+            <button type="button" onclick="document.getElementById('nfunctions').innerHTML = makeSizeText('D',document.getElementById('domain').value, 'R', document.getElementById('range').value)">Calculate function list size</button>
+            <button type="button" onclick="document.getElementById('nfunctions').innerHTML = ''">Remove</button> 
           </div>
           <div id="nfunctions" class="text-center"></div>
           <div class="text-center">
             <button type="button" onclick="createTable(document.getElementById('domain').value, document.getElementById('range').value, 'functions')">Generate function list</button>
-            <button type="button" onclick="removeText('functions')">Remove</button> 
+            <button type="button" onclick="document.getElementById('functions').innerHTML = ''">Remove</button> 
           </div>
           <table id="functions" class="center"></table>          
         </div>
@@ -107,13 +107,13 @@
             </table>
           </div>
           <div class="text-center">
-            <button type="button" onclick="makeSizeText('Set', document.getElementById('set').value, '5', '0, 1', 'nsubsets')">Calculate subset list size</button>
-            <button type="button" onclick="removeText('nsubsets')">Remove</button>
+            <button type="button" onclick="document.getElementById('nsubsets').innerHTML = makeSizeText('Set', document.getElementById('set').value, '5', '0, 1')">Calculate subset list size</button>
+            <button type="button" onclick="document.getElementById('nsubsets').innerHTML = ''">Remove</button>
           </div>
           <div id="nsubsets" class="text-center"></div>
           <div class="text-center">
             <button type="button" onclick="createTable(document.getElementById('set').value, '', 'subsets')">Generate subset list</button> 
-            <button type="button" onclick="removeText('subsets')">Remove</button>
+            <button type="button" onclick="document.getElementById('subsets').innerHTML = ''">Remove</button>
           </div>          
           <table id="subsets" class="center"></table>          
         </div>
