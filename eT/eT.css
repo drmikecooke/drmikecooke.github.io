@@ -56,13 +56,6 @@ nav a:hover { background-color: #ddd; color: black; }
 
 .card { background-color: white; padding: 20px; margin: 10px; }
 
-/* Cards: 250px wide or high */
-.cardw-250px { background-color: white; width: 250px; padding: 20px; margin: 10px; }
-
-.cardh-250px { display: inline-block; background-color: white; height: 250px; padding: 20px; margin: 10px; vertical-align: baseline;}
-
-img.h-180px {height: 180px; margin-top: 6px;}
-
 /* Prevent line-height variation */
 sup, sub {
   font-size:75%;
@@ -93,8 +86,6 @@ p { font-size: 18px; line-height: 1.4em; margin-top: 10px; }
 h2 { margin-bottom: 10px; }
 
 input { background-color: #ddd; }
-
-.sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; top: -0.5em }
 
 article {
   font-family: "Times New Roman", Times, serif;
