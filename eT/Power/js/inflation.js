@@ -22,8 +22,6 @@ function inflationGraph(inf, icost) {
 
   svgtxt += svgText(325, 325, "black", "middle", "1em", "Year");
 
-  document.getElementById("costtable").innerHTML = tabletext;
-
   var maxcost = Math.max(costs[0], costs[10]);
   var maxlog = Math.log(maxcost) / Math.log(10);
   var pow10 = Math.pow(10, Math.floor(maxlog));
@@ -67,11 +65,11 @@ function svgText(x1, y1, c, a, s, t) {
 }
 
 function inflationTable(inf,icost) {
-    var tarray = ["Inflation = " + inf.toString() + "% | Initial cost = $" + parseFloat(icost).toFixed(2)]; // caption
+    var tarray = [["Inflation = " + inf.toString() + "% | Initial cost = $" + parseFloat(icost).toFixed(2)]]; // caption
     tarray.push(["Year", "Cost"]); // headings
     var cost = icost
-    for (n = 0; n < 11; n++) { // data
-        tarray.push([n,Number(cost).toFixed(2)]);
+    for (var n = 0; n < 11; n++) { // data
+        tarray.push([n.toString(),Number(cost).toFixed(2)]);
         cost = cost * (1 + inf / 100);
     }
     return tarray
