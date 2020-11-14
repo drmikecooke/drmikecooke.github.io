@@ -1,59 +1,18 @@
-function Description(listName,listString) {
-	this.n = listName;
-	this.l = setList(listString);	
-}
+function setList(string) { return Array.from(new Set(string.split(","))) } // removes duplicate elements
 
-function removeDuplicateUsingSet(arr) {
-    let unique_array = Array.from(new Set(arr))
-    return unique_array
-}
-
-function setList(string) {
-	let list = removeDuplicateUsingSet(string.split(","));
-	return list
-}
-
-function sizeText(dn,rn,tn) {
-
-}
-
-function removeText(t) {
-	document.getElementById(t).innerHTML = "";
-}
-
-function makeSizeText(dn, ds, rn, rs, tn) {
-  let d = new Description (dn, ds);
-  let dsize = d.l.length;
-
-  let r = new Description(rn, rs);
-  let rsize = r.l.length;
-  
-  fsize = Math.pow(rsize, dsize);
+function makeSizeText(dn, ds, rn, rs) {
+  let dsize = setList(ds).length;
+  let rsize = setList(rs).length;  
+  let fsize = Math.pow(rsize, dsize);
      
-  // Assemble string
-  
-  vartext = "|" + d.n + "| = " + dsize.toString() + ", |" + r.n + "| = " + rsize.toString() + ", |" + r.n + "<sup>" + d.n + "</sup>| = |"+ r.n + "|<sup>|" + d.n +"|</sup> = ";
-  vartext += rsize.toString() + "<sup>" + dsize.toString() + "</sup> = " + fsize.toString();
-  
-  document.getElementById(tn).innerHTML = vartext;
-	
+  // Assemble html string  
+  return "|" + dn + "| = " + dsize + ", |" + rn + "| = " + rsize +
+      ", |" + rn + "<sup>" + dn + "</sup>| = |" + rn + "|<sup>|" + dn +"|</sup> = " +
+      rsize + "<sup>" + dsize + "</sup> = " + fsize;
 }
 
-function headText(hname, habbr, dlist) {
-	let t = "<caption>"+ hname + "</caption>" + "<tr><th>" + habbr + "</th>";
-	if (dlist=="Subset") { t += "<th>" + dlist + "</th>"; }
-	else {
-	var i;
-	for (i = 0; i < dlist.length; i++) {
-  	t += "<th>" + dlist[i] + "</th>";
-} 
-	}	
-  t += "</tr>";
-	return t;
-}
-
-function createTable(ds,rs,ts) {
-  var domainlist, rangelist, vartext, tabletext;
+function functionTable(ds,rs) {
+  var domainlist, rangelist, vartext, tableArray = [];
   var domainsize, rangesize, functionsize;
 
   // Get values and process input fields
@@ -62,44 +21,49 @@ function createTable(ds,rs,ts) {
   domainsize = domainlist.length;
   
   if (rs==="") {
-  	vartext = headText("Subsets", "Number", "Subset");
-  	rangelist = setList("0,1");
+      tableArray[0] = ["Subsets"];
+      tableArray[1] = ["Number", "Subset"];
+      rangelist = setList("0,1");
   }
   else {
-  	vartext = headText("Functions (f)", "f", domainlist);
-  	rangelist = setList(rs);
+      tableArray[0] = ["Functions (f)"];
+      tableArray[1] = ["f"];
+      tableArray[1] = tableArray[1].concat(domainlist);
+      rangelist = setList(rs);
   }
-  
+    
   rangesize = rangelist.length;
   
   functionsize = Math.pow(rangesize, domainsize);
-     
-  // Assemble string
   
-  var i, j, number, remainder, setbuild;
+  var i, j, number, remainder, func = [];
     
+ 
   for (i = 0; i < functionsize; i++) {
-  
-  	vartext += "<tr><td>" + (i + 1).toString() + "</td>";
-  	number = i;
-  	setbuild = "<td>{ "
-  	for (j = 0; j < domainsize; j++) {
-  		  	remainder = number % rangesize;
-  		  	number = (number - remainder)/rangesize;
-  		  	if (rs==="" && remainder==1) {
-  		  		setbuild += domainlist[j] + ", ";
-  		  	} 	else if (!(rs==="")) {
-  		  		vartext += "<td>" + rangelist[remainder] + "</td>";
-  		  	}
-  	}
-  	if (rs==="") {
- 	if (setbuild.length>6) {
-  		setbuild = setbuild.slice(0,setbuild.length-2)
-  	}
-  		vartext += setbuild + " }<td>";
-  	}
-  	vartext += "</tr>"
+      tableArray[i+2] = [(i+1).toString()];
+      number = i;
+      for (j = 0; j < domainsize; j++) {
+          remainder = number % rangesize;
+          number = (number - remainder)/rangesize;
+          func = func.concat(rangelist[remainder]);
+      }
+      if(rs==="") {
+          tableArray[i+2] = tableArray[i+2].concat([setString(func,domainlist)])
+      } else {
+          tableArray[i+2] = tableArray[i+2].concat(func)
+      }
+      func = [];
 }
 
-  document.getElementById(ts).innerHTML = vartext;
+  return tableArray;
   } 
+
+function setString(ch, dm) {
+    // convert characteristic (ch) on domain (dm) to set string
+    var st = [], str = "";
+    for(var i=0;i<ch.length;i++) {
+        if(ch[i]==1) {st.push(dm[i])}
+    }
+    str = st.toString().replaceAll(",", ", ")
+    return "{ " + str + " }"
+}
