@@ -7,12 +7,16 @@
   <link rel="stylesheet" media="print" href="../eTp.css">
   <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
   <title>eT: Powering up</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
   <script src="js/inflation.js"></script>
   <script src="js/setup.js"></script>
   <script src="/js/table.js"></script>
   <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  
   <style>
  
   table {
@@ -82,14 +86,11 @@ tr th {
             </table>
           </div>
           <div class="text-center">
-            <button type="button" onclick="inflationGraph(getValue('inflation'), getValue('icost'))">Make<br>graph</button>
-            <button type="button" onclick="target('variables', table(inflationTable(getValue('inflation'), getValue('icost'))))">Make<br>table</button>
+            <button type="button" onclick="target('variables', ninf(getValue('inflation'), getValue('icost')).HTML)">Make<br>table</button>
+            <button type="button" onclick="target('variables','');pinf(getValue('inflation'), getValue('icost'))">Make<br>plot</button>
+            <button type="button" onclick="target('variables','')">Make<br>blank</button>
           </div>
-          <div id="variables" class="text-center"></div>
-          <div class="text-center">
-            <table id="costtable" style="display: inline-block; vertical-align: middle;"></table>
-            <svg id = "svg" viewBox="0 0 600 350" style="display: inline-block; vertical-align: middle;width:50%"></svg>
-          </div>          
+          <div id="variables" class="text-center" style="width:50%; margin:auto"></div>        
         </div>
         
         <h2>Set<sup>up</sup></h2>
