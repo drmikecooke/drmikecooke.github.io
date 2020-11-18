@@ -16,30 +16,34 @@
   <script src="/js/table.js"></script>
   <script src="/js/data.js"></script>
   <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+  <script>
+    var infTable;    
+  </script>
   
   <style>
- 
-  table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-tr td {
-  text-align: right;
-}
-
-tr th {
-  text-align: center;
-}
-
-.set tr td:nth-child(1) {
-  text-align: right;
-}
-
-.set tr td:nth-child(2) {
-  text-align: center;
-}
+    
+    table {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    tr td {
+      text-align: right;
+    }
+    
+    tr th {
+      text-align: center;
+    }
+    
+    .set tr td:nth-child(1) {
+      text-align: right;
+    }
+    
+    .set tr td:nth-child(2) {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -86,11 +90,20 @@ tr th {
             </table>
           </div>
           <div class="text-center">
-            <button type="button" onclick="target('variables', ninf(getValue('inflation'), getValue('icost')).HTML)">Make<br>table</button>
-            <button type="button" onclick="target('variables','');pinf(getValue('inflation'), getValue('icost'))">Make<br>plot</button>
-            <button type="button" onclick="target('variables','')">Make<br>blank</button>
+            <button type="button" onclick="infTableClick()">Make<br>table</button>
+            <button type="button" onclick="infPlotlyClick()">Make<br>plot</button>
+            <button type="button" onclick="infBlank()">Make<br>blank</button>
           </div>
-          <div id="variables" class="text-center" style="width:50%; margin:auto"></div>        
+          <div id="variables" class="text-center" style="width:50%; margin:auto">          
+          </div>
+          <div id="saveSVG" class="text-center" style="display:none;">
+            <button type="button" onclick="savePlotly('variables', getValue('svgFile')+'.svg')">Save as . . .</button>
+            <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+          </div>
+          <div id="saveCSV" class="text-center" style="display:none;">
+            <button type="button" onclick="downloadMIME(window.infTable.CSV, getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+            <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+          </div>
         </div>
         
         <h2>Set<sup>up</sup></h2>
@@ -148,12 +161,11 @@ tr th {
           <div id="subsets" class="set center"></div>          
         </div>
         <div class="indent">I have reused the structures of the previous functions with a bit of a trick, which you may want to work out.</div>
-     
+        
       </article>
     </div>
   </div>
   
-  <footer><script src="/footer.js"></script></footer>
-  
+  <footer><script src="/footer.js"></script></footer>  
 </body>
 </html>

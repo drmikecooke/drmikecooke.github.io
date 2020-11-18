@@ -5,7 +5,23 @@ function ninf(inf,icost) {
   return new Table(head,["Year", "Cost/$"],infData(inf,icost))
 }
 
-function pinf(inf,icost) {
-  var tinf = ninf(inf,icost);
-  Plotly.newPlot('variables', tinf.pData, tinf.pLayout, {scrollZoom: true});
+function infTableClick() {
+  window.infTable = ninf(getValue('inflation'), getValue('icost'));
+  target('variables', window.infTable.HTML);
+  document.getElementById('saveSVG').style = 'display:none;';
+  document.getElementById('saveCSV').style = 'display:block;';
+}
+
+function infPlotlyClick() {
+  target('variables','');
+  window.infTable = ninf(getValue('inflation'), getValue('icost'));
+  Plotly.newPlot('variables', window.infTable.pData, window.infTable.pLayout, {scrollZoom: true});
+  document.getElementById('saveSVG').style = 'display:block;';
+  document.getElementById('saveCSV').style = 'display:none;';
+}
+
+function infBlank() {
+  target('variables','');
+  document.getElementById('saveSVG').style = 'display:none;';
+  document.getElementById('saveCSV').style = 'display:none;';
 }
