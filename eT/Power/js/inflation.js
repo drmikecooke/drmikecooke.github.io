@@ -7,7 +7,7 @@ function ninf(inf,icost) {
 
 function infTableClick() {
   window.infTable = ninf(getValue('inflation'), getValue('icost'));
-  target('variables', window.infTable.HTML);
+  target('variables', window.infTable.HTML());
   document.getElementById('saveSVG').style = 'display:none;';
   document.getElementById('saveCSV').style = 'display:block;';
 }
@@ -15,7 +15,7 @@ function infTableClick() {
 function infPlotlyClick() {
   target('variables','');
   window.infTable = ninf(getValue('inflation'), getValue('icost'));
-  Plotly.newPlot('variables', window.infTable.pData, window.infTable.pLayout, {scrollZoom: true});
+  Plotly.newPlot('variables', window.infTable.pData, window.infTable.pLayout, {scrollZoom: false});
   document.getElementById('saveSVG').style = 'display:block;';
   document.getElementById('saveCSV').style = 'display:none;';
 }

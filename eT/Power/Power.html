@@ -101,7 +101,7 @@
             <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
           </div>
           <div id="saveCSV" class="text-center" style="display:none;">
-            <button type="button" onclick="downloadMIME(window.infTable.CSV, getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+            <button type="button" onclick="downloadMIME(window.infTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
             <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
           </div>
         </div>
