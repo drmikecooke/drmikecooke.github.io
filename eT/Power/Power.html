@@ -12,7 +12,7 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   
   <script src="js/inflation.js"></script>
-  <script src="js/setup.js"></script>
+    <script src="js/newSetup.js"></script>
   <script src="/js/table.js"></script>
   <script src="/js/data.js"></script>
   <script src="/js/Table.js"></script>
@@ -104,8 +104,7 @@
             <button type="button" onclick="downloadMIME(window.infTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
             <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
           </div>
-        </div>
-        
+        </div>        
         <h2>Set<sup>up</sup></h2>
         <div class="noindent">Powers are also useful in counting possibilities. We’ve all had to create passwords, which are based on combinations of characters from a set of possibilities — an “alphabet”. Let us imagine the passwords have a fixed length, 16 characters for example. If we avoid accents, punctuation marks, don't distinguish between upper- (capitals) and lower- (small) case letters, and such, there are 26 letters in the English alphabet. A given password can be viewed as a function between the place and a letter.</div>
         <div class="indent">I’ve just generated a password “jxndhoiigvsinmie”. Let us represent it as a letter <em>p</em>. As a function, in the first place is the letter “j” — or <em>p</em>(1) = ”j”. In a similar way, we have <em>p</em>(7) = <em>p</em>(8) = <em>p</em>(12) = <em>p</em>(15) = “i”. There seem to be a lot of “i”s, but there you go. The point is, the letters in the different places are not necessarily unique:</div>
@@ -130,10 +129,10 @@
           </div>
           <div id="nfunctions" class="text-center"></div>
           <div class="text-center">
-            <button type="button" onclick="target('functions', table(functionTable(getValue('domain'), getValue('range'))))">Generate function list</button>
+            <button type="button" onclick="functionsClick()">Generate function list</button>
             <button type="button" onclick="target('functions', '')">Remove</button> 
           </div>
-          <div id="functions" class="center"></div>          
+          <div id="functions" class="center"></div>
         </div>
         <div class="indent">The calculation button allows you to assess whether you want to generate the table. You can input different domains and ranges with the objects separated by commas. The function number is just an arbitrary enumeration label. If the number of possibilities gets too large, your system will slow to a crawl — you have been warned!</div>
         
@@ -155,13 +154,13 @@
           </div>
           <div id="nsubsets" class="text-center"></div>
           <div class="text-center">
-            <button type="button" onclick="target('subsets',table(functionTable(getValue('set'), '')))">Generate subset list</button> 
+            <button type="button" onclick="setsClick()">Generate subset list</button> 
             <button type="button" onclick="target('subsets', '')">Remove</button>
           </div>          
-          <div id="subsets" class="set center"></div>          
+          <div id="subsets" class="set center"></div>
+
         </div>
         <div class="indent">I have reused the structures of the previous functions with a bit of a trick, which you may want to work out.</div>
-        
       </article>
     </div>
   </div>

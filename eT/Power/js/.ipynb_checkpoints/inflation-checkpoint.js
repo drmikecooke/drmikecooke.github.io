@@ -15,7 +15,11 @@ function infTableClick() {
 function infPlotlyClick() {
   target('variables','');
   window.infTable = ninf(getValue('inflation'), getValue('icost'));
-  Plotly.newPlot('variables', window.infTable.pData, window.infTable.pLayout, {scrollZoom: false});
+    var pa = new PlotlyArgs('variables', window.infTable, 0, 1, 'red', 4, 'beige')
+  Plotly.newPlot(...pa.args);
+    var bglayer = document.getElementsByClassName("bglayer");
+    var bgrect = bglayer[0].firstElementChild;
+    bgrect.outerHTML = "<rect width='100%' height='100%' style='fill:beige;' />";
   document.getElementById('saveSVG').style = 'display:block;';
   document.getElementById('saveCSV').style = 'display:none;';
 }
