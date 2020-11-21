@@ -10,10 +10,8 @@
   <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
   <script src="js/inflation.js"></script>
-    <script src="js/newSetup.js"></script>
-  <script src="/js/table.js"></script>
+  <script src="js/newSetup.js"></script>
   <script src="/js/data.js"></script>
   <script src="/js/Table.js"></script>
   <script src="/js/download.js"></script>
@@ -44,6 +42,7 @@
     .set tr td:nth-child(2) {
       text-align: center;
     }
+    
   </style>
 </head>
 <body>
@@ -56,39 +55,27 @@
         
         <h1>Powering<sup>up</sup></h1>
         
-        <div class="noindent">The exponential is a standardized and generalized form of the <em>power</em> concept. Here we will look first at whole number powers, following that with the extension to negative numbers. Just as multiplication can be viewed as repeated addition of the same number, powers consist of repeated multiplication:
-        </div>
-        <div class="standard" style="text-align: center;">Multiplication: <span class="math inline">\(2 \times 3 = 2 + 2 + 2 = 6\)</span>
-        </div>
-        <div class="standard" style="text-align: center;">
-          <span id="magicparlabel-5"></span>Power: <span class="math inline">\(2^{3} = 2 \times 2 \times 2 = 8\)</span>
-        </div>
-        <div class="indent">
-          <span id="magicparlabel-6"></span>The power formula consists of two terms. In the above power, <span class="math inline">\(2^{3}\)</span>, the power/exponent 3 has base 2. The concept generalizing to other bases, including fractions and real numbers, would seem straightforward (tell me if you don't think this is so). However, the generalization of the exponent to non whole numbers — non-fractions/-irrationals greater than zero — is more involved.
-        </div>
+        <div class="noindent">The exponential is a standardized and generalized form of the <em>power</em> concept. Here we will look first at whole number powers, following that with the extension to negative numbers. Just as multiplication can be viewed as repeated addition of the same number, powers consist of repeated multiplication:</div>
+        <div class="standard" style="text-align: center;">Multiplication: <span class="math inline">\(2 \times 3 = 2 + 2 + 2 = 6\)</span></div>
+        <div class="standard" style="text-align: center;">Power: <span class="math inline">\(2^{3} = 2 \times 2 \times 2 = 8\)</span></div>
+        <div class="indent">The power formula consists of two terms. In the above power, <span class="math inline">\(2^{3}\)</span>, the power/exponent 3 has base 2. The concept generalizing to other bases, including fractions and real numbers, would seem straightforward (tell me if you don't think this is so). However, the generalization of the exponent to non whole numbers — non-fractions/-irrationals greater than zero — is more involved.</div>
         
         <h2 class="section_">Inflation</h2>
-        <div class="noindent">
-          <span id="magicparlabel-102"></span>Perhaps it would be useful at this point to see how powers are used. Imagine a government sets an inflation target of 2% each year. That means that something (like bread?) that costs $1 (or whatever currency) this year, will cost $1.02 next year — the original $1 plus 2¢. If the inflation continues at 2%, the next year the item will cost 1.02×$1.02=$1.0404. So if you rounded the value to whole numbers of cents, it would appear that the increase was just double at 4% after two years. But for a $100 product (a TV?) the price will have increased to $104.04, 4.04% up. The extra 4¢ does not appear much, but these extras eventually add up over longer periods.
-        </div>
-        <div class="indent">
-          <span id="magicparlabel-119"></span>To make life easy so far, I have used products with $1 and $100 initial value. Let's imagine instead a cheap Android pad costing $80. After two years with 2% inflation, the cost would rise to 1.02×1.02×$80=1.022×$80=$83.232 — rounding, of course, gives $83.23. I have put in the power form with two years as the exponent at the intermediate stage. One could write this as a formula:
-        </div>
-        <div class="standard">
-          <span id="magicparlabel-132"></span><span class="math display">\[price\left( {year} \right) = \left( 1 + inflation)^{year}price\left( 0 \right) \right.\]</span>
-        </div>
+        <div class="noindent">Perhaps it would be useful at this point to see how powers are used. Imagine a government sets an inflation target of 2% each year. That means that something (like bread?) that costs $1 (or whatever currency) this year, will cost $1.02 next year — the original $1 plus 2¢. If the inflation continues at 2%, the next year the item will cost 1.02×$1.02=$1.0404. So if you rounded the value to whole numbers of cents, it would appear that the increase was just double at 4% after two years. But for a $100 product (a TV?) the price will have increased to $104.04, 4.04% up. The extra 4¢ does not appear much, but these extras eventually add up over longer periods.</div>
+        <div class="indent">To make life easy so far, I have used products with $1 and $100 initial value. Let's imagine instead a cheap Android pad costing $80. After two years with 2% inflation, the cost would rise to 1.02×1.02×$80=1.022×$80=$83.232 — rounding, of course, gives $83.23. I have put in the power form with two years as the exponent at the intermediate stage. One could write this as a formula:</div>
+        <div class="standard"><span class="math display">\[price\left( {year} \right) = \left( 1 + inflation)^{year}price\left( 0 \right) \right.\]</span></div>
         <div class="indent">The price at year zero is the current cost.</div>
         
         <h3 id="graph" class="subsection_">Graph</h3>
         <div class="noindent">The following gives an idea of how the inflation function works. Try playing around with the inputs: in particular, a higher inflation rate (e.g. 20%), and even negative rates (e.g.  &ndash;20%, &ndash;100%,  &ndash;120%,  &ndash;200%,  &ndash;220%). The same structure also describes interest and how it compounds to give higher than naïvely expected returns to the lender.</div>
         <div class="arial">
           <h4>Inflation graph</h4>
-          <div class="label">
-            <table class="center">
-              <tr><td style="text-align: right;">Inflation: </td><td><input id="inflation" size="3" class="label" value="2" style="font-size: 1em; text-align: right;">%</td></tr>
-              <tr><td style="text-align: right;">Initial cost: </td><td>$<input id="icost" size="3" value="80" style="font-size: 1em"></td></tr>
-            </table>
-          </div>
+          
+          <table class="center">
+            <tr><td style="text-align: right;">Inflation: </td><td><input id="inflation" size="3" value="2" style="font-size: 1em; text-align: right;">%</td></tr>
+            <tr><td style="text-align: right;">Initial cost: </td><td>$<input id="icost" size="3" value="80" style="font-size: 1em"></td></tr>
+          </table>
+          
           <div class="text-center">
             <button type="button" onclick="infTableClick()">Make<br>table</button>
             <button type="button" onclick="infPlotlyClick()">Make<br>plot</button>
@@ -108,21 +95,17 @@
         <h2>Set<sup>up</sup></h2>
         <div class="noindent">Powers are also useful in counting possibilities. We’ve all had to create passwords, which are based on combinations of characters from a set of possibilities — an “alphabet”. Let us imagine the passwords have a fixed length, 16 characters for example. If we avoid accents, punctuation marks, don't distinguish between upper- (capitals) and lower- (small) case letters, and such, there are 26 letters in the English alphabet. A given password can be viewed as a function between the place and a letter.</div>
         <div class="indent">I’ve just generated a password “jxndhoiigvsinmie”. Let us represent it as a letter <em>p</em>. As a function, in the first place is the letter “j” — or <em>p</em>(1) = ”j”. In a similar way, we have <em>p</em>(7) = <em>p</em>(8) = <em>p</em>(12) = <em>p</em>(15) = “i”. There seem to be a lot of “i”s, but there you go. The point is, the letters in the different places are not necessarily unique:</div>
-        <div class="text-center">
-          <embed id="pwd" src="pwd.svg" style="width:750px;"/>
-        </div>        
+        <div class="text-center"><embed id="pwd" src="pwd.svg" style="width:750px;"/></div>        
         <div class="indent">The more possible passwords there are, the more difficult it is hoped will be a malicious attempt to guess it. Hence, it is of interest to count the number of possibilities. With a 1-letter password, there would just be 26 possibilities. As we increase the password length by 1, we increase the number of possibilities by a factor of 26. So with our 16-letter password, the number of possibilities is 26<sup>16</sup>, a very long number involving 23 digits that I won’t write out.</div>
         <div class="indent">Let us view the places and alphabet as two sets: P = {1 . . . 16} and A = {“a” . . . “z”}. The sizes of these sets are represented as |P| and |A|, so we have the possibility count |A|<sup>|P|</sup>. First, this formulation allows us to generalize to other sets/functions with different domains (password places in this case) and ranges (alphabet). In set theory, the set of functions is represented as A<sup>P</sup>, without the vertical bars, representing the set size. The size of the set of functions is |A<sup>P</sup>| = |A|<sup>|P|</sup>. Expanding the set of letters in the alphabet, distinguishing between small and captial letters, adding in number digits, punctuation, etc., pushes the number of possible passwords up — for a 16-letter password with upper/lower case distinctions (52-letter alphabet) we get 52<sup>16</sup> passwords, a number with 28 digits.</div>
         <div class="indent">We can generalize to arbitrary functions from a domain to a range:</div>
-        <div class="arial">
-          
-          <h4>Functions</h4>          
-          <div class="label">
-            <table>
-              <tr><td style="text-align: right;">Domain (D):</td><td>{<input id="domain" size="5" style="font-size: 1em;" type="text" value="A, B, C">}</td></tr>
-              <tr><td style="text-align: right;">Range (R): </td><td>{<input id="range" size="5" style="font-size: 1em;" type="text" value="0, 1">}</td></tr>
-            </table>
-          </div>
+        
+        <div class="arial">          
+          <h4>Functions</h4>
+          <table>
+            <tr><td style="text-align: right;">Domain (D):</td><td>{<input id="domain" size="5" style="font-size: 1em;" type="text" value="A, B, C">}</td></tr>
+            <tr><td style="text-align: right;">Range (R): </td><td>{<input id="range" size="5" style="font-size: 1em;" type="text" value="0, 1">}</td></tr>
+          </table>
           <div class="text-center">
             <button type="button" onclick="target('nfunctions', makeSizeText('D',getValue('domain'), 'R', getValue('range')))">Calculate function list size</button>
             <button type="button" onclick="target('nfunctions', '')">Remove</button> 
@@ -134,20 +117,17 @@
           </div>
           <div id="functions" class="center"></div>
         </div>
+        
         <div class="indent">The calculation button allows you to assess whether you want to generate the table. You can input different domains and ranges with the objects separated by commas. The function number is just an arbitrary enumeration label. If the number of possibilities gets too large, your system will slow to a crawl — you have been warned!</div>
         
         <h3>Power set</h3>
-        <div class="noindent">
-          <span id="magicparlabel-182"></span>A further particular application of the power concept to sets is the set of subsets — indeed this is often called the power set. To see how this arises we imagine the set of functions from the set of interest, X, to the 2-element set {0, 1}. Given such a function you can construct a subset consisting of all the elements that are mapped to 1. Each such subset has a unique function that describes it in this way. We can view this as a set of labels: if the label is “1”, the item is in the subset; if “0”, not. The number of subsets is thus 2<sup>|X|</sup>. Further in some developments of set theory, numbers are built up from the empty set 0 = ∅ = {}, 1 = {0}={∅}, 2 = {0, 1}={0,{0}}. Thus the set of subsets is represented as 2<sup>X</sup>:
-        </div>
+        <div class="noindent">A further particular application of the power concept to sets is the set of subsets — indeed this is often called the power set. To see how this arises we imagine the set of functions from the set of interest, X, to the 2-element set {0, 1}. Given such a function you can construct a subset consisting of all the elements that are mapped to 1. Each such subset has a unique function that describes it in this way. We can view this as a set of labels: if the label is “1”, the item is in the subset; if “0”, not. The number of subsets is thus 2<sup>|X|</sup>. Further in some developments of set theory, numbers are built up from the empty set 0 = ∅ = {}, 1 = {0}={∅}, 2 = {0, 1}={0,{0}}. Thus the set of subsets is represented as 2<sup>X</sup>:</div>
+        
         <div class="arial">
           <h4>Power sets</h4>
-          
-          <div class="label">
-            <table>
-              <tr><td>Set:</td><td>{<input id="set" size="5" style="font-size: 1em;" type="text" value="A,B,C">}</td></tr>
-            </table>
-          </div>
+          <table>
+            <tr><td>Set:</td><td>{<input id="set" size="5" style="font-size: 1em;" type="text" value="A,B,C">}</td></tr>
+          </table>
           <div class="text-center">
             <button type="button" onclick="target('nsubsets', makeSizeText('Set', getValue('set'), '2', '0, 1'))">Calculate subset list size</button>
             <button type="button" onclick="target('nsubsets', '')">Remove</button>
@@ -158,8 +138,8 @@
             <button type="button" onclick="target('subsets', '')">Remove</button>
           </div>          
           <div id="subsets" class="set center"></div>
-
         </div>
+        
         <div class="indent">I have reused the structures of the previous functions with a bit of a trick, which you may want to work out.</div>
       </article>
     </div>
