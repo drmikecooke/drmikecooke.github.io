@@ -19,8 +19,8 @@ sup, sub {
   top: -0.4em;
 }
 
-sub { 
-  top: 0.4em; 
+sub {
+  top: 0.4em;
 }
 
 /* Header/Blog Title */
@@ -59,13 +59,6 @@ a {
   text-decoration: none;
   color: black;
 }
-
-.row { display: flex; background-color: #ddd; padding: 10px; }
-
-/* Left and right columns */
-.lcolumn { flex-grow: 1; margin: 0px; vertical-align: top; padding: 0px; }
-
-.rcolumn { flex-shrink: 1; margin: 0px; vertical-align: top; padding: 0px; }
 
 /* Footer */
 footer {

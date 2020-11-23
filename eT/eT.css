@@ -42,19 +42,7 @@ nav a {
 /* Change color on hover */
 nav a:hover { background-color: #ddd; color: black; }
 
-.container { display: flex; background-color: #ddd; padding: 10px; }
-
-
-.item {
-  flex-grow: 1;
-  margin: 0px;
-  vertical-align: top;
-  padding: 0px;
-}
-
 .flex-center { display:flex; justify-content:center; }
-
-.card { background-color: white; padding: 20px; margin: 10px; }
 
 /* Prevent line-height variation */
 sup, sub {
@@ -68,6 +56,7 @@ sub { top: 0.4em; }
 
 .exponential { font-family: "Times New Roman", Times, serif; font-weight: bold; }
 
+/* used in hidden panels in SIR */
 .content { padding: 20px; background-color: #f1f1f1; }
 
 button {
@@ -91,6 +80,10 @@ article {
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   line-height: 1.4em;
+  background-color: white;
+  padding: 20px;
+  border: 20px solid;
+  border-color: #ddd;
 }
 
 article h1, h2, h3, h4 {
@@ -174,9 +167,21 @@ footer {
   font-size: 21px;
 }
 
-table { margin: 0 auto; }
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 tr { vertical-align: baseline; }
+
+tr td {
+  text-align: right;
+}
+
+tr th {
+  text-align: center;
+}
 
 div.noindent {
   margin-bottom: 0.25em;
@@ -205,8 +210,6 @@ article figcaption {
 
 /* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {
-  .container { display: flex; background-color: #ddd; padding: 0px; margin: 0px; flex-direction: column; }
-  .card { background-color: white; width: 100%; padding: 5px; margin: 0px; }
   figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   figure img { width: 100%; }
   .stripimg { width: 98%; }

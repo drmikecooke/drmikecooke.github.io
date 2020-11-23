@@ -24,7 +24,7 @@ function Table(heading, heads, data) {
         this.heads.splice(i,0, col.head);
         this.data.map((v,j)=>{v.splice(i,0,col.data[j])});
         };
-    this.CSV = ()=>{heads.join() + "\n" + data.join("\n")};
+    this.CSV = ()=>{return heads.join() + "\n" + data.join("\n")};
 }
 
 function PlotlyArgs(div, table, i, j, color, width, bgcolor) {
