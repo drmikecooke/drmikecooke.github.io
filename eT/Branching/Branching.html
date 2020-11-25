@@ -23,8 +23,6 @@
   <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
   <nav><script src="/eT/nav.js"></script></nav>
 
-
-
   <article>
 
     <div id="header">
@@ -39,9 +37,21 @@
         <tr><td style="text-align: right;">Branches:</td><td><input id="branches" size="1" value="2" style="font-size: 1em; text-align: right;"></td></tr>
         <tr><td style="text-align: right;">Generations: </td><td><input id="generations" size="1" value="3" style="font-size: 1em; text-align: right;"></td></tr>
       </table>
-      <div class="text-center"><button type="button" onclick="tree()">Tree</button></div>
+      <div class="text-center">
+        <button type="button" onclick="treeTableClick()">Tree table</button>
+        <button type="button" onclick="treeSVGClick()">Tree SVG</button>
+        <button type="button" onclick="removeTreeClick()">Remove</button>
+      </div>
       <div id="variables" class="text-center"></div>
-      <div class="text-center"><svg id="svg" width="50%"></svg></div>
+
+      <div id="saveTreeSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable, getValue('svgTreeFile')+'.svg','image/svg+xml');">Save as . . .</button>
+        <input id="svgTreeFile" size="8" value="tree" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveTreeCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvTreeFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvTreeFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
     </div>
 
     <h2 id="wascally-wabbits" class="section_">Wascally wabbits</h2>
@@ -69,22 +79,19 @@
       </div>
 
 
-    <div id="saveSVG" class="text-center" style="display:none;">
-      <button type="button" onclick="savePlotly('fvariables', getValue('svgFile')+'.svg')">Save as . . .</button>
-      <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
-    </div>
-    <div id="saveCSV" class="text-center" style="display:none;">
-      <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
-      <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('fvariables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
     </div>
   </div>
-  </article>
+</article>
 
-
-
-
-
-  <footer><script src="/footer.js"></script></footer>
+<footer><script src="/footer.js"></script></footer>
 
 </body>
 </html>

@@ -1,42 +1,20 @@
 // Needs Table object defined
 
-// Click functions
-
-function treeTableClick() {
-  window.fTable = treeTable(getNumber('branches'),getNumber('generations'));
-  target('variables', window.fTable.HTML());
-  document.getElementById('saveTreeSVG').style = 'display:none;';
-  document.getElementById('saveTreeCSV').style = 'display:block;';
-}
-
-function treeSVGClick() {
-  window.fTable = svgTree(treeTable(getNumber('branches'),getNumber('generations')));
-  target('variables', window.fTable);
-  document.getElementById('saveTreeSVG').style = 'display:block;';
-  document.getElementById('saveTreeCSV').style = 'display:none;';
-}
-
-function removeTreeClick() {
-  target('variables','');
-  document.getElementById('saveTreeSVG').style = 'display:none;';
-  document.getElementById('saveTreeCSV').style = 'display:none;';
-}
-
-function treeTable(branches, generations) {
-  // Assemble heading
-  var heading = "Branches = " + branches + " | Generations = " + generations;
-   var range = [...Array(generations+1).keys()];
-    var data = range.map(g=>[g,(branches)**g]);
+function treeTable(branches, generations) {    
+  // Assemble heading  
+  var heading = "Branches = " + branches + " | Generations = " + generations;  
+   var range = [...Array(generations+1).keys()];    
+    var data = range.map(g=>[g,(branches)**g]);    
    return new Table(heading, ["Generation","Nodes"], data);
 }
 
-function svgTree(treeTable) {
+function svgTree(treeTable) {    
     var branches=treeTable.data[1][1], next,nstep;
 var current=treeTable.data[0][1];
 var generations = treeTable.data.length - 1;
   var cstep=300;
   var gstep=600/generations;
-
+    
 var svgtxt = '<svg id="tree" width="780" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
 // styles
 svgtxt += '<style>\n';
@@ -58,26 +36,26 @@ svgtxt += '<rect width="780" height="400" fill="beige" />\n';
 svgtxt += svgTextc("50%","25",treeTable.heading,'gntext');
 
 svgtxt += '<g transform="translate(155,35)">\n';
-  for(var n = 0; n < generations; n++) {
-    svgtxt += svgGLine(n*gstep, n, current);
-    next = treeTable.data[n+1][1];
+  for(var n = 0; n < generations; n++) {  
+    svgtxt += svgGLine(n*gstep, n, current);    
+    next = treeTable.data[n+1][1];    
     nstep = 300/next;
-
+      
     for (var m =0; m<current;m++) {
       svgtxt += svgBLines(n*gstep,(m+1/2)*cstep,gstep,(m*branches+1/2)*nstep,nstep,branches);
     }
-
+    
     current=next;
-    cstep=nstep;
+    cstep=nstep;    
     }
-
+    
     svgtxt += svgGLine(n*gstep, n, current); // final generation line
     for (m =0; m<current;m++) { svgtxt += svgBlob(n*gstep, (m+1/2)*cstep); } // final blobs
-
+  
     //labels for numbers
   svgtxt += svgTextc(-20,325,treeTable.heads[0]+": ","heads");
  svgtxt += svgTextc(-20,350,treeTable.heads[1]+": ","heads");
-
+    
 return svgtxt+'</g>\n</svg>'
 }
 
