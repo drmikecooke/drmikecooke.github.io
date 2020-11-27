@@ -1,0 +1,65 @@
+%% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{luainputenc}
+\usepackage{amssymb}
+\usepackage{babel}
+\begin{document}
+\title{Backlog}
+
+\maketitle
+I plan to go into more detail concerning the power and log relation,
+since I guess my Logjam effort was too compact in this area.
+
+So let's start by examining the powers of a ``base'' b up to, and
+just beyond, 10:
+
+We have chosen to go up to 10, because our aim is to get an estimate
+of the logarithms to base 10. If we were looking for logs to base
+2, we would have cut off there instead. The length of the list depends
+on how close your base is to 1. The size of the base does not matter,
+except that the closer to 1, the more accurate our estimates will
+be.
+
+Now to get logs to base 10, from our base b calculations we need:
+
+\[
+\log_{10}x=\frac{\log_{b}x}{\log_{b}10}
+\]
+
+Now the logs to base b are found by reversing the table, where our
+log is the ``n'' value for a given ``x'' ($b^{n}$):
+
+If you choose $b=1.1$ you will find $\log_{b}10$ is somewhere between
+24 and 25. Going to $b=1.01$, you find a $\log_{b}10$ between 231
+and 232. Unless you are very careful, it is unlikely that your $\log_{b}10$
+is going to be a whole number (or even close to one). We could try
+fine-tuning the base, but then what about other values of $\log_{b}x$?
+Rather we assume that $\log_{b}10$ and $\log_{b}x$ lie on the straight
+lines between adjoining points.
+
+With $b=1.1$, we have $\left(x,\log_{b}x\right)$ values of $\left(9.84\ldots,24\right)$
+and $\left(10.83\ldots,25\right)$. The straight line going through
+these points has the formula:
+
+\[
+\log_{b}x\thickapprox24\frac{x-10.83\ldots}{9.84\ldots-10.83\ldots}+25\frac{x-9.84\ldots}{10.83\ldots-9.84\ldots}
+\]
+
+This form should make it fairly easy to convince yourself in your
+head that when $x=9.84\ldots$ we have $\log_{b}x=24$, and the same
+for the other target value. The formula can be rearranged:
+
+\[
+\log_{b}x\thickapprox\frac{25\left(x-9.84\ldots\right)-24\left(x-10.83\ldots\right)}{10.83\ldots-9.84\ldots}=\frac{x-25\left(9.84\ldots\right)+24\left(10.83\ldots\right)}{10.83\ldots-9.84\ldots}
+\]
+
+Inserting $x=10$, one finds $\log_{b}x\thickapprox24.1525\ldots$.
+A more accurate computer calculated value is $\log_{b}x\thickapprox24.1588\ldots$.
+Using the points closest to the integers up to 10, we use similar
+``linear interpolation'' to derive an estimate to the table (and
+for other $x$ values if desired):
+
+
+\end{document}

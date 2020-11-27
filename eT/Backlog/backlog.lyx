@@ -1,0 +1,293 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Backlog
+\end_layout
+
+\begin_layout Standard
+I plan to go into more detail concerning the power and log relation, since
+ I guess my Logjam effort was too compact in this area.
+\end_layout
+
+\begin_layout Standard
+So let's start by examining the powers of a 
+\begin_inset Quotes eld
+\end_inset
+
+base
+\begin_inset Quotes erd
+\end_inset
+
+ b up to, and just beyond, 10:
+\end_layout
+
+\begin_layout Standard
+We have chosen to go up to 10, because our aim is to get an estimate of
+ the logarithms to base 10.
+ If we were looking for logs to base 2, we would have cut off there instead.
+ The length of the list depends on how close your base is to 1.
+ The size of the base does not matter, except that the closer to 1, the
+ more accurate our estimates will be.
+\end_layout
+
+\begin_layout Standard
+Now to get logs to base 10, from our base b calculations we need:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log_{10}x=\frac{\log_{b}x}{\log_{b}10}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now the logs to base b are found by reversing the table, where our log is
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+n
+\begin_inset Quotes erd
+\end_inset
+
+ value for a given 
+\begin_inset Quotes eld
+\end_inset
+
+x
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $b^{n}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+If you choose 
+\begin_inset Formula $b=1.1$
+\end_inset
+
+ you will find 
+\begin_inset Formula $\log_{b}10$
+\end_inset
+
+ is somewhere between 24 and 25.
+ Going to 
+\begin_inset Formula $b=1.01$
+\end_inset
+
+, you find a 
+\begin_inset Formula $\log_{b}10$
+\end_inset
+
+ between 231 and 232.
+ Unless you are very careful, it is unlikely that your 
+\begin_inset Formula $\log_{b}10$
+\end_inset
+
+ is going to be a whole number (or even close to one).
+ We could try fine-tuning the base, but then what about other values of
+ 
+\begin_inset Formula $\log_{b}x$
+\end_inset
+
+? Rather we assume that 
+\begin_inset Formula $\log_{b}10$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\log_{b}x$
+\end_inset
+
+ lie on the straight lines between adjoining points.
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $b=1.1$
+\end_inset
+
+, we have 
+\begin_inset Formula $\left(x,\log_{b}x\right)$
+\end_inset
+
+ values of 
+\begin_inset Formula $\left(9.84\ldots,24\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(10.83\ldots,25\right)$
+\end_inset
+
+.
+ The straight line going through these points has the formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log_{b}x\thickapprox24\frac{x-10.83\ldots}{9.84\ldots-10.83\ldots}+25\frac{x-9.84\ldots}{10.83\ldots-9.84\ldots}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This form should make it fairly easy to convince yourself in your head that
+ when 
+\begin_inset Formula $x=9.84\ldots$
+\end_inset
+
+ we have 
+\begin_inset Formula $\log_{b}x=24$
+\end_inset
+
+, and the same for the other target value.
+ The formula can be rearranged:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log_{b}x\thickapprox\frac{25\left(x-9.84\ldots\right)-24\left(x-10.83\ldots\right)}{10.83\ldots-9.84\ldots}=\frac{x-25\left(9.84\ldots\right)+24\left(10.83\ldots\right)}{10.83\ldots-9.84\ldots}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inserting 
+\begin_inset Formula $x=10$
+\end_inset
+
+, one finds 
+\begin_inset Formula $\log_{b}x\thickapprox24.1525\ldots$
+\end_inset
+
+.
+ A more accurate computer calculated value is 
+\begin_inset Formula $\log_{b}x\thickapprox24.1588\ldots$
+\end_inset
+
+.
+ Using the points closest to the integers up to 10, we use similar 
+\begin_inset Quotes eld
+\end_inset
+
+linear interpolation
+\begin_inset Quotes erd
+\end_inset
+
+ to derive an estimate to the table (and for other 
+\begin_inset Formula $x$
+\end_inset
+
+ values if desired):
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

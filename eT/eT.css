@@ -70,7 +70,7 @@ button {
   margin: 10px;
 }
 
-p { font-size: 18px; line-height: 1.4em; margin-top: 10px; }
+p { line-height: 1.4em; margin-top: 10px; }
 
 h2 { margin-bottom: 10px; }
 
@@ -183,12 +183,12 @@ tr th {
   text-align: center;
 }
 
-div.noindent {
+article .noindent {
   margin-bottom: 0.25em;
   text-indent: 0em;
   text-align: left;
 }
-div.indent {
+article .indent {
   margin-bottom: 0.25em;
   text-indent: 2em;
   text-align: left;

@@ -28,7 +28,7 @@ function Table(heading, heads, data) {
 }
 
 function PlotlyArgs(div, table, i, j, color, width, bgcolor) {
-    if(!(this instanceof PlotlyArgs)) {return new PlotlyArgs(div, table, i, j)}
+    if(!(this instanceof PlotlyArgs)) {return new PlotlyArgs(div, table, i, j, color, width, bgcolor)}
     this.div = div;
     this.data = [plotlyTrace(table, i, j, color, width)];
     this.layout = plotlyLayout(table, i, j, bgcolor);

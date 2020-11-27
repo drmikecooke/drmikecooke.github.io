@@ -1,54 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="900" height="425" viewBox="-150 0 750 425" xmlns="http://www.w3.org/2000/svg">
-<line x1="0" y1="0" x2="0" y2="300" style="stroke:black;stroke-width:1"></line>
-<text x="0" y="350" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">0</text>
-<text x="0" y="400" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">1</text>
-<line x1="0" y1="150" x2="200" y2="75" style="stroke:black;stroke-width:2"></line>
-<circle cx="0" cy="150" r="5" fill="red"></circle>
-<line x1="0" y1="150" x2="200" y2="225" style="stroke:black;stroke-width:2"></line>
-<circle cx="0" cy="150" r="5" fill="red"></circle>
-<line x1="200" y1="0" x2="200" y2="300" style="stroke:black;stroke-width:1"></line>
-<text x="200" y="350" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">1</text>
-<text x="200" y="400" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">2</text>
-<line x1="200" y1="75" x2="400" y2="37.5" style="stroke:black;stroke-width:2"></line>
-<circle cx="200" cy="75" r="5" fill="red"></circle>
-<line x1="200" y1="75" x2="400" y2="112.5" style="stroke:black;stroke-width:2"></line>
-<circle cx="200" cy="75" r="5" fill="red"></circle>
-<line x1="200" y1="225" x2="400" y2="187.5" style="stroke:black;stroke-width:2"></line>
-<circle cx="200" cy="225" r="5" fill="red"></circle>
-<line x1="200" y1="225" x2="400" y2="262.5" style="stroke:black;stroke-width:2"></line>
-<circle cx="200" cy="225" r="5" fill="red"></circle>
-<line x1="400" y1="0" x2="400" y2="300" style="stroke:black;stroke-width:1"></line>
-<text x="400" y="350" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">2</text>
-<text x="400" y="400" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">4</text>
-<line x1="400" y1="37.5" x2="600" y2="18.75" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="37.5" r="5" fill="red"></circle>
-<line x1="400" y1="37.5" x2="600" y2="56.25" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="37.5" r="5" fill="red"></circle>
-<line x1="400" y1="112.5" x2="600" y2="93.75" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="112.5" r="5" fill="red"></circle>
-<line x1="400" y1="112.5" x2="600" y2="131.25" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="112.5" r="5" fill="red"></circle>
-<line x1="400" y1="187.5" x2="600" y2="168.75" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="187.5" r="5" fill="red"></circle>
-<line x1="400" y1="187.5" x2="600" y2="206.25" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="187.5" r="5" fill="red"></circle>
-<line x1="400" y1="262.5" x2="600" y2="243.75" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="262.5" r="5" fill="red"></circle>
-<line x1="400" y1="262.5" x2="600" y2="281.25" style="stroke:black;stroke-width:2"></line>
-<circle cx="400" cy="262.5" r="5" fill="red"></circle>
-<line x1="600" y1="0" x2="600" y2="300" style="stroke:black;stroke-width:1"></line>
-<text x="600" y="350" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">3</text>
-<text x="600" y="400" fill="black" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="30">8</text>
-<circle cx="600" cy="18.75" r="5" fill="red"></circle>
-<circle cx="600" cy="56.25" r="5" fill="red"></circle>
-<circle cx="600" cy="93.75" r="5" fill="red"></circle>
-<circle cx="600" cy="131.25" r="5" fill="red"></circle>
-<circle cx="600" cy="168.75" r="5" fill="red"></circle>
-<circle cx="600" cy="206.25" r="5" fill="red"></circle>
-<circle cx="600" cy="243.75" r="5" fill="red"></circle>
-<circle cx="600" cy="281.25" r="5" fill="red"></circle>
-<text x="-20" y="350" fill="black" text-anchor="end" alignment-baseline="central" font-family="Arial" font-size="30">Generations: </text>
-<text x="-20" y="400" fill="black" text-anchor="end" alignment-baseline="central" font-family="Arial" font-size="30">Nodes: </text>
+<svg id="tree" width="780" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+text {font-family: Arial, Helvetica, sans-serif; font-size: 20; fill: black;}
+#vline {stroke:black; stroke-width:1}
+.bline {stroke:black; stroke-width:2}
+.gntext {text-anchor: middle;}
+.heads {text-anchor: end;}
+</style>
+<defs>
+<circle id="blob" cx="0" cy="0" r="5" fill="red" />
+<line id="vline" x1="0" y1="0" x2="0" y2="300" />
+</defs>
+<rect width="780" height="400" fill="beige" />
+<text x="50%" y="25" class="gntext">Branches = 2 | Generations = 3</text>
+<g transform="translate(140,35)">
+<use x="0" y="0"  xlink:href="#vline" />
+<text x="0" y="325" class="gntext">0</text>
+<text x="0" y="350" class="gntext">1</text>
+<line x1="0" y1="150" x2="200" y2="75" class="bline" />
+<line x1="0" y1="150" x2="200" y2="225" class="bline" />
+<use x="0" y="150" xlink:href="#blob" />
+<use x="200" y="0"  xlink:href="#vline" />
+<text x="200" y="325" class="gntext">1</text>
+<text x="200" y="350" class="gntext">2</text>
+<line x1="200" y1="75" x2="400" y2="37.5" class="bline" />
+<line x1="200" y1="75" x2="400" y2="112.5" class="bline" />
+<use x="200" y="75" xlink:href="#blob" />
+<line x1="200" y1="225" x2="400" y2="187.5" class="bline" />
+<line x1="200" y1="225" x2="400" y2="262.5" class="bline" />
+<use x="200" y="225" xlink:href="#blob" />
+<use x="400" y="0"  xlink:href="#vline" />
+<text x="400" y="325" class="gntext">2</text>
+<text x="400" y="350" class="gntext">4</text>
+<line x1="400" y1="37.5" x2="600" y2="18.75" class="bline" />
+<line x1="400" y1="37.5" x2="600" y2="56.25" class="bline" />
+<use x="400" y="37.5" xlink:href="#blob" />
+<line x1="400" y1="112.5" x2="600" y2="93.75" class="bline" />
+<line x1="400" y1="112.5" x2="600" y2="131.25" class="bline" />
+<use x="400" y="112.5" xlink:href="#blob" />
+<line x1="400" y1="187.5" x2="600" y2="168.75" class="bline" />
+<line x1="400" y1="187.5" x2="600" y2="206.25" class="bline" />
+<use x="400" y="187.5" xlink:href="#blob" />
+<line x1="400" y1="262.5" x2="600" y2="243.75" class="bline" />
+<line x1="400" y1="262.5" x2="600" y2="281.25" class="bline" />
+<use x="400" y="262.5" xlink:href="#blob" />
+<use x="600" y="0"  xlink:href="#vline" />
+<text x="600" y="325" class="gntext">3</text>
+<text x="600" y="350" class="gntext">8</text>
+<use x="600" y="18.75" xlink:href="#blob" />
+<use x="600" y="56.25" xlink:href="#blob" />
+<use x="600" y="93.75" xlink:href="#blob" />
+<use x="600" y="131.25" xlink:href="#blob" />
+<use x="600" y="168.75" xlink:href="#blob" />
+<use x="600" y="206.25" xlink:href="#blob" />
+<use x="600" y="243.75" xlink:href="#blob" />
+<use x="600" y="281.25" xlink:href="#blob" />
+<text x="-20" y="325" class="heads">Generation: </text>
+<text x="-20" y="350" class="heads">Nodes: </text>
+</g>
 </svg>
