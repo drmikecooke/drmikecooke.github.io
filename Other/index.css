@@ -70,15 +70,13 @@ nav a:hover {
   overflow: hidden;
 }
 
+/* Footer */
 footer {
   padding: 5px;
   text-align: center;
   background: #ccc;
   margin-top: 5px;
-}
-
-footer h2 a {
-  font: bold;
+  font-weight: bold;
   font-size: 21px;
 }
 

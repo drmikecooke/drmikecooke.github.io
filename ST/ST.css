@@ -85,8 +85,11 @@ footer {
   margin-top: 5px;
 }
 
-footer h2 a {
-font-family: Arial;
-  font: bold;
+footer {
+  padding: 5px;
+  text-align: center;
+  background: #ccc;
+  margin-top: 5px;
+  font-weight: bold;
   font-size: 21px;
 }
