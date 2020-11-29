@@ -72,8 +72,6 @@ button {
 
 p { line-height: 1.4em; margin-top: 10px; }
 
-h2 { margin-bottom: 10px; }
-
 input { background-color: #ddd; }
 
 article {
@@ -88,13 +86,12 @@ article {
 
 article h1, h2, h3, h4 {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 1ex 0;
 }
 
-article h1 { font-size: 2.4em; text-align: center; }
-article h2 { font-size: 1.8em; text-align: left; }
-article h3 { font-size: 1.5em; text-align: center; }
-article h4 { font-size: 1.3em; text-align: center; }
+article h1 { font-size: 2.4em; text-align: center; line-height: 1.4em; }
+article h2 { font-size: 1.8em; text-align: left; line-height: 1.4em; }
+article h3 { font-size: 1.5em; text-align: center; line-height: 1.4em; }
+article h4 { font-size: 1.3em; text-align: center; line-height: 1.4em; }
 
 article th, td {
   padding: 3px;
