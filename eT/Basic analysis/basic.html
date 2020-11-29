@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Basic analysis</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="backlog.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/data.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+  <article>
+    <h1>Basic analysis</h1>
+    <p class="noindent">We found in <a href="/eT/Logjam/logjam.html">Logjam</a> and <a href="/eT/Backlog/backlog.html">Backlog</a> that making our base closer and closer to 1 enables us to set up more accurate log tables for other bases. Here we are going to analyse this limit. We will see that there is a "natural" base for logarithms that has many nice properties (and not so nice ones).</p>
+    <p class="indent">So let’s start considering the powers of a “base” \(1 + \Delta x\) to a power of \(N\), where we want \(\Delta x\) to go to zero. At the same time we want \(N\) to become large to give a finite, but variable value for \((1 + \Delta x)^N\). Setting \(\Delta x = 0\) at the start just gives 1 for all values of \(N\) — that would be a pretty pointless exercise. So what if we fix the relation between them as \(N \Delta x = x\)? This would give \((1 + \Delta x)^N = (1 + \Delta x)^{x/\Delta x}\). Using our power relations (described on <a href="/eT/Logjam/logjam.html">Logjam</a>) we can recast this as:</p>
+    <p class="noindent">\[[(1 + \Delta x)^{1/\Delta x}]^x\]</p>
+    <p class="indent">The inner part depends only on \(\Delta x\), which is then taken to a power of \(x\). As \(\Delta x\) gets closer to zero, we will find that it tends to a definite limit, which you probably already know as \(e\) or \(\exp\). So the equation above is expressed as \(e^x\) or \(\exp(x)\).</p>
+    <p class="indent">Another way of looking at the expression is as dividing \(x\) into smaller and smaller intervals and letting \(N\) become larger and larger:</p>
+    <p class="noindent">\[(1+\frac x N)^N\]</p>
+    <h2>The absolute limit</h2>
+    <p class="noindent">The idea of limits in mathematics were only really sorted out in the 19th century. Before that there was a tangle of results, many of which were unreliable and philosophers like Bishop Berkley could tear apart, casting doubt on the whole enterprise. Our problem of not being able to cut to the chase and just set \(\Delta x = 0\) is an example of this. In the first instance we are interested in:</p>
+    <p class="noindent">\[e = \lim_{\Delta x \to 0}(1 + \Delta x)^{1/\Delta x} = \lim_{N \to +\infty}(1+\frac 1 N)^N\]</p>
+    <p class="indent">At this point we are assuming \(\Delta x, N \gt 0\). So let's see how these functions behave. We will be using the \(N\) expression, since it allows us to calculate in whole number powers, avoiding the thorny question of rational or even irrational numbers being used as an exponent. However we also cast the table in terms of the corresponding \(\Delta x\) since the limit to zero is easier to visualise on a graph. The values of \(N\) will be a series of doublings from 1.</p>
+    <div class="arial text-center">
+      <h4>Generate \(e\) estimates</h4>
+      <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="base2" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
+      <button type="button" onclick="setLogbTable()">Make<br /> table</button>
+      <div id="logbtable" style="margin-bottom: 10px"></div>
+    </div>
+  </article>
+  <footer id="email"><script src="/js/footer.js"></script></footer>
+</body>
+</html>
