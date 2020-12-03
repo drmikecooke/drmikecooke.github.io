@@ -22,7 +22,7 @@
 
   <article>
     <h1>Basic analysis</h1>
-    <p class="noindent">We found in <a href="/eT/Logjam/logjam.html">Logjam</a> and <a href="/eT/Backlog/backlog.html">Backlog</a> that making our base closer and closer to 1 enables us to set up more accurate log tables for other bases. Here we are going to analyse this limit. We will see that there is a "natural" base for logarithms that has many nice properties (and not so nice ones).</p>
+    <p class="noindent">We found in <a href="/eT/Logjam/logjam.html">Logjam</a> and <a href="/eT/Backlog/backlog.html">Backlog</a> that making our base closer and closer to 1 enables us to set up more accurate log tables for other bases. Here we are going to analyse this limit. We will see that there is a “natural” base for logarithms that has many nice properties (and not so nice ones).</p>
     <p class="indent">So let’s start considering the powers of a “base” \(1 + \Delta x\) to a power of \(N\), where we want \(\Delta x\) to go to zero. At the same time we want \(N\) to become large to give a finite, but variable value for \((1 + \Delta x)^N\). Setting \(\Delta x = 0\) at the start just gives 1 for all values of \(N\) — that would be a pretty pointless exercise. So what if we fix the relation between them as \(N \Delta x = x\)? This would give \((1 + \Delta x)^N = (1 + \Delta x)^{x/\Delta x}\). Using our power relations (described on <a href="/eT/Logjam/logjam.html">Logjam</a>) we can recast this as:</p>
     <p class="noindent">\[[(1 + \Delta x)^{1/\Delta x}]^x\]</p>
     <p class="indent">The inner part depends only on \(\Delta x\), which is then taken to a power of \(x\). As \(\Delta x\) gets closer to zero, we will find that it tends to a definite limit, which you probably already know as \(e\) or \(\exp\). So the equation above is expressed as \(e^x\) or \(\exp(x)\).</p>
@@ -30,8 +30,8 @@
     <p class="noindent">\[(1+\frac x N)^N\]</p>
     <h2>The absolute limit</h2>
     <p class="noindent">The idea of limits in mathematics were only really sorted out in the 19th century. Before that there was a tangle of results, many of which were unreliable and philosophers like Bishop Berkley could tear apart, casting doubt on the whole enterprise. Our problem of not being able to cut to the chase and just set \(\Delta x = 0\) is an example of this. In the first instance we are interested in:</p>
-    <p class="noindent">\[e = \lim_{\Delta x \to 0}(1 + \Delta x)^{1/\Delta x} = \lim_{N \to +\infty}(1+\frac 1 N)^N\]</p>
-    <p class="indent">At this point we are assuming \(\Delta x, N \gt 0\). So let's see how these functions behave. We will be using the \(N\) expression, since it allows us to calculate in whole number powers, avoiding the thorny question of rational or even irrational numbers being used as an exponent. However we also cast the table in terms of the corresponding \(\Delta x\) since the limit to zero is easier to visualise on a graph. The values of \(N\) will be a series of doublings from 1.</p>
+    <p class="noindent">\[e = \lim_{\Delta x \to 0}(1 + \Delta x)^{1/\Delta x} = \lim_{N \to +\infty}\left(1+\frac 1 N\right)^N\]</p>
+    <p class="indent">At this point we are assuming \(\Delta x, N \gt 0\). So let's see how these functions behave. We will be using the \(N\) expression, since it allows us to calculate in whole number powers, avoiding the thorny question of rational or even irrational numbers being used as an exponent. However we also cast the table in terms of the corresponding \(\Delta x\) since the limit to zero is easier to visualise on a graph. The values of \(N\) will be a series of doublings from 1 (this will be useful for Richardson extrapolation).</p>
     <div class="arial text-center">
       <h4>Generate \(e\) estimates</h4>
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
@@ -56,10 +56,53 @@
         document.getElementById("e").innerHTML = "<em>e</em> = " + Math.E;
     </script>
 
-    <p class="indent">If we define \(e_N = (1+1/N)^N\), we have (excluding \(N = 0, 1\) from consideration):</p>
+    <p class="indent">If we define \(e_N = (1+1/N)^N\), we have (excluding \(N = 0, 1\) from consideration, see below):</p>
     <p class="noindent">\[e_{-N} = e_{N-1} \frac N {N-1}\]</p>
-
-
+<p class="indent">We want to show the sequence in:</p>
+<p class="noindent">\[\lim_{N\to+\infty}e_{N}=\lim_{N\to+\infty}\left(1+\frac{1}{N}\right)^{N}\]</p>
+<p class="noindent">is monotonic increasing for \(N&gt;0\). As a bonus we want to also show that \(\lim_{N\to-\infty}e_{N}\) is monotonic decreasing for \(N&lt;-1\), along with \(e_{-N}&gt;e_{M}\) for all positive \(N,M\). Finally we want to show that both limits go the same finite number. The numbers \(N=0,-1\) are pathological, giving \(e_{0}=+\infty\) and \(e_{-1}=0\).</p>
+<p class="indent">None of these statements is obvious (except for the exceptions). First off: the size of the factors \((1+1/N)\) decrease as \(N\to+\infty\), but there are more of them. We can bring to bear stuff we “know” from school or university, but then we have to ask “How do we know?” Some of this “knowledge” includes features of the behaviour of powers (or logarithms) that we want to prove.</p>
+<p class="indent">We can use the binomial formula to break the problem down a bit:</p>
+<p class="noindent">\[\left(a+b\right)^{N}=\sum_{n=0}^{N}a^{n}b^{N-n}{N \choose n}\]</p>
+<p class="indent">The binomial factor is:</p>
+<p class="noindent">\[{N \choose n}=\frac{N!}{n!\left(N-n\right)!}\]</p>
+<p class="noindent">is the number of ways of choosing \(n\) \(a\)s and \(N-n\) \(b\)s from the brackets. [\(n!=n(n-1)(n-2)\ldots1.\)] This can be shown fairly easily using inductive arguments, and elementary properties of multiplication and addition.</p>
+<p class="indent">So we have (swapping \(n\) and \(N-n\)):</p>
+<p class="noindent">\[e_{N}=\sum_{n=0}^{N}\left(\frac{1}{N}\right)^{n}1^{N-n}{N \choose n}=\sum_{n=0}^{N}\left(\frac{1}{N}\right)^{n}{N \choose n}\]</p>
+<p class="indent">The first two terms turn out to be both 1, so they are constant for \(N\to+\infty\). The third term is \(\left(N-1\right)/\left(2N\right)=\left(1/2\right)\left(1-1/N\right)\), which approaches 1/2 from below (i.e. is monotonic increasing). Although this is a good start, obviously to consider each term in this way would take from here to eternity. Let us define:</p>
+<p class="noindent">\[e_{N}^{\left(n\right)}=\left(\frac{1}{N}\right)^{n}{N \choose n}\]</p>
+<p class="indent">Separating out the binomial factor:</p>
+<p class="noindent">\[e_{N}^{\left(n\right)}=\frac{1}{n!}\prod_{m=0}^{n}\frac{N-m}{N}=\frac{1}{n!}\prod_{m=1}^{n}\frac{N-m}{N}=\frac{1}{n!}\prod_{m=1}^{n}\left(1-\frac{m}{N}\right)\]</p>
+<p class="indent">This is a product of terms that increase towards 1. The m=0 term was removed since it was (already) 1. Hence the \(e_{N}\) increase with \(N\).</p>
+<p class="indent">Unfortunately we can’t transfer this analysis straight away to negative \(N\) since the binomial expansion is infinite (and not at this stage obviously true). However we can cast the negative values to positive using:</p>
+<p class="noindent">\[e_{-N}=\left(1-\frac{1}{N}\right)^{-N}=\left(\frac{N-1}{N}\right)^{-N}=\left(\frac{N}{N-1}\right)^{N}=\frac{N}{N-1}\left(1+\frac{1}{N-1}\right)^{N-1}=\frac{N}{N-1}e_{N-1}\]</p>
+<p class="indent">While interesting, this result isn’t much use at this point, although it does tell us that \(e_{-N}&gt;e_{N-1}\). Let’s look instead at:</p>
+<p class="noindent">\[f_{N}=\frac{1}{e_{-N}}=\left(1-\frac{1}{N}\right)^{N}=\sum_{n=0}^{N}\left(\frac{-1}{N}\right)^{n}{N \choose n}=1-1+\frac{N-1}{2N}-\frac{\left(N-1\right)\left(N-2\right)}{6N^{2}}+\ldots=\frac{N^{2}-1}{3N^{2}}+\ldots\]</p>
+<p class="indent">If we can show that this increases with \(N\) we will then have that \(e_{N}\) decreases. We have paired the positive and negative terms to give zero and a number that increases to 1/3 as \(N\) increases, which is promising for the project.</p>
+<p class="indent">Working in more generalised terms:</p>
+<p class="noindent">\[f_{2N+1}=\sum_{n=0}^{N}\left(\left(\frac{-1}{2N+1}\right)^{2n}{2N+1 \choose 2n}+\left(\frac{-1}{2N+1}\right)^{2n+1}{2N+1 \choose 2n+1}\right)\]</p>
+<p class="indent">After some hard mathematical graft, I compressed this a bit to:</p>
+<p class="noindent">\[f_{2N+1}=\sum_{n=0}^{N}\left(2n\left(\frac{1}{2N+1}\right)^{2n+1}{2N+2 \choose 2n+1}\right)\]</p>
+<p class="indent">You may have noticed that I have missed out the even \(N\). In that case there are an odd number of terms. Adding in the extra (positive) term gives:</p>
+<p class="noindent">\[f_{2N}=\sum_{n=0}^{N-1}\left(2n\left(\frac{1}{2N}\right)^{2n+1}{2N+1 \choose 2n+1}\right)+\left(\frac{1}{2N}\right)^{2N}\]</p>
+<p class="indent">We also notice that the \(n=0\) term is zero (as already noted above), and can therefore be omitted from consideration. Let us define:</p>
+<p class="noindent">\[f_{N}^{(n)}=2n\left(\frac{1}{N}\right)^{2n+1}{N+1 \choose 2n+1}\]</p>
+<p class="indent">These expressions mean that:</p>
+<p class="noindent">\[f_{2N}=\sum_{n=1}^{N-1}f_{2N}^{(n)}+\left(\frac{1}{2N}\right)^{2N}\]</p>
+<p class="noindent">\[f_{2N+1}=\sum_{n=1}^{N}f_{2N+1}^{(n)}\]</p>
+<p class="indent">Let us unpack:</p>
+<p class="noindent">\[f_{N}^{(n)}=\frac{2n}{\left(2n+1\right)!}\left(\frac{1}{N}\right)^{2n+1}\prod_{m=0}^{2n}\left(N+1-m\right)=\frac{2n}{\left(2n+1\right)!}\prod_{m=0}^{2n}\frac{N+1-m}{N}\]</p>
+<p class="indent">All the terms in the final product increase with \(N\) except for the \(m=0,1\) terms. However the \(m=0\) term can be combined with the \(m=2\) term, while the \(m=1\) term is 1, neither increasing or decreasing the product:</p>
+<p class="noindent">\[f_{N}^{(n)}=\frac{2n}{\left(2n+1\right)!}\frac{N^{2}-1}{N^{2}}\prod_{m=3}^{2n}\frac{N+1-m}{N}\]</p>
+<p class="indent">The combined \(m=0,2\) term is also increasing with \(N\).</p>
+<p class="indent">The only niggle left is whether the combination of the last two terms of an “odd” sequence might decrease relative to the single term of the previous “even” sequence. However, one finds that in fact the worry about the behaviour of the final terms can be lifted by considering:</p>
+<p class="noindent">\[f_{2N}^{(N)}=2N\left(\frac{1}{2N}\right)^{2N+1}{2N+1 \choose 2N+1}=\left(\frac{1}{2N}\right)^{2N}\]</p>
+<p class="indent">So in fact:</p>
+<p class="noindent">\[f_{2N}=\sum_{n=1}^{N}f_{2N}^{(n)}\]</p>
+<p class="noindent">and the neighbouring series are comparable, including the last odd term, if present.</p>
+<p class="indent">So what do we know so far? First, for \(N,m&gt;0\) we have \(e_{N+m}&gt;e_{N}\). Similarly, \(e_{-\left(N+m\right)}&lt;e_{-N}\) (\(N&gt;1\)). As noted above \(e_{-N}&gt;e_{N-1}\). We can now extend this to \(e_{-N}&gt;e_{-\left(N+m\right)}&gt;e_{N+m-1}\). The \(e_{N}\) is an increasing sequence, this means that all \(e_{-N}\) are greater than all \(e_{M}\), or \(e_{-N}&gt;e_{M}\) (\(M&gt;0\)). Any \(e_{-N}\) bounds above the increasing monotonic sequence \(e_M\). Similarly any \(e_{M}\) bounds the decreasing sequence \(e_{-N}\) from below. The other bounds are given by the first terms in the sequences. These features enable us to say that the sequences tend towards unique numbers (rather than increasing or decreasing forever, wandering off to positive or negative infinity). Although the sequences are made up of rational numbers, the limits may not be (and in fact are not). The real numbers were invented to enable such sequences to be dealt with coherently (early work on this is in Euclid). Further the limits of the sequences lead to the <em>same</em> number. This follows from (since the extra factor tends to 1):</p>
+<p class="noindent">\[e_{-N}=\frac{N}{N-1}e_{N-1}\]</p>
+<p class="indent">There are a bewildering number of ways to define real numbers from the rationals, the two main ones being Cauchy sequences and Dedekind cuts. These eventually lead to things like the “bounded monotone covergence theorem” used above.</p>
   </article>
   <footer id="email"><script src="/js/footer.js"></script></footer>
 </body>

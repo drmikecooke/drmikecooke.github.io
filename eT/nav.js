@@ -7,3 +7,4 @@ navbar.innerHTML += '<a href="/eT/Power/Power.html">Powering<sup>up</sup></a>\n'
 navbar.innerHTML += '<a href="/eT/Branching/Branching.html">Bugs, bunnies . . .</a>\n';
 navbar.innerHTML += '<a href="/eT/Logjam/logjam.html">Logjam</a>\n';
 navbar.innerHTML += '<a href="/eT/Backlog/backlog.html">Backlog</a>\n';
+navbar.innerHTML += '<a href="/eT/Basic analysis/basic.html">Basic analysis</a>\n';

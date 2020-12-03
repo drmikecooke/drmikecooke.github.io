@@ -1,0 +1,713 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+We want to show the sequence in:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{N\to+\infty}e_{N}=\lim_{N\to+\infty}\left(1+\frac{1}{N}\right)^{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+is monotonic increasing for 
+\begin_inset Formula $N>0$
+\end_inset
+
+.
+ As a bonus we want to also show that 
+\begin_inset Formula $\lim_{N\to-\infty}e_{N}$
+\end_inset
+
+ is monotonic decreasing for 
+\begin_inset Formula $N<-1$
+\end_inset
+
+, along with 
+\begin_inset Formula $e_{-N}>e_{M}$
+\end_inset
+
+ for all positive 
+\begin_inset Formula $N,M$
+\end_inset
+
+.
+ Finally we want to show that both limits go the same finite number.
+ The numbers 
+\begin_inset Formula $N=0,-1$
+\end_inset
+
+ are pathological, giving 
+\begin_inset Formula $e_{0}=+\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{-1}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+None of these statements is obvious (except for the exceptions) first off:
+ for example, the size of the factors 
+\begin_inset Formula $(1+1/N)$
+\end_inset
+
+ decrease as 
+\begin_inset Formula $N\to+\infty$
+\end_inset
+
+, but there are more of them.
+ We can bring to bear stuff we 
+\begin_inset Quotes eld
+\end_inset
+
+know
+\begin_inset Quotes erd
+\end_inset
+
+ from school or university, but then we have to ask 
+\begin_inset Quotes eld
+\end_inset
+
+How do we know?
+\begin_inset Quotes erd
+\end_inset
+
+ Some of this 
+\begin_inset Quotes eld
+\end_inset
+
+knowledge
+\begin_inset Quotes erd
+\end_inset
+
+ includes features of the behaviour of powers (or logarithms) that we want
+ to prove.
+\end_layout
+
+\begin_layout Standard
+We can use the binomial formula to break the problem down a bit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(a+b\right)^{N}=\sum_{n=0}^{N}a^{n}b^{N-n}\binom{N}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The binomial factor is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\binom{N}{n}=\frac{N!}{n!\left(N-n\right)!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+is the number of ways of choosing 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $a$
+\end_inset
+
+s and 
+\begin_inset Formula $N-n$
+\end_inset
+
+ 
+\begin_inset Formula $b$
+\end_inset
+
+s from the brackets.
+ [
+\begin_inset Formula $n!=n(n-1)(n-2)\ldots1.$
+\end_inset
+
+] This can be shown fairly easily using inductive arguments, and elementary
+ properties of multiplication and addition.
+\end_layout
+
+\begin_layout Standard
+So we have (swapping 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $N-n$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{N}=\sum_{n=0}^{N}\left(\frac{1}{N}\right)^{n}1^{N-n}\binom{N}{n}=\sum_{n=0}^{N}\left(\frac{1}{N}\right)^{n}\binom{N}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first two terms turn out to be both 1, so they are constant for 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $N\to+\infty$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ The third term is 
+\begin_inset Formula $\left(N-1\right)/\left(2N\right)=\left(1/2\right)\left(1-1/N\right)$
+\end_inset
+
+, which approaches 1/2 from below (i.e.
+ is monotonic increasing).
+ Although this is a good start, obviously to consider each term in this
+ way would take from here to eternity.
+ Let us define:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{N}^{\left(n\right)}=\left(\frac{1}{N}\right)^{n}\binom{N}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This may contain many factors, so we perhaps seem no better off.
+ Let us reduce the number of factors by considering the ratio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e_{N+1}^{\left(n\right)}}{e_{N}^{\left(n\right)}}=\left(\frac{N}{N+1}\right)^{n}\frac{\left(N+1\right)!}{n!\left(N+1-n\right)!}\frac{n!\left(N-n\right)!}{N!}=\left(\frac{N}{N+1}\right)^{n}\frac{N+1}{N+1-n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This still contains a power.
+ For 
+\begin_inset Formula $n=0,1$
+\end_inset
+
+ we have ratios of 1, which we already knew.
+ We can do the same trick, this time with 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e_{N+1}^{\left(n+1\right)}}{e_{N}^{\left(n+1\right)}}/\frac{e_{N+1}^{\left(n\right)}}{e_{N}^{\left(n\right)}}=\frac{N}{N+1}\frac{N+1}{N+1-n-1}\frac{N+1-n}{N+1}=\frac{N\left(N+1-n\right)}{\left(N+1\right)\left(N-n\right)}=\frac{N^{2}+\left(1-n\right)N}{N^{2}+\left(1-n\right)N-n}>1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+for 
+\begin_inset Formula $n>0$
+\end_inset
+
+.
+ Since the ratio is 1 for 
+\begin_inset Formula $n=0$
+\end_inset
+
+, this implies that 
+\begin_inset Formula $e_{N+1}^{\left(n\right)}/e_{N}^{\left(n\right)}$
+\end_inset
+
+ strictly increases as 
+\begin_inset Formula $n$
+\end_inset
+
+ increases for 
+\begin_inset Formula $n>1$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $e_{N+1}^{\left(1\right)}/e_{N}^{\left(1\right)}$
+\end_inset
+
+ is 1, these ratios are therefore greater than 1.
+ This means that 
+\begin_inset Formula $e_{N+1}^{\left(n\right)}>e_{N}^{\left(n\right)}$
+\end_inset
+
+ for 
+\begin_inset Formula $n>1$
+\end_inset
+
+.
+ In turn, this means 
+\begin_inset Formula $e_{N+1}>e_{N}$
+\end_inset
+
+ for 
+\begin_inset Formula $N>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Unfortunately we can't transfer this analysis to negative 
+\begin_inset Formula $N$
+\end_inset
+
+ since the binomial expansion, apart from being infinite (and not at this
+ stage obviously true), includes positive and negative terms.
+ However we can cast the negative values to positive using:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{-N}=\left(1-\frac{1}{N}\right)^{-N}=\left(\frac{N-1}{N}\right)^{-N}=\left(\frac{N}{N-1}\right)^{N}=\frac{N}{N-1}\left(1+\frac{1}{N-1}\right)^{N-1}=\frac{N}{N-1}e_{N-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While interesting, this result isn't much use at this point.
+ Let's look instead at:
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+f_{N}=\frac{1}{e_{-N}}=\left(1-\frac{1}{N}\right)^{N}=\sum_{n=0}^{N}\left(\frac{-1}{N}\right)^{n}\binom{N}{n}=1-1+\frac{N-1}{2N}-\frac{\left(N-1\right)\left(N-2\right)}{6N^{2}}+\ldots=\frac{N^{2}-1}{3N^{2}}+\ldots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we can show that this increases with 
+\begin_inset Formula $N$
+\end_inset
+
+ we will then have that 
+\begin_inset Formula $e_{N}$
+\end_inset
+
+ decreases.
+ We have paired the positive and negative terms to give zero and a number
+ that increases to 1/3 as 
+\begin_inset Formula $N$
+\end_inset
+
+ increases, which is promising for the project.
+\end_layout
+
+\begin_layout Standard
+Working in more generalised terms:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N+1}=\sum_{n=0}^{N}\left(\left(\frac{-1}{2N+1}\right)^{2n}\binom{2N+1}{2n}+\left(\frac{-1}{2N+1}\right)^{2n+1}\binom{2N+1}{2n+1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After some hard mathematical graft, I compressed this a bit to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N+1}=\sum_{n=0}^{N}\left(2n\left(\frac{1}{2N+1}\right)^{2n+1}\binom{2N+2}{2n+1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You may have noticed that I have missed out the even 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ In that case there are an odd number of terms.
+ Adding in the extra (positive) term gives:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N}=\sum_{n=0}^{N-1}\left(2n\left(\frac{1}{2N}\right)^{2n+1}\binom{2N+1}{2n+1}\right)+\left(\frac{1}{2N}\right)^{2N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also notice that the 
+\begin_inset Formula $n=0$
+\end_inset
+
+ term is zero, and can therefore be omitted from consideration.
+ Let us define:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{N}^{(n)}=2n\left(\frac{1}{N}\right)^{2n+1}\binom{N+1}{2n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These expressions mean that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N}=\sum_{n=1}^{N-1}f_{2N}^{(n)}+\left(\frac{1}{2N}\right)^{2N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N+1}=\sum_{n=1}^{N}f_{2N+1}^{(n)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us unpack:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{N}^{(n)}=\frac{2n}{\left(2n+1\right)!}\left(\frac{1}{N}\right)^{2n+1}\prod_{m=0}^{2n}\left(N+1-m\right)=\frac{2n}{\left(2n+1\right)!}\prod_{m=0}^{2n}\frac{N+1-m}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All the terms in the final product increase with 
+\begin_inset Formula $N$
+\end_inset
+
+ except for the 
+\begin_inset Formula $m=0,1$
+\end_inset
+
+ terms.
+ However the 
+\begin_inset Formula $m=0$
+\end_inset
+
+ term can be combined with the 
+\begin_inset Formula $m=2$
+\end_inset
+
+ term, while the 
+\begin_inset Formula $m=1$
+\end_inset
+
+ term is 1, neither increasing or decreasing the product:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{N}^{(n)}=\frac{2n}{\left(2n+1\right)!}\frac{N^{2}-1}{N^{2}}\prod_{m=3}^{2n}\frac{N+1-m}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The combines 
+\begin_inset Formula $m=0,2$
+\end_inset
+
+ term is also increasing with 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ The only niggle left is whether the combination of the last two terms might
+ decrease relative to the previous single term.
+ However, one finds that in fact the worry about the behaviour of the final
+ terms can be lifted by considering:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N}^{(N)}=2N\left(\frac{1}{2N}\right)^{2N+1}\binom{2N+1}{2N+1}=\left(\frac{1}{2N}\right)^{2N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So in fact:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{2N}=\sum_{n=1}^{N}f_{2N}^{(n)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and the neighbouring series are comparable.
+\end_layout
+
+\begin_layout Standard
+[Rubbish tip .
+ .
+ .]
+\end_layout
+
+\begin_layout Standard
+So applying the binomial expansion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{-N}=\sum_{n=0}^{N}\left(\frac{1}{N-1}\right)^{n}\binom{N}{n}=\sum_{n=0}^{N}e_{-N}^{\left(n\right)}=1+\frac{N}{N-1}+\frac{1}{2}\frac{N}{N-1}+\frac{1}{6}\frac{N\left(N-2\right)}{\left(N-1\right)^{2}}+\ldots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since we want to show that these expressions are monotonic decreasing we
+ need to consider the comparision ratios:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e_{-\left(N+1\right)}^{\left(n\right)}}{e_{-N}^{\left(n\right)}}=\left(\frac{N-1}{N}\right)^{n}\frac{N+1}{N+1-n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e_{N+1}^{\left(n+1\right)}}{e_{N}^{\left(n+1\right)}}/\frac{e_{N+1}^{\left(n\right)}}{e_{N}^{\left(n\right)}}=\frac{\left(N-1\right)\left(N+1-n\right)}{N\left(N-n\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
