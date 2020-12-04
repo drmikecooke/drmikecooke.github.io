@@ -1,0 +1,221 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Richardson extrapolation enables accurate limits of sequences to be achieved
+ more accurately and quickly.
+ We are trying to estimate some constant 
+\begin_inset Formula $A^{*}$
+\end_inset
+
+ from a sequence 
+\begin_inset Formula $A_{N}$
+\end_inset
+
+ or 
+\begin_inset Formula $A_{h}$
+\end_inset
+
+ where 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+ or 
+\begin_inset Formula $h\to0$
+\end_inset
+
+.
+ We hope that as the limit is approached, the error goes to zero:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{*}=A_{N}+\Delta A_{N}=A_{h}+\Delta A_{h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Further, we might hope that the behaviour is a simple power of the parameter,
+ negative in the case of 
+\begin_inset Formula $N$
+\end_inset
+
+, positive for 
+\begin_inset Formula $h$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{*}=A_{N}+\frac{a_{N}}{N^{\alpha}}=A_{h}+b_{h}h^{\beta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the powers have been chosen correctly the multiplicative factors should
+ tend towards constants in the appropriate limit.
+ We can estimate these constants by evaluating the 
+\begin_inset Formula $A$
+\end_inset
+
+'s appropriately, for example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{*}=A_{N}+\frac{a^{*}}{N^{\alpha}}=A_{2N}+\frac{a^{*}}{\left(2N\right)^{\alpha}}\Rightarrow a^{*}\approx N^{\alpha}\frac{A_{2N}-A_{N}}{1-(1/2)^{\alpha}}\Rightarrow A^{*}\thickapprox\frac{A_{2N}-A_{N}/2^{\alpha}}{1-(1/2)^{\alpha}}=\frac{2^{\alpha}A_{2N}-A_{N}}{2^{\alpha}-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A similar calculation gives:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{*}\thickapprox\frac{2^{\beta}A_{h/2}-A_{h}}{2^{\beta}-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are looking to improve the estimate to 
+\begin_inset Formula $e$
+\end_inset
+
+ given by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e_{N}=\left(1+\frac{1}{N}\right)^{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the page 
+\begin_inset Quotes eld
+\end_inset
+
+basic analysis
+\begin_inset Quotes erd
+\end_inset
+
+, the limit as 
+\begin_inset Formula $\Delta x=1/N\to0$
+\end_inset
+
+ appears to be linear, so here 
+\begin_inset Formula $\alpha,\beta=1$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

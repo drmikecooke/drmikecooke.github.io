@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Richardson extrapolation</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="Richardson.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/data.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+  <article>
+    <h1>Richardson extrapolation</h1>
+    <p>Richardson extrapolation enables accurate limits of sequences to be achieved more accurately and quickly. We are trying to estimate some constant <span class="math inline">\(A^{*}\)</span> from a sequence <span class="math inline">\(A_{N}\)</span> or <span class="math inline">\(A_{h}\)</span> where <span class="math inline">\(N\to\infty\)</span> or <span class="math inline">\(h\to0\)</span>. We hope that as the limit is approached, the error goes to zero:</p>
+<p><span class="math display">\[A^{*}=A_{N}+\Delta A_{N}=A_{h}+\Delta A_{h}\]</span></p>
+<p>Further, we might hope that the behaviour is a simple power of the parameter, negative in the case of <span class="math inline">\(N\)</span>, positive for <span class="math inline">\(h\)</span>:</p>
+<p><span class="math display">\[A^{*}=A_{N}+\frac{a_{N}}{N^{\alpha}}=A_{h}+b_{h}h^{\beta}\]</span></p>
+<p>If the powers have been chosen correctly the multiplicative factors should tend towards constants in the appropriate limit. We can estimate these constants by evaluating the <span class="math inline">\(A\)</span>’s appropriately, for example:</p>
+<p><span class="math display">\[A^{*}=A_{N}+\frac{a^{*}}{N^{\alpha}}=A_{2N}+\frac{a^{*}}{\left(2N\right)^{\alpha}}\Rightarrow a^{*}\approx N^{\alpha}\frac{A_{2N}-A_{N}}{1-(1/2)^{\alpha}}\Rightarrow A^{*}\thickapprox\frac{A_{2N}-A_{N}/2^{\alpha}}{1-(1/2)^{\alpha}}=\frac{2^{\alpha}A_{2N}-A_{N}}{2^{\alpha}-1}\]</span></p>
+<p>A similar calculation gives:</p>
+<p><span class="math display">\[A^{*}\thickapprox\frac{2^{\beta}A_{h/2}-A_{h}}{2^{\beta}-1}\]</span></p>
+<p>We are looking to improve the estimate to <span class="math inline">\(e\)</span> given by:</p>
+<p><span class="math display">\[e_{N}=\left(1+\frac{1}{N}\right)^{N}\]</span></p>
+      <p>On the page <a href="/eT/Basic analysis/basic.html">Basic analysis</a>, the limit as <span class="math inline">\(\Delta x=1/N\to0\)</span> appears to be linear, so here <span class="math inline">\(\alpha,\beta=1\)</span>. So:</p>
+<p><span class="math display">\[e_{N}^{(1)}=\frac{2e_{2N}-e_{N}}{2-1}=2e_{2N}-e_{N}\]</span></p>
+<p>should give us an improvement.</p>
+    <div class="arial text-center">
+      <h4>Generate \(e\) estimates</h4>
+      <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
+      <button type="button" onclick="target('reTable',makeR1ETable(getNumber('Nmax')).HTML())">Make<br /> table</button>
+      <button type="button" onclick="PlotlyR1ETable(getNumber('Nmax'))">Make<br /> graph</button>
+      <div id="reTable" class="text-center" style="width:50%; margin:auto"></div>
+    </div>
+
+    <p class="indent">Moving to negative \(\Delta x,N\):
+    <div class="arial text-center">
+      <h4>Generate \(e\) estimates from negative \(\Delta x\)</h4>
+      <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax2" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
+      <button type="button" onclick="target('rneTable',makeR1NETable(getNumber('Nmax')).HTML())">Make<br /> table</button>
+      <button type="button" onclick="PlotlyR1NETable(getNumber('Nmax2'))">Make<br /> graph</button>
+      <div id="rneTable" class="text-center" style="width:50%; margin:auto"></div>
+    </div>
+    <p class="indent">Both Richardson extrapolations seem to converge from below, and may suggest a quadratic (power 2) error. They both seem to be approaching a value around 2.718281... As a reminder Javascript in your browser gives:</p>
+    <div id="e" class="text-center"></div>
+    <script>
+        document.getElementById("e").innerHTML = "<em>e</em> = " + Math.E;
+    </script>
+      <p class="indent">Let us assume a quadratic error in \(e_N^{(1)}\):</p>
+    <p class="noindent">\[e_N^{(2)}=\frac{2^2e_{2N}^{(1)}-e_N^{(1)}}{2^2-1}\]</p>
+    <div class="arial text-center">
+      <h4>Generate \(e\) estimates (2nd Richardson extrapolation)</h4>
+      <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax3" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
+      <button type="button" onclick="target('r2eTable',makeR2ETable(getNumber('Nmax3')).HTML())">Make<br /> table</button>
+      <button type="button" onclick="PlotlyR2ETable(getNumber('Nmax'))">Make<br /> graph</button>
+      <div id="r2eTable" class="text-center" style="width:50%; margin:auto"></div>
+    </div>
+    <div class="arial text-center">
+      <h4>Generate \(e\) estimates (2nd Richardson extrapolation, neg. (\(\Delta x\)))</h4>
+      <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax4" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
+      <button type="button" onclick="target('r2neTable',makeR2NETable(getNumber('Nmax4')).HTML())">Make<br /> table</button>
+      <button type="button" onclick="PlotlyR2NETable(getNumber('Nmax'))">Make<br /> graph</button>
+      <div id="r2neTable" class="text-center" style="width:50%; margin:auto"></div>
+    </div>
+      <p class="indent">Now the estimate seems to be between 2.7182818283 and 2.7182818286. Some further investigation can be made using a simple average of the even-order extrapolations for \(e_N\) and \(e_{-N}\) with error of the two values from the average:</p>
+      <div class="arial text-center">
+      <h4>Exploration of Richardson extrapolation</h4>
+      <table>
+          <tr> <td style="text-align: right;">\(N\):</td> <td>2<sup><input id="N" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr>
+          <tr> <td style="text-align: right;">Order:</td> <td><input id="O" size="5" value="10" style="font-size: 1em; text-align: right;"></td> </tr></table>
+      <button type="button" onclick="target('meanerr',meanerr(getNumber('N')+1,getNumber('O')))">Calculate</button>
+      <div id="meanerr" class="text-center" style="width:50%; margin:auto"></div>
+    </div>
+      <p class="indent">With the smallest \(N\) of \(2^1\), one finds the error reduces to 6.661338147750939e-14 when the order is 8, but then starts increasing, and even becoming erratic with going negative. This is indicative of an unreliable result. The best result at this level is therefore 2.718281828459084. Only the last two figures are off from the Javascript version. I was not able to improve on this value by increasing \(N\) or by varying the order. Even orders are preferred since the error should then have an odd power, which crosses at \(e\), rather than just kissing it. This means that the estimates for positive and negative \(N\) bracket the value we are interested in.</p>
+  </article>
+  <footer id="email"><script src="/js/footer.js"></script></footer>
+</body>
+</html>

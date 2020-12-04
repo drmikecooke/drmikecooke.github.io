@@ -8,3 +8,4 @@ navbar.innerHTML += '<a href="/eT/Branching/Branching.html">Bugs, bunnies . . .<
 navbar.innerHTML += '<a href="/eT/Logjam/logjam.html">Logjam</a>\n';
 navbar.innerHTML += '<a href="/eT/Backlog/backlog.html">Backlog</a>\n';
 navbar.innerHTML += '<a href="/eT/Basic analysis/basic.html">Basic analysis</a>\n';
+navbar.innerHTML += '<a href="/eT/Richardson/Richardson.html">Richardson extrapolation</a>\n';

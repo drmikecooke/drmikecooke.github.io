@@ -73,7 +73,7 @@
 <p class="noindent">\[e_{N}^{\left(n\right)}=\left(\frac{1}{N}\right)^{n}{N \choose n}\]</p>
 <p class="indent">Separating out the binomial factor:</p>
 <p class="noindent">\[e_{N}^{\left(n\right)}=\frac{1}{n!}\prod_{m=0}^{n}\frac{N-m}{N}=\frac{1}{n!}\prod_{m=1}^{n}\frac{N-m}{N}=\frac{1}{n!}\prod_{m=1}^{n}\left(1-\frac{m}{N}\right)\]</p>
-<p class="indent">This is a product of terms that increase towards 1. The m=0 term was removed since it was (already) 1. Hence the \(e_{N}\) increase with \(N\).</p>
+<p class="indent">This is a product of terms that increase towards 1. The \(m=0\) term was removed since it was (already) 1. Hence the \(e_{N}\) increase with \(N\).</p>
 <p class="indent">Unfortunately we can’t transfer this analysis straight away to negative \(N\) since the binomial expansion is infinite (and not at this stage obviously true). However we can cast the negative values to positive using:</p>
 <p class="noindent">\[e_{-N}=\left(1-\frac{1}{N}\right)^{-N}=\left(\frac{N-1}{N}\right)^{-N}=\left(\frac{N}{N-1}\right)^{N}=\frac{N}{N-1}\left(1+\frac{1}{N-1}\right)^{N-1}=\frac{N}{N-1}e_{N-1}\]</p>
 <p class="indent">While interesting, this result isn’t much use at this point, although it does tell us that \(e_{-N}&gt;e_{N-1}\). Let’s look instead at:</p>
