@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Logjam 5</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer"><a href="/eT/Logjam/logjam4.html">◀ Previous</a></div> 
+
+  <article>
+<h2>Logjam 5: I hear you</h2>
+    <div class="standard">At first sight it may appear strange that “an octave” describes a factor of two, since “octo” in Latin and similar sounds in derived languages (e.g. Italian, “otto”) means “eight”. (One can have similar thoughts about October being the tenth month, but that is another story.) The reason is somewhat obscure and historical, as usual, but relates to a series of musical “intervals” — factors/ratios — between notes: 1:1, 9:8, 5:4, 4:3, 3:2, 5:3, 15:8, 2:1, giving the scale from C: C, D, E, F, G, A, B, C. [In the key of C major.] The last C is the eighth in the sequence. In musical terms the intervals with smaller integers in the ratio are more “perfect”. So 2:1 is a “perfect eighth”. The “fourth” (4:3) and “fifth” (3:2) are also considered “perfect”, along with “unison” (1:1). There are the less perfect “major” intervals of 5:4 (“third”) and 5:3 (“sixth”), or even 9:8 (“second”) and 15:8 (“seventh”).</div>
+    <div class="indent">There are three ratios between steps in the given sequence 10:9 (e.g. E:D), 9:8 (e.g. D:C), and 16:15 (F:E). The last ratio is significantly smaller (1.066 . . .) than the first two (1.11 . . . and 1.125). The gaps between the larger steps are filled with “minor” intervals, giving a 12-tone scale. There are a large number of methods to do this and a bewildering array of designations and meanings. The note inserted between F and G can be referred to as F-sharp (F♯) or G-flat (G♭), and depending on how it is done, may refer to a slightly different frequency.</div>
+    <div class="indent">This “just” or “pure” intonation tuning is fine for ensembles with a few players and instruments. However, in large orchestras there is a wide range of sounds that can be produced. Generally tuning is done according to the “chromatic” scale with the octave divided into twelve “semi-tone” steps with constant ratios. We need to find the 12-th root of 2. This can be done with logarithms, or with a calculator/computer. The answer comes out at 1.059. . . .</div>
+    <div class="indent">Putting it all together we get the comparison:</div>
+
+    <table>
+      <tr><th>Note</th><th>m:n</th><th>m/n</th><th>delta</th><th>Semi-tone</th><th>12-tone ratio</th></tr>
+      <tr> <td>C</td> <td>1:1</td> <td>1</td> <td></td> <td></td> <td>1</td> </tr>
+      <tr> <td>♯/♭</td> <td></td> <td></td> <td></td> <td>1.059</td> <td>1.059</td> </tr>
+      <tr> <td>D</td> <td>9:8</td> <td>1.125</td> <td>1.125</td> <td>1.059</td> <td>1.122</td> </tr>
+      <tr> <td>♯/♭</td> <td></td> <td></td> <td></td> <td>1.059</td> <td>1.189</td> </tr>
+      <tr> <td>E</td> <td>5:4</td> <td>1.25</td> <td>1.111</td> <td>1.059</td> <td>1.260</td> </tr>
+      <tr> <td>F</td> <td>4:3</td> <td>1.333</td> <td>1.067</td> <td>1.059</td> <td>1.335</td> </tr>
+      <tr> <td>♯/♭</td> <td></td> <td></td> <td></td> <td>1.059</td> <td>1.414</td> </tr>
+      <tr> <td>G</td> <td>3:2</td> <td>1.5</td> <td>1.125</td> <td>1.059</td> <td>1.498</td> </tr>
+      <tr> <td>♯/♭</td> <td></td> <td></td> <td></td> <td>1.059</td> <td>1.587</td> </tr>
+      <tr> <td>A</td> <td>5:3</td> <td>1.667</td> <td>1.111</td> <td>1.059</td> <td>1.682</td> </tr>
+      <tr><td>♯/♭</td><td></td><td></td><td></td><td>1.059</td><td>1.782</td></tr>
+      <tr><td>B</td><td>15:8</td><td>1.875</td><td>1.125</td><td>1.059</td><td>1.888</td></tr>
+      <tr><td>C</td><td>2:1</td><td>2</td><td>1.067</td><td>1.059</td><td>2</td></tr>
+    </table>
+
+
+    <div class="indent">The reason for the perfect and major intervals being more “musical” is presumably related to how sound resonates in most instruments and the inner ear canal. There is a fundamental tone and then a series of overtones, which makes instruments playing the same “note” sound different. The overtones are close to a multiple of the fundamental frequency, determined by the size and material of the resonating object. The strength of the overtones tends to be less than the fundamental and die out more rapidly. The perfect intervals create more possibilities for overlapping and reinforcement of overtones, and hence a more “pleasing” sound, unless you are an awkward bastard like me that enjoys a good bit of dischordant music (e.g. the end of Mozart’s “Ein musikalischer Spaß”/“A Musical Joke”, or perhaps “Trout Mask Replica”?).</div>
+    <div class="indent">Wikipedia informs me about why we relate octave intervals:</div>
+
+    <blockquote cite="https://en.wikipedia.org/wiki/Octave">“Monkeys experience octave equivalence, and its biological basis apparently is an octave mapping of neurons in the auditory thalamus of the mammalian brain. Studies have also shown the perception of octave equivalence in rats (Blackwell &amp; Schlosberg 1943), human infants (Demany &amp; Armand 1984), and musicians (Allen 1967) but not starlings (Cynx 1993), 4–9 year old children (Sergeant 1983), or nonmusicians (Allen 1967).” <p class="right">[<a href="https://en.wikipedia.org/wiki/Octave">https://en.wikipedia.org/wiki/Octave</a>]</p></blockquote>
+
+    <div class="indent">These statements seem somewhat at odds with each other. Maybe “human infants” refers to exclusively to babies? How does bird song fit into this? I am sure experts in music and biology would find many imperfections and errors in the account I have given of these matters. I leave it to readers to check the veracity or not of what I have written.</div>
+    <div class="indent">Moving on, sound intensity/loudness is measured using logarithmic concepts. Generally a “decade”/base-10 scale is used — the “bel” or more precisely the decibel (a ratio <em>x</em> in dB \(= 10\log_{10}x\)), thus 1dB represents a ratio of 1.258 . . . , the 10-th root of 10. But ratio of what? To have meaning beyond ratios, dBs need some reference level for the 0dB value. For sound, a reference “sound intensity level” (SIL) of 1pW/m<sup>2</sup> is often used, being close to what is barely detectable by a healthy (young?) ear. </div>
+    <div class="indent">In engineering, powers are also often described using dBs, but with an added letter: dBm. In this case, 0dBm represents 1mW. One might be misled by the fact that 10dBm = 10mW to guess that 20dBm is 20mW, but in fact 20dBm = 100mW (20dB is a factor of 10<sup>2</sup> = 100).</div>
+    <div class="indent">Further confusion can arise when energy is related to the square of some quantity — e.g. kinetic energy to square velocities or sound intensity to the square of pressure fluctuation. This can lead to 20, rather than 10 appearing in a definition.</div>
+    <div class="indent">In electronics, amplifiers usually have some cut-off frequency beyond which the gain falls off, often by a factor that goes as one over the square of the frequency (\(1/f^{2}\)). This behavior is expressed in models that posit parisitic resistance and capacitance in the circuit, along with components put in to ensure stability and so on. Anyway an increase in frequency by a factor of 10 (a decade), leads to a reduction in gain by a factor of 100 (20dB), giving 20dB/decade “roll-off”. Sometimes, rather than a decade, an octave (2×) increase in frequency is used as the measure, giving a 4× reduction in power (6.02 . . . dB), and hence a 6dB/octave roll-off.</div>
+  </article>
+
+<div class="pointer"><a href="/eT/Logjam/logjam6.html" style="float:right;">Next ▶</a></div>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+
+</html>

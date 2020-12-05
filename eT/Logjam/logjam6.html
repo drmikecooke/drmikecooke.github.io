@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Logjam 6</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="exp.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer"><a href="/eT/Logjam/logjam5.html">◀ Previous</a></div> 
+
+  <article>
+ <h2>6 Graph-o-log-y or log-graph-y?</h2>
+    <div class="standard">I have already hinted how logs can be used to straighten out exponential behaviour. Here we allow an exponential progression of values (<em>y</em>) to be compared on lin-lin or lin-log scales:</div>
+
+    <div class="arial text-center">
+      <h4>Exponential table/graphs</h4>
+      <div class="standard">\[v = v_0 r^t\]</div>
+      <table>
+        <tr>
+          <td style="text-align: right;">Interation factor (<em>r</em>): </td>
+          <td><input id="iteration" size="2" value="2" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Initial value (<em>v</em><sub>0</sub>): </td>
+          <td><input id="init" size="2" value="80" style="font-size: 1em"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Duration (max <em>t</em>): </td>
+          <td><input id="dur" size="2" value="20" style="font-size: 1em"></td>
+        </tr>
+      </table>
+      <button type="button" onclick="displayTable(eData(), 'edisplay')">Show<br>table</button>
+      <button type="button" onclick="displayGraph(lin,lin,eData(), 'edisplay')">Lin-lin<br>graph</button>
+      <button type="button" onclick="displayGraph(lin,log,eData(), 'edisplay')">Lin-log<br>graph</button>
+      <div class="standard">
+        <div id="evariables" style="text-align:center;"></div>
+      </div>
+      <div id="edisplay"></div>
+    </div>
+
+    <div class="indent">But there is more. Logarithms also allow power law behaviours to be seen. Here the various possible scales can be seen:</div>
+
+    <div class="arial text-center">
+      <h4>Power law table/graphs</h4>
+      <div class="standard"> \[v = v_1 t^n\] </div>
+      <table>
+        <tr>
+          <td style="text-align: right;">Constant (<em>v</em><sub>1</sub>): </td>
+          <td><input id="constant" size="2" value="3" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Exponent (<em>n</em>): </td>
+          <td><input id="exponent" size="2" value="2" style="font-size: 1em"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Range (min,max <em>t</em>): </td>
+          <td><input id="range" size="4" value="2,5" style="font-size: 1em"></td>
+        </tr>
+      </table>
+      <button type="button" onclick="displayTable(pData(), 'pdisplay')">Show<br>table</button>
+      <button type="button" onclick="displayGraph(lin,lin,pData(), 'pdisplay')">Lin-lin<br>graph</button>
+      <button type="button" onclick="displayGraph(lin,log,pData(), 'pdisplay')">Lin-log<br>graph</button>
+      <button type="button" onclick="displayGraph(log,lin,pData(), 'pdisplay')">Log-lin<br>graph</button>
+      <button type="button" onclick="displayGraph(log,log,pData(), 'pdisplay')">Log-log<br>graph</button>
+      <div id="pvariables" style="text-align:center;"></div>
+      <div id="pdisplay"></div>
+    </div>
+
+    <div class="indent">The log-log combination gives straight line! The others are not so useful in this case. Also try changing the exponent (even negative values like for the \(1/f^{2}\) behaviour described earlier, corresponding with \(n = -2\)).</div>
+
+    <div class="indent">We can understand what the log scales are doing here, if we apply logs to the equation \(v = v_1 t^n\):</div>
+
+    <div class="standard"> \[\log v = \log (v_1 t^n) = \log v_1 + n \log t\] </div>
+
+    <div class="indent">The terms \(\log v_1\) and \(n\) are constant, and \(\log t\) varies. For those still reading, I assume some familiarity with linear graphs, often traditionally cast as \(y = m x + c\) with \(m\) and \(c\) being the “gradient” and “constant” terms, respectively. This is the form of our log-log graph if we cast \(\log v\) onto \(y\), \(\log v_1\) onto \(c\), \(n\) onto \(m\), and finally our \(\log t\) scale onto the variable \(x\) (reversing the order of the sum).</div>
+  </article>
+<div class="pointer"><a href="/eT/Logjam/logjam7.html" style="float:right;">Next ▶</a></div> 
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Logjam 3</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="log10.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer"><a href="/eT/Logjam/logjam2.html">◀ Previous</a></div> 
+
+  <article>
+    <h2>Logjam 3: Tabling some vulgarity</h2>
+    <div class="noindent">Armed with the knowledge of the previous section, I made code to generate a crude table for base-10 logarithms (click on “Make table”) and compared the values with what the computer came up with (obviously much more accurate).</div>
+
+    <div class="arial text-center">
+      <h4>Generate log<sub>10</sub><em>x</em> estimates</h4>
+      <table> <tr> <td style="text-align: right;">Base (<em>b</em>):</td> <td><input id="base" size="5" value="1.1" style="font-size: 1em; text-align: right;"></td> </tr> </table>
+      <button type="button" onclick="setLog10Table()">Make<br /> table</button>
+      <div id="log10table" style="margin-bottom: 10px"></div>
+    </div>
+
+    <div class="indent">The javascript code generates a list of powers of the given base (initially 1.1) up to and just beyond 10, and then uses linear interpolation between the whole number values to give an estimate for \(\log_{b}\) for any value of <em>x</em>. To translate to base-10, one just needs to calculate the scaling factor to give \(\log_{10}10 = 1\). Looking at the two result columns, I see that my effort achieves 3-figure accuracy for \(b = 1.1\). Using 1.01 instead of 1.1 gives 5-figure accuracy for the vaules of <em>x</em> listed above, and I expect more generally for the range 1–10. Some improvement might be expected from higher order (quadratic or cubic) interpolation methods, but my purpose is not to create great tables, but rather to see how they might be derived without resorting to calculus, power series and so on.</div>
+    <div class="indent">The logarithms as mathematical objects trace back to John Napier (1550–1617), a Scots aristocrat. From English translations of a posthumous publication in Latin (1619), I surmise that his main focus was providing means to ease trigonometric calculations, but the text is quite difficult to follow. Napier did publish tables, with instructions for use, before he died (1614), also in Latin. On the tricentenary of this publication (1914), E.W. Hobson gave a lecture on the discovery, claiming that Napier’s description of the construction was “clear”. To him, maybe. I don’t remember any celebrations in 2014. Perhaps, this has to do with the rise of electronic devices making logarithms “useless”. Intel’s technique for calculating logaithms and so on in its IA-64 chips is at this <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.5177">link</a>. </div>
+  </article>
+
+<div class="pointer"><a href="/eT/Logjam/logjam4.html" style="float:right;">Next ▶</a></div> 
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+
+</html>

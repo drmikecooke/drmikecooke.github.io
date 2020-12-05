@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Logjam 2</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/Logjam/logjam1.html">◀ Previous</a></div> 
+  <article>
+    <h2>Logjam 2: Power relations</h2>
+    <div class="standard">The logarithmic conversion of multiplication into addition is based on the formula:</div>
+
+    <div class="standard"> \[b^{m}b^{n} = b^{m + n}\] </div>
+
+    <div class="standard"> \[\begin{matrix} m \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix} \times \begin{matrix} n \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix} = \begin{matrix} {m + n} \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix}\] </div>
+
+    <div class="indent">This says that product of the products of <i>m</i> and <i>n</i> <i>b</i>s is the product of (<i>m</i> + <i>n</i>) <i>b</i>s. It is an expression of the associativity of multiplication, for those who know what that means:</div>
+
+    <div class="standard"> \[\left( {ab} \right)c = a\left( {bc} \right)\] </div>
+
+    <div class="indent">Another important formula:</div>
+
+    <div class="standard"> \[\left( b^{m} \right)^{n} = b^{mn}\] </div>
+
+    <div class="standard">  \[\begin{matrix} n \\ \overbrace{\begin{matrix} \begin{matrix} m \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix} &amp; \begin{matrix} m \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix} &amp; \cdots &amp; \begin{matrix} m \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix} \\ \end{matrix}} \\ \end{matrix} = \begin{matrix} {mn} \\ \overbrace{\begin{matrix} b b \cdots b \\ \end{matrix}} \\ \end{matrix}\]  </div>
+
+    <div class="indent">This says that the <i>n</i>-th power of the <i>m</i>-th power of <i>b</i> is the product of <i>mn</i> <i>b</i>s.</div>
+
+    <div class="indent">So far we have only looked at whole number powers. However the last formula will lead the way to defining fractional powers, while the formula for addition of powers will lead to a meaning for negative powers. The extension to real numbers depends on “continuity” with respect to powers — this means that as fractions approach closer to a real number the power approaches or “coverges” to a single well-defined real number.</div>
+
+    <div class="indent">So let’s try to find a fractional power:</div>
+
+    <div class="standard"> \[\left( b^{1/m} \right)^{m} = b^{m/m} = b^{1} = b\] </div>
+
+    <div class="indent">So \(b^{1/m}\) is the <em>m</em>-th root of <em>b</em> or \(\sqrt[m]{b}\). So a definition consistent with the power of a power formula is:</div>
+
+    <div class="standard"> \[b^{n/m} = \left( b^{1/m} \right)^{n} = \left( \sqrt[m]{b} \right)^{n}\] </div>
+
+    <div class="indent">A similar process from the product of two powers formula gives:</div>
+
+    <div class="standard"> \[b^{- m} = 1/b^{m}\] </div>
+
+    <div class="indent">[Remembering/defining that \(b^{0} = 1\).]</div>
+    <div class="indent">These considerations, along with the logarithm concept, allow us to make even more connections. Since \(b^{\prime} = b^{\log_{b}b^{\prime}}\) and \(b^{\log_{b}x} = x\):</div>
+
+    <div class="standard"> \[b^{\log_{b}x} = x = {b^{\prime}}^{\log_{b^{\prime}}x} = \left( b^{\log_{b}b^{\prime}} \right){}^{\log_{b^{\prime}}x} = b^{\log_{b}b^{\prime}\log_{b^{\prime}}x}\] </div>
+
+    <div class="indent">Equating the ends and antilogging:</div>
+
+    <div class="standard"> \[\log_{b}b^{\prime}\log_{b^{\prime}}x = \log_{b}x\] </div>
+
+    <div class="indent">Or more usefully:</div>
+
+    <div class="standard"> \[\log_{b^{\prime}}x = \frac{\log_{b}x}{\log_{b}b^{\prime}}\] </div>
+
+    <div class="indent">This allows easy conversion from one base to another.</div>
+  </article>
+
+<div class="pointer"><a href="/eT/Logjam/logjam3.html" style="float:right;">Next ▶</a></div> 
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+
+</html>

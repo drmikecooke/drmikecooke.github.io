@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../eT.css" />
+  <link rel="stylesheet" media="print" href="../eTp.css" />
+  <title>eT: Logjam 1</title>
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/Logjam/logjam0.html">◀ Previous</a></div> 
+  <article>
+
+<h2>Logjam 1: So what are logarithms?</h2>
+    <div class="standard">From the Covid example given in the <a href="/eT/Logjam/logjam0.html">introduction</a>, one could say that logarithms straighten out exponential behavior, so that a log-scale graph of an exponential process appears as a straight line. This is useful for distinguishing such behavior from others such as quadratic, cubic, etc. A less transparent way of putting this is to say that the logarithm is the inverse to an exponential.</div>
+    <div class="indent">You may have noticed that a lot of computer quantities are expressed as “k”, “M”, “G”, or even “T”, apparently representing the metric scaling factors kilo-, mega-, giga-, and tera-. In the metric system these mean factors of a thousand (10<sup>3</sup>), million (10<sup>6</sup>), billion (10<sup>9</sup>), and trillion (10<sup>12</sup>). A base-10 logarithm (log<sub>10</sub>) converts these to 3, 6, 9, and 12. Going a bit deeper, in computer contexts the meaning of these pre-factor names is often slightly modified to fit in with the binary basis of the mass of electronic machinery. In particular “kilo” becomes 2<sup>10</sup>, which works out at 1024, close to the traditional 1000. In computing, a base-2 logarithm is often the default (log<sub>2</sub>) with “k”, “M”, “G”, and “T”, translating to 10, 20, 30, and 40, respectively. These translate to 1024, 1,048,576, 1,073,741,824, and 1,099,511,627,776.</div>
+    <div class="indent">Manufacturers often use the base-10 designations, and operating systems base-2. I guess the smaller base-10 version allows marketing teams to trumpet a “larger” capacity for hard disks and flash cards. I’ve often wondered why I only seem to be able to burn up to around 4.2GB on a DVD that is marked 4.7GB. This is presumably part of the reason why. Not the full reason, however, since it should still have more than 4.3GB capacity in operating system terms. Probably, some of the space is reserved for directories, housekeeping, etc. On wikipedia, the operating system/base-2 versions are given the names “kibi”, “mebi”, “gibi”, and “tebi”, according to the IEC [International Electrotechnical Commission] standard, but I had never seen these terms until I looked at <a href="https://en.wikipedia.org/wiki/Terabyte">https://en.wikipedia.org/wiki/Terabyte</a> some minutes ago. JEDEC [name originally derived from Joint Electron Device Engineering Council] uses the metric (SI [International System of Units]) names, but only up to giga.</div>
+    <div class="indent">Yeah, whatevah! So what old man?</div>
+    <div class="indent">Get off my lawn, you young whippersnappers!</div>
+
+    <figure>
+      <img src="IBM1130.jpg" alt="IBM 1130" style="width:100%;margin:0;">
+      <figcaption class="arial">IBM 1130 with peripherals</figcaption>
+    </figure>
+
+    <div class="indent">Back in the 1970s when I was going through school there were no laptops or smartphones. A computer was a big box larger than a sofa with flashing lights and a few k of memory if you were lucky. The input device was a card or tape reader, and output was through another large machine called a “line printer”. You might have magnetic tape or disk storage systems attached for longer term projects. The magnetic tape was contained in a large glass-fronted cabinet with whizzing spools, while the disk system was top-loaded into a mechanism that was the size of a washing machine. Most of the time a user didn’t interact directly with the computer equipment, but rather through a human operator. You had to wait for results. Most people did not have access to such machinery, and probably felt no great desire for such.</div>
+    <div class="indent">So back to my school classroom — you didn’t have computers (except the one in your head) — electronic calculators were beginning to appear, but were only available to the well-off. I think towards the end of my schooling calculators were allowed in exams, but we were given to understand that only three significant figures at most were expected in calculations. That is about the level of accuracy of a slide-rule (<a href="http://www.sliderules.info">http://www.sliderules.info</a>), which was allowed, or from using four-figure log tables, as supplied alongside the exam paper. I used a slide rule, while most of my contemporaries opted for tables or a calculator when allowed.</div>
+    <div class="indent">Clearly using log tables you are using logarithms for something. For anyone who can remember slide-rules, it may not be obvious, but their operation is also based on logarithms. But what then, was the purpose of logs? The most common operation in the classroom and exams was for multiplying numbers more quickly. You would convert the numbers you wanted multiplied into logs, <i>add them together</i>, and then “antilog” the result. The logarithm avoiding the need for all the shifting and carrying involved in the usual multiplication algorithm of decimal (or binary) numbers. Since division is a sort of inverse multiplication (and even more of a pain to calculate on paper), you might suspect that logarithms can help there too. You would be right — instead of adding you <i>subtract</i> the divisor from the dividend.</div>
+    <div class="indent">But how can that be? You’ve only shown the logarithms for numbers with whole number results like 10<sup>3</sup> → 3 in base-10. There is a consistent and continuous way to fill in the gaps so all positive real numbers map onto a real number. What you find is that:</div>
+
+    <div class="standard">\[\log\left( {xy} \right) = \log x + \log y\]</div>
+
+    <div class="indent">I haven’t given the base, since this equation true whatever the base, so long as you stick to one. To get your answer you need to know your base, say <i>b</i>, and then:</div>
+
+    <div class="standard"> \[b^{\log_{b}x} = x\] </div>
+
+    <div class="indent">So <i>b</i> to the power of your logarithm is the antilog function. There is also the relation:</div>
+
+    <div class="standard"> \[\log_{b}\left( b^{x} \right) = x\] </div>
+
+    <div class="indent">These functions mutually invert each other.</div>
+
+  </article>
+
+<div class="pointer"><a href="/eT/Logjam/logjam2.html" style="float:right;">Next ▶</a></div>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+
+</html>

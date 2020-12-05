@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eTp.css">
+  <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Bugs, bunnies, bombs and branches 3</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+  <script src="Fission.js"></script>
+  <script>
+    var fTable;
+  </script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/Branching/Branching2.html">◀ Previous</a></div> 
+  <article>
+   <div id="header">
+      <h1>Bugs, bunnies, bombs and branches 3</h1>
+    </div>
+
+    <h2 id="boom" class="section_">Boom!</h2>
+    <div class="noindent">Nuclear fission is another process that has a branching character: a neutron is absorbed the 235-atomic mass isotope of uranium, converting it to an extremely unstable 236-mass isotope, which splits giving off more neutrons among other fragments. The products move very fast and transfer a lot of energy to their surroundings (the uranium) as heat. Depending on the conditions, these neutrons can trigger further fissions, leave the fissile material, or be absorbed by non-fissile materials (graphite control rods and such). As with the rabbits, the branching number is variable. If we take averages, which we can handle by countenancing fractional branching numbers.</div>
+    <div class="indent">The factor that evil geniuses have to work out to create a nuclear bomb is having enough of the 235, rather than the more common 238, isotope close enough together so the branching is more than 1 on average. This is what the gas centrifuges are designed to achieve in uranium enrichment. The heat from the exponentially proliferating fission processes explosively expand the material.</div>
+    <div class="indent">For the less evil geniuses wanting to make nuclear power stations, the trick is to also have control mechanisms (‘negative feedback’) to keep the branching around 1. If the branching goes higher than 1, control rods are positioned to absorb neutrons to push the branching down to 1; lower than 1, and the rods are withdrawn to promote fission and bring the branching up to 1. If the branching is less than 1, and nothing is done to change it, the fission process fizzles out. The branching value of 1 constitute the transition point between fizzling out and devastation. A similar dynamic has been in operation with attempts to cope with the <a href="../SIR/SIR.html">2020 Covid-19 crisis</a>.</div>
+    <div class="indent">There is a fossil deposit from a “natural nuclear fission reactor” in Oklo, Gabon, which is thought to have run for a few hundred thousand years about 1.7 billion years ago. The thermal power output during the reaction is estimated at 100kW. The fissile material is believed to have been 235-isotope uranium.</div>
+
+    <div class="arial">
+      <h4>Fission graph</h4>
+      <table>
+        <tr><td style="text-align: right;">Average branching:</td><td><input id="fbranching" size="1" value="2" style="font-size: 1em; text-align: right;"></td></tr>
+        <tr><td style="text-align: right;">Generations:</td><td><input id="fgenerations" size="1" value="10" style="font-size: 1em; text-align: right;"></td></tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="fissionTableClick()" style="margin-bottom: 20px">Table</button>
+        <button type="button" onclick="fissionPlotlyClick()" style="margin-bottom: 20px">Graph</button>
+        <button type="button" onclick="removeClick()" style="margin-bottom: 20px">Remove</button>
+        <div id="fvariables" class="text-center" style="width:50%; margin:auto"></div>
+      </div>
+
+
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('fvariables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>
