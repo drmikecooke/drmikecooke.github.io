@@ -37,7 +37,7 @@
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="setETable(getNumber('Nmax'))">Make<br /> table</button>
       <button type="button" onclick="PlotlyETable(getNumber('Nmax'))">Make<br /> graph</button>
-      <div id="eTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="eTable" class="text-center plot-box"></div>
     </div>
 
     <p class="indent">It is interesting to consider \(\Delta x\) that are negative, but also close to 0. We can control this by redefining the relation with \(N\) as \(\Delta x = -1/N\). In this case, it is important to specify that \(N \neq 1\) — I hope you can see why?</p>
@@ -48,7 +48,7 @@
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax2" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="setNETable(getNumber('Nmax2'))">Make<br /> table</button>
       <button type="button" onclick="PlotlyNETable(getNumber('Nmax2'))">Make<br /> graph</button>
-      <div id="neTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="neTable" class="text-center plot-box"></div>
     </div>
     <p class="indent">The previous evaluation seemed to be converging from below, while this evaluation is proceeding from above. They both seem to be approaching a value around 2.71 something (closer to 2.72 than to 2.71). Javascript in your browser gives:</p>
     <div id="e" class="text-center"></div>

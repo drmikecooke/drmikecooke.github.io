@@ -85,10 +85,8 @@ footer {
 
 /* Responsive layout - when the screen is less than 900px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {
-  .row { display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
   figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   figure img {width: 100%;}
-  .lcolumn { width: 100%; padding: 0; }
   nav a { float: none; width: 100%; }
   footer h2 a { font-size: 18px; }
 }

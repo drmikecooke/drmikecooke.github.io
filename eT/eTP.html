@@ -7,58 +7,49 @@
   <link rel="stylesheet" href="/css/cards.css">
   <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
   <title>eT: Prospectus</title>
-  <script src="/lcard.js"></script>
-<style>h1,h2,h3,h4 {margin-bottom: 5px;}</style>
+  <script src="/js/lcard.js"></script>
+<style>
+  h1,h2,h3,h4 {margin-bottom: 5px;}
+  .strip { display: block; padding: 0px; margin: 0px; }
+  .stripimg { width: 33%; }
+  @media screen and (max-width: 900px) {
+    .strip { display: flex; flex-direction: column; }
+    .stripimg { width: 100%; }
+  }
+</style>
 </head>
 <body>
   <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
-  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+  <nav id="menu"></nav>
+  <script src="/eT/nav.js"></script>
 
 <div class="container">
   <div id="lcards" class="panel">
     <div class="card">
       <h1>Prospectus</h1>
         <div class="strip">
-          <img src="burn.jpg" alt="burn" class="stripimg">
-          <img src="pretty.jpg" alt="pretty" class="stripimg">
-          <img src="garbage.jpg" alt="garbage" class="stripimg">
+          <img src="burn.jpg" alt="burn" class="stripimg"><img src="pretty.jpg" alt="pretty" class="stripimg"><img src="garbage207.jpg" alt="garbage" class="stripimg">
         </div>
-        <p>We humans are making exponential demands on ourselves and our environment. What I want to do here is explore
-        this thought – the ways in which it is true and not true. Is it a good thing or bad? Can we step off the
-        exponential treadmill?</p>
-        <p>Part of this will be to show how we recognize exponential behaviour – growth and decay – through specific
-        examples. Also, I will explore some of the mathematical background and history of how exponential behaviour was
-        discovered and wider uses. Almost all mathematics involves exponential or exponential-like objects.</p>
-        <p>Although the work will have some blogish features, it will not be a linear stream of consciousness. I will
-        feel free to go back and revise and add to stuff that has already been written.</p>
-        <p>Feel free to comment kindly, and politely. But if this is not for you, never mind. In a way it is more for
-        self-clarification than for seeking fame and fortune.</p>
+        <p>We humans are making exponential demands on ourselves and our environment. What I want to do here is explore this thought – the ways in which it is true and not true. Is it a good thing or bad? Can we step off the exponential treadmill? Will we be thrown off?</p>
+        <p>Part of this will be to show how we recognize exponential behaviour – growth and decay – through specific examples. Also, I will explore some of the mathematical background and history of how exponential behaviour was discovered and wider uses. Almost all mathematics involves exponential or exponential-like objects.</p>
+        <p>Although the work will have some blogish features, it will not be a linear stream of consciousness. I will feel free to go back and revise and add to stuff that has already been written.</p>
+        <p>Feel free to comment kindly, and politely. But if this is not for you, never mind. In a way it is more for self-clarification than for seeking fame and fortune.</p>
       </div>
 
-  </div>
+    </div>
 
-<script>
+    <script>
        lcard("/eT/fi/fi.html", "Infection delays", "/eT/fi/images/2dlog.svg");
        lcard("/eT/SIR/SIR.html", "SIR model and covid-19", "/eT/SIR/images/SIR.svg");
        lcard("/eT/Branching/Branching.html", "Bugs, bunnies . . .", "/eT/branch.svg");
      </script>
 
-  <div class="panel">
-  <div class="cardw-250px">
-        <h2>Who am I?</h2><img class="w-210px" src="../mike210.png" alt="My ugly bonce">
-        <p>My name is Mike Cooke, a freelance technology journalist who has worked in the semiconductor and advanced
-        technology sectors since 1997.</p>
-      </div>
+    <div id="rpanel" class="panel"></div>
+    <script src="/js/rpanel.js"></script>
 
-      <div class="cardw-250px">
-        <h3>Other stuff by me</h3>
-        <p>I frequently contribute to the online magazine <a href=
-        "http://www.semiconductor-today.com/"><em>Semiconductor Today</em></a>.</p>
-      </div>
-      </div>
-</div>
+  </div>
 
-<footer id="email"><script src="/js/footer.js"></script></footer>
+  <footer id="email"><script src="/js/footer.js"></script></footer>
 
 </body>
 </html>

@@ -124,8 +124,10 @@ table {
     padding:6px;
 }
 
+.menu { display:flex; justify-content:center; }
+
 @media screen and (max-width: 900px) {
-  .row { display: flex;	background-color: #ddd; padding: 0px; flex-direction: column; }
+  .menu { flex-direction: column; }
   figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   figure img {width: 100%;}
   .lcolumn { width: 100%; padding: 0; }

@@ -37,7 +37,7 @@ var generations = treeTable.data.length - 1;
   var cstep=300;
   var gstep=600/generations;
 
-var svgtxt = '<svg id="tree" width="780" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
+var svgtxt = '<svg id="tree" width="780" height="400" viewbox="0 0 780 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
 // styles
 svgtxt += '<style>\n';
 svgtxt += 'text {font-family: Arial, Helvetica, sans-serif; font-size: 20; fill: black;}\n';

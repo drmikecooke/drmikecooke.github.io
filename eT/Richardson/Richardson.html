@@ -40,7 +40,7 @@
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="target('reTable',makeR1ETable(getNumber('Nmax')).HTML())">Make<br /> table</button>
       <button type="button" onclick="PlotlyR1ETable(getNumber('Nmax'))">Make<br /> graph</button>
-      <div id="reTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="reTable" class="text-center plot-box"></div>
     </div>
 
     <p class="indent">Moving to negative \(\Delta x,N\):
@@ -49,7 +49,7 @@
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax2" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="target('rneTable',makeR1NETable(getNumber('Nmax')).HTML())">Make<br /> table</button>
       <button type="button" onclick="PlotlyR1NETable(getNumber('Nmax2'))">Make<br /> graph</button>
-      <div id="rneTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="rneTable" class="text-center plot-box"></div>
     </div>
     <p class="indent">Both Richardson extrapolations seem to converge from below, and may suggest a quadratic (power 2) error. They both seem to be approaching a value around 2.718281... As a reminder Javascript in your browser gives:</p>
     <div id="e" class="text-center"></div>
@@ -63,14 +63,14 @@
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax3" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="target('r2eTable',makeR2ETable(getNumber('Nmax3')).HTML())">Make<br /> table</button>
       <button type="button" onclick="PlotlyR2ETable(getNumber('Nmax'))">Make<br /> graph</button>
-      <div id="r2eTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="r2eTable" class="text-center plot-box"></div>
     </div>
     <div class="arial text-center">
       <h4>Generate \(e\) estimates (2nd Richardson extrapolation, neg. (\(\Delta x\)))</h4>
       <table> <tr> <td style="text-align: right;">Largest \(N\):</td> <td>2<sup><input id="Nmax4" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr> </table>
       <button type="button" onclick="target('r2neTable',makeR2NETable(getNumber('Nmax4')).HTML())">Make<br /> table</button>
       <button type="button" onclick="PlotlyR2NETable(getNumber('Nmax'))">Make<br /> graph</button>
-      <div id="r2neTable" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="r2neTable" class="text-center plot-box"></div>
     </div>
       <p class="indent">Now the estimate seems to be between 2.7182818283 and 2.7182818286. Some further investigation can be made using a simple average of the even-order extrapolations for \(e_N\) and \(e_{-N}\) with error of the two values from the average:</p>
       <div class="arial text-center">
@@ -79,7 +79,7 @@
           <tr> <td style="text-align: right;">\(N\):</td> <td>2<sup><input id="N" size="5" value="10" style="font-size: 1em; text-align: right;"></sup></td> </tr>
           <tr> <td style="text-align: right;">Order:</td> <td><input id="O" size="5" value="10" style="font-size: 1em; text-align: right;"></td> </tr></table>
       <button type="button" onclick="target('meanerr',meanerr(getNumber('N')+1,getNumber('O')))">Calculate</button>
-      <div id="meanerr" class="text-center" style="width:50%; margin:auto"></div>
+      <div id="meanerr" class="text-center plot-box"></div>
     </div>
       <p class="indent">With the smallest \(N\) of \(2^1\), one finds the error reduces to 6.661338147750939e-14 when the order is 8, but then starts increasing, and even becoming erratic with going negative. This is indicative of an unreliable result. The best result at this level is therefore 2.718281828459084. Only the last two figures are off from the Javascript version. I was not able to improve on this value by increasing \(N\) or by varying the order. Even orders are preferred since the error should then have an odd power, which crosses at \(e\), rather than just kissing it. This means that the estimates for positive and negative \(N\) bracket the value we are interested in.</p>
   </article>

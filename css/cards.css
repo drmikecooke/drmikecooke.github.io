@@ -1,14 +1,22 @@
 /* Cards: 250px wide or high */
-.cardw-250px { display: block; background-color: white; width: 250px; padding: 10px; margin: 0px; border: 10px solid; border-color: beige;}
+.cardw-250px { display: block; background-color: white; width: 250px; padding: 10px; margin: 0px; border: 10px solid; border-color: beige; }
 
 .cardh-250px { display: inline-block; background-color: white; height: 250px; padding: 10px; margin: 10px; vertical-align: baseline; }
 
-.h-180px {height: 180px; margin-top: 6px;}
+.h-180px {height: 180px; margin-top: 10px 0px;}
 
 .w-210px {width: 210px; margin: 10px 0px;}
 
 .card { display: block; background-color: white; padding: 10px; margin: 10px; }
 
-.panel { display: block; background-color: beige; border: 10px solid; border-color: #ddd; padding: 10px;}
+.panel { display: block; background-color: beige; border: 10px solid; border-color: #ddd; padding: 10px; }
 
 .container { display: flex; background-color: #ddd; border: 10px solid; border-color: #ddd; }
+
+@media screen and (max-width: 900px) {
+  .panel { display: flex; flex-direction: column; }
+  .container { display: flex; flex-direction: column; }
+  .cardw-250px { width: 100%; height: auto; }
+  .cardh-250px { display: block; width: 100%; height: auto; padding: 10px; margin: 0px; border: 10px solid; border-color: beige; }
+  .h-180px { width: 100%; height: auto;}
+}

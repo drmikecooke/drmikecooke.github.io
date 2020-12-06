@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/cards.css">
   <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
   <title>Mike Cooke’s projects</title>
-  <script src="/lcard.js"></script>
+  <script src="/js/lcard.js"></script>
 </head>
 <body>
   <header>Mike Cooke’s projects</header>
@@ -17,28 +17,17 @@
 
     <div id="lcards" class="panel"></div>
 
-<script>
-/* Insert lcards in panel */
+    <script>
+    /* Insert lcards in panel */
         lcard("/eT/fi/fi.html", "Infection delays", "/eT/fi/images/2dlog.svg");
         lcard("/eT/SIR/SIR.html", "SIR model and covid-19", "/eT/SIR/images/SIR.svg");
         lcard("/eT/eTP.html", '<span class="exponential">e<em><sup>x</sup>ponential</em></span> <span class="arialblack">Times</span>', "eT/burn.jpg");
         lcard("ST/2020.html", "My writing at", "/ST/STbanner.svg");
-      </script>
+    </script>
 
-    <div class="panel">
-      <div class="cardw-250px">
-        <h2>Who am I?</h2>
-        <img class="w-210px" src="mike210.png" alt="" style="width:100%;">
-        <p>I am a freelance technology journalist who has worked in the semiconductor and advanced technology sectors since 1997.</p>
-      </div>
+    <div id="rpanel" class="panel"></div>
+    <script src="/js/rpanel.js"></script>
 
-
-      <div class="cardw-250px">
-        <h3>Other stuff by me</h3>
-        <br/>
-        <p>I frequently contribute to the online magazine <a href="http://www.semiconductor-today.com/"><em>Semiconductor Today</em></a>.</p>
-      </div>
-    </div>
   </div>
 
   <footer id="email"><script src="/js/footer.js"></script></footer>

@@ -8,7 +8,7 @@ function card(data, i) {
 
 function getCards(array) {
   for(var i=0; i<array.length; i++) {
-    document.getElementById("row").innerHTML += "<a onclick=\"goto('"+array[i]+"')\"><div id='cardBody"+i+"'></div></a>";
+    document.getElementById("menu").innerHTML += "<a onclick=\"goto('"+array[i]+"')\"><div id='cardBody"+i+"'></div></a>";
     loadAJAX(array[i], makeCbCard(i), 'json');
   }
 }
@@ -20,5 +20,5 @@ function makeCbCard(i) {return (e) => {
   }
 }
 
-document.getElementById("abody").innerHTML = "<div id='row' style='display:flex;justify-content:center;'></div>";
+document.getElementById("abody").innerHTML = "<div id='menu' class='menu'></div>";
 getCards(['tests/width.json', "tests/AJAX/cd.json", "tests/AJAX/info.json", 'json/json.json', 'Factor/Factor.json']);

@@ -8,7 +8,7 @@
   <link rel="icon" href="/mike.ico" type="image/ico" sizes="16x16">
   <title>eT: Bugs, bunnies, bombs and branches 1</title>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <script src="/js/data.js"></script>
   <script src="/js/Table.js"></script>
   <script src="/js/download.js"></script>
@@ -39,7 +39,7 @@
         <button type="button" onclick="treeSVGClick()">Tree SVG</button>
         <button type="button" onclick="removeTreeClick()">Remove</button>
       </div>
-      <div id="variables" class="text-center"></div>
+      <div id="variables" class="text-center" style="width: 100%"></div>
 
       <div id="saveTreeSVG" class="text-center" style="display:none;">
         <button type="button" onclick="downloadMIME(window.fTable, getValue('svgTreeFile')+'.svg','image/svg+xml');">Save as . . .</button>
