@@ -1,10 +1,3 @@
-@font-face {
-      font-family: "Bitstream Vera Serif Bold";
-
-      src: local("sans-serif bold");
-      
-    }
-
 * {
   margin: 0;
   padding: 0;
@@ -32,9 +25,9 @@ sub {
 
 /* Header/Blog Title */
 header {
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: 'Arial Black', Gadget, sans-serif;
   font-size: 7vw;
-  font-weight: normal;
+  font-weight: bold;
   padding: 10px;
   text-align: center;
   background: white;
@@ -42,8 +35,9 @@ header {
 
 /* Style the top navigation bar */
 nav {
-  font-family: Copperplate, Papyrus, fantasy, Gadget, sans-serif;
+  font-family: "Arial Black", Gadget, sans-serif;
   font-size: 18px;
+  font-weight: bold;
   overflow: hidden;
   background-color: #333;
   user-select: none;
@@ -88,6 +82,7 @@ footer {
 
 .arialblack {
   font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
   line-height: 80%;
 }
 
