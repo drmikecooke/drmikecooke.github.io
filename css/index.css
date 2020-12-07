@@ -3,7 +3,6 @@ font-family: Franklin;
 src: url("/fonts/fb.ttf");
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -40,9 +39,8 @@ header {
 
 /* Style the top navigation bar */
 nav {
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: Franklin;
   font-size: 18px;
-  font-weight: bold;
   overflow: hidden;
   background-color: #333;
   user-select: none;
@@ -84,9 +82,8 @@ footer {
   position: relative;
 }
 
-.arialblack {
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-weight: bold;
+.frank {
+  font-family: Franklin;
   line-height: 80%;
 }
 
