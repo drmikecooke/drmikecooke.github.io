@@ -21,6 +21,7 @@ a {
 header {
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 10vw;
+  font-weight: bold;
   text-align: center;
   background: white;
   padding: 10px;
@@ -29,6 +30,7 @@ header {
 /* Style the top navigation bar */
 nav {
   font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
   overflow: hidden;
   background-color: #333;
 }
@@ -167,7 +169,7 @@ article img.center {
 
 article div.text-center { text-align: center; }
 
-article .arialblack { font-family: "Arial Black", Gadget, sans-serif; }
+article .arialblack { font-family: "Arial Black", Gadget, sans-serif; font-weight: bold; }
 
 article .arial { font-family: Arial, Helvetica, sans-serif; }
 
