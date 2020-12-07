@@ -21,13 +21,15 @@ header {
 }
 
 header h1 {
-	font-family: Arial black;
-	font-size: 7vw;
+  font-family: Arial black;
+  font-weight: bold;
+  font-size: 7vw;
 }
 
 /* Style the top navigation bar */
 nav {
-	font-family: Arial Black;
+  font-family: Arial Black;
+  font-weight: bold;
   overflow: hidden;
   background-color: #333;
 }

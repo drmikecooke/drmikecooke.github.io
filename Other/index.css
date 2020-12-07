@@ -16,6 +16,7 @@ body {
 
 header {
   font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
   padding: 10px;
   text-align: center;
   background: white;
@@ -32,6 +33,7 @@ nav {
 
 nav a {
   font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
   display: inline-block;
   color: #f2f2f2;
   text-align: center;
