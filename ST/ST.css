@@ -98,3 +98,21 @@ footer {
   font-weight: bold;
   font-size: 21px;
 }
+
+#figcapSearch {
+  background-image: url(search.svg);
+  background-size: 25px;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.month {
+  display: inline-block;
+  background-color: beige;
+  margin: 20px;
+}
