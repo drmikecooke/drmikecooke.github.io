@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Infection delays</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e <em><sup>x</sup>ponential</em> </span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/fi/fi0.html">◀ Previous</a></div> 
+  <article>
+   <h3>Example 1: Two-day delay</h3>
+    <div class="noindent"> Let's imagine the simplest non-trivial example &mdash; a 2-day infection: you, M. Average, pick up a mild cold virus at the supermarket, go around for a couple of days unaware that you are sub-par, then sniffles strike and you stay home and hopefully beat off the virus in short order. On the first day after the supermarketing you infect 0.25 of a person (as M. Average); day two comes, and, with the virus settled in and happily reproducing wildly, you infect 1.5 people. This would give:</div>
+
+    <div class="indent"> \[I_{n} = 0.25I_{n - 1} + 1.5I_{n - 2}\]</div>
+
+    <div class="indent"> The characteristic polynomial is then a quadratic:</div>
+
+    <div class="indent"> \[a^{2} = 0.25a + 1.5\]</div>
+
+    <div class="indent"> This is satisfied by real <em>a</em> values of about 1.36 and &ndash;1.11 (more accurate values in spreadsheet):</div>
+
+    <img class="center" src="images/character.svg" alt="image: character.svg" />
+    <div class="text-center arialblack"> <em>Download:</em> <a href='downloads/2dcombined.xlsx'>xlsx</a></div>
+
+    <div class="indent"> Let's imagine the cold virus initially infected one person on day 0, “patient zero”. Before that the infection was at zero (it didn't exist). On day 1, there is a quarter (0.25) of a person newly infected. On day 2, the newly infected are 0.25×0.25+1.5×1, or approximately 1.56. And so on. I have put this into a spreadsheet, and used the graph features to produce the following images with new infections plotted on linear and logarithmic scales:</div>
+
+    <div class="flex-center"><img src="images/2dlin.svg" alt="image: 2dlin.svg" /><img src="images/2dlog.svg" alt="image: 2dlog.svg" /></div>
+
+    <div class="indent"> We note that the logarithmic image shows initial wobbling, but eventually tends to a straight line. In the spreadsheet there is an additional “Factor” column where I have taken the ratio of new infections for “today” and “yesterday”. I have created a graph of this too:</div>
+
+    <img class="center" src="images/2dfor.svg" alt="image: 2dfor.svg" />
+
+    <div class="indent"> If you look at the values in the spreadsheet, the factor tends to 1.36 approximately. Assuming that you aren't a proverbial goldfish, you may remember above that one of the solutions of the characteristic equation was 1.36. This not an accident &mdash; the solution with the largest absolute value tends to dominate, given sufficient time (after about 20 days, in this case). So once the infection has set in, one can model the behavior as a simple exponential.</div>
+    <div class="indent"> What does the other solution represent? We will show that it gives the wobbles in the initial stages of the infection. In fact we try a solution:</div>
+
+    <div class="indent"> \[I_{n} = A\left( 1.36)^{n} + B\left( - 1.11)^{n} \right. \right.\]</div>
+
+    <div class="indent"> On day 0, we have:</div>
+
+    <div class="indent"> \[1 = A\left( 1.36)^{0} + B\left( - 1.11)^{0} = A + B \right. \right.\]</div>
+
+    <div class="indent"> Day 1:</div>
+
+    <div class="indent"> \[0.25 = A\left( 1.36)^{1} + B\left( - 1.11)^{1} = 1.36A - 1.11B \right. \right.\]</div>
+
+    <div class="indent"> This is enough for us to solve for <em>A</em> and <em>B</em> , giving roughly 0.55 and 0.45, respectively. Since these are only accurate to two significant figures the deviation from the true solution is quite rapid:</div>
+
+    <div class="noindent">
+      <table>
+        <colgroup><col style="width:10%;" /><col style="width:40%;" /><col style="width:40%;" /></colgroup>
+        <tbody>
+          <tr><th>Day</th><th>New infections (<em>I<sub>n</sub></em>)</th><th><em>I<sub>n</sub></em> prediction</th></tr>
+          <tr><td>0</td><td>1</td><td>1</td></tr>
+          <tr><td>1</td><td>0.25</td><td>0.2485</td></tr>
+          <tr><td>2</td><td>1.5625</td><td>1.571725</td></tr>
+          <tr><td>3</td><td>0.765625</td><td>0.76806685</td></tr>
+          <tr><td>4</td><td>2.53515625</td><td>2.5646927725</td></tr>
+          <tr><td>5 </td><td>1.7822265625 </td><td>1.800646909885 </td></tr>
+          <tr><td>6</td><td>4.248291015625</td><td>4.32182193683725</td></tr>
+          <tr><td>7</td><td>3.73541259765625</td><td>3.79871205937171</td></tr>
+          <tr><td>8</td><td>7.30628967285156</td><td>7.47390041069244</td></tr>
+          <tr><td>9</td><td>7.42969131469727</td><td>7.60301082750063</td></tr>
+          <tr><td>10</td><td>12.8168573379517</td><td>13.1833527668565</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="indent">As the process repeats, the rounding errors become more and more severe. If one is minded, one can increase the precision of the arithmetic, and the solution of the sum of two powers multiplied by factors becomes exact in the limit of infinite precision. A better comparison is available in the spreadsheet.</div>
+    <div class="indent">With a more extended infection period, more solutions need to be added to give the initial wobbles. If there are <em>D</em> different roots of the characteristic equation, then you can again “solve” the progression with sums of powers that fits an initial infection pattern spread over <em>D</em> days. If some of the roots are multiple, the solution becomes more complicated, but not intractible. In real life, other factors come into play, such as the gathering of data being sporadic, hampered by political considerations, butt covering, and so on. One is then largely restricted to, hopefully intelligent, guesswork.</div>
+    <div class="indent"> Being a bit bonkers, I decided to run the prediction backwards in time (<em>I</em><sub><em>&ndash;n</em></sub>) on the spreadsheet with the related factor column gives the reduction factor going backwards in time (<em>&ndash;n</em>). We note that this tends to &ndash;1.11, the other solution of the characteristic polynomial. As far as it can (the solution is effectively zero at this point), it “dominates” the negative time behaviour:</div>
+
+    <img class="center" src="images/2dback.svg" alt="image: 2dback.svg" />
+
+  </article>
+<div class="pointer"><a href="/eT/fi/fi2.html" style="float:right;">Next ▶</a></div>
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

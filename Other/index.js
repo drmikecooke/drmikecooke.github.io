@@ -55,19 +55,3 @@ function css(url) {
   link.media = 'all';
   document.head.appendChild(link);
 }
-
-function addNav(url) {
-  loadAJAX(url, cbAddNav, 'json');
-}
-
-function cbAddNav(e) {
-  var loads = e.target.response;
-  var url = e.target.responseURL;
-  document.getElementsByTagName("nav")[0].innerHTML += '<a onclick="goto(\''+ url +'\')">' + loads.title + '</a>';
-}
-
-function addNavs(array) {
-  for(var i=0; i<array.length; i++) {
-    addNav(array[i]);
-  }
-}
