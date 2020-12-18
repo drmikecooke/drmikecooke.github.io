@@ -42,6 +42,7 @@ function plotlyTrace(table, i, j, color, width) {
         y: table.column(j).data,
         type: 'scatter',
         mode: 'lines',
+        name: table.column(j).head,
         line: {color: color, width: width}
     }
 }
@@ -54,4 +55,20 @@ function plotlyLayout(table, i, j, bgcolor) {
         yaxis: {title: table.heads[j], rangemode: 'tozero'},
         plot_bgcolor: bgcolor,
     }
+}
+
+function linspace(a,b,n) {
+    var array = [...Array(n).keys()];
+    array = array.map((v)=>(a+(b-a)*v/(n-1)))
+    return array
+}
+
+function PlotlyTraces(div, table, colors, width, bgcolor) {
+    if(!(this instanceof PlotlyTraces)) {return new PlotlyTraces(div, table, colors, width, bgcolor)}
+    this.div = div;
+    this.data = [];
+    for(var i=0; i<colors.length;i++) {this.data.push(plotlyTrace(table, 0, i+1, colors[i], width))} 
+    this.layout = {title: table.heading, showlegend: true, xaxis: {title: "x",},  yaxis: {rangemode: 'tozero'}, plot_bgcolor: bgcolor,};
+    this.config = {scrollZoom: false};
+    this.args = [div, this.data, this.layout, this.config]
 }

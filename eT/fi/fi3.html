@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="../eT.css">
+  <link rel="stylesheet" media="print" href="../eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Infection delays 4</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/fi/fi2.html">◀ Previous</a></div> 
+  <article>
+
+    <div id="header">
+      <h1>Infection delays</h1>
+    </div>
+
+    <h3>Example 3: Interactive</h3>
+    <div class="standard">This page may look rather busy. It attempts to implement the various displays made on previous pages in javascript rather than spreadsheet/python. By ‘recurrence’, I mean values calculated according to:</div>
+    <div class="indent"> \[I_{n} = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{n - d}\]</div>
+    <div class="indent">‘Resolution’ refers to the projection onto the characteristic solutions:</div>
+    <div class="indent"> \[I_{n} = \sum\limits_{{}_{m = 1}}^{{}_{M}} A_m a_m^n\]</div>
+    <div class="indent">The \(a_m\) are the zeros of the characteristic polynomial (calculated according to the Aberth method), while the \(A_m\) are coefficents that give \(I_0=1\) and zero for the first few negative values. The coefficients were determined using my shallow knowledge of Vandermonde determinants and Cramer’s (and some nice cancellations). [I would also note that \(D = M\).] I have used the resolution to repeat the ‘backward’ projection. The default gives the parameters for the ‘Three-day delay’ example (2) for comparison with the previous graphs. The parameters can be changed (even to the Two-day problem or more complicated ones).</div>
+    <div class="arial">
+      <h4 class="subsubsection_">Interactive example</h4>
+      <table>
+        <tr><td style="text-align: right;">Generation constants for new infection (\(g_1, g_2, g_3, . . .\)): </td><td><input id="garray" size="20" value="0.25, 0.75, 1" style="font-size: 1em; text-align: right;"></td></tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="charStr()">Characteristic equation</button>
+        <button type="button" onclick="grind()">Zeros</button>
+        <button type="button" onclick="sketch()">Sketch</button>
+        <button type="button" onclick="resolution()">Resolution</button>
+        <button type="button" onclick="target('variables','')">Remove</button><br/>
+        Forward graph (recurrence): <button type="button" onclick="flin()">Linear</button> <button type="button" onclick="flog()">Log</button> <button type="button" onclick="ffac()">Factor</button><br />
+        Forward graph (resolution): <button type="button" onclick="frlin()">Linear</button> <button type="button" onclick="frlog()">Log</button><br />
+        Backward graph (resolution): <button type="button" onclick="brlin()">Linear</button>
+      </div>
+      <div id="variables" class="text-center plot-box"></div>
+
+      <div id="saveTreeSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable, getValue('svgTreeFile')+'.svg','image/svg+xml');">Save as . . .</button>
+        <input id="svgTreeFile" size="8" value="tree" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveTreeCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvTreeFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvTreeFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+</article>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+<script src="js/ab.js"></script>
+
+</body>
+</html>
