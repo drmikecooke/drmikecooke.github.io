@@ -16,3 +16,4 @@ addNav("tests/AJAX/cd.json");
 addNav("tests/AJAX/info.json");
 addNav("json/json.json");
 addNav("Factor/Factor.json");
+addNav("modules/module.json");

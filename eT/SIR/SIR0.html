@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 0</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer">
+<div class="pointright"> <button id="sA" onclick="showAll()" class="tabbutton">Show all mathematical details</button><button id="hA" onclick="hideAll()" class="tabbutton">Hide all mathematical details</button></div>
+</div>
+
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+    <img class="center" src="images/SIR.svg" alt="image: SIR.svg" />
+    <div class="noindent">This is being written in early April 2020 from the United Kingdom (UK). A few weeks ago a friend sent me theoretical material on a model often used to understand the spread of disease. I had already done some preliminary spreadsheet presentations on UK data and extracted a rough idea of the rate of spread, using an exponential model. At that time, mid-March 2020, I had found that an exponential model would have the entire UK population infected by the virus within 40 days. That's less than 20 days from now.</div>
+    <div class="indent">In real life, exponential growth does not continue for ever. More sophisticated modeling uses a number of different approaches. For example, stochastic models set up scenarios with people-like objects subject to random influences that researchers imagine are relevant to the spread of the disease. The model is run many times and in many variations, speculative conclusions made, and plans drawn up. The plans depend on the relative and overlapping values placed by different societies on life, “the economy”, future prospects, class, the elderly, ethnicity, etc.</div>
+    <div class="indent">Here, we look at a discretized form of a compartmentalized deterministic model that splits the population into three parts: susceptible (<em>S</em>), infected (<em>I</em>), and recovered (<em>R</em>). Collecting the three parts as “SIR” gives the name to the model. On any given day, some susceptible people become infected and some infected people recover (hopefully). For simplicity, we also include death as a form of “recovery”, although to the victim or their family it is not. [Wondering here if a fourth compartment “(<em>L</em>)oss” could be set up, which would account for overwhelmed health services, or “businesses” in some countries.]</div>
+
+    <details id="maths1">
+      <summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
+      <div class="content">
+        <div class="indent">So how does the SIR model work? The proportion of susceptible people who become infected on a day depends on the number of infected people they are likely to contact. This reduces the pool of susceptibles. Using the common symbol “Δ” to represent the change we have:</div>
+
+        <div class="noindent">\[\Delta S = - \alpha SI\]</div>
+
+        <div class="indent">The symbol <em>S</em> represents the susceptible pool, <em>I</em> the infected pool, and α some constant. Putting these symbols together indicates that they should be multiplied.</div>
+        <div class="indent">So we have increased the number of infected people, but we also have to account for the fact that a proportion of people recover if they are infected. The changes here are the increase from newly infected people and decrease from recovery:</div>
+
+        <div class="noindent">\[\Delta I = + \alpha SI - \beta I\]</div>
+
+        <div class="indent">The new feature here is the constant <em>β</em>. Recovery is an individualized process. The sequence is completed with the change in <em>R</em>:</div>
+
+        <div class="noindent">\[\Delta R = + \beta I\]</div>
+
+        <div class="indent">Notice that if we add up all the changes:</div>
+
+        <div class="noindent">\[\Delta S + \Delta I + \Delta R = - \alpha SI + \alpha SI - \beta I + \beta I = 0\]</div>
+
+        <div class="indent">The total number of people (<em>S</em> + <em>I</em> + <em>R</em>) doesn't change, just their assignments to the compartments.</div>
+      </div>
+    </details>
+
+    <div class="indent">There are a number of valid criticisms of the model. The most obvious to me is that the disease doesn't act on a day-to-day timetable, but its action is spread over a period of around two weeks: a latent period where the victim doesn't have enough viral load to infect others (significantly?), the most dangerous infectious period where they don't appear sick, then the sickness itself, which also appears to have stages, before, hopefully, recovery. During the sick period, those at risk are family carers or, if necessary, hosptial staff, so there is a different infection dynamics. All these factors mean the daily data put out by government contain all sorts of delay factors in terms of the spread dynamics.</div>
+    <div class="indent">For the purpose of this article, my main concern is to show how one might get a handle on the gross <em>α</em> and <em>β</em> parameters from the data presented by governments.</div>
+  </article>
+
+<div class="pointer"><a href="/eT/SIR/SIR1.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/hidden.js"></script>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

@@ -255,12 +255,12 @@ article figcaption {
 
 .right { text-align: right; }
 
-.pointer { overflow: auto; }
+.pointer { display:flex; width:100%; overflow: auto; }
 
 .pointer a { 
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
-  font-size: 24px;
+  font-size: 21px;
   color: black;
   padding: 6px;
 }
@@ -268,6 +268,9 @@ article figcaption {
 .pointer a:hover { 
   background-color: #ddd;
 }
+
+/* show/hide all tabs*/
+.pointright { margin-left:auto; }
 
 /* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {

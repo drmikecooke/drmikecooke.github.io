@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 1</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer">
+<a href="/eT/SIR/SIR0.html">◀ Previous</a>
+<div class="pointright"> <button id="sA" onclick="showAll()" class="tabbutton">Show all mathematical details</button><button id="hA" onclick="hideAll()" class="tabbutton">Hide all mathematical details</button></div>
+</div>
+
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+
+    <h2 id="exponential-growth" class="section_">1 Exponential growth</h2>
+    <div class="noindent">I used data from this website: <a href="https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases">https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases</a> &mdash; I assume other countries have something similar [May update: this site became increasingly difficult to use as the developers made it more “user-friendly” <a href="https://github.com/tomwhite/covid-19-uk-data">https://github.com/tomwhite/covid-19-uk-data</a> may be useful to others.]. When this is all over, this link will presumably be retired at some point in the future. The “daily confirmed cases” link leads to a page where a xlsx table can be downloaded, updated daily.</div>
+    <div class="indent">The present version allowed me to construct this graph:</div>
+
+    <img class="center" src="images/lin.svg" alt="image: lin.svg" />
+
+    <div class="indent">The <em>y</em>-axis is new daily cases, and the exponential formula was a fit for an “exponential” trend line that my spreadsheet software (Libre) allows me to display.</div>
+    <div class="indent">When studying exponentials, it can be handy to use a logarithmic scale:</div>
+
+    <img class="center" src="images/log.svg" alt="image: log.svg" />
+
+    <div class="indent">This has converted the exploding “hockey-stick” curve into a straight line, but notice that the distances between factors of ten are the same in the sequence 1-10-100-1000-10000.</div>
+    <div class="indent">The important point for me is the trendline formula fit and the part multiplying “<em>x</em>” in the exponential. Here it is about 0.16. To go any further in the decimal is to fool yourself that you are being more accurate, given the variation about the curve. In mid-March, this number was higher, about 0.2 or more.</div>
+    <div class="indent">We can do the same thing for the cumulative reports:</div>
+
+    <div class="flex-center"><img src="images/clin.svg" alt="image: clin.svg" /><img src="images/clog.svg" alt="image: clog.svg" /></div>
+
+    <div class="indent">Hopefully you don't need me to tell you which version has a logarithmic scale. The exponential factor here is 0.17. It is also perhaps clearer that the growth factor was higher in mid-March. This is a positive sign indicating that social behaviour has changed to reduce the infection rate. It could also be a result of there being a reduced susceptible pool. At this point there are about 1/1000 of the UK population (almost 70 million) who have been confirmed as infected. The current confirmed deaths is more than 6000, about 10% of the confirmed cumulative infection. Many more presumably are self-isolating, but are not confirmed (and never will be without mass testing for antibodies and such). Will some of these people die without help and care in their final moments? The cynic in me suspects that there will be pressure to sweep some of these stories under the rug to avoid criticism of the government's performance.</div>
+    <div class="indent">For what it's worth, the daily death “<em>x</em>-factor” is about 0.18, and the cumulative 0.24. These are more reflective of my mid-March figures for infection with a two-three week delay in response.</div>
+
+    <details id="maths2">
+      <summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
+      <div class="content">
+        <div class="indent">Why am I just slapping the same process on different sets of figures. The first point is that different ways of dicing up the exponential growth should lead to similar <em>x</em>-factors, and largely they do, except for the cumulative death's 0.24. When you are dealing with the early stages of an infection (and other exponential-type processes), the initial form for the daily infection reports should go as:</div>
+
+        <div class="noindent">\[\Delta I = + \gamma I\]</div>
+
+        <div class="indent">If the cumulative number of infections (<em>I</em>) is growing exponentially, so will the daily reports (Δ<em>I</em>), multiplied by the <em>γ</em>-factor. The death statistics can also be treated with appropriate factors. In our case <em>γ</em> can be determined using the exponential function. The <em>x</em>-factor of 0.15 corresponds to \(\gamma = \exp\left( 0.15 \right) - 1 = 0.16\). You may have noticed that \(0.15 \approx 0.16\). This is not an accident: the smaller the <em>x</em>-factor, the closer <em>γ</em> will be to it. This is built-in to the exponential function. In a future life (if I have one), I may explain this.</div>
+        <div class="indent">In our SIR model, the <em>γ</em>-factor is:</div>
+
+        <div class="noindent">\[\gamma = + \alpha S - \beta\]</div>
+
+        <div class="indent">Assuming that we know “<em>S</em>”, we need another piece of information to tie down the <em>α</em> and <em>β</em> parameters.</div>
+      </div>
+    </details>
+  </article>
+
+<div class="pointer"><a href="/eT/SIR/SIR2.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/hidden.js"></script>
+
+  <footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 4</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div style="display:block;">
+<div class="pointer"><a href="/eT/SIR/SIR3.html">◀ Previous</a></div> 
+</div>
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+
+    <h2 id="implementing-the-model">4 Implementing the model</h2>
+    <div class="noindent">There are a number of ways of using the information gleaned above to see how the SIR model operates. We could just use population figures, that is numbers of people. That would perhaps be the human thing to do, but I am a cold-hearted scientist (trying to forget that I may be one of the dead in a few weeks). Here, I will express SIR in terms of proportions of the total population. This can be expressed as a fraction using one the various representations: decimal, percentage, ratio, etc. This gives the “sum rule”:</div>
+
+    <div class="noindent">\[S + I + R = 1\]</div>
+
+    <div class="indent">The problem now is to find the initial values and then let our spreadsheet program crank out a projection. The initial value of <em>S</em> is probably near 1 in mid-March, <em>I</em> would be smaller, and finally <em>R</em> would be a handful one would have thought. However, looking at the data that the UK government has issued, suggests severe under-reporting of <em>I</em>, and possibly <em>R</em>. On 7 April 2020, there were 55k confirmed cases, and 6k deaths, cumulatively. This either suggests a very high death rate of more than 10%, while elsewhere in the world (with better data from better testing regimes) the death rate is reported as around 1%. Assuming that <em>R</em> is still negligible, <em>I</em> would be 550k/70M, or about 0.008. Since we're dealing in very fuzzy knowledge here, I will take the <em>I</em>-value as 1/100. Hence <em>S</em> is indeed still around 1. Now <em>α</em> and <em>β</em> are “known”, we can go ahead. I got the graph:</div>
+    <img class="center" src="images/SIR.svg" alt="image: SIR.svg" />
+    <div class="indent">The peak can be expected in about 25 days. Given the infection and disease presentation progress over a similar length of time, the model is clearly inadequate. Even so, the model suggests there may be about 10% of the population uninfected at the end of this. We have an “at risk” population of over 60s (including me) of around 20%. Other at-risk factors, “pre-existing conditions” in health business-speak, will add to this. Also note that the peak reaches more than 20% of the population &mdash; a level that would probably break the health system, particularly that many of the health professionals exposed early on will be among the patients at that time.</div>
+    <div class="indent">Of course, the UK has instituted partial lock-downs of work and “social distancing”. Let us assume this halves the reproduction number. Here we have to be careful and fix <em>β</em> rather than <em>γ</em>, since we expect the disease to progress to recovery as before. This makes a dramatic difference:</div>
+    <img class="center" src="images/SIRb.svg" alt="image: SIRb.svg" />
+    <div class="indent">The peak of the population with the infection comes after about 60 days at the 3% level (a barely visible blip in the graph). One hopes that the health service could cope, but I don't know enough about that. The situation becomes relatively stable after 150 days. This, for those itching to get back to “normal”, is a problem. We are talking about almost half a year in lock-down. Even then, the loosening of restrictions would start the process over without effective treatments.</div>
+    <div class="text-center arial"><em>Downloads:</em> <a href="downloads/SIR200407.xlsx">SIR200407.xlsx</a> <a href="downloads/SIR.xlsx">SIR.xlsx</a> <a href="downloads/SIRb.xlsx">SIRb.xlsx</a></div>
+  </article>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

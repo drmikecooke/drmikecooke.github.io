@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 2</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div class="pointer">
+<a href="/eT/SIR/SIR1.html">◀ Previous</a>
+<div class="pointright"> <button id="sA" onclick="showAll()" class="tabbutton">Show all mathematical details</button><button id="hA" onclick="hideAll()" class="tabbutton">Hide all mathematical details</button></div>
+</div>
+
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+
+    <h2 id="reproduction-number" class="section_">2 Reproduction number</h2>
+    <div class="noindent">When I first started looking at this in mid-March, I found an estimate of something called the reproduction number as being around 2.5. I have since seen further guesses in the range 2&ndash;3.5. In terms of the SIR model, the reproduction number is:</div>
+
+    <div class="noindent">\[R_{0} = \frac{\alpha S}{\beta}\]</div>
+
+    <div class="indent">When <em>R</em><sub>0</sub> (no relation to <em>R</em>) is greater than 1, the number of new infections is greater than the numbers passing out into recovery (and non-infectivity). Happiness is achieved when the reproduction number is less than 1, because then the infection is on the way to dying out.</div>
+    <div class="indent">I have also seen the reproduction number described as the average number of new infections created by an infected person. Let's see how that joins up with the formula above. There is a differential calculus route, which if you know what you're doing is simpler. But I am assuming many people are not comfortable with such things, and it all seems to be a bit hocus-pocus. To some, even what I've done above will be like that, but they probably won't be reading this sentence. However, if the discrete approach used seems reasonable, maybe we can go forward.</div>
+
+    <details id="maths3">
+      <summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
+      <div class="content">
+        <div class="indent">So what are we attempting? We start with 1 infected person and assume <em>S</em> doesn't change much as they progress through the disease. Each day the infected person of interest is less likely to have the disease, since they may recover. We model the infected person as a fraction indicating the probability that they still have the disease. The parameter controlling this is <em>β</em>. The fraction of the person still infectious after <em>d</em> days is:</div>
+
+        <div class="noindent">\[F_{d} = \left( {1 - \beta} \right)^{d}\]</div>
+
+        <div class="indent">This is in no way a proper description of how the virus actually operates, as described above. This is an artifact of the crude model. However, it is sufficient to derive the reproduction number formula, and we will also use it to relate <em>β</em> to the average recovery/non-infectious period as a cross-check for later within the SIR model.</div>
+        <div class="indent">While the person is infectious, they are producing “children” (i.e. new infected people) each day at the rate <em>αS</em>:</div>
+
+        <div class="noindent">\[C_{d} = \alpha SF_{d}\]</div>
+
+        <div class="indent">We want to add up all the children:</div>
+
+        <div class="noindent">\[C = \sum\limits_{d = 0}^{\infty}C_{d} = C_{0} + C_{1} + \ldots = \alpha S\sum\limits_{d = 0}^{\infty}F_{d}\]</div>
+
+        <div class="indent">It just so happens that the last sum of the various fraction persons is known as a “geometric” series. In fact:</div>
+
+        <div class="noindent">\[\sum\limits_{d = 0}^{\infty}F_{d} = \sum\limits_{d = 0}^{\infty}\left( {1 - \beta} \right)^{d} = \frac{1}{\beta}\]</div>
+
+        <div class="indent">Collecting up:</div>
+
+        <div class="noindent">\[C = \frac{\alpha S}{\beta} = R_{0}\]</div>
+
+        <h4 id="average-recovery-time">Average recovery time</h4>
+        <div class="noindent">The probability that the infectious person recovers on day <em>d</em> is \(P_{d} = \beta F_{d} = \beta\left( {1 - \beta} \right)^{d}\). The sum of all the probabilities add up to 1, as they should:</div>
+
+        <div class="noindent">\[\sum\limits_{d = 0}^{\infty}P_{d} = \sum\limits_{d = 0}^{\infty}\beta\left( {1 - \beta} \right)^{d} = \frac{\beta}{\beta} = 1\]</div>
+
+        <div class="indent">The geometric sum comes in again here.</div>
+        <div class="indent">The average recovery time uses a modified geometric sum formula:</div>
+
+        <div class="noindent">\[\sum\limits_{d = 0}^{\infty}d\left( {1 - \beta} \right)^{d} = \frac{1}{\beta^{2}}\]</div>
+
+        <div class="indent">Hence:</div>
+
+        <div class="noindent">\[\left\langle d \right\rangle = \sum\limits_{d = 0}^{\infty}dP_{d} = \sum\limits_{d = 0}^{\infty}\beta d\left( {1 - \beta} \right)^{d} = \frac{\beta}{\beta^{2}} = \frac{1}{\beta}\]</div>
+
+        <div class="indent">We have used a standard notation for average with the angled brackets around the letter representing the averaged entity:\(\left\langle d \right\rangle\). There are other ways, such as an overbar and so on.</div>
+      </div>
+    </details>
+
+  </article>
+
+<div class="pointer"><a href="/eT/SIR/SIR3.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/hidden.js"></script>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

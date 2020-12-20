@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 3</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer">
+<a href="/eT/SIR/SIR2.html">◀ Previous</a>
+<div class="pointright"> <button id="sA" onclick="showAll()" class="tabbutton">Show all mathematical details</button><button id="hA" onclick="hideAll()" class="tabbutton">Hide all mathematical details</button></div>
+</div>
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+    <h2 id="estimating-the-parameters" class="section_">3 Estimating the parameters</h2>
+    <div class="noindent">Let us first gather the information we have some idea of. First there are the various exponential growth rates, <em>γ</em>. These are ranging between 0.15 and 0.24. I would add, that the exponential fit seems better in the mid-March period when the government was still not apparently doing much to stem the tide. Let us take 0.2 as this factor. Further, the reproduction number (<em>R</em><sub>0</sub>) range was estimated by experts at 2&ndash;3.5. I will initially use the 2.5 value, again as I did mid-March.</div>
+    <div class="indent">The reproduction number gives us that:</div>
+
+    <div class="noindent">\[\alpha S = 2.5\beta\]</div>
+
+    <div class="indent">We can then stuff this into:</div>
+
+    <div class="noindent">\[\gamma = + \alpha S - \beta = 1.5\beta = 0.2\]</div>
+
+    <div class="indent">This can be solved to give \(\beta = \frac{2}{15} = 0.1333\ldots\) The average time to “recovery” is then \(\left\langle d \right\rangle = \frac{15}{2} = 7.5\) days. This seems to me a reasonable value, remembering that in some sense this is the period when someone is infectious, and “recovery” in that sense is when they get visibly sick and their contact with others is hopefully very restricted (~5 days according to reports). Full recovery for serious cases seems to take a number of weeks.</div>
+    <div class="indent">Feeding back the <em>β</em> value one gets:</div>
+
+    <div class="noindent">\[\alpha S = 2.5\beta = \frac{1}{3} = 0.3333\ldots\]</div>
+
+    <details id="maths4">
+      <summary onclick="resetAll()">Mathematical details (click to reveal)</summary>
+      <div class="content">
+        <div class="indent">For general values of <em>γ</em> and <em>R</em><sub>0</sub>, more abstract algebra gives:</div>
+
+        <div class="noindent">\[\beta = \frac{\gamma}{R_{0} - 1}\]</div>
+        <div class="noindent">\[\alpha S = \frac{\gamma R_{0}}{R_{0} - 1}\]</div>
+      </div>
+    </details>
+  </article>
+
+<div class="pointer"><a href="/eT/SIR/SIR4.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/hidden.js"></script>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>
