@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="stylesheet" media="screen" href="/eT/css/hidden.css">
+  <title>eT: SIR models 5</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+
+<div style="display:block;">
+<div class="pointer"><a href="/eT/SIR/SIR4.html">◀ Previous</a></div> 
+</div>
+  <article>
+    <h1>SIR models and Covid-19 spread</h1>
+
+    <h2>5 Update December 2020</h2>
+    <div class="noindent">It’s near the end of 2020. “People” [in the Trumpian sense of “it is my impression that people . . .”] now know something about “R” numbers, even if only vaguely. I have also learned stuff in the intervening period, mainly about how to code graphs and tables in javascript, with the help of Plotly.js, as opposed to my early clumsy attempts to code svg graphs directly. At some point I may also learn D3.js, on which Plotly is based, in the hope of more efficient code. Anyway, I thought it was time to deploy this new knowledge to remove the need for spreadsheets in the model implementation. I guess I could also work out a way to import live data to update the input parameters, but I am not at the stage yet in knowing how to do that.</div>
+    <div class="indent">It probably doesn’t need me to tell you that I have changed the “R” trace colour to green (although it may be a problem for those who find distinguishing colors difficult — is it just me that finds the violet and brown resistor colour codes hard to separate?). The Plotly “yellow” seemed confusing to me when I tried to use it on the “beige” background I have implemented to give nice svg downloads. I have also included an option to put in your own SIR values, and normalize them to 1 if you want (press/click the button). The α value assumes normalized values, so I have adjusted the js functions to take account of this, giving the same qualitative behaviour whether or not you normalize the absolute values or not.</div>
+    <div class="arial">
+      <h4>SIR graph</h4>
+      <table>
+        <tr><td style="text-align: right;">R<sub>0</sub>:</td><td><input id="R_0" size="2" value="2.5" style="font-size: 1em; text-align: right;" onChange="R_0up()"/></td>
+        <td style="text-align: right;">γ:</td><td><input id="γ" size="2" value="0.2" style="font-size: 1em; text-align: right;" onChange="R_0up()"/></td>
+        <td style="text-align: right;">β:</td><td><input id="β" size="2" value="0.2" style="font-size: 1em; text-align: right;" onChange="βup()"/></td>
+        <td style="text-align: right;">α:</td><td><input id="α" size="2" value="10" style="font-size: 1em; text-align: right;" onChange="αup()" /></td></tr>
+        <tr><td>t:</td><td>0</td>
+        <td style="text-align: right;">S:</td><td><input id="S" size="2" value="70e6" style="font-size: 1em; text-align: right;" /></td>
+        <td style="text-align: right;">I:</td><td><input id="I" size="2" value="70e4" style="font-size: 1em; text-align: right;" /></td>
+        <td style="text-align: right;">R:</td><td><input id="R" size="2" value="0" style="font-size: 1em; text-align: right;" /></td></tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="normalizeClick()" style="margin-bottom: 20px">Normalize SIR values</button>
+        <button type="button" onclick="SIRTableClick()" style="margin-bottom: 20px">Table</button>
+        <button type="button" onclick="SIRGraphClick()" style="margin-bottom: 20px">Graph</button>
+        <button type="button" onclick="removeClick()" style="margin-bottom: 20px">Remove</button>
+        <div id="fvariables" class="text-center plot-box"></div>
+      </div>
+
+
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('fvariables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+  </div>
+
+  </article>
+
+<script src="/eT/SIR/js/SIR5.js"></script>
+
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>

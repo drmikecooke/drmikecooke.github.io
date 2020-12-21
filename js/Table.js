@@ -68,7 +68,7 @@ function PlotlyTraces(div, table, colors, width, bgcolor) {
     this.div = div;
     this.data = [];
     for(var i=0; i<colors.length;i++) {this.data.push(plotlyTrace(table, 0, i+1, colors[i], width))} 
-    this.layout = {title: table.heading, showlegend: true, xaxis: {title: "x",},  yaxis: {rangemode: 'tozero'}, plot_bgcolor: bgcolor,};
+    this.layout = {title: table.heading, showlegend: true, xaxis: {title: table.heads[0],},  yaxis: {rangemode: 'tozero'}, plot_bgcolor: bgcolor,};
     this.config = {scrollZoom: false};
     this.args = [div, this.data, this.layout, this.config]
 }
