@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en_UK">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Infection delays 4</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/fi/fi3.html">◀ Previous</a></div> 
+  <article>
+
+    <div id="header">
+      <h1>Infection delays</h1>
+    </div>
+
+    <h3>Example 4: Drowning and waving</h3>
+    <img class="center" src="/eT/fi/images/weekly.svg" alt="weekly data">
+    <div class="standard">Up to this point we have been looking at the recurrence relation as having terms where all the terms contribute positively to the production of new virus carriers. Here I want to look more at the wavy possibilities of such equations. Up to now we have had some oscillations, but they tended to only affect the early development. Having oscilliatory components that remain significant or even growing requires some negative terms in the recurrence relations. Such negative terms would not be possible in the infection delay scenario that has been the main focus in this thread. However, if we step back and look at the whole system of pandemic and government/popular response, one could imagine negative terms arising. As infections rise, people look out and think “I don’t want to risk it” and go out as little as possible. Governments shut down certain facilities where the infection spreads more easily — gyms, pubs, restaurants, etc. The infection falls and people become more blasé. Governments and businesses want the economy “to start growing again”, etc. Restrictions are lifted, and the infection starts rising and a second wave develops.</div>
+    <div class="indent">I have grabbed some data from a UK government website (https://coronavirus.data.gov.uk/details/cases) and amalgamated the daily data into weekly bins, since I think people react on a longer scale than daily, but monthly would give too few data points. The orange curve above is the data up to 21 December 2020, and the blue is an attempted fit, based on an exponential growth term and two complex terms that combine to give a real response. I have not as yet (this may not be true in the future) described how complex powers combine oscillatory and exponential behaviour, but they do. Anyway, I looked at the data and saw two peaks, the first around week 15, and the second around week 45. So we are looking for an oscilliatory component with about a thirty week period.</div>
+    <div class="indent">So what I am proposing is a solution of the form:</div>
+    <div class="indent"> \[I_{w} = A r^w + B \rho^w e^{i w \theta} + B^* \rho^w e^{-i w \theta} \]</div>
+    <div class="indent">With this template, we can work back to the recurrence relation. First we construct the characteristic polynomial:</div>
+    <div class="indent"> \[\left( a - r \right) \left( a - \rho e^{i \theta} \right) \left( a - \rho e^{-i \theta} \right) = 0\]</div>
+    <div class="indent">Multiplying out with the information \(e^{i \theta} + e^{-i \theta} = 2 \cos \theta \) (this is where the oscillation comes in) and \(e^{i \theta} e^{-i \theta} = 1\):</div>
+    <div class="indent"> \[a^3 - \left( r + 2 \rho \cos \theta \right) a^2 + \left( 2 r \rho \cos \theta + \rho^2 \right) x - r \rho^2 = 0\]</div>
+    <div class="indent">The corresponding recurrence relation is:</div>
+    <div class="indent"> \[I_w = \left( r + 2 \rho \cos \theta \right) I_{w - 1} - \left( 2 r \rho \cos \theta + \rho^2 \right)I_{w - 2} + r \rho^2 I_{w - 3}\]</div>
+    <div class="indent">To give a thirty week period, one needs \(\theta\) to be about \(2 \pi / 30 \) in radians. This comes out at about 0.21 radians, or about 12°. I have started the recurrence at a fairly high value in order to get something of the size of the peaks. When I looked at the UK data I was surprised to see one case in week 2 of 2020 — that would have been in January. Since the disease was barely a blip on the radar, possibly there was far more infection around in the UK than suggested by that single case. The ability to recognize and test for the disease must have improved with time, so perhaps we are also not comparing like with like in our weekly series. One could add a phase factor to give a bit more nudge space on the fit, but the more parameters, the less value: it is said that von Neumann, a mathematician of the early-to-mid 20th century, would claim to be able to fit an elephant with four parameters, and even make its trunk wiggle with a fifth.</div>
+    <div class="arial">
+      <h4 class="subsubsection_">Drowning and waving interaction</h4>
+      <table>
+        <tr>
+          <td style="text-align: right;">\(r\): </td><td><input id="r" size="2" value="1.05" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(\rho\): </td><td><input id="rho" size="2" value="1.045" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(\theta\): </td><td><input id="theta" size="2" value="0.22" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(I_0\): </td><td><input id="I0" size="2" value="450" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="recStr()">Recurrence relation</button> <button type="button" onclick="graph()">Graph</button>
+        <button type="button" onclick="table()">Table</button>
+        <button type="button" onclick="remove()">Remove</button>
+      </div>
+      <div id="variables" class="text-center plot-box"></div>
+
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('variables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+
+   <div class="indent">What does this all tell us about anything? I’m not sure much. The real behaviour is sharper, particularly on the upside (for the SARS-CoV-2 virus, at least). This is the result of inertia on the part of governments and people — “Perhaps it will just go away. It’s not real. Why should I wear a mask?” So society’s behaviour is more like a switch (a bit like nerve signals that only fire at a certain threshold, let alone the analogy of neural adaptation where a repeated stimulus evokes less of a response as time goes on). Change only happens when a crisis point is reached, otherwise it is the line of least resistance. For my future readers, if any, the upswing in the real data around week 47 seems to be due to a new kid on the block, a variant virus that seems to have been developed in the UK evolutionary laboratory of schools and a government programme, “Eat out to help out” during the summer, designed to help the ailing catering industries and small businesses stay afloat. There also is apparently another variant that was brewed in southern Africa. Whether these new variants will respond to the vaccine developed for the original virus worries me, and I suspect others. This doesn’t seem to be ending soon.</div>
+</article>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+<script src="js/fi4.js"></script>
+
+</body>
+</html>
