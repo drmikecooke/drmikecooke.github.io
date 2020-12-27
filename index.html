@@ -7,21 +7,21 @@
   <link rel="stylesheet" href="/css/cards.css">
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <title>Mike Cooke’s projects</title>
-  <script src="/js/lcard.js"></script>
+
 </head>
 <body>
   <header>Mike Cooke’s projects</header>
-  <nav id="menu"><script src="/js/nav.js"></script></nav>
+  <nav id="menu"><script src="/js/nav.js?1"></script></nav>
 
   <div class="container">
 
     <div id="lcards" class="panel"></div>
-
+    <script src="/js/lcard.js"></script>
     <script>
     /* Insert lcards in panel */
         lcard("/eT/fi/fi.html", "Infection delays", "/eT/fi/images/2dlog.svg");
         lcard("/eT/SIR/SIR.html", "SIR model and covid-19", "/eT/SIR/images/SIR.svg");
-        lcard("/eT/eTP.html", '<span class="exponential">e<em><sup>x</sup>ponential</em></span> <span class="frank">Times</span>', "/eT/images/burn.jpg");
+        lcard("/eT", '<span class="exponential">e<em><sup>x</sup>ponential</em></span> <span class="frank">Times</span>', "/eT/images/burn.jpg");
         lcard("ST/2020.html", "My writing at", "/ST/STbanner.svg");
     </script>
 

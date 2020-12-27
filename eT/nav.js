@@ -1,6 +1,6 @@
 var navbar = document.getElementById("menu");
 navbar.innerHTML += '<a href="/" style="float:right">Back to base</a>\n';
-navbar.innerHTML += '<a href="/eT/eTP.html">Prospectus</a>\n';
+navbar.innerHTML += '<a href="/eT">Prospectus</a>\n';
 navbar.innerHTML += '<a href="/eT/Power/Power.html">Powering<sup>up</sup></a>\n';
 navbar.innerHTML += '<a href="/eT/Backlog/backlog.html">Backlog</a>\n';
 navbar.innerHTML += '<div class="dropdown"><button class="dropbtn">Logjam ▼</button><div class="dropdown-content"><a href="/eT/Logjam/logjam0.html">0 Introduction</a><a href="/eT/Logjam/logjam1.html">1 So what are logarithms?</a><a href="/eT/Logjam/logjam2.html">2 Power relations</a><a href="/eT/Logjam/logjam3.html">3 Tabling some vulgarity</a><a href="/eT/Logjam/logjam4.html">4 Compound uselessness</a><a href="/eT/Logjam/logjam5.html">5 I hear you</a><a href="/eT/Logjam/logjam6.html">6 Graph-o-log-y or log-graph-y?</a><a href="/eT/Logjam/logjam7.html">7 What the frack is a slide-rule?</a></div></div>\n'

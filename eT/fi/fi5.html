@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Infection delays 5</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+.border {border: 1pt solid black;}
+.torder {border: 3pt solid red;}
+.collapse {border-collapse:collapse;}
+</style>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/fi/fi4.html">◀ Previous</a></div> 
+  <article>
+    <div id="header">
+      <h1>Infection delays 5</h1>
+    </div>
+<h3>Infinite interlude</h3>
+<table class="collapse">
+<tr><td>\(\rho z\): \(\dots\)</td><td class="border">\(z_{-3}\)</td><td class="border">\(z_{-2}\)</td><td class="torder">\(z_{-1}\)</td><td class="border">\(z_{0}\)</td><td class="border">\(z_{+1}\)</td><td> \(\dots \rightarrow\)</td></tr>
+<tr><td>\(z\): \(\dots\)</td><td class="border">\(z_{-2}\)</td><td class="border">\(z_{-1}\)</td><td class="torder">\(z_{0}\)</td><td class="border">\(z_{+1}\)</td><td class="border">\(z_{+2}\)</td><td style="text-align:left;"> \(\dots\)</td></tr>
+<tr><td>\(\lambda z\): \(\dots\)</td><td class="border">\(z_{-1}\)</td><td class="border">\(z_{0}\)</td><td class="torder">\(z_{+1}\)</td><td class="border">\(z_{+2}\)</td><td class="border">\(z_{+3}\)</td><td> \(\dots \leftarrow\)</td></tr>
+</table>
+    <div class="noindent">Here we plan to look at the way characteristic solutions arise and perhaps glean a more solid understanding of what is going on with the characteristic polynomial and so on. Above I begin by suggesting an analogy of the infection data sequence with a sort of infinite vector, which we have designated \(z\). At the same time we have also defined two shift operators: \(\lambda, \rho\). The \(\lambda\) operator shifts the sequence entries <em>left</em>, and \(\rho\), <em>right</em>. The thicker, red border indicates the zero component of the respective sequences. It is perhaps also useful to give a component definition for the shift operators:</div>
+
+    <div class="indent"> \[ \left(\lambda z\right)_n = z_{n+1}, \left(\rho z\right)_n = z_{n-1} \]</div>
+
+    <div class="indent">I hope it is obvious that \(\lambda \rho z = \rho \lambda z = \iota z = z\), where \(\iota\) is the “identity”, do-nothing operator. Even more compactly: \(\lambda \rho = \rho \lambda = \iota \).</div>
+
+    <div class="indent">We also define the hopefully “obvious” vector operations of addition and scalar multiplication: \((w+z)_n = w_n + z_n, (kz)_n = k z_n\).</div>
+
+    <div class="indent">In this notation our primordial recurrence relation \(z_n = a z_{n-1}\) can be expressed as \(z = a \rho z \). Using \(\lambda\) as the inverse of \(\rho\), we also derive \(\lambda z = a z\). In operator theory, if an operation on a certain vector gives back the same vector multiplied by a scalar, the vector is called an eigenvector of the operator, and the scalar an eigenvalue. Older English texts often used “characteristic" in place of the German loan of “eigen” (meaning “own” as in “one’s own”, i.e. an adjective rather than a verb). We therefore know a whole range of eigenvectors of \(\lambda, \rho\): \(\alpha_n = a^n\), with \(a\) variable. We have \(\lambda \alpha = a \alpha\) and \(\alpha = a \rho \alpha\ \implies \rho \alpha = \alpha / a\).</div>
+
+    <div class="indent"> Using fancy maths notation, with the Greek capital sigma character (Σ) indicating a sum between limits, with <em>D</em> being the length of time the infection lasts in the average person (or at least stops creating new infections):</div>
+
+    <div class="indent"> \[I_{0} = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{- d}\]</div>
+
+    <div class="indent"> Tomorrow's new infections would then be expected to be:</div>
+
+    <div class="indent"> \[I_{1} = g_{1}I_{0} + g_{2}I_{- 1} + g_{3}I_{- 2} + \ldots = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{- d + 1}\]</div>
+
+    <div class="indent"> And on day <em>n</em> :</div>
+
+    <div class="indent"> \[I_{n} = g_{1}I_{n - 1} + g_{2}I_{n - 2} + g_{3}I_{n - 3} + \ldots = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{n - d}\]</div>
+
+    <div class="indent"> There are known to be a number of (characteristic) solutions of these equations that have a simple power form:</div>
+
+    <div class="indent"> \[I_{n} = a^{n}\]</div>
+
+    <div class="indent"> This only works for specific values of <em>a</em> . To find these values we pop the proposed solution into one of the equations:</div>
+
+    <div class="indent"> \[a^{n} = g_{1}a^{n - 1} + g_{2}a^{n - 2} + g_{3}a^{n - 3} + \ldots + g_{D}a^{n - D}\]</div>
+
+    <div class="indent"> If we divide through by <em>\(a^{n - D}\):</em> </div>
+
+    <div class="indent"> \[a^{D} = g_{1}a^{D - 1} + g_{2}a^{D - 2} + g_{3}a^{D - 3} + \ldots + g_{D}\]</div>
+
+    <div class="indent"> This is a <em>D</em> -order polynomial. Note that <em>n</em> has dropped out, since it is not really relevant (and shouldn't be, that's the point) to the value of <em>a</em> . In theory, this equation can have up to <em>D</em> solutions. Allowing complex number solutions, there are exactly <em>D</em> solutions, possibly including multiple roots.</div>
+
+  </article>
+
+<div class="pointer"><a href="/eT/fi/fi1.html" class="pointright">Next ▶</a></div>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>
