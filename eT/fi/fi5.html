@@ -7,7 +7,7 @@
   <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
-  <title>eT: Infection delays 5</title>
+  <title>eT: Infection delays 6</title>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
@@ -23,7 +23,7 @@
 <div class="pointer"><a href="/eT/fi/fi4.html">◀ Previous</a></div> 
   <article>
     <div id="header">
-      <h1>Infection delays 5</h1>
+      <h1>Infection delays 6</h1>
     </div>
 <h3>Infinite interlude</h3>
 <table class="collapse">
@@ -31,7 +31,7 @@
 <tr><td>\(z\): \(\dots\)</td><td class="border">\(z_{-2}\)</td><td class="border">\(z_{-1}\)</td><td class="torder">\(z_{0}\)</td><td class="border">\(z_{+1}\)</td><td class="border">\(z_{+2}\)</td><td style="text-align:left;"> \(\dots\)</td></tr>
 <tr><td>\(\lambda z\): \(\dots\)</td><td class="border">\(z_{-1}\)</td><td class="border">\(z_{0}\)</td><td class="torder">\(z_{+1}\)</td><td class="border">\(z_{+2}\)</td><td class="border">\(z_{+3}\)</td><td> \(\dots \leftarrow\)</td></tr>
 </table>
-    <div class="noindent">Here we plan to look at the way characteristic solutions arise and perhaps glean a more solid understanding of what is going on with the characteristic polynomial and so on. Above I begin by suggesting an analogy of the infection data sequence with a sort of infinite vector, which we have designated \(z\). At the same time we have also defined two shift operators: \(\lambda, \rho\). The \(\lambda\) operator shifts the sequence entries <em>left</em>, and \(\rho\), <em>right</em>. The thicker, red border indicates the zero component of the respective sequences. It is perhaps also useful to give a component definition for the shift operators:</div>
+    <div class="noindent">Here we plan to look at the way characteristic solutions arise and perhaps glean a more solid understanding of what is going on with the characteristic polynomial and so on. Above I begin by suggesting an analogy of the infection data sequence with a sort of infinite vector, which we have designated \(z\). At the same time we have also defined two linear shift operators: \(\lambda, \rho\). The \(\lambda\) operator shifts the sequence entries <em>left</em>, and \(\rho\), <em>right</em>. The thicker, red border indicates the zero component of the respective sequences. It is perhaps also useful to give a component definition for the shift operators:</div>
 
     <div class="indent"> \[ \left(\lambda z\right)_n = z_{n+1}, \left(\rho z\right)_n = z_{n-1} \]</div>
 
@@ -39,37 +39,30 @@
 
     <div class="indent">We also define the hopefully “obvious” vector operations of addition and scalar multiplication: \((w+z)_n = w_n + z_n, (kz)_n = k z_n\).</div>
 
-    <div class="indent">In this notation our primordial recurrence relation \(z_n = a z_{n-1}\) can be expressed as \(z = a \rho z \). Using \(\lambda\) as the inverse of \(\rho\), we also derive \(\lambda z = a z\). In operator theory, if an operation on a certain vector gives back the same vector multiplied by a scalar, the vector is called an eigenvector of the operator, and the scalar an eigenvalue. Older English texts often used “characteristic" in place of the German loan of “eigen” (meaning “own” as in “one’s own”, i.e. an adjective rather than a verb). We therefore know a whole range of eigenvectors of \(\lambda, \rho\): \(\alpha_n = a^n\), with \(a\) variable. We have \(\lambda \alpha = a \alpha\) and \(\alpha = a \rho \alpha\ \implies \rho \alpha = \alpha / a\).</div>
+    <div class="indent">In this notation our primordial recurrence relation \(z_n = a z_{n-1}\) can be expressed as \(z = a \rho z \). Using \(\lambda\) as the inverse of \(\rho\), we also derive \(\lambda z = a z\). In operator theory, if an operation on a certain vector gives back the same vector multiplied by a scalar, the vector is called an eigenvector of the operator, and the scalar an eigenvalue. Older English texts often used “characteristic" in place of the German loan of “eigen” (meaning “own” as in “one’s own”, i.e. an adjective rather than a verb). We therefore know a whole range of eigenvectors of \(\lambda, \rho\): \(\alpha_n = a^n\), with \(a\) variable. We have \(\lambda \alpha = a \alpha\) and \(\alpha = a \rho \alpha\ \implies \rho \alpha = \alpha / a\). It also useful to put this in the form \((\lambda-a)\alpha = 0 \).</div>
 
-    <div class="indent"> Using fancy maths notation, with the Greek capital sigma character (Σ) indicating a sum between limits, with <em>D</em> being the length of time the infection lasts in the average person (or at least stops creating new infections):</div>
+    <div class="indent">Let us look at a product of two operators: \( (\lambda - a)(\lambda - b)\). If we apply this to the vector \(\alpha\), I hope it is not too difficult to believe that we get zero. Also the same result is obtained when the operator product is applied to \(\beta_n = b^n\). Combining, \( (\lambda - a)(\lambda - b)(A\alpha + B\beta) = 0\) with \(A, B\) arbitrary constants. From our previous work, it seems likely that this is the general solution. Let us write out the equation for general z:</div>
 
-    <div class="indent"> \[I_{0} = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{- d}\]</div>
+    <div class="indent">\[(\lambda - a)(\lambda - b)z=(\lambda^2-(a+b)\lambda + ab)z=0\]</div>
 
-    <div class="indent"> Tomorrow's new infections would then be expected to be:</div>
+<div class="noindent">or in components: \(z_{n+2}-(a+b)z_{n+1} + ab z_n = 0 \implies z_{n+2}=(a+b)z_{n+1} - ab z_n\). This is our recurrence relation form \(z_n=g_1z_{n-1}+g_2z_{n-2}\), shifting back two places. So long as we define two consecutive components of \(z\), we can build up a forward solution. The backward solution can be built by the relation \(z_n = ((a+b)z_{n+1} - z_{n+2})/ab\). The same two initial components can be used. These components can be used to determine a consistent pair \(A,B\). Thinking back, we are just seeing our characteristic polynomial with powers of \(\lambda\) rather than powers of a number.</div>
 
-    <div class="indent"> \[I_{1} = g_{1}I_{0} + g_{2}I_{- 1} + g_{3}I_{- 2} + \ldots = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{- d + 1}\]</div>
+<div class="indent">So we have a general solution \(z = A\alpha + B\beta\). Applying one of the factors \((\lambda-a)z = B(b-a)\beta\), remembering that \(\lambda \alpha = a \alpha, \lambda \beta = b \beta\). Looking at the zero component, \(z_1-a z_0 = B(b-a)b^0 = B(b-a) \implies B = (z_1-az_0)/(b-a)\). Similarly, \(A = (z_1-bz_0)/(a-b)\). We can think of the factors of the recurrence relation characteristic polynomial as being projection operators onto the opposite eigenvector:</div>
 
-    <div class="indent"> And on day <em>n</em> :</div>
+<div class="indent">\[P_\alpha z = \frac{(\lambda - b)z}{a-b}=A\alpha\]</div>
+ <div class="indent">\[P_\beta z = \frac{(\lambda - a)z}{b-a}=B\beta\]</div>
 
-    <div class="indent"> \[I_{n} = g_{1}I_{n - 1} + g_{2}I_{n - 2} + g_{3}I_{n - 3} + \ldots = \sum\limits_{{}_{d = 1}}^{{}_{D}}g_{d}I_{n - d}\]</div>
+<div class="indent">If we have a longer product \((\lambda - a_1)(\lambda-a_2)\dots z= \prod\limits_i{(\lambda-a_i)}z=0\) with general solution \(z = \sum\limits_i A_i\alpha_i\), the projections are:</div>
 
-    <div class="indent"> There are known to be a number of (characteristic) solutions of these equations that have a simple power form:</div>
+<div class="indent">\[P_{\alpha_i} z = \prod\limits_{j\neq i}\frac{(\lambda - \alpha_j)z}{\alpha_i-\alpha_j}=A_i\alpha_i\]</div>
 
-    <div class="indent"> \[I_{n} = a^{n}\]</div>
+<div class="indent">Each \((\lambda - \alpha_j)\) factor acts as a filter nulling out the unwanted components.
 
-    <div class="indent"> This only works for specific values of <em>a</em> . To find these values we pop the proposed solution into one of the equations:</div>
-
-    <div class="indent"> \[a^{n} = g_{1}a^{n - 1} + g_{2}a^{n - 2} + g_{3}a^{n - 3} + \ldots + g_{D}a^{n - D}\]</div>
-
-    <div class="indent"> If we divide through by <em>\(a^{n - D}\):</em> </div>
-
-    <div class="indent"> \[a^{D} = g_{1}a^{D - 1} + g_{2}a^{D - 2} + g_{3}a^{D - 3} + \ldots + g_{D}\]</div>
-
-    <div class="indent"> This is a <em>D</em> -order polynomial. Note that <em>n</em> has dropped out, since it is not really relevant (and shouldn't be, that's the point) to the value of <em>a</em> . In theory, this equation can have up to <em>D</em> solutions. Allowing complex number solutions, there are exactly <em>D</em> solutions, possibly including multiple roots.</div>
+    <div class="indent">The assumption in all the above is that the \(\alpha_i\) values are distinct — new problems arise when multiple zeros occur in the characteristic polynomial . . .</div>
 
   </article>
 
-<div class="pointer"><a href="/eT/fi/fi1.html" class="pointright">Next ▶</a></div>
+<div class="pointer" style="display:none;"><a href="/eT/fi/fi6.html" class="pointright">Next ▶</a></div>
 
 <footer id="email"><script src="/js/footer.js"></script></footer>
 
