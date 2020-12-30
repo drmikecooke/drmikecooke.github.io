@@ -201,19 +201,6 @@ figcaption {
   margin-bottom: 10px;
 }
 
-footer a {
-  color: black;
-}
-
-/* Footer */
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  font-weight: bold;
-  font-size: 21px;
-}
-
 table {
   display: flex;
   flex-direction: column;
@@ -278,7 +265,7 @@ article figcaption {
   article figure img { width: 100%; }
   article img { width: 90%; margin:0.25em; }
   article { font-size: 18px; }
-  footer h2 a { font-size: 18px; }
+  footer a { font-size: 18px; }
   svg { width: 100% }
   embed { width: 100% }
   article img.center { width: 100%; }

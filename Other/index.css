@@ -75,16 +75,6 @@ nav a:hover {
   overflow: hidden;
 }
 
-/* Footer */
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  margin-top: 5px;
-  font-weight: bold;
-  font-size: 21px;
-}
-
 input {
   background-color: #ddd;
 }
@@ -135,5 +125,5 @@ table {
   .menu { flex-direction: column; }
   figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   figure img {width: 100%; }
-  footer h2 a { font-size: 18px; }
+  footer a { font-size: 18px; }
 }

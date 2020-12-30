@@ -82,23 +82,6 @@ max-width: 75%;
 padding: 10px;
 }
 
-/* Footer */
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  margin-top: 5px;
-}
-
-footer {
-  padding: 5px;
-  text-align: center;
-  background: #ccc;
-  margin-top: 5px;
-  font-weight: bold;
-  font-size: 21px;
-}
-
 #figcapSearch {
   background-image: url(search.svg);
   background-size: 25px;
