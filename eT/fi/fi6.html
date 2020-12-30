@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Infection delays 7</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+.border {border: 1pt solid black;}
+.torder {border: 3pt solid red;}
+.collapse {border-collapse:collapse;}
+</style>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+<nav id="menu"><script src="/eT/nav.js"></script></nav>
+<div class="pointer"><a href="/eT/fi/fi5.html">◀ Previous</a></div> 
+  <article>
+    <div id="header">
+      <h1>Infection delays 7</h1>
+    </div>
+<h3>Multiple generalizations</h3>
+    <div class="noindent">. . . If the characteristic polynomial of a recurrence relation contains terms of the form \((\lambda-a)^k\), where \(k>1\), then we need to find extra solutions to fill out the initial conditions. Let us look at what is perhaps the simplest example of this:</div>
+
+    <div class="indent"> \[ (\lambda - 1)^2 z = 0 \implies z_{n+2} = 2 z_{n+1} - z_n \]</div>
+
+    <div class="indent">One solution is \(\epsilon_n = 1\), which satisfies \((\lambda-1)\epsilon =0\). Since we need to be able to fit two starting/seed conditions, \(z_0,z_1\) say, we need one other solution: \((\lambda-1)^2\zeta =0, (\lambda-1)\zeta \neq 0 \). In fact, to be more specific, we can specify \((\lambda-1)\zeta = \epsilon \implies \zeta_{n+1} = \zeta_n +1\). One solution is \(\zeta_n = n\). We could also add in an arbitrary constant, but this would merely be mixing in some \(\epsilon\), which would be nulled by the first \((\lambda -1)\) factor it came across. The \(\zeta\) solution is a rank-2 generalized eigenvector, while the ordinary eigenvector solution \(\epsilon\) is rank-1. Higher rank-k generalized eigenvectors are solutions of \((\lambda -1)^k z = 0\) such that (\(\lambda -1)^{k-1} z \neq 0\).</div>
+
+    <div class="indent">Let us try to find the whole set of generalized eigenvectors of rank-k, which we will denote \(\epsilon^{(k)}\). We will also subject these vectors to the conditions:</div> 
+
+    <div class="indent">\[(\lambda-1)\epsilon^{(k)} = \epsilon^{(k-1)}, \space \epsilon^{(k)}_0 = 0, k>1, \space \epsilon^{1}_0=1.\]</div>
+
+    <div class="indent">In fact, \(\epsilon^{(1)}=\epsilon\), the normal eigenvector. We can also define \((\lambda-1)\epsilon^{(1)} = \epsilon^{(0)}=0\). Let us define a vector that combines all these generalized eigenvectors, \(z(\alpha)=\sum\limits_{k=0}^{\infty}\alpha^k \epsilon^{(k)}\).</div> 
+
+    <div class="indent">According to our initial condition \(z(\alpha)_0=\sum\limits_{k=0}^{\infty}\alpha^k \epsilon^{(k)}_0=\alpha\). Further \((\lambda-1)z(\alpha)=\sum\limits_{k=0}^{\infty}\alpha^k (\lambda-1) \epsilon^{(k)}=\sum\limits_{k=0}^{\infty}\alpha^k \epsilon^{(k-1)}=\sum\limits_{k=0}^{\infty}\alpha^{k+1} \epsilon^{(k)}=\alpha z(\alpha)\). Looking at the extremes:</div> 
+
+    <div class="indent">\[\lambda z = (1+\alpha)z \implies z_n=z_0 (1+\alpha)^n=\alpha(1+\alpha)^n\]</div> 
+
+     <div class="indent">Expanding the binomial for positive \(n\):</div> 
+
+    <div class="indent">\[z_n=\sum\limits_{k=0}^n \alpha^{k+1}\binom{n}{k}\]</div> 
+
+    <div class="indent">Shifting the \(k\) variable:</div> 
+
+    <div class="indent">\[z_n=\sum\limits_{k=1}^{n+1} \alpha^{k}\binom{n}{k-1}=\sum\limits_{k=1}^{n+1} \alpha^{k}\epsilon^{(k)}_n \implies \epsilon^{(k)}_n=\binom{n}{k-1}\]</div> 
+
+    <div class="indent">The question that immediately arises is if these “solutions" actually work as advertized? For example, there are worries about non-positive \(n\). And what about \(k>n+1\)? It also seems a little strange that the generating vector \(z(\alpha)\) is in fact a normal eigenvector with eigenvalue \(1+\alpha\). It is perhaps instructive to look at the first few “solutions":</div>
+
+    <div class="indent">\[\epsilon^{(1)}_n=\binom{n}{0}=\frac{n!}{0!n!}=1, \space \epsilon^{(2)}_n=\zeta=\binom{n}{1}=\frac{n!}{1!(n-1)!}=n, \space \epsilon^{(3)}_n=\binom{n}{2}=\frac{n!}{2!(n-2)!}=\frac{n(n-1)}{2}\]</div> 
+
+    <div class="indent">The first two are the solutions we already know about. We just need to check that \((\lambda-1)\epsilon^{(3)}=\epsilon^{(2)}, \space \epsilon^{(3)}_0=0\):</div>
+
+    <div class="indent">\[ \epsilon^{(3)}_{n+1} - \epsilon^{(3)}_n=\frac{n(n+1)}{2}-\frac{n(n-1)}{2}=n=\epsilon^{(2)}_n, \space \epsilon^{(3)}_0 = \frac{0\times-1}{2}=0\]</div> 
+
+    <div class="indent">In fact \(\epsilon^{(3)}_1=0\) too, which takes care of the only non-obvious \(k>n+1\) case. The solutions clearly continue seamlessly to negative \(n\). It seems clear to me that:</div> 
+
+    <div class="indent">\[\epsilon^{(k)}_n=\frac{n(n-1) \dots (n-k+2)}{(k-1)!}=\frac{\prod\limits^{k-2}_{l=0}n-l}{(k-1)!}\]</div>
+<div style="background-color:lightgray;padding:12px;">
+<h4 style="text-align:left;">Warnings for readers familiar with quantum mechanics</h4>
+<div class="noindent">Some of the above may seem familiar from what you have learnt in quantum mechanics, but there are differences. For example, I have not defined an “inner” or “scalar” product, so there is no concept here of hermitean/self-adjoint operators. Indeed, with self-adjoint operators there are no generalized eigenvectors, only the normal ones. Reversing this implication, the operator \(\lambda\) cannot be self-adjoint even if a scalar product were defined. Also, the fact that the generalized eigenvectors can be used to construct the normal eigenvectors for other eigenvalues suggests a sort of “overcompleteness”, as opposed to the desired completeness relations one gets from a complete set of commuting “observables” described by self-adjoint operators. Coincidentally I have been reading PAM Dirac’s <em>Principles of Quantum Mechanics</em> (4th edition), and I was struck by the similarity to my presentation of projection operators in the <a href="/eT/fi/fi5.html">previous section</a> to Dirac’s (pp. 32-34). Also, his proof that self-adjoint operators (referred to as “real linear operators”) can only have normal eigenvalues is on pp.28-29. The 1st edition, 1930, does not contain this material and uses a more primitive notation.</div>
+</div>
+
+<h3>Generalization of the generalization</h3>
+
+<div class="noindent">I am getting towards the end of this work. There remains, for now, only the determination of the generalized eigenvectors for other eigenvalues, i.e. solutions of \((\lambda - a)^k z=0\) with \((\lambda - a)^{k-1} z \neq 0\). We propose a solution of the form \(\alpha^{(k)}_n = c_k \epsilon^{(k)}_n a^n\), where the \(c_k\) are normalization constants. Let us see how \(\lambda\) performs on these vectors:</div>
+
+<div class="indent">\[(\lambda \alpha^{(k)})_n = \alpha^{(k)}_{n+1}=c_k\epsilon^{(k)}_{n+1}a^{n+1}=c_k(\epsilon^{(k)}_n+\epsilon^{(k-1)}_n)a^{n+1}=a\left(\alpha^{(k)}_n+\frac{c_k}{c_{k-1}}\alpha^{(k-1)}_n\right)\]</div>
+
+<div class="indent">Rearranging and casting as a vector equation:</div>
+
+<div class="indent">\[(\lambda-a) \alpha^{(k)} = a\frac{c_k}{c_{k-1}}\alpha^{(k-1)}\]</div>
+
+<div class="indent">Choosing \(c_k=a^{-k}\) gives \((\lambda-a) \alpha^{(k)} = \alpha^{(k-1)}\) with \(\alpha^{(k)}_n = \epsilon^{(k)}_n a^{n-k}\). If one was fussed, one could produce a series of projection operators and simple means to implement these to find solutions relative to general initial conditions, combined with other roots of the recurrence relation/characteristic polynomial. The fact that the solutions are zero for \(n \lt k-1\) seems useful in this respect.</div>
+
+<div class="indent">A final point. If one has distinct roots (i.e. no multiples) one doesn’t need to worry about generalized eigenvalue solutions. If one was choosing coefficients at random, one could probably guess that the likelihood of the roots being extacly the same is a number adjacent to zero. However, one tends to have a bias to rational coefficients, and if you are beginning to explore the problem, it doesn’t seem unlikely that you would come across the seminal problem on this page:</div>
+
+<div class="indent"> \[ (\lambda - 1)^2 z = 0 \implies z_{n+2} = 2 z_{n+1} - z_n \]</div>
+
+<div class="noindent">or similar.</div>
+
+  </article>
+
+<div class="pointer" style="display:none;"><a href="/eT/fi/fi7.html" class="pointright">Next ▶</a></div>
+
+<footer id="email"><script src="/js/footer.js"></script></footer>
+
+</body>
+</html>
