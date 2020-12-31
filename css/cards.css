@@ -14,8 +14,8 @@
 .container { display: flex; background-color: #ddd; border: 10px solid; border-color: #ddd; }
 
 @media screen and (max-width: 900px) {
-  .panel { display: flex; flex-direction: column; }
-  .container { display: flex; flex-direction: column; }
+  .panel { display: flex; flex-direction: column; border: none;}
+  .container { display: flex; flex-direction: column; border: none;}
   .cardw-250px { width: 100%; height: auto; }
   .cardh-250px { display: block; width: 100%; height: auto; padding: 10px; margin: 0px; border: 10px solid; border-color: beige; }
   .h-180px { width: 100%; height: auto;}

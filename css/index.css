@@ -28,38 +28,6 @@ sub {
   top: 0.4em;
 }
 
-/* Header/Blog Title */
-header {
-  font-family: Franklin;
-  font-size: 8vw;
-  padding: 10px;
-  text-align: center;
-  background: white;
-}
-
-/* Style the top navigation bar */
-nav {
-  font-family: Franklin;
-  font-size: 18px;
-  overflow: hidden;
-  background-color: #333;
-  user-select: none;
-}
-
-/* Style the topnav links */
-nav a {
-  display: inline-block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -75,11 +43,4 @@ a {
 .frank {
   font-family: Franklin;
   line-height: 80%;
-}
-
-/* Responsive layout - when the screen is less than 900px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-  figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
-  figure img {width: 100%;}
-  footer a { font-size: 18px; }
 }
