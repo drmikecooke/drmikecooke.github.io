@@ -14,9 +14,11 @@
 .container { display: flex; background-color: #ddd; border: 10px solid; border-color: #ddd; }
 
 @media screen and (max-width: 900px) {
-  .panel { display: flex; flex-direction: column; border: none;}
-  .container { display: flex; flex-direction: column; border: none;}
-  .cardw-250px { width: 100%; height: auto; }
-  .cardh-250px { display: block; width: 100%; height: auto; padding: 10px; margin: 0px; border: 10px solid; border-color: beige; }
-  .h-180px { width: 100%; height: auto;}
+  .panel { display: flex; flex-direction: column; border: none; padding:0px;}
+  .container { display: flex; flex-direction: column; border: none; padding:0px;}
+  .card {padding:5px; margin:0px;}
+  .cardw-250px { width: 100%; height: auto; border: none;}
+  .cardh-250px { display: block; width: 100%; height: auto; padding: 5px; margin: 0px; border: none;}
+  .h-180px {width: 100%; height: auto;}
+  .w-210px {width: 20%; margin: 5px; float:right;}
 }
