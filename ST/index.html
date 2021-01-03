@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mike at ST</title>
+  <link rel="stylesheet" href="ST.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16" />
+</head>
+<body>
+
+<header>
+  <h1>Mike Cooke at ST</h1>
+</header>
+
+<script src="/ST/index.js"></script>
+
+<h1>My writing at:</h1>
+<a href="http://www.semiconductor-today.com/"><img src="STbanner.svg" alt="ST banner" /></a>
+
+<input type="text" id="figcapSearch" onkeyup="figcapSearch()" placeholder="Simple substring filter . . ." title="Type in a name" style="display:block;" />
+    <script src="/ST/ST.js"></script>
+    
+    <div id="panel"></div>
+    <script src="/js/footer.js"></script>
+    
+    <script>
+        function loadAJAX(file, callback, type) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = callback;
+            xhttp.open("GET", file+'?'+(new Date()).getTime(), true);
+            xhttp.responseType = type;
+            xhttp.send(null);
+        }
+
+function getJSON(year) {
+    document.title = "Mike at ST/"+year;
+    loadAJAX("/ST/"+year+".json", cbJSON, 'json');
+}
+        
+        function addelement(to,type) {
+            var newelement = document.createElement(type);
+            to.appendChild(newelement);
+            return newelement;
+        }
+        
+        function changel(el,props) {
+            for(var [prop,value] of Object.entries(props)) {
+                el[prop] = value;
+            }
+        }
+        
+        function newel(to,type,props) {
+            var newelem = addelement(to,type);
+            changel(newelem,props);
+            return newelem
+        }
+
+function cbJSON(e) {
+    var figure,a,caption,img,i;
+    var response = e.target.response,h2;
+    var panel = document.getElementById("panel");
+    panel.innerHTML = "";
+    for(var [mnth,value] of Object.entries(response)) {
+        var month = newel(panel,"div",{className:"month"});
+        h2 = newel(month,"h2",{innerText:mnth});
+        for(i = 0; i < value.length; i++) {
+            figure = addelement(month,"figure");
+            a = newel(figure,"a",{href:value[i].url,target:"_blank"});
+            caption = newel(a,"figcaption",{innerText:(i+1)+" "+value[i].caption});
+            img = newel(a,"img",{src:value[i].img,alt:value[i].img,"style.height": "180px"});
+        }
+    }
+}
+        var mclass = {innerText:".monthj{display:inline-block;background-color:beige;margin:20px;}"};
+        var style = newel(document.body,"style",mclass);
+        var year = "2020";  
+        getJSON(year);
+        
+    </script>
+
+</body>
+</html>
