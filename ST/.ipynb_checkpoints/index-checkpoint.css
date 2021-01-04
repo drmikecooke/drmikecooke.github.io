@@ -1,0 +1,11 @@
+*{margin:0;padding:0;border:0;outline:0;background:transparent;box-sizing:border-box;}
+
+body{font-family:Arial;background: #f1f1f1;}
+
+h1,h2 {padding:10px;}
+
+a{text-decoration:none;color: black;}
+
+img{height:120px;}
+
+input{display:block;border:2px solid gray;background-color:whitesmoke;margin:10px;}

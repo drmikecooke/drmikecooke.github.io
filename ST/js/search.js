@@ -20,3 +20,7 @@ function figcapSearch() {
        if(flag) {month[i].style.display = "inline-block"} else {month[i].style.display = "none"}
     }
 }
+
+var css = "#figcapSearch{background-image: url(/ST/images/search.svg);background-size: 25px;background-position: 10px 12px;background-repeat: no-repeat;width: 50%;font-size: 16px;padding: 12px 20px 12px 40px;  border: 1px solid #ddd;margin-bottom: 12px;}";
+
+var style = newel(document.body,"style",{innerText:css});

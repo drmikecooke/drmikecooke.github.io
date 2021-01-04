@@ -11,6 +11,6 @@ navbar.innerHTML += anchor("/","Base");
 navbar.innerHTML += anchor("/eT/fi/fi0.html","Infection delays");
 navbar.innerHTML += anchor("eT/",'<span class="exponential">e<em><sup>x</sup>ponential</em></span> Times');
 navbar.innerHTML += anchor("/eT/SIR/SIR0.html","SIR model and covid-19");
-navbar.innerHTML += anchor("/ST/2020.html","Semiconductor Today");
+navbar.innerHTML += anchor("/ST","Semiconductor Today");
 navbar.innerHTML += anchor("/Other","Website experiments");
 document.body.appendChild(navbar);

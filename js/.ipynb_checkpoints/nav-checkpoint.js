@@ -5,10 +5,12 @@ navstyle.innerText = "nav{font-family:Franklin;font-size:18px;overflow:hidden;ba
 navstyle.innerText += "nav a{display:inline-block;color:#f2f2f2;text-align:center;padding:14px 16px;text-decoration:none;}";
 navstyle.innerText += "nav a:hover{background-color:#ddd;color:black;}";
 document.body.appendChild(navstyle);
-
 navbar = document.createElement("nav");
-navbar.innerHTML = anchor("/index.html","Base");
-navbar.innerHTML += anchor("/ST/2020.html","2020");
-navbar.innerHTML += anchor("/ST/2019.html","2019");
-navbar.innerHTML += anchor("/ST/2018.html","2018");
+navbar.innerHTML = '<a href="/" style="float:right">Back to base</a>\n';
+navbar.innerHTML += anchor("/","Base");
+navbar.innerHTML += anchor("/eT/fi/fi0.html","Infection delays");
+navbar.innerHTML += anchor("eT/",'<span class="exponential">e<em><sup>x</sup>ponential</em></span> Times');
+navbar.innerHTML += anchor("/eT/SIR/SIR0.html","SIR model and covid-19");
+navbar.innerHTML += anchor("/ST","Semiconductor Today");
+navbar.innerHTML += anchor("/Other","Website experiments");
 document.body.appendChild(navbar);
