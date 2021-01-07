@@ -8,6 +8,7 @@
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
   <title>eT: Logjam 6</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <script src="exp.js"></script>
@@ -40,16 +41,16 @@
           <td><input id="dur" size="2" value="20" style="font-size: 1em"></td>
         </tr>
       </table>
-      <button type="button" onclick="displayTable(eData(), 'edisplay')">Show<br>table</button>
-      <button type="button" onclick="displayGraph(lin,lin,eData(), 'edisplay')">Lin-lin<br>graph</button>
-      <button type="button" onclick="displayGraph(lin,log,eData(), 'edisplay')">Lin-log<br>graph</button>
-      <div class="standard">
-        <div id="evariables" style="text-align:center;"></div>
-      </div>
-      <div id="edisplay"></div>
+      <button type="button" onclick="target('variables',eTable().HTML())">Show<br>table</button>
+      <button type="button" onclick="eLin()">Lin-lin<br>graph</button>
+      <button type="button" onclick="eLog()">Lin-log<br>graph</button>
+      <button type="button" onclick="target('variables','')">Remove<br>display</button>
+
+      <div id="variables" class="text-center plot-box"></div>
+
     </div>
 
-    <div class="indent">But there is more. Logarithms also allow power law behaviours to be seen. Here the various possible scales can be seen:</div>
+    <div class="indent">But there is more. Logarithms also allow power-law behaviours to be seen. Here the various possible scales can be seen:</div>
 
     <div class="arial text-center">
       <h4>Power law table/graphs</h4>
@@ -68,13 +69,13 @@
           <td><input id="range" size="4" value="2,5" style="font-size: 1em"></td>
         </tr>
       </table>
-      <button type="button" onclick="displayTable(pData(), 'pdisplay')">Show<br>table</button>
-      <button type="button" onclick="displayGraph(lin,lin,pData(), 'pdisplay')">Lin-lin<br>graph</button>
-      <button type="button" onclick="displayGraph(lin,log,pData(), 'pdisplay')">Lin-log<br>graph</button>
-      <button type="button" onclick="displayGraph(log,lin,pData(), 'pdisplay')">Log-lin<br>graph</button>
-      <button type="button" onclick="displayGraph(log,log,pData(), 'pdisplay')">Log-log<br>graph</button>
-      <div id="pvariables" style="text-align:center;"></div>
-      <div id="pdisplay"></div>
+      <button type="button" onclick="target('pdisplay',pTable().HTML())">Show<br>table</button>
+      <button type="button" onclick="pLinLin()">Lin-lin<br>graph</button>
+      <button type="button" onclick="pLinLog()">Lin-log<br>graph</button>
+      <button type="button" onclick="pLogLin()">Log-lin<br>graph</button>
+      <button type="button" onclick="pLogLog()">Log-log<br>graph</button>
+      <button type="button" onclick="target('pdisplay','')">Remove<br>display</button>
+      <div id="pdisplay" class="text-center plot-box"></div>
     </div>
 
     <div class="indent">The log-log combination gives straight line! The others are not so useful in this case. Also try changing the exponent (even negative values like for the \(1/f^{2}\) behaviour described earlier, corresponding with \(n = -2\)).</div>
@@ -87,6 +88,8 @@
   </article>
 <div class="pointer"><a href="/eT/Logjam/logjam7.html" class="pointright">Next ▶</a></div> 
   <script src="/js/footer.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
 
 </body>
 

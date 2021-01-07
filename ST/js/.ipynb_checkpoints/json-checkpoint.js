@@ -1,3 +1,13 @@
+function monthNumber(mon){
+   return (new Date(Date.parse(mon +" 1, 2012")).getMonth()+1).toString().padStart(2,"0")
+}
+
+function imagePath(year,month,index) {
+    var imgpath = "/ST/images/"+year+"/";
+    imgpath += monthNumber(month)+"/"+index+"."
+    return imgpath
+}
+
 function loadAJAX(file, callback, type) {
     var xhttp = new XMLHttpRequest();
     xhttp.onload = callback;
@@ -8,7 +18,7 @@ function loadAJAX(file, callback, type) {
 
 function getJSON(year) {
     function cbJSON(e) {
-        var figure,a,caption,img,i;
+        var figure,a,caption,img,i,imagepath;
         var response = e.target.response,h2;
         var panel = document.getElementById("panel");
         panel.innerHTML = "";
@@ -16,10 +26,11 @@ function getJSON(year) {
             var month = newel(panel,"div",{className:"month"});
             h2 = newel(month,"h2",{innerText:mnth+" "+year});
             for(i = 0; i < value.length; i++) {
+                imgpath = imagePath(year,mnth,i+1);
                 figure = addelement(month,"figure");
                 a = newel(figure,"a",{href:value[i].url,target:"_blank"});
                 caption = newel(a,"figcaption",{innerText:(i+1)+" "+value[i].caption});
-                img = newel(a,"img",{src:"/ST/images/"+value[i].img,alt:value[i].img,"style.height": "180px"});
+                img = newel(a,"img",{src:imgpath+value[i].img,alt:value[i].img,"style.height": "180px"});
             }
         }
         figcapSearch();
