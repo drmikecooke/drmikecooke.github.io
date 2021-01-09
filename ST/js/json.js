@@ -41,8 +41,8 @@ function getJSON(year) {
         
 var css = ".month{display:inline-block;background-color:beige;margin:20px;}";
 css += "figcaption{font-size: 1em;text-align: center;padding: 0px;}";
-css += "figure{display:inline-block;text-align:center;vertical-align:top;background-color:white;height: 220px;width: 210px;padding: 10px;margin: 10px;}";
-css += "figure img{max-height:60%;max-width:95%;padding: 10px;}";
+css += "figure{display:inline-block;text-align:center;vertical-align:top;background-color:white;height:220px;width:210px;padding:10px;margin:10px;}";
+css += "figure img{max-height:60%;max-width:95%;padding:10px;}";
 var style = newel(document.body,"style",{innerText:css});
 var year = "2020";  
 getJSON(year);

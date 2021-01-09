@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>eT: Logjam 8</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+   <script src="/eT/nav.js"></script>
+
+<div class="pointer"><a href="/eT/Logjam/logjam7.html">◀ Previous</a></div> 
+
+  <article>
+ <h2>8 Thoughts on world population</h2>
+    <div class="standard">In <a href="/eT/Logjam/logjam6.html">section 6</a> I presented theoretical reasons for using logarithmic scaling. Here I want to bring this down to earth, or rather to the human population of the Earth.</div>
+
+    <div class="arial text-center">
+      <h4>Human population/millions</h4>
+      <table>
+        <tr>
+          <td style="text-align: right;">Time range: </td>
+          <td><input id="trange" size="10" value="-10000,2020" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Population range: </td>
+          <td><input id="prange" size="10" value="3,8000" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+      </table>
+      <button type="button" onclick="target('wpop',wpTable.HTML())">Show<br>table</button>
+      <button type="button" onclick="wpGraph('lin')">Lin-lin<br>graph</button>
+      <button type="button" onclick="wpGraph('log')">Lin-log<br>graph</button>
+      <button type="button" onclick="target('wpop','')">Remove<br>display</button>
+
+      <div id="wpop" class="text-center plot-box"></div>
+
+    </div>
+
+    <div class="indent">The data are a simple grab from <a href="https://commons.wikimedia.org/wiki/File:Population_curve.svg">wikipedia</a> with some nips and tucks of the most recent data, where there seems to be some uncertainty. Hopefully they are reasonably accurate. Many of the source links seem out of date — I may update and fill in at some point. If you look at the linear plot, about all you can say is “Wow!” It is not very useful for the sort of speculation, which can lead to hypotheses and hopefully “knowledge”. The lin-log graph allows us to observe changes of pace: around 5000BCE (before common era/“Before Christ” as was), around 750BCE, around 400BCE, and around 1700CE. A Eurocentric view off the top of my head might attribute some of these to technological trends in agriculture, warfare, “fall” of empires, industrial capitalism, etc. Of course, much (all?) of the data are little more than intelligent guesses from archeology, assessments of contemporary historians’ reliability, records where available, legal documents, etc. These speculations then need to be checked against other sources, expanded, and so on. The most recent data are presumably mainly an aggregation of census data, which in many (all?) countries are carried out every ten years.</div>
+
+  </article>
+<div class="pointer" style="display:none;"><a href="/eT/Logjam/logjam9.html" class="pointright">Next ▶</a></div> 
+  <script src="/js/footer.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="wp.js"></script>
+</body>
+
+</html>
