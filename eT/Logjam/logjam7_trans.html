@@ -8,6 +8,50 @@
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
   <link rel="stylesheet" href="trans.css">
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: red;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background: white;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: green;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
 </head>
 
 <body>
@@ -15,7 +59,18 @@
   <script src="/eT/nav.js"></script>
   <div class="pointer"><a href="/eT/Logjam/logjam6.html">◀ Previous</a></div>
   <article>
-    <h4>Adder/subtractor (new)</h4>
+    <h4 id="rHead">Adder/subtractor</h4>
+
+    <div class="arial" style="text-align:center;padding:10px;">
+      <p>
+        <span id="addsub" style="font-weight:bold;">Add/substract</span>
+        <label class="switch">
+          <input id="switch" type="checkbox" onchange="changeRule()">
+          <span class="slider"></span>
+        </label>
+        <span id="muldiv" style="font-weight:normal;">Multiply/divide</span>
+      </p>
+    </div>
 
     <div class="wrapper" id="wrapper">
 
@@ -28,6 +83,11 @@
           <div id="zblk" class="zotblk">
             <div class="zl"></div>
             <div id="info" class="itext"></div>
+          </div>
+
+          <div id="tblk" class="zotblk" style="left:1480px;">
+            <div class="zl"></div>
+            <div id="tinfo" class="itext"></div>
           </div>
 
           <div id="rblk" class="run">
@@ -46,6 +106,31 @@
 
     <script>
 
+      function changeRule() {
+        var vSwitch=document.getElementById("switch").checked;
+        if(vSwitch){
+          document.getElementById("rHead").innerText="Multiply/divide";
+          document.getElementById("addsub").style.fontWeight="normal";
+          document.getElementById("muldiv").style.fontWeight="bold";
+          document.getElementById("fixed").src="log.svg";
+          slide.src="log.svg";
+          ten.style.display="block";
+          rConvert= (x) => Math.pow(10,x/1000);
+          addmul = "× ";
+          subdiv = " / "
+        }else{
+          document.getElementById("rHead").innerText="Add/substract";
+          document.getElementById("addsub").style.fontWeight="bold";
+          document.getElementById("muldiv").style.fontWeight="normal";
+          document.getElementById("fixed").src="linear.svg";
+          slide.src="linear.svg";
+          ten.style.display="none";
+          rConvert = (x) => x/50;
+          addmul = "+ ";
+          subdiv = " – ";
+        };
+      }
+
       function getX(e) {
         var type = e.type;
         if(type=="touchstart"||type=="touchmove") {return  e.touches[0].clientX}
@@ -58,6 +143,7 @@
         tRule+=dX;
         move(slide,tRule);
         move(zero,tRule);
+        move(ten,tRule);
       }
 
       function moveRunner(dX) {
@@ -93,18 +179,24 @@
       }
 
       function readings() {
-        var refzero = tRule/50;
-        var result = tRun/50+10;
-        var run = result-refzero;
+        var refzero = rConvert(tRule);
+        var reften = rConvert(tRule+1000);
+        var result = rConvert(tRun+500);
+        var run = rConvert(tRun-tRule+500);
         document.getElementById("info").innerHTML = refzero.toFixed(2) + "<br />" + refzero.toFixed(2);
-        document.getElementById("add").innerHTML= "+ "+run.toFixed(2)+" = "+result.toFixed(2)+"<br />"+"= "+result.toFixed(2)+" – "+run.toFixed(2);
+        document.getElementById("tinfo").innerHTML = (reften).toFixed(2) + "<br />" + (reften).toFixed(2);
+        document.getElementById("add").innerHTML= addmul+run.toFixed(2)+" = "+result.toFixed(2)+"<br />"+"= "+result.toFixed(2)+subdiv+run.toFixed(2);
       }
 
       var slide = document.getElementById("slide");
       var space = document.getElementById("rs");
+      var switchButton = document.getElementById("switch");
+      switchButton.checked = false;
       var tRule=0,tRun=0;active=false;
-      var dStart, dNext, activeItem;
+      var dStart, dNext, activeItem, rConvert=(x)=>x/50, addmul="+ ", subdiv=" – ";
       var zero = document.getElementById("zblk"); // set up zero line
+      var ten = document.getElementById("tblk"); // set up ten line
+      ten.style.display="none";
       var runner = document.getElementById("rblk"); // set up runner/glass
       readings();
       slide.addEventListener("touchstart", slideStart, false);
