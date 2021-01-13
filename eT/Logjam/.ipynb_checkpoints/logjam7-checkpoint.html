@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>eT: Logjam 7</title>
+  <link rel="stylesheet" href="dragrule.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="dragrule.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+   <script src="/eT/nav.js"></script>
+<div class="pointer"><a href="/eT/Logjam/logjam6.html">◀ Previous</a></div> 
+  <article>
+   
+ <h2>Logjam 7: What the frack is a slide-rule?</h2>
+    <div class="noindent">To get an understanding of how a slide-rule works, we present a gizmo below, which allows you to slide two bits: the top part with numbers, and the box with the vertical red line in it. The results can be interpreted either as an addition or a subtraction. You may need to be careful where you grab the bits — there is a dead zone around the vertical red line indicating the zero position of the top rule. Also clicking (or touch manipulation on mobile devices, which works on some better than others, depending on device and/or browser) within the box should move the “runner/glass” part, which gives the result of the calculation (or brackets the two terms of the subtraction). The number results presented below the vertical red lines are derived from the relative positions of the bits, along with the scaling factors. I am hoping the principle is “obvious". Assuming so, I will move on below to the slide-rule proper, with logarithmic scales enabling “easy” multiplication.</div>
+
+    <h4>Adder/subtractor</h4>
+    <div id="addsub" class="rulearea">
+
+      <div class="strip">
+        <div id="mydiv" class="slide rule"></div>
+      </div>
+
+      <div class="strip">
+        <div id="ref" class="rule"></div>
+      </div>
+
+      <div id="zblk" class="zotblk">
+        <div class="zl"></div>
+        <div id="info"></div>
+      </div>
+
+      <div id="rblk" class="run">
+        <div class="zl"></div>
+        <div id="add"></div>
+      </div>
+
+      <script>
+        // build rules
+        var slide = document.getElementById("mydiv");
+        var fixed = document.getElementById("ref");
+        var addsub = document.getElementById("addsub")
+        slide.innerHTML = rule();
+        fixed.innerHTML = rule();
+        slide.style.left = fixed.offsetLeft + "px"; // line up slide with fixed rule
+
+        var zero = document.getElementById("zblk"); // set up zero line
+        zero.style.top = (slide.offsetTop - 10) + "px";
+
+        var runner = document.getElementById("rblk"); // set up runner/glass
+        runner.style.left = (fixed.offsetLeft + 340) + "px";
+        runner.style.top = (slide.offsetTop - 10) + "px";
+
+        readings(); // initial data for zero and runnerStart
+
+        var active = false;
+        var activeItem = slide;
+        var refItem = fixed;
+        var currentX = 0;
+        var currentY = 0;
+        var initialX, initialS;
+
+        slide.addEventListener("touchstart", slideStart, false);
+        runner.addEventListener("touchstart", runnerStart, false);
+        addsub.addEventListener("touchend", dragEnd, false);
+        addsub.addEventListener("touchmove", drag, false);
+
+        slide.addEventListener("mousedown", slideStart, false);
+        runner.addEventListener("mousedown", runnerStart, false);
+        addsub.addEventListener("mouseup", dragEnd, false);
+        addsub.addEventListener("mousemove", drag, false);
+      </script>
+    </div>
+
+    <div class="indent">Below we present a “proper” slide-rule with logarithmic scales to give multiplication/division rather than addition/substrtaction. Notice first that there are two vertical red lines at 1 and 10. There is no 0 value. On a logarithmic scale, 0 is at minus infinity (far away to the left, if you believe in such things as infinity) on the rule. Next line up 1 on the top scale with 2 on the fixed scale: notice that the distance between 1 and 2 on the top scale is the same as between 2 and 4 on the bottom. Move the runner to 2 on the top scale, if you feel the need. So we have both 2 × 2 = 4 and 4 ÷ 2 = 2 represented. But what about 5 × 5 = 25? Yes, the runner shows the calculation, but the calculation has run off the end of the bottom rule. How can you get the runner back to the bottom scale? This is the reason I have included the line on 10. Lining it up with 5 on the bottom scale, and then the runner with 5 on the top scale gives the calculation we need up to a factor of 10 (0.500 × 5.00 = 2.50.</div>
+
+    <h4>Multiplier/divider</h4>
+    <div id="muldiv" class="rulearea">
+      <div class="strip">
+        <div id="slog" class="slide rule"></div>
+      </div>
+
+      <div class="strip">
+        <div id="flog" class="rule"></div>
+      </div>
+
+      <div id="onelog" class="zotblk">
+        <div class="zl"></div>
+        <div id="oneloginfo"></div>
+      </div>
+
+      <div id="tenlog" class="zotblk">
+        <div class="zl"></div>
+        <div id="tenloginfo"></div>
+      </div>
+
+      <div id="rlog" class="run">
+        <div class="zl"></div>
+        <div id="mulinfo"></div>
+      </div>
+    </div>
+    <script>
+      var slog = document.getElementById("slog");
+      var flog = document.getElementById("flog");
+      var muldiv = document.getElementById("muldiv");
+      slog.innerHTML = logrule();
+      flog.innerHTML = logrule();
+      slog.style.left = flog.offsetLeft + "px"; // line up slide with fixed rule
+
+      var one = document.getElementById("onelog"); // set up one line
+      one.style.top = (slog.offsetTop - 10) + "px";
+
+      var ten = document.getElementById("tenlog"); // set up one line
+      ten.style.top = (slog.offsetTop - 10) + "px";
+
+      var rlog = document.getElementById("rlog"); // set up runner/glass
+      rlog.style.left = (slog.offsetLeft + 340) + "px";
+      rlog.style.top = (slog.offsetTop - 10) + "px";
+
+      logreadings(); // initial position and data for one ten and rlog
+
+      active = false;
+      activeItem = slog;
+      refItem = flog;
+
+      slog.addEventListener("touchstart", slogStart, false);
+      rlog.addEventListener("touchstart", rlogStart, false);
+      muldiv.addEventListener("touchend", dragEnd, false);
+      muldiv.addEventListener("touchmove", drag, false);
+
+      slog.addEventListener("mousedown", slogStart, false);
+      rlog.addEventListener("mousedown", rlogStart, false);
+      muldiv.addEventListener("mouseup", dragEnd, false);
+      muldiv.addEventListener("mousemove", drag, false);
+    </script>
+
+    <div class="indent">However, we don’t need to have 1 and 10 markers — instead we can wrap the rule around on itself so 1 and 10 (dropped) are in the same position, giving a circular structure. The object below does this. The inner blue section moves with suitable mouse/touch gestures. It is more difficult to arrange a easy readout in this format, so I have provided a table below with the relevant information, which I hope you can interpret with a bit of experimentation.</div>
+
+    <h4>Wrapping up the rule</h4>
+    <div style="height:700px; font-size:12pt;">
+
+      <div id="circle" class="circlearea">
+        <div id="fcabs">
+          <div id="fcirc" class="circlefixed"></div>
+          <div id="scabs" style="position:absolute" class="circleslide"><span id="scirc"></span></div>
+        </div>
+        <div id="wedge" style="position:absolute;z-index:40;transform-origin: 30px 269px;">
+          <svg width="60" height="310" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <title>Wedge</title>
+            <desc>Wedge</desc>
+            <path d="M5 10 a260,260 0 0,1 50 0 l -25 259 z" fill="none" stroke="gray" stroke-width="1" />
+            <line x1="30" x2="30" y1="0" y2="150" style="stroke:red;stroke-width:2px" />
+          </svg>
+        </div>
+        <div id="cone" style="position:absolute;z-index:30;transform-origin: 30px 269px;">
+          <svg width="60" height="310" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <title>Circle one</title>
+            <desc>Circle one</desc>
+            <line x1="30" x2="30" y1="0" y2="150" style="stroke:red;stroke-width:2px" />
+          </svg>
+        </div>
+      </div>
+      <br /><br />
+      <div id="ctext"></div>
+
+      <script>
+        //circular
+        var circle = document.getElementById("circle");
+        var scabs = document.getElementById("scabs");
+        var fcabs = document.getElementById("fcabs");
+        var wedge = document.getElementById("wedge");
+        var cone = document.getElementById("cone");
+        var ctext = document.getElementById("ctext");
+        document.getElementById("fcirc").innerHTML = crule(250);
+        document.getElementById("scirc").innerHTML = crule(190);
+        scabs.style.left = "65px";
+        scabs.style.top = "65px";
+        wedge.style.left = "225px";
+        wedge.style.top = "-14px";
+        cone.style.left = "225px";
+        cone.style.top = "-14px";
+        var [sangle, wangle] = [0, 360 * Math.log(3) / Math.LN10];
+        wedge.style.transform = "rotate(" + wangle + "deg)";
+        creadings();
+        var initialA, currentA; // Touch angles
+
+        scabs.addEventListener("touchstart", sStart, false);
+        wedge.addEventListener("touchstart", wStart, false);
+        circle.addEventListener("touchend", dragEnd, false);
+        circle.addEventListener("touchmove", cdrag, false);
+
+        scabs.addEventListener("mousedown", sStart, false);
+        wedge.addEventListener("mousedown", wStart, false);
+        circle.addEventListener("mouseup", dragEnd, false);
+        circle.addEventListener("mousemove", cdrag, false);
+
+      </script>
+    </div>
+
+  </article>
+  <div class="pointer"><a href="/eT/Logjam/logjam8.html" class="pointright">Next ▶</a></div> 
+  <script src="/js/footer.js"></script>
+
+</body>
+
+</html>

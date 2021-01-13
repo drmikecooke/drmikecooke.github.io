@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>eT: Logjam 7/trans</title>
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <link rel="stylesheet" href="trans.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/Logjam/logjam6.html">◀ Previous</a></div>
+  <article>
+    <h4>Adder/subtractor (new)</h4>
+
+    <div class="wrapper" id="wrapper">
+
+      <div class="scaler" id="scaler">
+
+        <div class="rulespace" id="rs">
+          <img src="linear.svg" alt="rule.svg" draggable="false" class="rule" id="slide" />
+          <img src="linear.svg" alt="rule.svg" draggable="false" class="rule" id="fixed" />
+
+          <div id="zblk" class="zotblk">
+            <div class="zl"></div>
+            <div id="info" class="itext"></div>
+          </div>
+
+          <div id="rblk" class="run">
+            <div class="zl"></div>
+            <div class="glass"></div>
+            <div id="add" class="itext"></div>
+          </div>
+
+        </div>
+
+        <div class="iStrip"></div>
+
+      </div>
+
+    </div>
+
+    <script>
+
+      function getX(e) {
+        var type = e.type;
+        if(type=="touchstart"||type=="touchmove") {return  e.touches[0].clientX}
+        return e.clientX/scale
+      }
+
+      function move(item,x) {item.style.transform="translate("+x+"px)"}
+
+      function moveSlide(dX) {
+        tRule+=dX;
+        move(slide,tRule);
+        move(zero,tRule);
+      }
+
+      function moveRunner(dX) {
+        tRun+=dX;
+        move(runner,tRun);
+      }
+
+      function slideStart(e) {
+        activeItem = slide;
+        dStart=getX(e);
+        active = true;
+      }
+
+      function runnerStart(e) {
+        activeItem = runner;
+        dStart = getX(e);
+        active=true;
+      }
+
+      function drag(e) {
+        if(active) {
+          e.preventDefault();
+          dNext = getX(e);
+          if(activeItem==slide) {moveSlide(dNext-dStart)} else {moveRunner(dNext-dStart)};
+          dStart = dNext;
+        }
+        readings();
+      }
+
+      function dragEnd(e) {
+        active = false;
+        readings();
+      }
+
+      function readings() {
+        var refzero = tRule/50;
+        var result = tRun/50+10;
+        var run = result-refzero;
+        document.getElementById("info").innerHTML = refzero.toFixed(2) + "<br />" + refzero.toFixed(2);
+        document.getElementById("add").innerHTML= "+ "+run.toFixed(2)+" = "+result.toFixed(2)+"<br />"+"= "+result.toFixed(2)+" – "+run.toFixed(2);
+      }
+
+      var slide = document.getElementById("slide");
+      var space = document.getElementById("rs");
+      var tRule=0,tRun=0;active=false;
+      var dStart, dNext, activeItem;
+      var zero = document.getElementById("zblk"); // set up zero line
+      var runner = document.getElementById("rblk"); // set up runner/glass
+      readings();
+      slide.addEventListener("touchstart", slideStart, false);
+      slide.addEventListener("mousedown", slideStart, false);
+      space.addEventListener("touchmove", drag, false);
+      space.addEventListener("mousemove", drag, false);
+      window.addEventListener("touchend", dragEnd, false);
+      window.addEventListener("mouseup", dragEnd, false);
+      runner.addEventListener("touchstart", runnerStart, false);
+      runner.addEventListener("mousedown", runnerStart, false);
+      var wrap=document.getElementById("wrapper");
+      var object=document.getElementById("scaler");
+      scale=wrap.offsetWidth/object.offsetWidth;
+      wrap.style.height=scale*object.offsetHeight+"px";
+      object.style.transform="translate(-50%,-50%) scale("+scale+","+scale+")";
+    </script>
+  </body>
+  </html>

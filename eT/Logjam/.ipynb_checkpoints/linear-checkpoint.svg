@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="tiny" height="100%" version="1.2" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><line id="ltick" stroke="green" stroke-width="2" x1="0" x2="0" y1="0" y2="20" /><line id="stick" stroke="green" stroke-width="1" x1="0" x2="0" y1="0" y2="10" /></defs><use x="20" xlink:href="ltick" y="20" /><line stroke="green" stroke-width="2" x1="0" x2="0" y1="0" y2="20" /></svg>
