@@ -9,12 +9,28 @@
   <title>eT: Logjam 7/circle</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <style>
-    .clide {position:relative;width:610px;margin:auto;}
+    .clide {position:relative;width:auto;height:auto;margin:auto;}
     .circle {width:610px;}
     .circle::selection {background-color:transparent;color:#000;}
     .inner {position:absolute;width:610px;left:0;top:0;transform-origin:50% 50%;}
     .inner::selection {background-color:transparent;color:#000;}
-    .ctext {text-align:center;font-size:large;user-select:none;}
+    .ctext {text-align:center;height:80px;font-size:large;user-select:none;}
+    .cScaler {
+      width: 610px;
+      height: 690px;
+      text-align: center;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center center;
+      background:orange;
+    }
+
+    .wrapper {
+      position: relative;
+      background: gray;
+    }
   </style>
 </head>
 
@@ -25,14 +41,18 @@
   <article>
 
     <h4>Wrapping up the rule</h4>
-    <div id="clide" class="clide">
-      <img src="circle.svg" alt="circle" class= "circle" />
-      <img id="inner" src="inner.svg" alt="inner" draggable="false" class="inner" />
-      <img id="wedge" src="wedge.svg" alt="wedge" draggable="false" class="inner" />
+
+    <div class="wrapper" id="cWrapper">
+
+      <div class="cScaler" id="cScaler">
+        <div id="clide" class="clide">
+          <img src="images/circle.svg" alt="circle" class= "circle" />
+          <img id="inner" src="images/inner.svg" alt="inner" draggable="false" class="inner" />
+          <img id="wedge" src="images/wedge.svg" alt="wedge" draggable="false" class="inner" />
+          <div id="ctext" class="ctext"></div>
+        </div>
+      </div>
     </div>
-
-    <div id="ctext" class="ctext"></div>
-
     <script>
 
       function cStart(e) {
@@ -53,10 +73,9 @@
         }
       }
 
-      function dragEnd(e) {
+      function cdragEnd(e) {
         active = false;
       }
-
 
       function cXY(e) {
         var rect = clide.getBoundingClientRect();
@@ -83,23 +102,37 @@
         ctext.innerHTML = html;
       }
 
+      function rHandler(e) {
+        console.log('Hello');
+        window.location.href = window.location.href;
+
+      }
+
       var clide=document.getElementById("clide");
       var wedge={element:document.getElementById("wedge"),angle:90};
       var inner={element:document.getElementById("inner"),angle:0};
-
       var ctext=document.getElementById("ctext");
       var currentA,nextA,active;
       active=false;
 
       rotate(wedge);
       rotate(inner);
+      cReadings();
+
+      var scale=1;
+      var wrap=document.getElementById("cWrapper");
+      var object=document.getElementById("cScaler");
+      if(window.innerWidth<700){scale=wrap.offsetWidth/object.offsetWidth;}
+      wrap.style.height=scale*object.offsetHeight+"px";
+      object.style.transform="translate(-50%,-50%) scale("+scale+","+scale+")";
+
       clide.addEventListener("mousedown", cStart, false);
       clide.addEventListener("touchstart", cStart, false);
       clide.addEventListener("mousemove", cDrag, false);
       clide.addEventListener("touchmove", cDrag, false);
-      window.addEventListener("touchend", dragEnd, false);
-      window.addEventListener("mouseup", dragEnd, false);
-      cReadings();
+      window.addEventListener("touchend", cdragEnd, false);
+      window.addEventListener("mouseup", cdragEnd, false);
+      window.addEventListener("resize", rHandler, false);
 
     </script>
   </div>
