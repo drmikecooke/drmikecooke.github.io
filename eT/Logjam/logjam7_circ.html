@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>eT: Logjam 7/circle</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <style>
+    .clide {position:relative;width:610px;margin:auto;}
+    .circle {width:610px;}
+    .circle::selection {background-color:transparent;color:#000;}
+    .inner {position:absolute;width:610px;left:0;top:0;transform-origin:50% 50%;}
+    .inner::selection {background-color:transparent;color:#000;}
+    .ctext {text-align:center;font-size:large;user-select:none;}
+  </style>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/Logjam/logjam6.html">◀ Previous</a></div>
+  <article>
+
+    <h4>Wrapping up the rule</h4>
+    <div id="clide" class="clide">
+      <img src="circle.svg" alt="circle" class= "circle" />
+      <img id="inner" src="inner.svg" alt="inner" draggable="false" class="inner" />
+      <img id="wedge" src="wedge.svg" alt="wedge" draggable="false" class="inner" />
+    </div>
+
+    <div id="ctext" class="ctext"></div>
+
+    <script>
+
+      function cStart(e) {
+
+        currentA=cA(e);
+        if(Math.abs(currentA-wedge.angle)<10) {active=wedge}else{active=inner};
+      }
+
+      function cDrag(e) {
+        if(active){
+          e.preventDefault();
+          nextA=cA(e);
+          var deltaA=nextA-currentA;
+          active.angle+=deltaA;
+          rotate(active);
+          currentA=nextA;
+          cReadings()
+        }
+      }
+
+      function dragEnd(e) {
+        active = false;
+      }
+
+
+      function cXY(e) {
+        var rect = clide.getBoundingClientRect();
+        var oX=rect.left+rect.width/2,oY=rect.height/2+rect.top;
+        var X,Y;
+        if(e.type=="touchstart" || e.type=="touchmove") { [X, Y] = [e.touches[0].clientX, e.touches[0].clientY] } else { [X,Y] = [e.clientX, e.clientY] }
+        return [X-oX, oY-Y];  // [, ] position within the element.
+      }
+
+      function cA(e) {
+        var [X,Y] = cXY(e);
+        return Math.atan2(X, Y)*180/Math.PI
+      }
+
+      function rotate(object) {object.element.style.transform="rotate("+object.angle+"deg)";}
+
+      function cReadings() {
+        var html = "";
+        var sf = Math.pow(10,inner.angle/360);
+        var wf = Math.pow(10,wedge.angle/360);
+        var ws = Math.pow(10,(wedge.angle-inner.angle)/360);
+        html += sf.toPrecision(3) + " × " + ws.toPrecision(3) + " = " + wf.toPrecision(3) + "<br />";
+        html += wf.toPrecision(3) + " / " + ws.toPrecision(3) + " = " + sf.toPrecision(3);
+        ctext.innerHTML = html;
+      }
+
+      var clide=document.getElementById("clide");
+      var wedge={element:document.getElementById("wedge"),angle:90};
+      var inner={element:document.getElementById("inner"),angle:0};
+
+      var ctext=document.getElementById("ctext");
+      var currentA,nextA,active;
+      active=false;
+
+      rotate(wedge);
+      rotate(inner);
+      clide.addEventListener("mousedown", cStart, false);
+      clide.addEventListener("touchstart", cStart, false);
+      clide.addEventListener("mousemove", cDrag, false);
+      clide.addEventListener("touchmove", cDrag, false);
+      window.addEventListener("touchend", dragEnd, false);
+      window.addEventListener("mouseup", dragEnd, false);
+      cReadings();
+
+    </script>
+  </div>
+
+</article>
+<div class="pointer"><a href="/eT/Logjam/logjam8.html" class="pointright">Next ▶</a></div>
+<script src="/js/footer.js"></script>
+</body>
+</html>
