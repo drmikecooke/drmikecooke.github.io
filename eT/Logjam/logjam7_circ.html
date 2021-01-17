@@ -1,37 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <link rel="stylesheet" media="screen" href="css/logjam7.css" />
   <title>eT: Logjam 7/circle</title>
-  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
-  <style>
-    .clide {position:relative;width:auto;height:auto;margin:auto;}
-    .circle {width:610px;}
-    .circle::selection {background-color:transparent;color:#000;}
-    .inner {position:absolute;width:610px;left:0;top:0;transform-origin:50% 50%;}
-    .inner::selection {background-color:transparent;color:#000;}
-    .ctext {text-align:center;height:80px;font-size:large;user-select:none;}
-    .cScaler {
-      width: 610px;
-      height: 690px;
-      text-align: center;
-      position: relative;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transform-origin: center center;
-      background:orange;
-    }
-
-    .wrapper {
-      position: relative;
-      background: gray;
-    }
-  </style>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16" />
 </head>
 
 <body>
@@ -39,106 +16,21 @@
   <script src="/eT/nav.js"></script>
   <div class="pointer"><a href="/eT/Logjam/logjam6.html">◀ Previous</a></div>
   <article>
-
+    <div class="indent">However, we don’t need to have 1 and 10 markers — instead we can wrap the rule around on itself so 1 and 10 (dropped) are in the same position, giving a circular structure. The object below does this. The inner section moves with suitable mouse/touch gestures. It is more difficult to arrange an easy readout in this format, so I have provided a table below with the relevant information, which I hope you can interpret with a bit of experimentation.</div>
     <h4>Wrapping up the rule</h4>
 
     <div class="wrapper" id="cWrapper">
-
-      <div class="cScaler" id="cScaler">
-        <div id="clide" class="clide">
-          <img src="images/circle.svg" alt="circle" class= "circle" />
-          <img id="inner" src="images/inner.svg" alt="inner" draggable="false" class="inner" />
-          <img id="wedge" src="images/wedge.svg" alt="wedge" draggable="false" class="inner" />
-          <div id="ctext" class="ctext"></div>
-        </div>
+      <div id="clide" class="cScaler">
+        <img src="images/circle.svg" alt="circle" class= "inner" id="circle"/>
+        <img id="inner" src="images/inner.svg" alt="inner" draggable="false" class="inner" />
+        <img id="wedge" src="images/wedge.svg" alt="wedge" draggable="false" class="inner" />
+        <div id="ctext" class="ctext"></div>
       </div>
     </div>
-    <script>
 
-      function cStart(e) {
-
-        currentA=cA(e);
-        if(Math.abs(currentA-wedge.angle)<10) {active=wedge}else{active=inner};
-      }
-
-      function cDrag(e) {
-        if(active){
-          e.preventDefault();
-          nextA=cA(e);
-          var deltaA=nextA-currentA;
-          active.angle+=deltaA;
-          rotate(active);
-          currentA=nextA;
-          cReadings()
-        }
-      }
-
-      function cdragEnd(e) {
-        active = false;
-      }
-
-      function cXY(e) {
-        var rect = clide.getBoundingClientRect();
-        var oX=rect.left+rect.width/2,oY=rect.height/2+rect.top;
-        var X,Y;
-        if(e.type=="touchstart" || e.type=="touchmove") { [X, Y] = [e.touches[0].clientX, e.touches[0].clientY] } else { [X,Y] = [e.clientX, e.clientY] }
-        return [X-oX, oY-Y];  // [, ] position within the element.
-      }
-
-      function cA(e) {
-        var [X,Y] = cXY(e);
-        return Math.atan2(X, Y)*180/Math.PI
-      }
-
-      function rotate(object) {object.element.style.transform="rotate("+object.angle+"deg)";}
-
-      function cReadings() {
-        var html = "";
-        var sf = Math.pow(10,inner.angle/360);
-        var wf = Math.pow(10,wedge.angle/360);
-        var ws = Math.pow(10,(wedge.angle-inner.angle)/360);
-        html += sf.toPrecision(3) + " × " + ws.toPrecision(3) + " = " + wf.toPrecision(3) + "<br />";
-        html += wf.toPrecision(3) + " / " + ws.toPrecision(3) + " = " + sf.toPrecision(3);
-        ctext.innerHTML = html;
-      }
-
-      function rHandler(e) {
-        console.log('Hello');
-        window.location.href = window.location.href;
-
-      }
-
-      var clide=document.getElementById("clide");
-      var wedge={element:document.getElementById("wedge"),angle:90};
-      var inner={element:document.getElementById("inner"),angle:0};
-      var ctext=document.getElementById("ctext");
-      var currentA,nextA,active;
-      active=false;
-
-      rotate(wedge);
-      rotate(inner);
-      cReadings();
-
-      var scale=1;
-      var wrap=document.getElementById("cWrapper");
-      var object=document.getElementById("cScaler");
-      if(window.innerWidth<700){scale=wrap.offsetWidth/object.offsetWidth;}
-      wrap.style.height=scale*object.offsetHeight+"px";
-      object.style.transform="translate(-50%,-50%) scale("+scale+","+scale+")";
-
-      clide.addEventListener("mousedown", cStart, false);
-      clide.addEventListener("touchstart", cStart, false);
-      clide.addEventListener("mousemove", cDrag, false);
-      clide.addEventListener("touchmove", cDrag, false);
-      window.addEventListener("touchend", cdragEnd, false);
-      window.addEventListener("mouseup", cdragEnd, false);
-      window.addEventListener("resize", rHandler, false);
-
-    </script>
-  </div>
-
-</article>
-<div class="pointer"><a href="/eT/Logjam/logjam8.html" class="pointright">Next ▶</a></div>
-<script src="/js/footer.js"></script>
+    <script src="js/logjam7.js"></script>
+  </article>
+  <div class="pointer"><a href="/eT/Logjam/logjam8.html" class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
 </body>
 </html>

@@ -8,20 +8,10 @@
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
+    .switch{position:relative;display:inline-block;width:60px;height:34px;}
+    .switch input{opacity:0;width:0;height:0;}
 
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
+    .slider{
       position: absolute;
       cursor: pointer;
       top: 0;
@@ -32,7 +22,7 @@
       transition: .4s;
     }
 
-    .slider:before {
+    .slider:before{
       position: absolute;
       content: "";
       height: 26px;
@@ -43,17 +33,12 @@
       transition: .4s;
     }
 
-    input:checked + .slider {
-      background-color: green;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
+    input:checked + .slider {background:green;}
+    input:checked + .slider:before {transform: translateX(26px);}
 
     .scaler {
       width: 2000px;
-      height: 260px;
+      height: 240px;
       text-align: center;
       position: relative;
       left: 50%;
@@ -63,30 +48,11 @@
       background:orange;
     }
 
-    .wrapper {
-      position: relative;
-      background: gray;
-    }
-    .rulespace {
-      display: block;
-      position:relative;
-      background: green;
-      width: 2000px;
-      height:auto;
-    }
-    .rule {
-      display: block;
-      margin: auto;
-      width: 1050px;
-      height:70px;
-    }
-    .zl {
-      margin: auto;
-      width: 0px;
-      border-right: 1px solid red;
-      border-left: 1px solid red;
-      height: 160px;
-    }
+    .wrapper {position:relative;background:gray;}
+
+    .rulespace{display:block;position:relative;background:green;}
+    .rule {display:block;margin:auto;width:1050px;height:70px;}
+
     .glass {
       width: 100px;
       height: 160px;
@@ -103,35 +69,30 @@
       display: block;
       z-index: 20;
       width: 40px;
-      font-size:medium;
+      font-size:large;
       text-align: center;
       top:-10px;
       left:480px;
     }
+
+    .zotblk img{display:block;width:40px;}
+
     .run {
       display: block;
       width: 120px;
+      font-size:large;
       text-align: center;
       white-space: nowrap;
       position:absolute;
       top:-10px;
       left:940px;
     }
-    .rule::selection {
-      background-color: transparent;
-      color: #000;
-    }
 
-    .itext {
-      font-size: large;
-      user-select:none;
-    }
+    .run img {display:block;width:100px;margin:auto;}
 
-    .iStrip {
-      width:2000px;
-      height:75px;
-      background:transparent;
-    }
+    .iStrip {width:2000px;height:75px;background:transparent;}
+
+    .nosel ::selection{background-color:transparent;color:#000;}
 
   </style>
 </head>
@@ -143,11 +104,11 @@
   <article>
     <h4 id="rHead">Adder/subtractor</h4>
 
-    <div class="arial" style="text-align:center;padding:10px;">
+    <div class="arial nosel" style="text-align:center;padding:10px;">
       <p>
         <span id="addsub" style="font-weight:bold;">Add/subtract</span>
         <label class="switch">
-          <input id="switch" type="checkbox" onchange="changeRule()">
+          <input id="switch" type="checkbox" checked="false" onchange="changeRule()">
           <span class="slider"></span>
         </label>
         <span id="muldiv" style="font-weight:normal;">Multiply/divide</span>
@@ -155,141 +116,108 @@
     </div>
 
     <div class="wrapper" id="wrapper">
-
-      <div class="scaler" id="scaler">
+      <div class="scaler nosel" id="scaler">
         <div style="height:20px"></div>
         <div class="rulespace" id="rs">
           <div id="sblk">
-            <img src="linear.svg" alt="rule.svg" draggable="false" class="rule" id="slide" />
+            <img src="images/linear.svg" alt="rule.svg" draggable="false" class="rule" id="slide" />
             <div id="zblk" class="zotblk">
-              <div class="zl"></div>
-              <div id="info" class="itext"></div>
+              <img src="redline.svg" alt="redline" draggable="false">
+              <div id="info"></div>
             </div>
             <div id="tblk" class="zotblk" style="left:1480px;">
-              <div class="zl"></div>
-              <div id="tinfo" class="itext"></div>
+              <img src="redline.svg" alt="redline" draggable="false">
+              <div id="tinfo"></div>
             </div>
           </div>
 
-          <img src="linear.svg" alt="rule.svg" draggable="false" class="rule" id="fixed" />
+          <img src="images/linear.svg" alt="rule.svg" draggable="false" class="rule" id="fixed" />
 
           <div id="rblk" class="run">
-            <div class="zl"></div>
-            <div class="glass"></div>
-            <div id="add" class="itext"></div>
+            <img src="runner.svg" alt="glass" draggable="false">
+            <div id="add"></div>
           </div>
 
         </div>
 
         <div class="iStrip"></div>
-
       </div>
-
     </div>
 
     <script>
+      function ruleSwitch(rh,aw,mw,r,tsd,rc,am,sd) {
+        document.getElementById("rHead").innerText=rh;
+        document.getElementById("addsub").style.fontWeight=aw;
+        document.getElementById("muldiv").style.fontWeight=mw;
+        document.getElementById("fixed").src="images/"+r+".svg";
+        document.getElementById("slide").src="images/"+r+".svg";
+        document.getElementById("tblk").style.display=tsd;
+        rConvert= rc;
+        addmul = am;
+        subdiv = sd;
+      }
 
       function changeRule() {
-        var vSwitch=switchButton.checked;
-        if(vSwitch){
-          document.getElementById("rHead").innerText="Multiply/divide";
-          document.getElementById("addsub").style.fontWeight="normal";
-          document.getElementById("muldiv").style.fontWeight="bold";
-          document.getElementById("fixed").src="log.svg";
-          document.getElementById("slide").src="log.svg";
-          ten.style.display="block";
-          rConvert= (x) => Math.pow(10,x/1000);
-          addmul = "× ";
-          subdiv = " / "
+        if(document.getElementById("switch").checked){
+          ruleSwitch("Multiply/divide","normal","bold","log","block",(x)=>Math.pow(10,x/1000)," × "," / ");
         }else{
-          document.getElementById("rHead").innerText="Add/subtract";
-          document.getElementById("addsub").style.fontWeight="bold";
-          document.getElementById("muldiv").style.fontWeight="normal";
-          document.getElementById("fixed").src="linear.svg";
-          document.getElementById("slide").src="linear.svg";
-          ten.style.display="none";
-          rConvert = (x) => x/50;
-          addmul = "+ ";
-          subdiv = " – ";
+          ruleSwitch("Add/subtract","bold","normal","linear","none",(x)=>x/50," + "," – ");
         }
         readings();
       }
 
       function getX(e) {
-        var type = e.type;
-        if(type=="touchstart"||type=="touchmove") {return  e.touches[0].clientX/scale}
+        if(e.type=="touchstart"||e.type=="touchmove") {return  e.touches[0].clientX/scale}
         return e.clientX/scale
       }
 
-      function move(item,x) {item.style.transform="translate("+x+"px)"}
-
-      function moveSlide(dX) {
-        tRule+=dX;
-        move(slide,tRule);
-      }
-
-      function moveRunner(dX) {
-        tRun+=dX;
-        move(runner,tRun);
-      }
-
-      function slideStart(e) {
-        activeItem = slide;
+      function dragStart(e) {
+        if(e.currentTarget.id=="rblk") {active=runner}else{active=slide}
         dStart=getX(e);
-        active = true;
-      }
-
-      function runnerStart(e) {
-        activeItem = runner;
-        dStart = getX(e);
-        console.log(e.offsetX);
-        active=true;
       }
 
       function drag(e) {
         if(active) {
           e.preventDefault();
           dNext = getX(e);
-          if(activeItem==slide) {moveSlide(dNext-dStart)} else {moveRunner(dNext-dStart)};
+          active.t+=dNext-dStart;
+          active.element.style.transform="translate("+active.t+"px)";
           dStart = dNext;
+          readings();
         }
-        readings();
       }
 
-      function dragEnd(e) {
-        active = false;
-        readings();
-      }
+      function dragEnd(e) {active = false;readings();}
 
       function readings() {
-        var refzero = rConvert(tRule);
-        var reften = rConvert(tRule+1000);
-        var result = rConvert(tRun+500);
-        var run = rConvert(tRun-tRule+500);
+        var refzero = rConvert(slide.t);
+        var reften = rConvert(slide.t+1000);
+        var result = rConvert(runner.t+500);
+        var run = rConvert(runner.t-slide.t+500);
         document.getElementById("info").innerHTML = refzero.toFixed(2) + "<br />" + refzero.toFixed(2);
         document.getElementById("tinfo").innerHTML = (reften).toFixed(2) + "<br />" + (reften).toFixed(2);
         document.getElementById("add").innerHTML= addmul+run.toFixed(2)+" = "+result.toFixed(2)+"<br />"+"= "+result.toFixed(2)+subdiv+run.toFixed(2);
       }
 
-      var slide = document.getElementById("sblk");
+      document.getElementById("switch").checked=false;
+
+      var slide = {element:document.getElementById("sblk"),t:0};
       var space = document.getElementById("rs");
-      var switchButton = document.getElementById("switch");
-      switchButton.checked = false;
-      var tRule=0,tRun=0;active=false;
-      var dStart, dNext, activeItem, rConvert=(x)=>x/50, addmul="+ ", subdiv=" – ";
-      var zero = document.getElementById("zblk"); // set up zero line
-      var ten = document.getElementById("tblk"); // set up ten line
-      ten.style.display="none";
-      var runner = document.getElementById("rblk"); // set up runner/glass
+      var active=false;
+      var dStart, dNext, rConvert, addmul, subdiv;
+      ruleSwitch("Add/subtract","bold","normal","linear","none",(x)=>x/50," + "," – ");
+      var runner = {element:document.getElementById("rblk"),t:0}; // set up runner/glass
       readings();
-      slide.addEventListener("touchstart", slideStart, false);
-      slide.addEventListener("mousedown", slideStart, false);
+
+      slide.element.addEventListener("touchstart", dragStart, false);
+      slide.element.addEventListener("mousedown", dragStart, false);
       space.addEventListener("touchmove", drag, false);
       space.addEventListener("mousemove", drag, false);
       window.addEventListener("touchend", dragEnd, false);
       window.addEventListener("mouseup", dragEnd, false);
-      runner.addEventListener("touchstart", runnerStart, false);
-      runner.addEventListener("mousedown", runnerStart, false);
+      runner.element.addEventListener("touchstart", dragStart, false);
+      runner.element.addEventListener("mousedown", dragStart, false);
+
       var wrap=document.getElementById("wrapper");
       var object=document.getElementById("scaler");
       var scale=wrap.offsetWidth/object.offsetWidth;
