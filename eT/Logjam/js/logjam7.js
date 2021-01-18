@@ -60,8 +60,8 @@ function scaler(object,wrap,scale){
 
 var scale=1;
 var wrap=document.getElementById("cWrapper");
-if(window.outerWidth<700){scale=wrap.offsetWidth/clide.offsetWidth;}
-document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale+"; Window outer: "+window.outerWidth+"; inner: "+window.innerWidth;
+if(window.outerWidth<700){scale=(window.outerWidth-50)/clide.offsetWidth;}
+document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale+"; Window height: "+window.outerHeight+"; width: "+window.outerWidth;
 scaler(clide,wrap,scale);
 
 clide.addEventListener("mousedown", cStart, false);
