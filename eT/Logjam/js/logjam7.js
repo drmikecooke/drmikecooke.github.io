@@ -61,6 +61,7 @@ function scaler(object,wrap,scale){
 var scale=1;
 var wrap=document.getElementById("cWrapper");
 if(window.innerWidth<700){scale=wrap.offsetWidth/clide.offsetWidth;}
+document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale;
 scaler(clide,wrap,scale);
 
 clide.addEventListener("mousedown", cStart, false);
@@ -141,4 +142,5 @@ runner.element.addEventListener("mousedown", dragStart, false);
 wrap=document.getElementById("wrapper");
 var object=document.getElementById("scaler");
 scale=wrap.offsetWidth/object.offsetWidth;
+document.getElementById("scaleinfo").innerHTML+="; linear scale: "+scale;
 scaler(object,wrap,scale);
