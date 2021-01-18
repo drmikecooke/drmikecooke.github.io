@@ -1,19 +1,64 @@
 .inner {position:absolute;width:610px;left:0;top:0;transform-origin:50% 50%;}
-    .inner::selection {background-color:transparent;color:#000;}
-    .ctext {position:absolute;top:610px;width:610px;height:80px;font-size:large;user-select:none;}
-    .cScaler {
-      width: 610px;
-      height: 690px;
-      text-align: center;
-      position: relative;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transform-origin: center center;
-      background:orange;
-    }
+.ctext {position:absolute;top:610px;width:610px;height:80px;font-size:large;}
 
-    .wrapper {
-      position: relative;
-      background: gray;
-    }
+.cScaler {
+  width: 610px;
+  height: 690px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background:beige;
+}
+.wrapper {position:relative;background:transparent;}
+
+.switch{position:relative;display:inline-block;width:60px;height:34px;}
+.switch input{opacity:0;width:0;height:0;}
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+  transition: .4s;
+}
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: .4s;
+}
+input:checked + .slider {background:green;}
+input:checked + .slider:before {transform: translateX(26px);}
+
+.scaler {
+  width: 2000px;
+  height: 240px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background:beige;
+}
+
+.rulespace{display:block;position:relative;font-size:large;text-align:center;background:green;}
+.rule {display:block;margin:auto;width:1050px;height:70px;}
+
+.zotblk {position:absolute;display:block;width:40px;top:-10px;left:480px;}
+.zotblk img{display:block;width:40px;}
+
+.run {display:block;width:120px;white-space:nowrap;position:absolute;top:-10px;left:940px;}
+.run img {display:block;width:100px;margin:auto;}
+
+.iStrip {width:2000px;height:75px;background:transparent;}
+
+.nosel ::selection{background-color:transparent;color:#000;}

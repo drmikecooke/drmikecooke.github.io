@@ -34,4 +34,4 @@ function cbCSV(e) {
 function getRange() {return [getValue('trange').split(','),getValue('prange').split(',')]}
 
 var wpTable;
-loadAJAX('wp.csv',cbCSV,"text");
+loadAJAX('js/wp.csv',cbCSV,"text");
