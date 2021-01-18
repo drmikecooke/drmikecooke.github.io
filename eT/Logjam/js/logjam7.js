@@ -61,7 +61,7 @@ function scaler(object,wrap,scale){
 var scale=1;
 var wrap=document.getElementById("cWrapper");
 if(window.outerWidth<700){scale=wrap.offsetWidth/clide.offsetWidth;}
-document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale;
+document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale+"; Window outer: "+window.outerWidth+"; inner: "+window.innerWidth;
 scaler(clide,wrap,scale);
 
 clide.addEventListener("mousedown", cStart, false);
