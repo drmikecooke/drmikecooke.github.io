@@ -67,7 +67,7 @@ clide.addEventListener("mousedown", cStart, false);
 clide.addEventListener("touchstart", cStart, false);
 clide.addEventListener("mousemove", cDrag, false);
 clide.addEventListener("touchmove", cDrag, false);
-window.addEventListener("resize", rHandler, false);
+//window.addEventListener("resize", rHandler, false);
 
 function ruleSwitch(rh,aw,mw,r,tsd,rc,am,sd) {
   document.getElementById("rHead").innerText=rh;
