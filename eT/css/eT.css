@@ -180,7 +180,7 @@ article figcaption {
 
 .pointer { display:flex; width:100%; overflow: auto; }
 
-.pointer a { 
+.pointer a {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   font-size: 21px;
@@ -188,7 +188,7 @@ article figcaption {
   padding: 6px;
 }
 
-.pointer a:hover { 
+.pointer a:hover {
   background-color: #ddd;
 }
 
@@ -199,9 +199,9 @@ article figcaption {
 @media screen and (max-width: 900px) {
   article figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   article figure img { width: 100%; }
-  article img { width: 90%; margin:0.25em; }
-  article { font-size: 18px; border: none; }
-  footer a { font-size: 18px; }
+  /*article img { width: 90%; margin:0.25em; }*/
+  article {font-size:18px; border: none; }
+  footer a {font-size:18px; }
   svg { width: 100% }
   embed { width: 100% }
   article img.center { width: 100%; }
