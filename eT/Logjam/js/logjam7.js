@@ -60,7 +60,7 @@ function scaler(object,wrap,scale){
 
 var scale=1;
 var wrap=document.getElementById("cWrapper");
-if(window.innerWidth<700){scale=wrap.offsetWidth/clide.offsetWidth;}
+if(window.outerWidth<700){scale=wrap.offsetWidth/clide.offsetWidth;}
 document.getElementById("scaleinfo").innerHTML+="Circle scale: "+scale;
 scaler(clide,wrap,scale);
 
