@@ -8,6 +8,7 @@ document.body.appendChild(navstyle);
 
 navbar = document.createElement("nav");
 navbar.innerHTML = '<a href="/">Base</a>';
+navbar.innerHTML += anchor("2021");
 navbar.innerHTML += anchor("2020");
 navbar.innerHTML += anchor("2019");
 navbar.innerHTML += anchor("2018");

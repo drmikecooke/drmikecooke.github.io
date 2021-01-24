@@ -1,0 +1,5 @@
+{
+  "title": "Geometric series",
+  "definition": "Geometric series are of the form \\(z_n=r a^n\\) with \\(r,a\\) constants.",
+  "sum": "<div class='noindent'>We have \\(S_n=\\sum\\limits_{k=0}^{n}r a^k\\).</div><div class='noindent'>Multiplying by \\(a\\) and using the distributive law: \\[a S_n=\\sum\\limits_{k=0}^{n}r a^{k+1}\\]</div><div class='noindent'>We notice that this series includes all the terms of \\(S_n\\) <em>except</em> for the \\(k=0\\) term, \\(r\\). We also have an extra term, \\(r a^{n+1}\\): \\[a S_n=S_n +r a^{n+1} -r\\]</div><div class='noindent'>Solving and simplifying: \\[S_n=r \\frac{a^{n+1} -1}{a-1} \\]</div>"
+}

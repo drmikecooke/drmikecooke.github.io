@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>geometric</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+  <h1 id="Geometric-series">Geometric series</h1>
+
+  <p>Geometric series are sums of terms of the form \(z_n=a r^n \) with \(a,r \) constants.</p>
+
+  <p>Define \(S_n = \sum \limits_{k=0}^{n} a r^k \).</p>
+
+  <p>Multiplying by \(r \) and using the distributive law: \[r S_n=\sum\limits_{k=0}^{n}a r^{k+1} \]</p>
+
+  <p>We notice that this series includes all the terms of \(S_n \) <em>except</em> for the \(k=0 \) term, \(r \). We also have an extra term, \(a r^{n+1} \): \[r S_n=S_n +a r^{n+1} -a \]</p>
+
+  <p>Solving and simplifying: \[S_n=a \frac{r^{n+1} -1}{r-1} \]</p>
+
+  <h2 id="Differentiating">Differentiating</h2>
+
+  <p>We notice that \[\frac{d S_n}{dr} = \sum \limits_{k=0}^{n} a k r^{k-1}=a \frac{(n+1)r^n(r-1)- r^{n+1}+1}{(r-1)^2} \]</p>
+
+  <p>The last part comes from the sum formula. It simplifies (somewhat) to: \[\sum \limits_{k=0}^{n} a k r^{k-1}=a \frac{n r^{n+1}-(n+1)r^n +1}{(r-1)^2} \]</p>
+
+  <p>A sort of interesting limit is \(r\rightarrow1 \). We investigate it using \(r=1+\epsilon \): \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (1+\epsilon)^{n+1}-(n+1)(1+\epsilon)^n +1}{\epsilon^2} \]</p>
+
+  <p>Expanding the binomials to the quadratic term: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n \left(1+(n+1)\epsilon+\dfrac{(n+1)n}{2}\epsilon^2\right)-(n+1)\left(1+n\epsilon+\dfrac{n(n-1)}{2}\epsilon^2\right) +1 +O(\epsilon^3)}{\epsilon^2} \]</p>
+
+  <p>This looks like it will blow up in the limit. But there are some convenient cancellations and we are left with: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (n+1)n\epsilon^2-(n+1)n(n-1)\epsilon^2 +O(\epsilon^3)}{2\epsilon^2} \]</p>
+
+  <p>This looks like it will blow up in the limit. But there are some convenient cancellations and we are left with: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n(n+1)}{2} (1+O(\epsilon))=a \frac{n(n+1)}{2} \]</p>
+
+  <p>This is the well-known formula (multiplied by a constant) for the sum of the arithmetic series, \[\sum\limits_{k=0}^n k=\frac{n(n+1)}{2} \]</p>
+
+  <p>By differentiating further, and taking appropriate limits, in principle one could derive sums of higher integer powers.</p>
+
+</body>
+</html>

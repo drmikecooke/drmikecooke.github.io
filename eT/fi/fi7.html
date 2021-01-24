@@ -59,15 +59,15 @@
     <h3>Accumulator</h3>
     <div class="noindent">
       In the Covid-19 reports there are usually figures for “new” and “total” cases. Up to here, we have focused on the “new” aspect. At least in the distinct eigenvalue case, the derivation of the “total” result is relatively straightforward. It depends on knowledge of the behaviour of “geometric series”.<a class="footnote">*</a>
-      <aside>Geometric series are of the form \(z_n=r a^n\) with \(r,a\) constants.</aside>
+      <aside>Geometric series are sums of terms of the form \(z_n=a r^n\) with \(a,r\) constants.</aside>
     </div>
 
     <div class="indent">We want to sum such series from “Day Zero", when “Patient Zero” was infected. The sum formula of geometric series is well known.<a class="footnote">*</a>
       <aside>
-        <div class="noindent">We have \(S_n=\sum\limits_{k=0}^{n}r a^k\).</div>
-        <div class="noindent">Multiplying by \(a\) and using the distributive law: \[a S_n=\sum\limits_{k=0}^{n}r a^{k+1}\]</div>
-        <div class="noindent">We notice that this series includes all the terms of \(S_n\) <em>except</em> for the \(k=0\) term, \(r\). We also have an extra term, \(r a^{n+1}\): \[a S_n=S_n +r a^{n+1} -r\]</div>
-        <div class="noindent">Solving and simplifying: \[S_n=r \frac{a^{n+1} -1}{a-1} \]</div>
+        <div class="noindent">Define \(S_n=\sum\limits_{k=0}^{n}a r^k\).</div>
+        <div class="indent">Multiplying by \(r\) and using the distributive law: \[r S_n=\sum\limits_{k=0}^{n}a r^{k+1}\]</div>
+        <div class="indent">We notice that this series includes all the terms of \(S_n\) <em>except</em> for the \(k=0\) term, \(r\). We also have an extra term, \(a r^{n+1}\): \[r S_n=S_n +a r^{n+1} -a\]</div>
+        <div class="indent">Solving and simplifying: \[S_n=a \frac{r^{n+1} -1}{r-1} \]</div>
       </aside>
     </div>
 
@@ -77,7 +77,8 @@
     <div class="indent">At the same time, we have \(I_n \sim A_{m^*}a_{m^*}^n\). These asymptotic relations hold as \(n\rightarrow\infty\). The asymptotic regime kicks in when \(a_{m^*}^{n+1}\gg1\).</div>
     <div class="indent">Also as \(n\rightarrow\infty\), \[T_n\rightarrow\frac{a_{m^*}}{a_{m^*}-1}I_n\]</div>
     <div class="indent">I indicated that such a behaviour is not unexpected when I looked at Covid-19 reports in my articles on the <a href="/eT/SIR/SIR1.html">SIR model</a>.</div>
-
+    <div class="indent">The case where all the eigenvalues are different is somewhat special. Then all the \(r^{n+1}\rightarrow0\) as \(n\rightarrow\infty\). We are then left with a constant: \[I_n\rightarrow\sum\limits_{m=0}^{M} \frac{-A_m}{a_m-1}=\sum\limits_{m=0}^{M} \frac{A_m}{1-a_m}\]</div>
+    <div class="indent">This constant is positive, if all the \(A_m\) are positive.</div>
   </article>
 
   <div class="pointer" style="display:none;"><a href="/eT/fi/fi8.html" class="pointright">Next ▶</a></div>
