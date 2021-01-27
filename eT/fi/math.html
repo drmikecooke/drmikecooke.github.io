@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.js" integrity="sha512-I0P+l8NrgTsaftmvg7m946nCfUNRc+UrMlfwiJSERXXmcnofik9gqOsG9PpsUNjqPH4KFXY+XNwmxsnlzmG/Mg==" crossorigin="anonymous"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" sync
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+  <div id="has-math">\[S_N^{(k)}=\frac{B_{k+1}(N+1)-B_{k+1}(0)}{k+1}\]</div>
+  <script type="text/javascript">
+    console.log(math.sqrt(-4).toString()); // 2i
+    console.log(math.combinations(3,2).toString());
+    const node = document.getElementById('has-math');
+MathJax.typesetClear([node]);
+node.innerHTML = "\\[n=0\\]";
+MathJax.typesetPromise([node]).then(() => {
+  // the new content is has been typeset
+});
+
+node.innerHTML="\\[x=1\\]"
+
+MathJax.typeset([node]);
+
+  </script>
+</body>
+</html>

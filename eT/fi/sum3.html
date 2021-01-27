@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sums</title>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <h1>Sums of powers</h1>
+  <p>We consider the sums: \[S_N^{(k)}=\sum\limits_{n=0}^Nn^k\]</p>
+  <p>We can create a generating function: \[G_N(t)=\sum\limits_{k=0}^\infty\frac{t^k}{k!}S_N^{(k)}\]</p>
+  <p>Inserting the sum: \[G_N(t)=\sum\limits_{k=0}^\infty\frac{t^k}{k!}\sum\limits_{n=0}^Nn^k\]</p>
+  <p>We can reverse the sum order and combine the powers: \[G_N(t)=\sum\limits_{n=0}^N\sum\limits_{k=0}^\infty\frac{(tn)^k}{k!}\]</p>
+  <p>We recognize the infinite sum expression (which is why we chose the generating function form that we did): \[G_N(t)=\sum\limits_{n=0}^Ne^{tn}\]</p>
+  <p>But we also now recognize a geometric series: \[G_N(t)=\sum\limits_{n=0}^N(e^t)^n=\frac{e^{t(N+1)}-1}{e^t-1}\]</p>
+
+  <h2>Bernoulli polynomials</h2>
+  <p>So we have a neat generating function. So what? In this case the form links into a well-known generating function for the Bernoulli polynomials (what?): \[\frac{t e^{zt}}{e^t-1} = \sum\limits_{n=0}^\infty B_n(z) \frac{t^n}{n!}\]</p>
+  <p>It is not obvious that the \(B_n\) are polynomials. But this is known. So we should be able to see the relation with our sum powers generating function:\[tG_N(t)=\sum\limits_{k=0}^\infty [B_k(N+1)-B_k(0)] \frac{t^k}{k!}=\sum\limits_{k=0}^\infty\frac{t^{k+1}}{k!}S_N^{(k)}\]</p>
+  <p>Lining up the powers in \(t\) and equating we get: \[[B_{k+1}(N+1)-B_{k+1}(0)]\frac{1}{(k+1)!}=S_N^{(k)}\frac{1}{k!}\]</p>
+  <p>Rearranged, this is: \[S_N^{(k)}=\frac{B_{k+1}(N+1)-B_{k+1}(0)}{k+1}\]</p>
+
+  <h2>Shift work</h2>
+  <p>We can start to get an idea of these Bernoulli polynomials by using the simple properties of the exponential function and expanding: \[\frac{t e^{(z+h)t}}{e^t-1} = \sum\limits_{n=0}^\infty B_n(z+h) \frac{t^n}{n!}\]</p>
+  <p>Alternatively: \[e^{ht}\frac{t e^{zt}}{e^t-1} = \sum\limits_{m=0}^\infty \sum\limits_{p=0}^\infty h^m \frac{t^m}{m!} B_p(z) \frac{t^p}{p!}\]</p>
+  <p>Since the two expressions are equal, we equate equal powers of \(t\), resulting in: \[B_n(z+h)=\sum \limits_{m=0}^n h^m B_{n-m}(z) \frac{n!}{m!(n-m)!} = \sum \limits_{m=0}^n \binom{n}{m} h^m B_{n-m}(z)\]</p>
+  <p>We have inserted the symbol for the binomial coefficient in the last form. A particular choice for \(z,h\) of 0 and \(x\), respectively, gives: \[B_n(x)= \sum \limits_{m=0}^n \binom{n}{m} x^m B_{n-m}(0)\]</p>
+  <p>This last form shows that the “polynomials” are indeed such of degree n. The “Bernoulli numbers” are given by \(B_n=B_n(0)\), so we have: \[B_n(x)= \sum \limits_{m=0}^n \binom{n}{m} x^m B_{n-m}\]</p>
+
+  <h2>Numerology</h2>
+  <p>So now we just have to find the Bernoulli numbers! The generating function (\(z=0\)!) is: \[\frac{t}{e^t-1} = \sum\limits_{n=0}^\infty B_n \frac{t^n}{n!}\]</p>
+  <p>Rearrange: \[t=\sum\limits_{n=0}^\infty B_n \frac{t^n}{n!}\sum\limits_{m=1}^\infty \frac{t^m}{m!}\]</p>
+  <p>There is only one term on the left, so all the coefficients on the right are zero apart from the linear term: \[\sum\limits_{n=0}^{p-1}  \frac{B_n}{n!(p-n)!}=\frac{\delta_{p1}}{p!}\]</p>
+  <p>We introduce the \(p!\), which in the only case that matters is 1, so we have:\[\sum\limits_{n=0}^{p-1} \binom{p}{n}B_n=\delta_{p1}\]</p>
+  <p>For \(p=1\): \[\sum\limits_{n=0}^{0} \binom{1}{n}B_n=\binom{1}{0}B_0=B_0=1\]</p>
+  <p>When \(p>1\) the sum can be separated to give a recurrence relation: \[ \sum\limits_{n=0}^{p-1} \binom{p}{n}B_n=\binom{p}{p-1}B_{p-1} + \sum\limits_{n=0}^{p-2} \binom{p}{n}B_n=p B_{p-1} + \sum\limits_{n=0}^{p-2} \binom{p}{n}B_n=0 \] \[\implies B_{p-1}=-\dfrac{\sum\limits_{n=0}^{p-2} \binom{p}{n}B_n}{p} \] \[\implies B_p=-\dfrac{\sum\limits_{n=0}^{p-1} \binom{p+1}{n}B_n}{p+1} \]</p>
+  <p>The first few Bernoulli numbers arise fairly easily: \[B_1=-\frac{1}{2}, B_2=\frac{1}{6}, B_3=0, B_4=-\frac{1}{30}, B_5=0\]</p>
+
+  <h2>Odd bods</h2>
+  <p>We notice that the odd terms, except \(B_1\), are zero in this list. Is this true as we continue? We look back at the generating function and project out the odd Bernoulli numbers: \[\frac{t}{e^t-1} -\frac{-t}{e^{-t}-1}= \sum\limits_{n=0}^\infty B_n \frac{t^n-(-t)^n}{n!}=\sum\limits_{n=0}^\infty B_{2n+1} \frac{2t^{2n+1}}{(2n+1)!}\]</p>
+  <p>So we have a new generating function that should give us just the odd Bernoulli numbers. But (using \(e^{-t}=1/e^t\)): \[\frac{t}{e^t-1} -\frac{-t}{e^{-t}-1}=\frac{t}{e^t-1} +\frac{t}{e^{-t}-1}=\frac{t}{e^t-1} +\frac{te^t}{1-e^t}=\frac{t(1-e^t)}{e^t-1}=-t\]</p>
+  <p>This gives \(B_1=-\frac{1}{2}\) and \(B_{2n+1}=0\) for \(n>0\).</p>
+</body>
+</html>

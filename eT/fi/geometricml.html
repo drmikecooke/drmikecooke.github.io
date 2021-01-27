@@ -20,9 +20,30 @@
 <p>The last part comes from the sum formula. It simplifies (somewhat) to: \[\sum \limits_{k=0}^{n} a k r^{k-1}=a \frac{n r^{n+1}-(n+1)r^n +1}{(r-1)^2}\]</p>
 <p>A sort of interesting limit is \(r\rightarrow1\). We investigate it using \(r=1+\epsilon\): \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (1+\epsilon)^{n+1}-(n+1)(1+\epsilon)^n +1}{\epsilon^2}\]</p>
 <p>Expanding the binomials to the quadratic term: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n \left(1+(n+1)\epsilon+\dfrac{(n+1)n}{2}\epsilon^2\right)-(n+1)\left(1+n\epsilon+\dfrac{n(n-1)}{2}\epsilon^2\right) +1 +O(\epsilon^3)}{\epsilon^2}\]</p>
-<p>This looks like it will blow up in the limit. But there are some convenient, but expected cancellations: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (n+1)n\epsilon^2-(n+1)n(n-1)\epsilon^2 +O(\epsilon^3)}{2\epsilon^2}\]</p>
+<p>This looks like it will blow up in the limit. But there are some convenient cancellations: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (n+1)n\epsilon^2-(n+1)n(n-1)\epsilon^2 +O(\epsilon^3)}{2\epsilon^2}\]</p>
 <p>We are left with: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n(n+1)}{2} (1+O(\epsilon))=a \frac{n(n+1)}{2}\]</p>
 <p>This is the well-known formula (multiplied by a constant) for the sum of the arithmetic series, \[\sum\limits_{k=0}^n k=\frac{n(n+1)}{2}\]</p>
 <p>By differentiating further, and taking appropriate limits, in principle one could derive sums of higher integer powers.</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+  <msup>
+
+    <mfenced>
+    <mrow>
+    <mi>a</mi>
+    <mo>+</mo>
+
+    <mi>b</mi>
+
+    </mrow>
+    </mfenced>
+    <mn>2</mn>
+    </msup>
+</math>
+
 </body>
 </html>
