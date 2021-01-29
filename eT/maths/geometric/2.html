@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Geometric 0/Sum</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/geometric/1.html">◀ Previous</a></div>
+  <article>
+<h1>Geometric series</h1>
+
+<h2>Interesting, sort of</h2>
+<p class="noindent">A sort of interesting limit of the first derivative is \(r\rightarrow1\). We investigate it using \(r=1+\epsilon\): \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (1+\epsilon)^{n+1}-(n+1)(1+\epsilon)^n +1}{\epsilon^2}\]</p>
+<p class="indent">Expanding the binomials to the quadratic term: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n \left(1+(n+1)\epsilon+\dfrac{(n+1)n}{2}\epsilon^2\right)-(n+1)\left(1+n\epsilon+\dfrac{n(n-1)}{2}\epsilon^2\right) +1 +O(\epsilon^3)}{\epsilon^2}\]</p>
+<p class="indent">This looks like it will blow up in the limit. But there are some convenient, but expected cancellations: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n (n+1)n\epsilon^2-(n+1)n(n-1)\epsilon^2 +O(\epsilon^3)}{2\epsilon^2}\]</p>
+<p class="indent">We are left with: \[\sum \limits_{k=0}^{n} a k =\lim_{\epsilon\rightarrow0} a \frac{n(n+1)}{2} (1+O(\epsilon))=a \frac{n(n+1)}{2}\]</p>
+<p class="indent">This is the well-known formula (multiplied by a constant) for the sum of the arithmetic series, \[\sum\limits_{k=0}^n k=\frac{n(n+1)}{2}\]</p>
+<p class="indent">By differentiating further, and taking appropriate limits, in principle one could derive sums of higher integer powers. We could also derive, using the same technique, the obvious \[\lim_{r \to 1}\sum\limits_{k=0}^{n}a r^{k+1}=\sum\limits_{k=0}^{n}a =(n+1)a\]</p>
+<p class="indent">These sums are in fact dealt with better using <a href="/eT/maths/sum3.html">Bernoulli polynomials</a>.</p>
+</article>
+
+<div class="pointer"><a href="/eT/maths/bernoulli/1.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+<script src="/js/footer.js"></script>
+</body>
+</html>

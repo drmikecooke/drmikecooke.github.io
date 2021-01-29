@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Bernoulli 1/Numerology</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.js" integrity="sha512-I0P+l8NrgTsaftmvg7m946nCfUNRc+UrMlfwiJSERXXmcnofik9gqOsG9PpsUNjqPH4KFXY+XNwmxsnlzmG/Mg==" crossorigin="anonymous"></script>
+  <style>
+    /* Popup container - can be anything you want */
+    .popup {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: hidden;
+      line-height: 1.6;
+      background-color: #555;
+      color: #fff;
+      transform: translateX(-50%);
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      animation: fadeIn 1s;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }
+
+    input {font-size: 1em;}
+  </style>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/bernoulli/0.html">◀ Previous</a></div>
+  <article>
+
+    <h1>Bernoulli polynomials and numbers</h1>
+    <h2>Numerology</h2>
+    <p>The generating function for the Bernoulli numbers (\(z=0\)!) becomes: \[\frac{t}{e^t-1} = \sum\limits_{n=0}^\infty B_n \frac{t^n}{n!}\]</p>
+    <p class="indent">Rearrange: \[t=\sum\limits_{n=0}^\infty B_n \frac{t^n}{n!}\sum\limits_{m=1}^\infty \frac{t^m}{m!}\]</p>
+    <p class="indent">There is only one term on the left, so all the coefficients on the right are zero apart from the linear term: \[\sum\limits_{n=0}^{p-1}  \frac{B_n}{n!(p-n)!}=\frac{\delta_{p1}}{p!}\]</p>
+    <p class="indent">We introduce the \(p!\), which in the only case that matters is 1, so we have:\[\sum\limits_{n=0}^{p-1} \binom{p}{n}B_n=\delta_{p1}\]</p>
+    <p class="indent">For \(p=1\): \[\sum\limits_{n=0}^{0} \binom{1}{n}B_n=\binom{1}{0}B_0=B_0=1\]</p>
+    <p class="indent">When \(p>1\) the sum can be separated to give a recurrence relation: \[ \sum\limits_{n=0}^{p-1} \binom{p}{n}B_n=\binom{p}{p-1}B_{p-1} + \sum\limits_{n=0}^{p-2} \binom{p}{n}B_n=p B_{p-1} + \sum\limits_{n=0}^{p-2} \binom{p}{n}B_n=0 \] \[\implies B_{p-1}=-\dfrac{\sum\limits_{n=0}^{p-2} \binom{p}{n}B_n}{p} \] \[\implies B_p=-\dfrac{\sum\limits_{n=0}^{p-1} \binom{p+1}{n}B_n}{p+1} \]</p>
+    <p class="indent">The first few Bernoulli numbers arise fairly easily: \[B_1=-\frac{1}{2}, B_2=\frac{1}{6}, B_3=0, B_4=-\frac{1}{30}, B_5=0\]</p>
+    <div  class="popup"><span id="has-math" class="popuptext"></span></div>
+    <div  style="text-align:center;">
+      \(B_n\) list up to n = <input id="bernlim" value="5" size="3"/>
+
+      <button onclick="goBn()">Go</button><button onclick="rmv()">Remove</button>
+
+    </div>
+    <p>[The code here is limited to \(n&lt;30\), due to the number sizes becoming excessive for accurate integer/fraction representation. I could completely rewrite using the “BigInt” javascript objects that have recently become available. Not minded to at the moment.]</p>
+  </article>
+
+  <script type="text/javascript">
+
+    // Configure the default type of number: 'number' (default), 'BigNumber', or 'Fraction'
+    math.config({number: 'Fraction'});
+    function extend(B) {
+      var sum=B[0];
+      var p=math.fraction(B.length,1);
+      for (var m=1;m<p;m++) {
+        sum=math.add(sum,math.multiply(math.combinations(p+1,m),B[m]));
+      }
+      B.push(negate(math.divide(sum,p+1)));
+    }
+
+    function negate(n) {return math.multiply(-1,n)}
+
+    function Blist(n) {
+      var Bern=[math.fraction(1,1)];
+      for(var m=1;m<n+1;m++) {
+        extend(Bern);
+      }
+      return Bern
+    }
+
+    const node = document.getElementById('has-math');
+
+    function goBn(){
+      var Blim=Number(document.getElementById("bernlim").value);
+      var Bern=Blist(Blim);
+      var str="";
+
+      for(var m=0;m<Bern.length;m++) {str+=", \\(B_{"+m+"}=\\)"+ftex(math.format(Bern[m]));}
+
+      node.innerHTML=str.slice(2);
+      MathJax.typeset([node]);
+      node.classList.add("show");
+    }
+
+    function rmv() {node.classList.remove("show");}
+
+    function ftex(str) {
+      var sstring=str.split('/');
+      if(sstring[1]=='1') {return "\\("+sstring[0]+"\\)"}
+      if(Number(sstring[0])<0) {return "\\(-\\frac{"+sstring[0].slice(1)+"}{"+sstring[1]+"}\\)"}
+      return "\\(\\frac{"+sstring[0]+"}{"+sstring[1]+"}\\)"
+    }
+
+  </script>
+
+<div class="pointer"><a href="/eT/maths/bernoulli/2.html" class="pointright">Next ▶</a></div>
+
+<script src="/js/footer.js"></script>
+
+</body>
+</html>

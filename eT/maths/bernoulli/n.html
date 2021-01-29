@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>menu</title>
+  <style>
+nav{font-family:Franklin;font-size:18px;overflow:hidden;background-color:#333;user-select:none;}
+
+nav a{float:left;color:#f2f2f2;text-align:center;padding:14px 16px;text-decoration:none;}
+
+.dropdown{float:left;overflow:hidden;font-size:inherit;}
+
+.dropdown .dropbtn{font-size:18px;font-weight:normal;border:none;outline:none;color:white;padding:14px 16px;background-color:inherit;font-family:inherit;margin:0;}
+
+nav a:hover,.dropdown:hover .dropbtn{background-color:#ddd;color:black;}
+
+.dropdown-content{display:none;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);z-index:1;}
+
+.dropdown-content a {float:none;color:black;padding: 12px 16px;text-decoration:none;display:block;text-align:left;}
+
+.dropdown-content a:hover{background-color:#ddd;}.dropdown:hover .dropdown-content{display:block;}
+
+.mega {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.mega .header {
+  background: red;
+  padding: 16px;
+  color: white;
+}
+
+.dropdown:hover .mega {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  /*width: 33.33%;*/
+  padding: 10px;
+  background-color: #ccc;
+  height: 250px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  </style>
+</head>
+<body>
+
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+
+
+  <nav>
+    <a href="/" style="float:right">Back to base</a>
+    <a href="/eT">Prospectus</a>
+    <a href="/eT/Power/Power.html">Powering<sup>up</sup></a>
+    <a href="/eT/Backlog/backlog.html">Backlog</a>
+    <div class="dropdown">
+      <button class="dropbtn">Analysis ▼</button>
+      <div class="dropdown-content">
+        <a href="/eT/Basic analysis/basic.html">Basic</a>
+        <details><summary style="padding:10px;">Heading</summary><a href="/eT/Basic analysis/basic.html">Basic</a><a href="/eT/Basic analysis/basic.html">Basic</a></details>
+        <a href="/eT/Richardson/Richardson.html">Richardson extrapolation</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Maths bits ▼</button>
+      <div class="mega">
+        <div class="header">
+          <h2>Maths bits</h2>
+        </div>
+        <div class="row">
+          <div class="column">
+            <h3>Bernoulli</h3>
+            <a href="#">Shift work</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="column">
+            <h3>Category 2</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="column">
+            <h3>Category 3</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pointer"><a href="/eT/maths/bernoulli/1.html">◀ Previous</a></div>
+  <article>
+
+    <h1>Head</h1>
+
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/bernoulli/3.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

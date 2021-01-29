@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Power sum 1/Bernoulli link</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/sum/0.html" >◀ Previous</a></div>
+  <article>
+    <h1>Sums of powers</h1>
+    <h2>Bernoulli link</h2>
+    <p class="noindent">So we have a neat generating function. So what? In this case the form links into a well-known generating function for the <a href="bernoulli/0.html">Bernoulli polynomials</a> (<a href="bernoulli/0.html">what</a>?): \[\frac{t e^{zt}}{e^t-1} = \sum\limits_{n=0}^\infty B_n(z) \frac{t^n}{n!}\]</p>
+    <p class="indent">Hopefully you can see the relation with our power-sum generating function:\[tG_N(t)=\sum\limits_{k=0}^\infty [B_k(N+1)-B_k(0)] \frac{t^k}{k!}=\sum\limits_{k=0}^\infty\frac{t^{k+1}}{k!}S_N^{(k)}\]</p>
+    <p class="indent">Lining up the powers in \(t\) and equating we get: \[[B_{k+1}(N+1)-B_{k+1}(0)]\frac{1}{(k+1)!}=S_N^{(k)}\frac{1}{k!}\]</p>
+    <p class="indent">Rearranged, this is: \[S_N^{(k)}=\frac{B_{k+1}(N+1)-B_{k+1}(0)}{k+1}\]</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/bernoulli/1.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
