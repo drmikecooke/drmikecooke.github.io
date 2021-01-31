@@ -108,6 +108,8 @@ article img.center {
   width: 45%;
 }
 
+.center{text-align:center;}
+
 article div.text-center { text-align: center; }
 
 article .arialblack { font-family: Franklin; }

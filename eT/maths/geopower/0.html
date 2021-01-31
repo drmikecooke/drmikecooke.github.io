@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Geometric-power sums 0</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/bernoulli/" style="display:none;">◀ Previous</a></div>
+  <article>
+
+    <h1>Geometric-power sums</h1>
+    <p class="center">[Inspired by Dominique Foata, <a href="http://irma.math.unistra.fr/~foata/paper/pub117EulerUlam.pdf">Eulerian Polynomials: from Euler’s Time to the Present</a>]</p>
+    <p>A quick note on: \[S_N^{(k)}(t)=\sum\limits_{n=1}^N n^k t^n\]</p>
+    <p class="indent">Using a similar trick to that used for summing geometric series, we look at: \[tS_N^{(k)}(t)=\sum\limits_{n=1}^N n^k t^{n+1}=\sum\limits_{n=2}^{N+1} (n-1)^k t^n\]</p>
+    <p class="indent">In fact, when \(k&gt;0\) we can add include the \(n=1\) term in the sum since it is zero. Extracting the \(N+1\) term we then have: \[tS_N^{(k)}(t)=N^kt^{N+1}+ \sum\limits_{n=1}^N (n-1)^k t^n\]</p>
+    <p class="indent">Performing a binomial expansion on the \((k-1)^n\) term and extracting the sum we are interested in: \[tS_N^{(k)}(t)=N^kt^{N+1}+ S_N^{(k)}(t) + \sum\limits_{n=1}^N \sum\limits_{p=0}^{k-1}\binom{k}{p}(-1)^{k-p}n^p t^n\]</p>
+    <p class="indent">This creates a recursive means to evaluate these sums: \[tS_N^{(k)}(t)=N^kt^{N+1}+ S_N^{(k)}(t) + \sum\limits_{p=0}^{k-1}\binom{k}{p}(-1)^{k-p}S_N^{(p)}(t)\]</p>
+    <p>\[\implies S_N^{(k)}(t)=\dfrac{N^kt^{N+1}+ \sum\limits_{p=0}^{k-1}\binom{k}{p}(-1)^{k-p}S_N^{(p)}(t)}{t-1}\]</p>
+    <p class="indent">The recursion starts with the geometric series sum from \(n=1\): \[S_N^{(0)}=\dfrac{t^{N+1}-t}{t-1}=\sum\limits_{n=1}^N t^n\]</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/bernoulli/1.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

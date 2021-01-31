@@ -22,7 +22,12 @@
     <p class="indent">A generating function for the Eulerian polynomials is: \[\frac{t-1}{t-e^{(t-1)z}} = \sum\limits_{n=0}^\infty A_n(t) \frac{z^n}{n!}\]</p>
     <p class="indent">Multiplying out the denominator and using the series expansion of the exponential allows the derivation of a recurrence relation: \[A_n(t)=\sum\limits_{m=0}^{n-1}\binom{n}{m}A_m(t)(t-1)^{n-m-1}\]</p>
     <p class="indent">The initial term is \(A_0(t)=1\). Apart from this term, the degrees of the polynomials are \(n-1\). In fact the highest power is contributed by the \(m=0\) term of the sum, \(A_0(t)(t-1)^{n-1}=(t-1)^{n-1}\), since the remaining terms have degree \(n-2\). The leading degree term is obviously \(t^{n-1}\), which makes it “monic”.</p>
-
+    <p class="indent">Absorbing the \((t-1)\) in the exponential of the generating function: \[\frac{t-1}{t-e^{z}} = \sum\limits_{n=0}^\infty A_n(t) \frac{(z/(t-1))^n}{n!}\]</p>
+    <p class="indent">\[\implies \frac{e^z}{1-te^z}=\sum\limits_{n=0}^{\infty}\frac{A_n(t)}{(1-t)^{n+1}}\frac{z^n}{n!}\]</p>
+    <p class="indent">A new form for the Eulerian polynomials arises from: \[\frac{e^z}{1-te^z}=\sum\limits_{m=0}^{\infty}t^m e^{(m+1)z}=\sum\limits_{m=0}^{\infty}\sum\limits_{n=0}^{\infty}t^m \frac{[(m+1)z]^n}{n!}\]</p>
+    <p class="indent">Comparing with the previous equation: \[\frac{A_n(t)}{(1-t)^{n+1}}=\sum\limits_{m=0}^{\infty}t^m (m+1)^n\]</p>
+    <p class="indent">Multiplying by \(t\) and differentiating we obtain: \[\frac{A_{n+1}(t)}{(1-t)^{n+2}}=\frac{d}{dt}\left(\frac{t A_n(t)}{(1-t)^{n+1}}\right)\]</p>
+    <p class="indent">This leads to a new recurrence relation: \[A_{n+1}(t)=t(1-t)A_n'(t)+(1-n t)A_n(t)\]</p>
   </article>
 
   <div class="pointer"><a href="/eT/maths/bernoulli/1.html" class="pointright">Next ▶</a></div>
