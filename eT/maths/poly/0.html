@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Polynomials 0/Introduction</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/bernoulli/" style="display:none;">◀ Previous</a></div>
+  <article>
+
+    <h1>Polynomials</h1>
+    <p class="noindent">Polynomials pop up everywhere in mathematics. They are usually introduced in earlyish education (typically secondary/high school) as functions of real numbers. However, their application and meaning is far broader than that.</p>
+    <p class="indent">The form of such objects is, for an “unknown” \(x\), \(p(x)=\sum a_n x^n = a_0 x^0 + a_1 x^1 + a_2 x^2 + \ldots = a_0 + a_1 x + a_2 x^2 + \ldots \). In this form, they are more correctly called “formal power series”. For such an object to be a “polynomial”, we need to specify that for \(n\) greater than some number \(N\), the “coefficients” \(a_n=0\). If also \(a_N \neq 0\), we define the degree of the polynomial as \(\deg p=N\). Degree 0 polynomials, \( p(x) = a_0 \), are called “constants”. If this constant is zero, it is common to assign a negative degree, which may be \(-1\) or \(-\infty\) or just “negative”, depending on taste. We will see why this is so below.</p>
+    <p class="indent">Polynomials can be combined in various ways. The most basic operation is addition: \[\sum a_n x^n + \sum b_n x^n = \sum (a_n + b_n) x^n \]</p>
+    <p class="indent">The meaning of polynomial addition is thus derived from that of the \(a_n, b_n\) coefficients. The degree of the result is less than or equal to the degrees of either polynomial. If all the \(b_n = -a_n\), the result is the zero polynomial.</p>
+    <p class="indent">It is usually assumed that the \(x^n\) are unrelated, so \(\sum a_n x^n =0 \implies a_n=0, \forall n\). But if \(x\) is known, this may not be true: \(x=\sqrt 2 \implies 2-x^2=0\). There are ways of ensuring the first logical relation, or even just declaring it to be true.</p>
+    <p class="indent">Multiplication is a bit more involved: \[\sum a_n x^n \sum b_m x^m = \sum a_n b_m x^{m+n}\]</p>
+    <p class="indent">Here we can combine terms with the same value of \(m+n\): \[\sum a_n x^n \sum b_m x^m = \sum\limits_{k=0} \left(\sum\limits_{n=0}^{k}a_n b_{k-n}\right) x^k\]</p>
+    <p class="indent">The object in brackets is the discrete convolution of the finite sequences of the component polynomial coefficients. The polynomial multiplication depends on the addition and multiplication operators of the coefficients. The constant term, \[\sum\limits_{n=0}^{0}a_n b_{k-n}=a_0 b_0\]</p>
+    <p class="indent">If \(k=\deg(\sum a_n x^n)+\deg(\sum b_m x^m)=N+M\), \[\sum\limits_{n=0}^{k}a_n b_{k-n}=a_N b_M,\] where \(N,M\) are the respective degrees of the polynomials. This results because in all the other terms in the sum, either \(a_n=0\) or \(b_{k-n}=0\), since \(n\) or \(k-n\) exceeds the degree of the respective polynomial.</p>
+    <p class="indent">It is often the case that the coefficient multiplication satisfies the logical relation \(a,b \neq 0 \implies ab \neq 0\). In posh terms, the “coefficient ring” is an “integral domain”. In such a case the degree of the product of two polynomial equals their sum: \(\deg(pq)=\deg(p)+\deg(q)\). The polynomials with an integral domain used for the coefficient ring is also an integral domain. In fact, in some applications the coefficient ring may itself be a set of polynomials in a series of unknowns.</p>
+    <p class="indent">If one of the polynomials is constant, \(\deg(p)=0\), the degree of the product is the same as the other polynomial. In fact, \[\sum\limits_{n=0}^{k}a_n b_{k-n}=a_0 b_k,\] if \(\deg(\sum a_n x^n)=0\). Hence, \(\sum a_n x^n \sum b_m x^m = a_0 \sum b_m x^m=\sum a_0 b_m x^m\). The constants act as “scalars” on the vector space/module of polynomials.</p>
+    <p class="indent">The formula \(\deg(pq)=\deg(p)+\deg(q)\) may need to be modified if one wants to distinguish the zero polynomial from the non-zero constants. For \(\deg(0)=-\infty\), the formula stands with the normal convention that \(-\infty +k=-\infty\). For \(\deg(0)=-1\), or just negative, one adds caveats to the degree rule.</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/poly/1.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
