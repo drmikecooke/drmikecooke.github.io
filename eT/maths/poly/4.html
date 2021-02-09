@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Polynomials 1/Linear functionals</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/poly/3.html" >◀ Previous</a></div>
+  <article>
+
+    <h1>Polynomials</h1>
+    <h2>Determinant</h2>
+    <p class="noindent">An alternative approach uses the determinant: \[P(x)=\left|\begin{array}{ccccc}\lambda_{0} & \lambda_{1} & \cdots & \lambda_{n-1} & \lambda_{n}\\ \lambda_{1} & \lambda_{2} & \cdots & \lambda_{n} & \lambda_{n+1}\\ \vdots & \vdots & \ddots & \vdots & \vdots\\ \lambda_{n-1} & \lambda_{n} & \cdots & \lambda_{2n-2} & \lambda_{2n-1}\\ 1 & x & \cdots & x^{n-1} & x^{n} \end{array}\right| \] </p>
+    <p class="indent">We note that: \[\langle \lambda | x^k P\rangle = \left|\begin{array}{ccccc} \lambda_{0} & \lambda_{1} & \cdots & \lambda_{n-1} & \lambda_{n}\\ \lambda_{1} & \lambda_{2} & \cdots & \lambda_{n} & \lambda_{n+1}\\ \vdots & \vdots & \ddots & \vdots & \vdots\\ \lambda_{n-1} & \lambda_{n} & \cdots & \lambda_{2n-2} & \lambda_{2n-1}\\ \lambda_k & \lambda_{k+1} & \cdots & \lambda_{k+n-1} & \lambda_{k+n} \end{array}\right| \]</p>
+    <p class="indent">The bottom row repeats one of those above if \(k \lt n \) and hence the determinant is equal to zero and thus \(P\) is orthogonal to \(x^k\). The polynomial is not monic, but this is simply corrected in: \[ p_n(x)=\dfrac{\left|\begin{array}{ccccc} \lambda_{0} & \lambda_{1} & \cdots & \lambda_{n-1} & \lambda_{n}\\ \lambda_{1} & \lambda_{2} & \cdots & \lambda_{n} & \lambda_{n+1}\\ \vdots & \vdots & \ddots & \vdots & \vdots\\ \lambda_{n-1} & \lambda_{n} & \cdots & \lambda_{2n-2} & \lambda_{2n-1}\\ 1 & x & \cdots & x^{n-1} & x^{n} \end{array}\right| }{ \left|\begin{array}{ccccc} \lambda_{0} & \lambda_{1} & \cdots & \lambda_{n-2} & \lambda_{n-1}\\ \lambda_{1} & \lambda_{2} & \cdots & \lambda_{n-1} & \lambda_{n}\\ \vdots & \vdots & \ddots & \vdots & \vdots\\ \lambda_{n-2} & \lambda_{n-1} & \cdots & \lambda_{2n-4} & \lambda_{2n-3}\\ \lambda_{n-1} & \lambda_{n} & \cdots & \lambda_{2n-3} & \lambda_{2n-2} \end{array}\right| } = \sum \limits_{k=0}^n \frac{\Delta^{(n)}_k}{\Delta^{(n)}_n}x^k=\sum \limits_{k=0}^n d^{(n)}_k x^k\] </p>
+    <p class="indent">The \(\Delta\)s are the appropriate minors needed to expand the determinant of \(P\). These can be used to express the three-term recurrence coefficients in terms of the moments of the linear functional defining orthogonality, \(\lambda_n\). We look at \[ p_{n+1}-x p_n = \sum \limits_{k=0}^n (d^{(n+1)}_k - d^{(n)}_{k-1})x^k\]</p>
+    <p class="indent">We define \(d^{(n)}_{-1}=0\) to enable the sum to make sense. The upper limit is \(n\) rather than \(n+1\) since \(d_{n+1}^{(n+1)} - d_n^{(n)}=1-1=0\). The first recurrence coefficient can be obtained from the leading power, \(a_n=d_n^{(n+1)} - d_{n-1}^{(n)}\).</p>
+    <p class="indent">Subtracting out the \(a_n p_n\) term to give \(b_n p_{n-1}\) and looking at the leading power: \[b_n = d^{(n+1)}_{n-1}-d^{(n)}_{n-2}-a_nd^{(n)}_{n-1}\]</p>
+    <p class="indent">We note that \(\langle \lambda | p_n^2 \rangle = \langle \lambda | x^n p_n \rangle = \Delta^{(n+1)}_{n+1}/\Delta^{(n)}_n\), giving the simpler formula \(b_n= -\langle \lambda | p_n^2\rangle/\langle \lambda | p_{n-1}^2\rangle = -\Delta^{(n+1)}_{n+1}\Delta^{(n-1)}_{n-1}/(\Delta^{(n)}_n)^2\)</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/poly/2.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

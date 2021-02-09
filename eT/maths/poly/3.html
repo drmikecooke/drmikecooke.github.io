@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Polynomials 1/Linear functionals</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/poly/2.html" >◀ Previous</a></div>
+  <article>
+    <h1>Polynomials</h1>
+    <h2>Favard’s theorem</h2>
+    <p class="noindent">An interesting question is whether a given set of monic polynomials \(\{p_n\}\) with \(n \in \mathbb{Z}^+\) and leading term \(x^n\) can be made orthogonal through the construction of a linear functional \(\lambda\). The trivial functional, \(\lambda=0\), accomplishes the orthogonality, but is not useful for projecting an arbitrary polynomial on the given set of polynomials, for which we need \(\langle \lambda | p_n^2\rangle \neq 0\).</p>
+    <p class="indent">If the set is orthogonal for some non-trivial functional, it satisfies a three-term recurrence: \(p_{n+1} = (x+a_n)p_n + b_np_{n-1}\). Assuming none of the \(\langle \lambda | p_n^2\rangle \) are zero, the \(b_n=-\langle \lambda | p_n^2\rangle/\langle \lambda | p_{n-1}^2\rangle\) are not zero either.</p>
+    <p class="indent">We can extend the recurrence to \(p_1 = (x+a_0)p_0 + b_0 p_{-1}\) with \(p_0=1\) and \(p_{-1}=0\). If we set \(\langle \lambda | 1\rangle=1\), \(\langle \lambda | p_n \rangle = \langle \lambda | x^n +q \rangle=0\), with \(q\) a polynomial of degree less than \(n\), allows us to construct \(\langle \lambda | x^n \rangle\) from the form of \(p_n\) and \(\{\langle \lambda | x^k \rangle: k \lt n\}\).</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/poly/4.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
