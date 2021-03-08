@@ -29,7 +29,7 @@ function getJSON(year) {
                 imgpath = imagePath(year,mnth,i+1);
                 figure = addelement(month,"figure");
                 a = newel(figure,"a",{href:value[i].url,target:"_blank"});
-                caption = newel(a,"figcaption",{innerText:(i+1)+" "+value[i].caption});
+                caption = newel(a,"figcaption",{innerHTML:(i+1)+" "+value[i].caption});
                 img = newel(a,"img",{src:imgpath+value[i].img,alt:value[i].img,"style.height": "180px"});
             }
         }
