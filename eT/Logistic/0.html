@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Limits to growth 0</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+
+  <article>
+    <div id="header">
+      <h1>Limits to growth 0</h1>
+    </div>
+
+    <img class="center" src="images/0.svg" alt="image: 0.svg" />
+    <h3>Introduction</h3>
+    <div class="noindent">Mainly our thoughts here have been directed to constant growth and decay processes, but it is also interesting to consider limiting factors in a simple model. Here we will look at what is called the “logistic” equation, which implements a very simple method for describing growth limits.</div>
+    <div class="indent">Let’s look first at a standard discrete growth equation: \(n_{t+1}=k n_t\). If \(k\) is constant, this has the simple solution: \(n_t=k^tn_0\). If \(k>1\), the number \(n_t\) grows “exponentially” with time \(t\). The \(k<1\) behaviour is an exponential decay to zero. Finally, when \(k=1\) \(n_t\) is constant.</div>
+    <div class="indent">In real life, or “irl” as the twitterati would put it, things don't grow at the same rate forever. External factors come into play: food supplies run out, new technology is developed (in a human context), and so on. There are also internal factors that control biological processes such as cell division and so on.</div>
+    <div class="indent">A simple model for such limitation is to allow \(k\) to depend on the existing population \(n_t\). [One could also just make \(k\) time dependent, but that would lead to rather arbitrary results of little interest.] We expect \(k\) to decrease towards 1 as \(n\) increases. Perhaps the simplest way to implement a model for this would be to have \(k=k_0 - k' n_t\) with \(k_0,k'\) constants.</div>
+    <div class="arial">
+      <h4>Discrete logistics</h4>
+      <table>
+        <tr>
+          <td style="text-align: right;">\(k_0\): </td><td><input id="k0" size="2" value="1.5" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(k'\): </td><td><input id="dk" size="4" value="0.003" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(n_0\): </td><td><input id="n0" size="2" value="1" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="graph()">Graph</button>
+        <button type="button" onclick="table()">Table</button>
+        <button type="button" onclick="remove()">Remove</button>
+      </div>
+      <div id="variables" class="text-center plot-box"></div>
+
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('variables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+    <div class="indent">If you generate the graph with the default parameters, duplicating the head image, you should get a graph showing initial growth and eventual stability at a value of more than 150. The stability occurs when the growth factor \(k\) is 1. This happens when \(n_{+\infty} = (k_0-1)/k'\). With \(k_0=1.5,k'=0.03\), this is \(n_{+\infty} = 500/3 \approx 167\).</div>
+    <div class="indent">Initially, we will explore this behaviour in the continuum limit (essentially, \(k_0\rightarrow1\)), but eventually we will be more interested in extreme discrete situations such as \(k_0=4\) — try it out — wtf, right? Our predicted \(n_{+\infty}=1000\) is only a very rough average of apparently “chaotic” swings. The value of \(k_0=5\) swings \(n_t\) “out of the ballpark”.</div>
+  </article>
+
+  <div class="pointer"><a href="1.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+  <script src="js/0.js"></script>
+
+</body>
+</html>

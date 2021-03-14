@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>eT: Limits to growth 1</title>
+  <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="0.html">◀ Previous</a></div>
+  <article>
+    <div id="header">
+      <h1>Limits to growth 1</h1>
+    </div>
+    <img class="center" src="images/0.svg" alt="image: 0.svg" />
+    <h3>Rescalings</h3>
+    <h4>Gobbling up a parameter</h4>
+    <div class="noindent">We have noted that for smallish values of \(k_0\) the growth of our discrete logistic \(n_{t+1}=(k_0-k'n_t)n_t\) is limited by \(n_{+\infty}=(k_0-1)/k'\).</div>
+    <div class="indent">In mathematical/practical investigations it is often useful to create a standardized equation through suitable rescaling.The most obvious rescaling here is to scale the \(n_t\) dependent variable relative to \(n_{+\infty}\). Such a rescaling could affect the parameters in the related logistic equation.</div>
+    <div class="indent">Let us define \(n_{st}=n_t/n_{+\infty}\). Substituting \(n_t=n_{st}n_{+\infty}\) in the logistic equation \(n_{s(t+1)}n_{+\infty}=(k_0-k'n_{st}n_{+\infty})n_{st}n_{+\infty}\implies n_{s(t+1)}=(k_0-k'n_{st}n_{+\infty})n_{st}\).</div>
+    <div class="indent">We can read off the rescaled parameters: \(k_{s0}=k_0,k_s'=k'n_{+\infty}\). But if we consider the definition \(n_{+\infty}=(k_0-1)/k'\), \(k_s'=k_0-1\). The scaled logistic now just has one parameter: \(n_{s(t+1)}=(k_0-(k_0-1)n_{st})n_{st}\). The rescaling has gobbled up \(k'\). The new parameters give \(n_{s+\infty}=1\) by design.</div>
+    <h4>Time out or in?</h4>
+    <div class="indent">The next rescaling is a lot more ticklish. Up to now we have taken the time steps to be 1. The nuts behaviour we noted on the previous page is intimately connected with the discrete time used. When we take a continuum model for the time, the behaviour is much better controlled — and less interesting.</div>
+    <div class="indent">We might say: “But time <em>IS</em> continuous. Why bother with a discrete time at all?” Personally I have a wide range of responses to such an attitude, not all of them fit for publication. But how do we know time is continuous? I can imagine practical models where discrete time provides a better description of reality: for example, there are yearly effects on the way the world economy works in terms of farming, distribution, retail, etc. One thing that used to drive me mad was looking at economic reports that compared quarter year performance to the previous quarter rather than the same quarter in the previous year. Everyone knows (or should) that there is increased retail activity in the month of December in historically Christian countries (and in others that have been influenced by colonial incursions and neocolonial domination). This increase is prepared for upstream in the supply chain (design, tooling, production and so on) at different parts of the year.</div>
+  </article>
+
+  <div class="pointer"><a href="1.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/Table.js"></script>
+  <script src="/js/download.js"></script>
+  <script src="js/0.js"></script>
+
+</body>
+</html>
