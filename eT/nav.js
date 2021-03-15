@@ -39,6 +39,7 @@ document.body.appendChild(navstyle);
 var navbar = document.createElement("nav");
 navbar.innerHTML += '<a href="/" style="float:right">Back to base</a>\n';
 navbar.innerHTML += anchor("/eT","Prospectus");
+navbar.innerHTML += anchor("/eT/Logistic/0.html","Limits");
 navbar.innerHTML += anchor("/eT/Power/Power.html","Powering<sup>up</sup>");
 navbar.innerHTML += anchor("/eT/Backlog/backlog.html","Backlog");
 drop("Analysis","/eT/",[["Basic analysis/basic.html","Basic"],["Richardson/Richardson.html","Richardson extrapolation"]]);

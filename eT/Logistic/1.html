@@ -11,6 +11,9 @@
   <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script>
+    window.MathJax = {loader: {load: ['[tex]/physics']},tex: {packages: {'[+]': ['physics']}}};
+  </script>
 </head>
 
 <body>
@@ -31,6 +34,12 @@
     <h4>Time out or in?</h4>
     <div class="indent">The next rescaling is a lot more ticklish. Up to now we have taken the time steps to be 1. The nuts behaviour we noted on the previous page is intimately connected with the discrete time used. When we take a continuum model for the time, the behaviour is much better controlled — and less interesting.</div>
     <div class="indent">We might say: “But time <em>IS</em> continuous. Why bother with a discrete time at all?” Personally I have a wide range of responses to such an attitude, not all of them fit for publication. But how do we know time is continuous? I can imagine practical models where discrete time provides a better description of reality: for example, there are yearly effects on the way the world economy works in terms of farming, distribution, retail, etc. One thing that used to drive me mad was looking at economic reports that compared quarter year performance to the previous quarter rather than the same quarter in the previous year. Everyone knows (or should) that there is increased retail activity in the month of December in historically Christian countries (and in others that have been influenced by colonial incursions and neocolonial domination). This increase is prepared for upstream in the supply chain (design, tooling, production and so on) at different parts of the year.</div>
+    <div class="indent">Here we will be assuming that the changes in \(n\) become smaller as the time step reduces. I understand there are stochastic processes where this assumption is not true. I also suspect the point is moot in quantum systems relative to the Heisenberg uncertainty principle. These are points I might explore in more depth at some point.</div>
+    <div class="indent">As mentioned elsewhere on this site, the Greek upper-case letter \(\Delta\) (“delta”) is used to represent changes. The lower-case version \(\delta\) is also sometimes used according to taste and with the added implication that a limiting process is being proposed. The actual limit then becomes a Latin letter “d”.</div>
+    <div class="indent">Let us look at how this works with our scaled equation \(n_{(t+1)}=(k_0-(k_0-1)n_{t})n_{t}\). We hope it is alright to drop the “s” from the subscript as unnecessary clutter. The change at \(t\) is: \(\Delta n_t = n_{t+1} - n_t = (k_0-1)(1-n_t)n_t\). The change in \(t\) itself is \(\Delta t =1\), so one could write with a view to time scaling: \[\Delta n_t=(k_0-1)(1-n_t)n_t \Delta t\].</div>
+    <div class="indent">For those familiar with differential equations, this becomes in the limit \(\delta t \rightarrow 0\): \[\dv{n}{t}=\kappa (1-n)n\] where I have replaced \(k_0 -1\) with \(\kappa\).</div>
+    <div class="indent">The behaviour of the solution is detemined by the value at one point in time: \[n(t)=\frac{1}{1+e^{-\kappa (t-t_0)}}\] with \(t_0\) being a parameter fixed by the value of \(n\) at the given time, e.g. \(t=0\).</div>
+    <div class="indent">We can further standardize by taking \(\kappa=1\) and scaling the \(t\) variable suitably, \(n_\kappa(t)=n_1(\kappa t)\): \[n_1(t)=\frac{1}{1+e^{-(t-t_0)}}\] (with a different \(t_0\) value).</div>
   </article>
 
   <div class="pointer"><a href="1.html" class="pointright" style="display:none;">Next ▶</a></div>
