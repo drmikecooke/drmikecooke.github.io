@@ -40,6 +40,31 @@
     <div class="indent">For those familiar with differential equations, this becomes in the limit \(\delta t \rightarrow 0\): \[\dv{n}{t}=\kappa (1-n)n\] where I have replaced \(k_0 -1\) with \(\kappa\).</div>
     <div class="indent">The behaviour of the solution is detemined by the value at one point in time: \[n(t)=\frac{1}{1+e^{-\kappa (t-t_0)}}\] with \(t_0\) being a parameter fixed by the value of \(n\) at the given time, e.g. \(t=0\).</div>
     <div class="indent">We can further standardize by taking \(\kappa=1\) and scaling the \(t\) variable suitably, \(n_\kappa(t)=n_1(\kappa t)\): \[n_1(t)=\frac{1}{1+e^{-(t-t_0)}}\] (with a different \(t_0\) value).</div>
+    <div class="arial">
+      <h4>Continuum logistics</h4>
+      <table>
+        <tr>
+          <td style="text-align: right;">\(\Delta t\): </td><td><input id="dt" size="2" value="1" style="font-size: 1em; text-align: right;"></td>
+          <td style="text-align: right;">\(n_0\): </td><td><input id="n0" size="2" value="0.01" style="font-size: 1em; text-align: right;"></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button type="button" onclick="graph()">Graph</button>
+        <button type="button" onclick="table()">Table</button>
+        <button type="button" onclick="remove()">Remove</button>
+      </div>
+      <div id="variables" class="text-center plot-box"></div>
+
+      <div id="saveSVG" class="text-center" style="display:none;">
+        <button type="button" onclick="savePlotly('variables', getValue('svgFile')+'.svg')">Save as . . .</button>
+        <input id="svgFile" size="8" value="plot" style="font-size:1em;text-align:right;">.svg
+      </div>
+      <div id="saveCSV" class="text-center" style="display:none;">
+        <button type="button" onclick="downloadMIME(window.fTable.CSV(), getValue('csvFile')+'.csv','text/csv')">Save as . . .</button>
+        <input id="csvFile" size="8" value="table" style="font-size:1em;text-align:right;">.csv
+      </div>
+    </div>
+    <div class="indent">The \(n_1\) curve is the theoretical limit as \(\Delta t \rightarrow 0\) described above. The \(n\) curve is the approximation that has the discrete logistic form: \[n_{t+\Delta t}=n_t + \Delta t (1-n_t)n_t\] — in essence the step size \(\Delta t\) has taken the place of \(\kappa\) and the \(t\)-scale has been redefined. Reducing \(\Delta t\) to zero brings the curves closer together.</div>
   </article>
 
   <div class="pointer"><a href="1.html" class="pointright" style="display:none;">Next ▶</a></div>
@@ -48,7 +73,7 @@
   <script src="/js/data.js"></script>
   <script src="/js/Table.js"></script>
   <script src="/js/download.js"></script>
-  <script src="js/0.js"></script>
+  <script src="js/1.js"></script>
 
 </body>
 </html>
