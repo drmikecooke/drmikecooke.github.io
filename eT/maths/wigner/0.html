@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: The union makes us strong</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="/eT/maths/bernoulli/" style="display:none;">◀ Previous</a></div>
+  <article>
+<h1>Wigner’s symmetry representation theorem</h1>
+<h2>Introduction</h2>
+<p class="noindent">I will assume familiarity with standard quantum mechanics, written using ‘Dirac notation’:</p>
+<p>\[\left\langle \psi|\varphi\right\rangle\]</p>
+<p class="indent">This is an unnormalized transition amplitude between states: \(\varphi\rightarrow\psi\). The amplitude becomes a probability: \[P_{\varphi\rightarrow\psi}=\frac{\left|\left\langle \psi|\varphi\right\rangle \right|^{2}}{\left\langle \psi|\psi\right\rangle \left\langle \varphi|\varphi\right\rangle }\]</p>
+<p class="indent">This represents the probability of measuring the system as being in the state \(\psi\) from a system prepared in the state \(\varphi\). There are linear/vector relations between states, and this is reflected in the Dirac ‘bra-kets’: \[\left\langle \psi|\alpha\varphi_{1}+\beta\varphi_{2}\right\rangle =\alpha\left\langle \psi|\varphi_{1}\right\rangle +\beta\left\langle \psi|\varphi_{2}\right\rangle\]</p>
+<p class="indent">The final important relation is \(\left\langle \psi|\varphi\right\rangle =\left\langle \varphi|\psi\right\rangle ^{*}\), where the asterisk indicates complex conjugation. This has the implication that \(\left\langle \psi|\psi\right\rangle\) and \(\left\langle \varphi|\varphi\right\rangle\) are real. Also: \[P_{\varphi\rightarrow\psi}=\frac{\left\langle \psi|\varphi\right\rangle \left\langle \varphi|\psi\right\rangle }{\left\langle \psi|\psi\right\rangle \left\langle \varphi|\varphi\right\rangle }\]</p>
+<p class="indent">An important observation is that for a non-zero complex number \(\alpha\), the state \(\alpha\varphi\) is the same as \(\varphi\). In fact if you work through the relations you find the probabilities are unchanged: \[P_{\alpha\varphi\rightarrow\beta\psi}=P_{\varphi\rightarrow\psi},\left(\alpha,\beta\neq0\right)\]</p>
+<p class="indent">The states represented by the vectors \(\varphi,\psi\) can also be represented by \(\alpha\varphi,\beta\psi\) with \(\alpha,\beta\neq0\). The states correspond to the ‘rays’ \(\left[\varphi\right]=\left\{ \alpha\varphi:\alpha\in\mathbb{C}-\left\{ \varnothing\right\} \right\}\).</p>
+<p class="indent">We are interested in symmetry relations between states — in other words mappings of states in the same or different system that maintain the probabilities between the transformed states. It will be found that these can all be represented by unitary (\(U\)) or antiunitary (\(A\)) operators (not both, in general) on the states vectors \(\varphi,\psi\). These operators, if they exist, satisfy \(\left\langle U\psi|U\varphi\right\rangle =\left\langle \psi|\varphi\right\rangle\) or \(\left\langle A\psi|A\varphi\right\rangle =\left\langle \varphi|\psi\right\rangle\). The operator \(U\) is linear: \(U\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)=\alpha U\varphi_{1}+\beta U\varphi_{2}\). By contrast, \(A\) is antilinear: \(A\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)=\alpha^{*}A\varphi_{1}+\beta^{*}A\varphi_{2}\). This is Wigner’s symmetry representation theorem. There are many complex proofs and extensions thereof. I will base my work on the two that I understand, given essentially by Bargmann and Uhlhorn. The latter I have seen only in the form given by Chevalier. [My bra-ket definition is linear on the second place, and anti-linear on the first place, as usual in the physics literature. Chevalier uses the opposite convention, more common among mathematicians.]</p>
+<p class="indent">Strictly the operators are only (anti)unitary if they are onto, allowing an inverse to be defined. Then the inverse operations can be related to the adjoints: \(U^{-1}=U^{\dagger}\) and \(A^{-1}=A^{\dagger}\). [The respective adjoints are defined by \(\left\langle U\psi|\varphi\right\rangle =\left\langle \psi|U^{\dagger}\varphi\right\rangle\) and \(\left\langle A\psi|\varphi\right\rangle =\left\langle A^{\dagger}\varphi|\psi\right\rangle\).]</p>
+  </article>
+
+  <div class="pointer"><a href="1.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

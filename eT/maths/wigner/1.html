@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+ <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+ <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+ <title>Maths bit: The union makes us strong</title>
+ <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+ <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+ <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+ <script src="/eT/nav.js"></script>
+ <div class="pointer"><a href="/eT/maths/bernoulli/" style="display:none;">◀ Previous</a></div>
+ <article>
+<h1>Wigner’s symmetry representation theorem</h1>
+<h2>LEMMA 1</h2>
+<p class="noindent italic">Let \(H,H^{\prime}\) be complex inner product spaces and consider a mapping \(f\) from a subset \(D\) of \(H\) into \(H^{\prime}\) which preserves the modulus of the inner product. For any pair \(\varphi_{1,2}\) of mutually nonzero orthogonal vectors of \(D\) and any pair of complex numbers \(\alpha,\beta\) such that \(\alpha\varphi_{1}+\beta\varphi_{2}\in D\) there exist \(\alpha^{\prime},\beta^{\prime}\in\mathbb{C}\) such that \[f\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)=\alpha^{\prime}f\varphi_{1}+\beta^{\prime}f\varphi_{2}\]Moreover, \(\left|\alpha\right|=\left|\alpha^{\prime}\right|,\left|\beta\right|=\left|\beta^{\prime}\right|\).</p>
+<p class="noindent">The mapping \(f\) satisfies \(\left|\langle f\psi|f\varphi\rangle\right|=\left|\langle\psi|\varphi\rangle\right|\) for \(\varphi,\psi\in D\).</p>
+<p class="indent">We have \(\left|\langle f\alpha\varphi|f\varphi\rangle\right|=\left|\langle\alpha\varphi|\varphi\rangle\right|=\left|\alpha\right|\left\Vert \varphi\right\Vert ^{2}=\left\Vert f\alpha\varphi\right\Vert \left\Vert f\varphi\right\Vert\). The extremes can only be equal if the vectors are linearly dependent (Schwarz inequality). Thus \(f\alpha\varphi=\alpha^{\prime}f\varphi\). The inner product also requires \(\left|\alpha\right|=\left|\alpha^{\prime}\right|\).</p>
+<p class="indent">If \(\langle\varphi_{1}|\varphi_{2}\rangle=0\), i.e. the vectors are ‘orthogonal’, then \(f\varphi_{1,2}\) are also orthogonal. We can Fourier expand: \[\left|f\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)\right\rangle =\frac{\left|f\varphi_{1}\right\rangle \langle f\varphi_{1}|f\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)\rangle}{\left\Vert f\varphi_{1}\right\Vert ^{2}}+\frac{\left|f\varphi_{2}\right\rangle \langle f\varphi_{2}|f\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)\rangle}{\left\Vert f\varphi_{2}\right\Vert ^{2}}\]</p>
+<p class="indent">The two sides have the same norm, \(\left|\alpha\right|^{2}\left\Vert \varphi_{1}\right\Vert ^{2}+\left|\beta\right|^{2}\left\Vert \varphi_{2}\right\Vert ^{2}\), so there are no missing vector components in the subspace orthogonal to \(f\varphi_{1,2}\). [Chevalier’s presentation assumes that if a vector is in the domain, a corresponding unit vector is too.]</p>
+ </article>
+
+ <div class="pointer"><a href="/eT/maths/sum/1.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+ <script src="/js/footer.js"></script>
+
+</body>
+</html>
