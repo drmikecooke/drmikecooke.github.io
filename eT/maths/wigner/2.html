@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="1.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>From modulus preserving towards an additive phase-equivalent map</h2>
+    <p class="noindent italic"><em>Proposition 2, step 1:</em> Construct a phase-equivalent map \(A\) on a subset, given \(H,H^{\prime}\) complex inner product spaces with \(dim H&gt;2\) and a modulus-preserving mapping \(T\) from \(H\) into \(H^{\prime}\).</p>
+    <p class="noindent">Begin by choosing \(\varphi_0 \in H\) with \(\left\Vert\varphi_0\right\Vert=1\). \(A\) will be defined on the subset \(D=(\varphi_0+[\varphi_0]^\perp) \cup [\varphi_0]^\perp\), where the subspace \([\varphi_0]^\perp=\{\varphi:\langle \varphi | \varphi_0 \rangle = 0 \}\) (the hyperplane orthogonal to \([\varphi_0]\)). The subset \(D\) is a disjoint union of its defining components, \(\varphi_0+[\varphi_0]^\perp\), \([\varphi_0]^\perp\) — i.e. \((\varphi_0+[\varphi_0]^\perp) \cap [\varphi_0]^\perp=\varnothing\).</p>
+    <p class="indent">For \(\varphi \in \varphi_0+[\varphi_0]^\perp\), \(A(\varphi)=T(\varphi)/\langle T(\varphi_0)|T(\varphi)\rangle\). We note \(|\langle T(\varphi_0)|T(\varphi)\rangle|=|\langle \varphi_0|\varphi\rangle|=1\), making the maps phase-equivalent on this subset. Further, \(\langle A(\varphi_0) | A(\varphi) \rangle = 1\).</p>
+    <p class="indent">For \(\varphi \in [\varphi_0]^\perp\), we want \(A(\varphi)=A(\varphi_0+\varphi)-A(\varphi_0)\).</p>
+    <p class="indent">Lemma 1 shows that \(T(\varphi_0+\varphi)\) is in the subspace spanned by the orthogonal vectors \(T(\varphi_0),T(\varphi)\). Using the inner product to project: \[|T(\varphi_0+\varphi)\rangle = \frac{|T(\varphi_0)\rangle \langle T(\varphi_0)| T(\varphi_0+\varphi) \rangle}{\left\Vert T(\varphi_0)\right\Vert^2} + \frac{|T(\varphi)\rangle \langle T(\varphi)| T(\varphi_0+\varphi) \rangle}{\left\Vert T(\varphi)\right\Vert^2}\]</p>
+    <p class="indent">Using facts like \(\left\Vert T(\varphi_0)\right\Vert=1\), we can boil down to: \[A(\varphi)=\frac{\langle T(\varphi)| T(\varphi_0+\varphi) \rangle}{\langle T(\varphi_0)| T(\varphi_0+\varphi) \rangle \left\Vert T(\varphi)\right\Vert^2}T(\varphi)\]</p>
+    <p class="indent">As before \(|\langle T(\varphi_0)| T(\varphi_0+\varphi) \rangle|=|\langle \varphi_0| \varphi_0+\varphi \rangle|=1\). Similar reasoning gives \(|\langle T(\varphi)| T(\varphi_0+\varphi) \rangle|=|\langle \varphi| \varphi_0+\varphi \rangle|=\left\Vert \varphi\right\Vert^2=\left\Vert T(\varphi)\right\Vert^2\). Combining these observations we see that \(A\) and \(T\) differ only by a phase factor on \(D\).</p>
+  </article>
+
+  <div class="pointer"><a href="/eT/maths/sum/1.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
