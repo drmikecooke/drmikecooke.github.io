@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="2.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Checking (anti)linearity is universal</h2>
+    <p class="noindent italic">Proposition 2, step 4: \(A\) is linear or antilinear on \([\varphi_0]^\perp\) but not both. Using this, \(A\) is extended to all of \(H\).</p>
+    <p class="noindent">We know that \(A\) is linear or antilinear on each ray. If \(\psi_1,\psi_2\) are orthogonal in \([\varphi_0]^\perp\), and \(A\) is linear on \([\psi_1]\) and antilinear on \([\psi_2]\), we have \(\Vert A(\psi_1+\psi_2)\Vert^2=\Vert A(\psi_1)\Vert^2+\Vert A(\psi_2)\Vert^2\) by additivity. But also \[\begin{aligned} \Vert A(\psi_1+\psi_2)\Vert^2&=\langle A(\psi_1+\psi_2)|A(\psi_1+\psi_2)\rangle\\&=|\mathrm{i} \langle A(\psi_1+\psi_2)|A(\psi_1+\psi_2)\rangle|\\&=|\langle A(\psi_1+\psi_2)|\mathrm{i}A(\psi_1)+\mathrm{i}A(\psi_2)\rangle|\\&=|\langle A(\psi_1+\psi_2)|A(\mathrm{i}\psi_1)-A(\mathrm{i}\psi_2)\rangle|\\&=|\Vert A(\psi_1)\Vert^2-\Vert A(\psi_2)\Vert^2|\end{aligned}\] The key part of this sequence is the use of the linearity/antilinearity in the respective rays, \(|\langle A(\psi_1+\psi_2)|\mathrm{i}A(\psi_1)+\mathrm{i}A(\psi_2)\rangle|=|\langle A(\psi_1+\psi_2)|A(\mathrm{i}\psi_1)-A(\mathrm{i}\psi_2)\rangle|\). The upshot is that \(\Vert A(\psi_1)\Vert^2+\Vert A(\psi_2)\Vert^2=|\Vert A(\psi_1)\Vert^2-\Vert A(\psi_2)\Vert^2|\), which implies that one of the ‘rays’ is in fact zero, i.e. not really a ray. Thus orthogonal rays all have the same linearity or antilinearity character.</p>
+    <p class="indent">The action of \(A\) on any vector \(\chi=\alpha_1\psi_1+\alpha_2\psi_2\) in the subspace spanned by \(\psi_1,\psi_2\) maintains their (anti)linear character: \(A(\alpha\chi)=\alpha'\alpha_1' A(\psi_1)+\alpha'\alpha_2' A(\psi_2)=\alpha'A(\chi)\), where the prime operation is the appropriate identity or conjugation for the linear/antilinear character of \(\psi_1,\psi_2\).</p>
+    <p class="indent">We can extend the definition of \(A\) to the whole of \(H\): \(A(\alpha\varphi_0+\varphi)=\alpha'A(\varphi_0)+A(\varphi)\), where \(\varphi \in [\varphi_0]^\perp\).</p>
+  </article>
+
+  <div class="pointer"><a href="4.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

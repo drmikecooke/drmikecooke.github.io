@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="3.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Checking relation of \(A\) and \(T\)</h2>
+    <p class="noindent italic">Proposition 2, step 5: \(A\) and \(T\) differ by a phase factor. Further \(A\) is an (anti)isometry.</p>
+    <p class="noindent">We already know that \(A\) is phase-equivalent to \(T\) on \(D=(\varphi_0+[\varphi_0]^\perp) \cup [\varphi_0]^\perp\). Thus for general \(\varphi \in [\varphi_0]^\perp\), we have \(T(\alpha \varphi_0 +\varphi)=\alpha' T(\varphi_0+\varphi/\alpha)=\alpha' \gamma A(\varphi_0+\varphi/\alpha)=\alpha' \gamma A(\alpha\varphi_0+\varphi)/\hat\alpha\), where \(\hat\alpha\) is the identity or conjugate of \(\alpha\), according to (anti)linearity of \(A\). Since \(|\gamma|=1\) and \(|\alpha'|=|\hat\alpha|=|\alpha|\), \(|\alpha' \gamma/\hat\alpha|=1\). \(A\) and \(T\) thus differ by a phase factor. Thus \(A\) is norm-preserving, hence bounded, hence continuous.</p>
+    <p class="indent">From additivity: \(\Vert A(\varphi +\psi)\Vert^2=\Vert A(\varphi)\Vert^2+\Vert A(\psi)\Vert^2+\langle A(\varphi)|A(\psi)\rangle+\langle A(\psi)|A(\varphi)\rangle\).</p>
+    <p class="indent">Also: \(\Vert A(\varphi +\psi)\Vert^2=\langle \varphi +\psi|\varphi +\psi\rangle=\Vert \varphi\Vert^2+\Vert \psi\Vert^2+\langle \varphi|\psi\rangle+\langle \psi|\varphi\rangle\).</p>
+    <p class="indent">Since \(\Vert A(\varphi)\Vert^2=\Vert \varphi\Vert^2\), and similarly for \(\psi\): \(\langle A(\varphi)|A(\psi)\rangle+\langle A(\psi)|A(\varphi)\rangle=\langle \varphi|\psi\rangle+\langle \psi|\varphi\rangle\).</p>
+    <p class="indent">Applying the properties of the inner product: \(\langle A(\varphi)|A(\mathrm i\psi)\rangle+\langle A(\mathrm i\psi)|A(\varphi)\rangle=\langle \varphi|\mathrm i\psi\rangle+\langle \mathrm i\psi|\varphi\rangle=\mathrm i(\langle \varphi|\psi\rangle-\langle \psi|\varphi\rangle)\).</p>
+    <p class="indent">Applying (anti)linearity, and inner product properties: \(\langle A(\varphi)|A(\mathrm i\psi)\rangle+\langle A(\mathrm i\psi)|A(\varphi)\rangle=\hat{\mathrm i}(\langle A(\varphi)|A(\psi)\rangle-\langle A(\psi)|A(\varphi)\rangle)\).</p>
+    <p class="indent">Equating: \(\langle A(\varphi)|A(\psi)\rangle-\langle A(\psi)|A(\varphi)\rangle=\pm (\langle A(\varphi)|A(\psi)\rangle-\langle A(\psi)|A(\varphi)\rangle)\). The plus sign corresponds to linearity and the minus to antilinearity. Hence \(\langle A(\varphi)|A(\psi)\rangle=\langle \varphi|\psi\rangle\) in the linear case, and \(\langle A(\varphi)|A(\psi)\rangle=\langle \psi|\varphi\rangle\), antilinear. This can be abbreviated to \(\langle A(\varphi)|A(\psi)\rangle=\widehat{\langle \varphi|\psi\rangle}\).</p>
+  </article>
+
+  <div class="pointer"><a href="5.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
