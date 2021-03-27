@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="4.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Symmetry and (anti)unitarity</h2>
+    <p class="noindent italic">Proposition 2, step 6. If \(T\) is a symmetry on \(H\), a phase-equivalent (anti)isometry \(A\) is (anti)unitary.</p>
+    <p class="noindent">\(T:H\rightarrow H\) is surjective. There is a phase-equivalent (anti)isometry \(A:H\rightarrow H\), which is also surjective: \[T(\varphi)=\psi\implies A(\varphi)=\lambda \psi\implies A(\varphi/\overline\lambda)=\psi,\] where the overline gives the appropriate (anti)linear value. As an (anti)isometry, \(A\) is also injective since \[A(\varphi)=0\implies \Vert A(\varphi)\Vert^2=0\implies \Vert \varphi\Vert^2=0\implies\varphi=0.\]</p>
+    <p class="indent">We define the (anti)linear adjoint: \[\langle \varphi | A^\dagger(\psi) \rangle=\overline{\langle A(\varphi) | \psi \rangle}.\] As an isometry: \[\langle A(\varphi) | A(\psi) \rangle=\overline{\langle \varphi | \psi \rangle}=\overline{\langle \varphi | A^\dagger(A(\psi)) \rangle}\implies A^\dagger A=\mathbb 1_H,\] the identity on \(H\).</p>
+    <p class="indent">Surjectivity (injectivity) implies for there exists a (unique) \(\psi'\) such that \(\psi=A(\psi')\). Hence, \(A A^\dagger(\psi)=A A^\dagger A(\psi')=A(\psi')=\psi\implies A A^\dagger=\mathbb 1_H\). \(A^\dagger\) is the inverse of \(A\), and so \(A\) is (anti)unitary.</p>
+  </article>
+
+  <div class="pointer"><a href="6.html" class="pointright" style="display:none;">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
