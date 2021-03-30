@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="A.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Uhlhorn 3 — normalizing \(\theta\)</h2>
+    <p class="noindent italic">Normalize \(\theta\) to give an isometry \(\Theta:H\rightarrow H'\).</p>
+    <p class="noindent">Define \(\delta:H-{0}\rightarrow \mathbb R\) from \(\Vert\theta(x)\Vert=\delta(x)\Vert x\Vert\).</p>
+    <p class="indent">For non-orthogonal \(x,y\), \(y\) is orthogonal to \(z=\langle y|y\rangle x-y\langle y|x\rangle\). Orthogonality is preserved by \(\theta\) so \(0=\langle \theta(y)|\theta(z)\rangle=\phi(\Vert y\Vert^2)\langle \theta(y)|\theta(x)\rangle-\phi(\langle y|x\rangle)\Vert \theta(y)\Vert^2\). Similarly, \(\phi(\Vert x\Vert^2)\langle \theta(x)|\theta(y)\rangle-\phi(\langle x|y\rangle)\Vert \theta(x)\Vert^2=0\). From \(\phi(\overline \alpha)=\overline{\phi(\alpha)}\), the reals are mapped onto themselves (Yale, theorem 3), and the action on the complex numbers is either the identity or conjugation. Hence \[\begin{align}\langle \theta(y)|\theta(x)\rangle&=\frac{\phi(\langle y|x\rangle)\Vert \theta(y)\Vert^2}{\phi(\Vert y\Vert^2)}=\frac{\phi(\langle y|x\rangle)\Vert \theta(y)\Vert^2}{\Vert y\Vert^2}=\phi(\langle y|x\rangle)\delta(y)^2\\&=\overline{\phi(\langle x|y\rangle)}\delta(x)^2=\phi(\langle y|x\rangle)\delta(x)^2\end{align}.\] Hence \(\delta(x)=\delta(y)\). The value of \(\delta\) is independent of the vector. If we define \(\Theta=\theta/\delta\), one has \(\langle \Theta(y)|\Theta(x)\rangle=\phi(\langle y|x\rangle)\). Since \(\phi\) is the identity or complex conjugate \(\Theta\) is an (anti)isometry. It \(T\) is onto, \(\Theta\) is also onto (and hence (anti)unitary), since \(\Theta(\alpha x)=\phi(\alpha)\Theta(x)\), so rays are mapped onto rays. Hence:</p>
+    <p class="noindent italic">PROPOSITION 8 ([Uhlhorn, 1962, Lemma 3.4, Theorems 4.1 and 4.2]). Let \(H,H'\) be complex Hilbert spaces with \(\mathrm{dim} H\ge 3\). If \(T:[H]\rightarrow[H']\) is an \(\perp\)-symmetry then there exists a unitary or antiunitary operator \(\Theta:H\rightarrow H'\) which induces \(T\). The operator \(\Theta\) is determined by \(T\) up to a complex factor of modulus 1.</p>
+  </article>
+
+  <div class="pointer"><a href="C.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

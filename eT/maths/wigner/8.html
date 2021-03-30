@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="7.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Lemma 7</h2>
+    <p class="noindent italic">1. In an inner product space \(H\), \(n+1\) vectors \(\varphi_1, \dots, \varphi_{n+1}\) are linearly independent exactly if the \(n\) first vectors are linearly independent and there exists a vector \(\psi\) which is orthogonal to the first \(n\) vectors and non-orthogonal to \(\varphi_{n+1}\).</p>
+    <p class="noindent">Applying Gram-Schmidt orthogonalization to the linearly independent sequence, results in a sequence of orthogonal vectors \(\psi_1(=\varphi_1), \dots, \psi_{n+1}\). The last vector \(\psi_{n+1}\) is orthogonal to the first \(n\) vectors of the original sequence, but not \(\varphi_{n+1}\).</p>
+    <p class="indent">Conversely, we have \(\varphi_1, \dots, \varphi_n\) linearly independent, and orthogonal \(\psi\) that is not orthogonal to \(\varphi_{n+1}\). If \(\lambda_1\varphi_1+ \dots+\lambda_{n+1} \varphi_{n+1}=0\), we have \(\langle \psi | \lambda_1\varphi_1+ \dots+\lambda_{n+1} \varphi_{n+1}\rangle=\lambda_{n+1}\langle \psi|\varphi_{n+1}\rangle=0\implies \lambda_{n+1}=0\), since \(\langle \psi|\varphi_{n+1}\rangle\ne0\). Therefore \(\lambda_1\varphi_1+ \dots+\lambda_n \varphi_n=0\implies \lambda_k=0, 1\le k\le n\), since the first \(n\) vectors are linearly independent. Thus:</p>
+    <p class="noindent italic">2. Every bijective mapping \(F:H\rightarrow H'\) preserving orthogonality of vectors in both directions also preserves linear independence of vectors in both directions and its
+extension to the set of all rays of \(H,H'\) preserves independence of rays in both directions.</p>
+  </article>
+
+  <div class="pointer"><a href="9.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

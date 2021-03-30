@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="9.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Uhlhorn 2 — rescaling \(\tau\)</h2>
+    <p class="noindent italic">Using \(\tau,\omega\) and arbitrary fixed vector \(x_0\ne 0\), construct bijective, additive \(\theta:H\rightarrow H'\).</p>
+    <p class="noindent">We define \(\theta(y)=\tau(y)\omega(y,x_0)\). Using the properties of the components, we have additivity: \[\begin{align}\theta(y_1+y_2)&=\tau(y_1+y_2)\omega(y_1+y_2,x_0)\\&=[\tau(y_1)\omega(y_1,y_1+y_2)+\tau(y_2)\omega(y_2,y_1+y_2)]\omega(y_1+y_2,x_0)\\&=\tau(y_1)\omega(y_1,x_0)+\tau(y_2)\omega(y_2,x_0)\\&=\theta(y_1)+\theta(y_2)\end{align}\]</p>
+    <p class="indent">The function preserves the \(\perp\)-symmetry since \(T([y])=\mathbb C \tau(y)=\mathbb C \theta(y)\).</p>
+    <p class="indent">We now explore the effect of scalar multiplication by \(\alpha\ne 0\), defining \(\theta(\alpha x)=\varphi(\alpha,x)\theta(x)\), since \([\alpha x]=[x]\):\[\theta(\alpha x+\alpha y)=\theta(\alpha x)+\theta(\alpha y)=\varphi(\alpha,x)\theta(x)+\varphi(\alpha,y)\theta(y)\] and \[\theta(\alpha (x+y))=\varphi(\alpha,x+y)\theta(x+y)=\varphi(\alpha,x+y)\theta(x)+\varphi(\alpha,x+y)\theta(y).\] Hence, \(\phi(\alpha)=\varphi(\alpha,x)=\varphi(\alpha,x+y)=\varphi(\alpha,y)\) is independent of the vectors \(x,y\). We complete the definition with \(\phi(0)=0\).</p>
+    <p class="indent">We find that \(\phi\) is a homomorphism (automporphism, since non-zero) of the complex field: \(\theta((\alpha+\beta)x)=\phi(\alpha+\beta)\theta(x)\) and \(\theta(\alpha x+\beta x)=\theta(\alpha x)+\theta(\beta x)=(\phi(\alpha)+\phi(\beta))\theta(x)\) give additivity; \(\theta((\alpha\beta) x)=\phi(\alpha\beta)\theta(x)\) and \(\theta(\alpha(\beta x))=\phi(\alpha)\phi(\beta)\theta(x)\) give multiplicativity. Clearly, \(\phi(1)=1\).</p>
+    <p class="indent">Given \(x,y\) orthogonal and equal normed, \(x+\alpha y,x-\overline \alpha^{-1}y\) are also orthogonal. \(\theta\) preserve orthogonality, so: \(\Vert\theta(x)\Vert^2-\overline{\phi(\alpha)}\phi(\overline \alpha^{-1})\Vert\theta(x)\Vert^2=0\). Hence: \[\overline{\phi(\alpha)}\phi(\overline \alpha^{-1})=\frac{\Vert\theta(x)\Vert^2}{\Vert\theta(y)\Vert^2}.\] The right-hand side is independent of \(\alpha\), so \(\overline{\phi(\alpha)}\phi(\overline \alpha^{-1})=\overline{\phi(1)}\phi(1)=1\implies \overline{\phi(\alpha)}=\phi(\overline \alpha)\).</p>
+  </article>
+
+  <div class="pointer"><a href="B.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
