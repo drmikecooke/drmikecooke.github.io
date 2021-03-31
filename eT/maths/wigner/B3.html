@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="B2.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Bargmann 4 — additivity on \([\varphi_0]^\perp\)</h2>
+    <p class="noindent italic">Chevalier, Proposition 2, step 3: The restriction of \(A\) to \([\varphi_0]^\perp\) is additive.</p>
+    <p class="noindent">First we consider orthogonal unit vectors \(\varphi_1,\varphi_2 \in [\varphi_0]^\perp\). We want to show that the double prime coefficients \(A(\alpha_1\varphi_1+\alpha_2\varphi_2)=\alpha_1''A(\varphi_1)+\alpha_2''A(\varphi_2)\) are the same as for \(A(\alpha_1\varphi_1)=\alpha_1'A(\varphi_1)\) and \(A(\alpha_2\varphi_2)=\alpha_2'A(\varphi_2)\). As above, we consider the two forms for \(|\langle A(\varphi_0+\alpha_1\varphi_1)|A(\varphi_0+\alpha_1\varphi_1+\alpha_2\varphi_2)\rangle|\): this gives \(|1+\alpha_1'^*\alpha_1''|=|1+\alpha_1^*\alpha_1|\). Since \(\alpha_1^*\alpha_1\) is real positive, we have that \(\alpha_1'^*\alpha_1''\) is real positive (so in Lemma 3, the two alternative results are in fact the same), and further \(\alpha_1'^*\alpha_1''=\alpha_1^*\alpha_1\). Since \(|\alpha_1|=|\alpha_1'|=|\alpha_1''|\), we deduce \(\alpha_1''=\alpha_1'\). Similarly, \(\alpha_2''=\alpha_2'\). Hence \(A(\alpha_1\varphi_1+\alpha_2\varphi_2)=A(\alpha_1\varphi_1)+A(\alpha_2\varphi_2)\).</p>
+    <p class="indent">Now consider vectors \(\psi_1,\psi_2\) in the subspace spanned by \(\varphi_1,\varphi_2\). We have \(\psi_1=\alpha_1\varphi_1+\alpha_2\varphi_2\) and \(\psi_2=\beta_1\varphi_1+\beta_2\varphi_2\). Further, \(A(\psi_1+\psi_2)=(\alpha_1+\beta_1)'A(\varphi_1)+(\alpha_2+\beta_2)'A(\varphi_2)\), \(A(\psi_1)=\alpha_1'A(\varphi_1)+\alpha_2'A(\varphi_2)\), and \(A(\psi_2)=\beta_1'A(\varphi_1)+\beta_2'A(\varphi_2)\). But since the prime operation is linear or antilinear on rays, we have \((\alpha_1+\beta_1)'=\alpha_1'+\beta_1'\) and \((\alpha_2+\beta_2)'=\alpha_2'+\beta_2'.\) Combining the pieces: \(A(\psi_1+\psi_2)=A(\psi_1)+A(\psi_2)\). Since the subspace spanned by two arbitrary vectors is either a ray or contains two orthogonal vectors, additivity results in either case.</p>
+  </article>
+
+  <div class="pointer"><a href="B4.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

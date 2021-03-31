@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css">
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Maths bit: Wigner symmetry theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</header>
+  <script src="/eT/nav.js"></script>
+  <div class="pointer"><a href="B1.html">◀ Previous</a></div>
+  <article>
+    <h1>Wigner’s symmetry representation theorem</h1>
+    <h2>Bargmann 3 — (anti)linearity on \([\varphi_0]^\perp\)</h2>
+    <p class="noindent italic">Chevalier, Proposition 2, step 2: \(A\) is linear or antilinear on rays in \([\varphi_0]^\perp\).</p>
+    <p class="noindent">For a unit vector \(\varphi \in [\varphi_0]^\perp\), Lemma 1 gives \(A(\alpha \varphi)=\alpha' A(\varphi)\) with \(|\alpha|=|\alpha'|\).</p>
+    <p class="indent">Remembering that \(A(\varphi_0+\alpha\varphi)=A(\varphi_0)+A(\alpha\varphi)\), we have two ways to evaluate \(|\langle A(\varphi_0+\varphi)|A(\varphi_0+\alpha\varphi)\rangle|\): \[|\langle A(\varphi_0+\varphi)|A(\varphi_0+\alpha\varphi)\rangle|=|\langle \varphi_0+\varphi|\varphi_0+\alpha\varphi\rangle|=|1+\alpha|\] and \[|\langle A(\varphi_0+\varphi)|A(\varphi_0+\alpha\varphi)\rangle|=|\langle A(\varphi_0)+A(\varphi)|A(\varphi_0)+\alpha' A(\varphi)\rangle|=|1+\alpha'|\]</p>
+    <p class="indent">From the following Lemma, \(\alpha'=\alpha\) or \(\alpha'=\alpha^*\).</p>
+    <p class="noindent italic">Chevalier, Lemma 3. Let \(\alpha\) and \(\alpha'\) be two complex numbers with the same modulus. If \(|1+\alpha'|=|1+\alpha|\) then \(\alpha'=\alpha\) or \(\alpha'=\alpha^*\).</p>
+    <p class="noindent">The real parts of \(\alpha\) and \(\alpha'\) can be equated, since \(|1+\alpha|^2=1+|\alpha|^2+2\operatorname{Re}(\alpha)\) and the same for \(\alpha'\), along with \(|\alpha|=|\alpha'|\): thus, \(\operatorname{Re}(\alpha)=\operatorname{Re}(\alpha')\). Since the real parts are the same and \(|\alpha|=|\alpha'|\), we have that the square of the imaginary parts are equal, giving \(\operatorname{Im}(\alpha')=\pm\operatorname{Im}(\alpha)\). Therefore, either \(\alpha'=\alpha\) or \(\alpha'=\alpha^*\).□</p>
+    <p class="indent">For another vector from the ray, we have, from considering \(|\langle A(\varphi_0+\alpha\varphi)|A(\varphi_0+\beta\varphi)\rangle|\) in the same way, \(|1+\alpha'^*\beta'|=|1+\alpha^*\beta|\), where \(\beta'\) is the complex number that corresponds to \(\beta\) as in the relation between \(\alpha,\alpha'\). Also \(|\alpha'^*\beta'|=|\alpha^*\beta|\), so Lemma 3 applies: either \(\alpha'^*\beta'=\alpha^*\beta\) or \(\alpha'^*\beta'=\alpha\beta^*\). We want to show that all vectors in the ray satisfy the same condition — i.e. the action of \(A\) is either linear on the whole ray or antilinear on the whole ray.</p>
+    <p class="indent">Imagine there are two vectors with \(\alpha'=\alpha\) and \(\beta'=\beta^*\). Then \(\alpha'^*\beta'=\alpha^*\beta^*\). If also \(\alpha'^*\beta'=\alpha^*\beta\) then \(\beta=\beta^*\) (\(\beta\) is real), and then \(\beta'=\beta\), like with \(\alpha\). The other possibility leads to the conclusion that \(\alpha\) is real, and so \(\alpha'=\alpha^*\), like \(\beta\). Hence, the vectors can only follow opposite relations when the complex multiplier of one is in fact real. In that case they also follow the same relation also. In all cases, therefore, \(A\) is either linear on the whole ray or antilinear on the whole ray.</p>
+  </article>
+
+  <div class="pointer"><a href="B3.html" class="pointright">Next ▶</a></div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>
