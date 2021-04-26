@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/cards.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Mike Cooke’s projects</title>
+<style>
+
+nav {
+  background-color: #1E1E23;
+  height: 65px;
+  font-family:Franklin;
+  font-size:18px;
+}
+
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menuToggle span.line
+{
+  display: flex;
+  width: 29px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 5px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span.line:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span.line:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span.line
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-3px, -1px);
+  background: #36383F;
+}
+#menuToggle input:checked ~ span.line:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span.line:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  box-shadow: 0 0 10px #85888C;
+  margin: -25px 0 0 -25px;
+  padding:60px 20px 10px 40px;
+  background-color: #F5F6FA;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  transition-delay: 2s;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+</style>
+
+</head>
+<body>
+  <header style="font-family:Franklin;font-size:8vw;padding:10px;text-align:center;background:white;">Mike Cooke’s projects</header>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <ul id="menu">
+        <li><a href="/">Base</a></li>
+        <li><a href="/eT"><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</li>
+        <li><a href="/ST">Semiconductor Today</a></li>
+        <li><a href="/Other">Website experiments</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="container" class="container">
+    <script src="/js/lpanel.js"></script>
+    <script src="/js/rpanel.js"></script>
+  </div>
+
+  <script src="/js/footer.js"></script>
+
+</body>
