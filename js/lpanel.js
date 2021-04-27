@@ -10,4 +10,5 @@ lpanel.innerHTML += lcard("/eT/fi/fi0.html", "Infection delays", "/images/infdel
 lpanel.innerHTML += lcard("/eT/SIR/SIR0.html", "SIR model and covid-19", "/eT/SIR/images/SIR.svg");
 lpanel.innerHTML += lcard("/eT", '<span class="exponential">e<em><sup>x</sup>ponential</em></span> <span class="frank">Times</span>', "/images/burn.webp");
 lpanel.innerHTML += lcard("/eT/Branching/Branching1.html", "Bugs, bunnies, . . .", "/eT/images/branch.svg");
-lpanel.innerHTML += lcard("/eT/Logjam/logjam0.html", "Logjam", "/images/tags.webp");;
+lpanel.innerHTML += lcard("/eT/Logjam/logjam0.html", "Logjam", "/images/tags.webp");
+lpanel.innerHTML += '<a href="/ST"><div class="cardh-250px" style="width:20%;"><h2>My writing at </h2><img src="/ST/images/STbanner.svg" alt="ST" style="width:100%;margin:45px 0;" /><p>I frequently contribute to the online magazine <em>Semiconductor Today</em>.</p></div></a>';
