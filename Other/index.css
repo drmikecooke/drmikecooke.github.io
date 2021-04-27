@@ -67,7 +67,7 @@ nav a:hover {
   display: inline-block;
   background-color: white;
   height: 250px;
-  width: 300px;
+  width: 350px;
   padding: 20px;
   margin: 10px;
   vertical-align: top;
@@ -124,7 +124,7 @@ table {
 @media screen and (max-width: 900px) {
   .menu { flex-direction: column; }
   footer a { font-size: 18px; }
-  .card{width:100%;margin:0;}
+  .card{margin:0;}
   .container{padding:0;width:100%}
   .article {padding:0;margin:0px;}
   body{padding:0;}
