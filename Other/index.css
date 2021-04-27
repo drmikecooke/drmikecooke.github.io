@@ -1,6 +1,6 @@
 @font-face {
-font-family: Franklin;
-src: url("/fonts/fb.ttf");
+  font-family: Franklin;
+  src: url("/fonts/fb.ttf");
 }
 
 * {
@@ -110,13 +110,13 @@ table {
 }
 
 .centerblock {
-    display: inline-block;
-    margin: auto;
+  display: inline-block;
+  margin: auto;
 }
 
 .tablecolumn {
-    float:left;
-    padding:6px;
+  float:left;
+  padding:6px;
 }
 
 .menu { display:flex; justify-content:center; }
@@ -126,5 +126,9 @@ table {
   figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   figure img {width: 100%; }
   footer a { font-size: 18px; }
-  .card{width:100%;}
+  .card{width:100%;margin:0;}
+  .container{padding:0;}
+  .article {padding:0;margin:0px;}
+  body{padding:0;}
+  h3{margin-top:5px;}
 }
