@@ -16,7 +16,6 @@
 body {
   padding: 10px;
   background: #f1f1f1;
-  text-align: center;
 }
 
 header {
@@ -27,65 +26,72 @@ header {
   font-size: 8vw;
 }
 
-
 nav {
-  text-align: left;
-  overflow: hidden;
-  background-color: #333;
-  user-select: none;
+  position: relative;
 }
-
 nav a {
   font-family: Franklin;
-  display: inline-block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  display:block;
+  color:black;
+  padding: 5px;
   text-decoration: none;
 }
+nav input
+{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left:5px;
+  top:5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+.bar {
+  background-color: #1E1E23;
+  padding: 10px;
+  cursor: pointer;
+}
+nav a:hover{background-color:#333;color:white;}
+#menupanel {
+  font-family:Franklin;
+  font-size:18px;
+  position: absolute;
+  box-shadow: 0 0 10px #85888C;
+  padding:10px;
+  background-color: #F5F6FA;
+  transform-origin: 0% 0%;
+  z-index:1;
+  display:none;
+  top:0;
+}
+nav input:checked ~ #menupanel {display:block}
 
-/* Hover color */
-nav a:hover {
-  background-color: #ddd;
-  color: black;
+.article {
+  background-color: beige;
+  text-align:center;
+  padding: 20px;
+  margin: 10px;
 }
 
 .container {
-  display: flex;
   background-color: #ddd;
   padding: 10px;
-}
-
-.article {
-  flex-grow: 1;
-  background-color: beige;
-  padding: 20px;
-  margin: 10px;
 }
 
 .card {
   display: inline-block;
   background-color: white;
   height: 250px;
-  width: 350px;
+  width: 300px;
   padding: 20px;
   margin: 10px;
   vertical-align: top;
   text-align: center;
   overflow: hidden;
 }
-
 input {
   background-color: #ddd;
-}
-
-article h1 {
-  font-size: 36px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 button {
@@ -94,39 +100,7 @@ button {
   padding: 10px;
   color: white;
   background-color: #555;
+  margin:5px;
 }
 
-h3 {
-  margin-bottom: 10px;
-}
-
-th,td {
-  padding: 5px;
-  vertical-align: baseline;
-}
-
-table {
-  margin: auto;
-}
-
-.centerblock {
-  display: inline-block;
-  margin: auto;
-}
-
-.tablecolumn {
-  float:left;
-  padding:6px;
-}
-
-.menu { display:flex; justify-content:center; }
-
-@media screen and (max-width: 900px) {
-  .menu { flex-direction: column; }
-  footer a { font-size: 18px; }
-  .card{margin:0;}
-  .container{padding:0;width:100%}
-  .article {padding:0;margin:0px;}
-  body{padding:0;}
-  h3{margin-top:5px;}
-}
+h3 {font-size: 1.5em;}

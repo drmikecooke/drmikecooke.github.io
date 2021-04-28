@@ -4,26 +4,39 @@
   <title>Other: Index</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link id="index.css" rel="stylesheet" href="index.css">
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
-  <script id="index.js" src="/Other/js/index.js"></script>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <header>Mike Cooke other</header>
 
-  <nav id="navmenu"><script src="/Other/js/nav.js"></script></nav>
+  <nav role="navigation">
+    <div class="bar">
+      <svg viewBox="0 0 70 60" width="30px">
+        <rect width="70" height="10" rx="8" fill="white"></rect>
+        <rect y="25" width="70" height="10" rx="8" fill="white"></rect>
+        <rect y="50" width="70" height="10" rx="8" fill="white"></rect>
+      </svg>
+    </div>
+    <input type="checkbox" />
+    <div id="menupanel">
+      <svg viewBox="0 0 80 80" width="40" height="40">
+        <line x1="10" y1="10" x2="40" y2="40" stroke="red" stroke-linecap="round" stroke-width="10" />
+        <line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-linecap="round" stroke-width="10" />
+      </svg>
+    </div>
+  </nav>
 
   <div class="container">
-     <article id="article" class="article">
-       <div id="atitle"></div>
-       <div id="abody"></div>
-       <script>
-        goto('cards/cards.json');
-      </script>
+    <article id="article" class="article">
+      <div id="atitle"></div>
+      <div id="abody"></div>
     </article>
   </div>
 
   <script src="/js/footer.js"></script>
+
+  <script id="index.js" src="/Other/js/index.js"></script>
 
 </body>
 </html>

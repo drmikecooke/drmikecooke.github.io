@@ -1,0 +1,18 @@
+th,td {
+  padding: 5px;
+  vertical-align: baseline;
+}
+
+table {
+  margin: auto;
+}
+
+.centerblock {
+  display: inline-block;
+  margin: auto;
+}
+
+.tablecolumn {
+  float:left;
+  padding:6px;
+}

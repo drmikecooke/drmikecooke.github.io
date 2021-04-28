@@ -38,7 +38,7 @@ function script(url) {
   document.head.appendChild(newScript);
   newScript.onerror = loadError;
   newScript.type = 'text/javascript';
-  newScript.async = true;  
+  newScript.async = true;
   newScript.src = url;
   newScript.id = id;
 }
@@ -56,4 +56,23 @@ function css(url) {
   document.head.appendChild(link);
 }
 
+function addNav(url) {
+  loadAJAX(url, cbAddNav, 'json');
+}
 
+function cbAddNav(e) {
+  var loads = e.target.response;
+  var url = e.target.responseURL;
+  navbar.innerHTML += '<a onclick="goto(\''+ url +'\')">' + loads.title + '</a>';
+}
+
+var navbar = document.getElementById("menupanel");
+addNav("cards/cards.json");
+addNav("tests/width.json");
+addNav("tests/AJAX/cd.json");
+addNav("tests/AJAX/info.json");
+addNav("json/json.json");
+addNav("Factor/Factor.json");
+addNav("modules/module.json");
+navbar.innerHTML += '<a href="/">Back to base</a>\n';
+goto('cards/cards.json');

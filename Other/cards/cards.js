@@ -1,14 +1,12 @@
 function card(data, i) {
-  var out = "<div class='card'>";
-  out += "<h3>"+data.title+"</h3>";
-  out += "<card id='cardDiv"+i+"'></div>";
-  out += "</div>";
+  var out = "<h3>"+data.title+"</h3>";
+  out += "<div id='cardDiv"+i+"'></div>";
   document.getElementById("cardBody"+i).innerHTML = out;
 }
 
 function getCards(array) {
   for(var i=0; i<array.length; i++) {
-    document.getElementById("menu").innerHTML += "<a onclick=\"goto('"+array[i]+"')\"><div id='cardBody"+i+"'></div></a>";
+    document.getElementById("menu").innerHTML += "<a class='card' onclick=\"goto('"+array[i]+"')\"><div id='cardBody"+i+"'></div></a>";
     loadAJAX(array[i], makeCbCard(i), 'json');
   }
 }
