@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>Rooted 0</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="/eT/nav.js"></script>
+
+  <article>
+    <h1>Rooted 0</h1>
+    <h2>A journey to infinity and beyond . . . the first steps</h2>
+    <p class="noindent">Hippasus was on a journey by boat (I am preparing for the TV documentary, where the phrase “on a journey” is mandatory). While the waves and scenery were pretty and all that, his mind was elsewhere: “If all numbers are commensurate . . . but then the square root of 2 . . . hey guys, you know that commensurate thing . . . it’s rubbish, and I can show you . . .” He then explained. Unfortunately, the “commensurate thing” was a foundation stone of Pythagoreanism and to question it was blasphemy. His companions were horrified, and took the only sensible course — they chucked Hippassus in the drink, where he drowned.</p>
+    <p class="indent">I made up most of this story. As near as I can tell there was a person called Hippasus (c.530–c.450BCE) who maybe drowned. An “early” report (Iamblicus ~300CE, about 800 years later) attributes the death to “impiety” for descibing/publishing a geometric construction of the dodecahedron in a sphere, whose discovery “belonged to Him [Pythagoras]”. Some of the confusion may be linked to Pappus (c.290–c.350CE), a commentator on Euclid’s elements, who reports that the Pythogorean discoverer of the irrationality of \(\sqrt 2\) drowned. In the 20th century, the two stories were possibly linked up and embellished. The moral is that 90% of anecdotes are made up. But as an extra warning, I am reminded of Vic Reeves/Jim Moir, who commented that 95% of statistics are made up (including that one. In particular, I don’t know the exact figure used by Reeves so I put in the 95%). A similar point can be made about quotes and their attributed authors. These are not modern phenomena — the only difference is that they are much more obvious when you can just “google it” rather than having to plough through a ton of books down at the public library. We also have the human desire for a good story, over an accurate account of reality (whatever that is).</p>
+    <p class="indent">So what is true? Well, \(\sqrt 2\) <em>is</em> “irrational” or “incommensurate” (aside from Pilate’s question about Truth).</p>
+<p class="indent">We now need to define what some of these terms mean. “Commensurate” and “rational” in modern maths are largely taken as synonymous. Back in the days of the ancient Greeks, the situation is a little more complicated: much of what we today call “number theory” was expressed in geometric terms. Two line segments were called “commensurate”, if you could find a third line, which fitted into the two original ones a whole number of times.</p>
+<p class="indent">I will assume that the reader knows the prime factorization theorem, which says that whole numbers are uniquely described by products of primes up to order. For example, \(12=2^23\), where 2 and 3 are prime numbers. Similar factorization theories crop up all over mathematics (groups, modules, etc.), but this is the great-grandparent of them all, dating back at least to Euclid (~300BCE).</p>
+<p class="indent">So let's consider a supposed rational number \(a/b\) whose square is 2 (or any other prime number). We have \(a^2/b^2=2 \implies a^2=2b^2\). Consider the prime factorizations of \(a^2\) and \(b^2\) — they each contain an even number of each of their different primes. But 2 is also prime, so \(a^2=2b^2\) contains both an even (left side) and odd (right side) number of 2s! The exclamation point is to express mock-surprize at the contradiction, which in turn shows that \(\sqrt 2\) cannot be rational. A similar proof can be made for any number that contains an odd number of a particular prime. And if the number contains all even numbers of the different primes, the square root consists of the whole number made up of half of all the different primes, e.g. \(144=2^43^2 \implies \sqrt {144}=2^23=12\). So we have a dichotomy: the square roots of whole numbers are <em>either</em> whole numbers <em>or</em> irrational (and clearly not both).</p>
+<p class="indent">The 19th-century mathematician Kronnecker, we are told, said that “God made the integers, all the rest is the work of man” [<em>Die ganzen Zahlen hat der liebe Gott gemacht, alles andere ist Menschenwerk.</em>] Supposedly a statement from an 1886 lecture, reported in an <a href="http://www.digizeitschriften.de/dms/img/?PID=PPN37721857X_0002|log6&physid=phys20#navi">obituary</a>. I am not so sure that God/Nature even made the integers. Computers are the work of humanity, and in the next few pages we show a couple of ways to find rational numbers close to \(\sqrt 2\). Ultimately, the point will be made that we need to carry such processes to their theoretical infinite limit and beyond what we can comprehend without a bit of mathematical mysticism.</p>
+  </article>
+  <script src="/js/footer.js"></script>
+</body>
+</html>
