@@ -17,14 +17,13 @@
       font-size:0px;
       display:block;
       background-color:lightgreen;
-      width:400px;
       height:8px;
     }
     .line {
       float:left;
       border-top: 1px solid blue;
       border-right: 1px solid red;
-      width: 40px;
+      width: 30px;
       Height: 8px;
       margin: 0;
       padding: 0;
@@ -34,7 +33,7 @@
       border-top: 1px solid blue;
       border-right: 1px solid red;
       border-left: 1px solid red;
-      width: 40px;
+      width: 30px;
       Height: 8px;
       margin: 0;
       padding: 0;
@@ -45,19 +44,18 @@
       border-left:1px solid red;
       background-color: lightblue;
       padding: 0;
-      width:400px;
       height:30px;
     }
     .number {
       float:left;
-      width: 40px;
+      width: 30px;
       margin: 0;
       padding: 0;
       text-align: center;
     }
 
     .numberLeftEnd {
-      width: 20px;
+      width: 15px;
       Height: 5px;
       float:left;
       margin: 0;
@@ -93,7 +91,7 @@
     <div class="arial text-center">
       <h4>Square root of 2 — binary search</h4>
       <div style="margin:auto;height:200px">
-        <div style="width:400px;margin:auto;position:relative;">
+        <div style="width:300px;margin:auto;position:relative;">
           <div id="upper">
             <div id="valup" class="val"></div>
             <div style="border-top:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:bottom;border-right:1px solid red;"></div>
@@ -141,12 +139,12 @@
         function scale(x){return (x-lower)/(upper-lower)}
 
         function updatecurs() {
-          aline.style.left=`${400*scale(va)-10}px`;
+          aline.style.left=`${300*scale(va)-10}px`;
           aline.style.top="0px";
           bline.style.top="0px";
-          bline.style.left=`${400*scale(b)-10}px`;
+          bline.style.left=`${300*scale(b)-10}px`;
           cline.style.top="0px";
-          cline.style.left=`${400*scale(c)-10}px`;
+          cline.style.left=`${300*scale(c)-10}px`;
           info.innerHTML=`<p>a=${va}=c if c<sup>2</sup>&lt;2</p><p>b=${b}=c if c<sup>2</sup>&gt;2</p><p>c=${c}=(a+b)/2</p><p>c<sup>2</sup>=${c*c}</p>`;
         }
 
