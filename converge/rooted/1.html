@@ -23,7 +23,7 @@
       float:left;
       border-top: 1px solid blue;
       border-right: 1px solid red;
-      width: 30px;
+      width: 20px;
       Height: 8px;
       margin: 0;
       padding: 0;
@@ -33,7 +33,7 @@
       border-top: 1px solid blue;
       border-right: 1px solid red;
       border-left: 1px solid red;
-      width: 30px;
+      width: 20px;
       Height: 8px;
       margin: 0;
       padding: 0;
@@ -48,14 +48,14 @@
     }
     .number {
       float:left;
-      width: 30px;
+      width: 20px;
       margin: 0;
       padding: 0;
       text-align: center;
     }
 
     .numberLeftEnd {
-      width: 15px;
+      width: 10px;
       Height: 5px;
       float:left;
       margin: 0;
@@ -90,8 +90,8 @@
     <p class="indent">Starting from these limits, we can do a binary search by looking at the square of the intermediate value: \(1.5^2=2.25\). This is greater than 2, so we now know that \(1&lt;\sqrt 2&lt;1.5\), and we can bring in the upper limit of our approximation. The step button below does this, and sets up the next step:</p>
     <div class="arial text-center">
       <h4>Square root of 2 — binary search</h4>
-      <div style="margin:auto;height:200px">
-        <div style="width:300px;margin:auto;position:relative;">
+      <div style="margin:auto;height:150px">
+        <div style="width:200px;margin:auto;position:relative;">
           <div id="upper">
             <div id="valup" class="val"></div>
             <div style="border-top:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:bottom;border-right:1px solid red;"></div>
@@ -139,12 +139,12 @@
         function scale(x){return (x-lower)/(upper-lower)}
 
         function updatecurs() {
-          aline.style.left=`${300*scale(va)-10}px`;
+          aline.style.left=`${200*scale(va)-10}px`;
           aline.style.top="0px";
           bline.style.top="0px";
-          bline.style.left=`${300*scale(b)-10}px`;
+          bline.style.left=`${200*scale(b)-10}px`;
           cline.style.top="0px";
-          cline.style.left=`${300*scale(c)-10}px`;
+          cline.style.left=`${200*scale(c)-10}px`;
           info.innerHTML=`<p>a=${va}=c if c<sup>2</sup>&lt;2</p><p>b=${b}=c if c<sup>2</sup>&gt;2</p><p>c=${c}=(a+b)/2</p><p>c<sup>2</sup>=${c*c}</p>`;
         }
 
