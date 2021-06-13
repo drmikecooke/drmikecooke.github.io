@@ -160,69 +160,6 @@
       </script>
     </div>
     <p class="indent">You can continue stepping. Sometimes, the upper limit is brought in, at others, the lower limit. The cursor lines pretty quickly overlap and then are indistinguishable. If you have the patience to keep on, you eventually find a lower limit of 1.414213562373095 and the upper side is 1.4142135623730951. After that no more improvement. This is an artefact of javascript’s internal representation of numbers that use the 64-bit IEEE 754 binary floating point structure. The number is represented with a sign bit, 11-bit exponent, and 53-bit mantissa (the significant bits). The leading bit of the mantissa is always 1, and is missed out in the computer representation, allowing the 53 bits to be recorded in 52.</p>
-
-    <div class="arial text-center">
-      <svg viewBox="-10 0 320 125" width="50%" style="display:block;margin:auto;">
-        <defs>
-          <line id="tick" x1="0" y1="0" x2="0" y2="10" stroke="red" stroke-width="1" />
-        </defs>
-        <rect y="0" width="300" height="30" fill="beige"></rect>
-        <rect y="30" width="300" height="10" fill="lightgreen"></rect>
-        <rect y="40" width="300" height="30" fill="lightblue"></rect>
-        <rect y="70" width="300" height="30" fill="beige"></rect>
-        <line x1="0" y1="30" x2="0" y2="85" stroke="red" stroke-width="1" />
-        <line x1="300" y1="40" x2="300" y2="15" stroke="red" stroke-width="1" />
-        <text x="285" y="23" text-anchor="end">2</text>
-        <text x="15" y="92" text-anchor="start">1.</text>
-        <use xlink:href="#tick" x="30" y="30"></use>
-        <text x="30" y="62"  text-anchor="middle">1</text>
-        <use xlink:href="#tick" x="60" y="30"></use>
-        <text x="60" y="62"  text-anchor="middle">2</text>
-        <use xlink:href="#tick" x="90" y="30"></use>
-        <text x="90" y="62"  text-anchor="middle">3</text>
-        <use xlink:href="#tick" x="120" y="30"></use>
-        <text x="120" y="62"  text-anchor="middle">4</text>
-        <use xlink:href="#tick" x="150" y="30"></use>
-        <text x="150" y="62"  text-anchor="middle">5</text>
-        <use xlink:href="#tick" x="180" y="30"></use>
-        <text x="180" y="62"  text-anchor="middle">6</text>
-        <use xlink:href="#tick" x="210" y="30"></use>
-        <text x="210" y="62"  text-anchor="middle">7</text>
-        <use xlink:href="#tick" x="240" y="30"></use>
-        <text x="240" y="62"  text-anchor="middle">8</text>
-        <use xlink:href="#tick" x="270" y="30"></use>
-        <text x="270" y="62"  text-anchor="middle">9</text>
-        <line x1="0" y1="30" x2="300" y2="30" stroke="blue" stroke-width="1" />
-        <line x1="0" y1="85" x2="15" y2="85" stroke="blue" stroke-width="1" />
-        <line x1="300" y1="15" x2="285" y2="15" stroke="blue" stroke-width="1" />
-        <g id="al"><line x1="0" y1="0" x2="0" y2="105" stroke="black" stroke-width="1" ></line><text x="0" y="120" text-anchor="middle">a</text></g>
-        <g id="bl"><line x1="0" y1="0" x2="0" y2="105" stroke="black" stroke-width="1" ></line><text x="0" y="120" text-anchor="middle">b</text></g>
-        <g id="cl"><line x1="0" y1="0" x2="0" y2="105" stroke="red" stroke-width="1" ></line><text x="0" y="120" text-anchor="middle">c</text></g>
-      </svg>
-      <div id="svginfo"></div>
-      <button onclick="svgstep()">Step</button>
-      <script>
-        function x2svg(x){return 300*(x-1)}
-        var al=document.getElementById("al"),ax=1;
-        var bl=document.getElementById("bl"),bx=2;
-        var cl=document.getElementById("cl"),cx=(ax+bx)/2;
-        var svginfo=document.getElementById("svginfo");
-        function updatesvg() {
-          al.setAttribute("transform",`translate(${x2svg(ax)} 0)`);
-          bl.setAttribute("transform",`translate(${x2svg(bx)} 0)`);
-          cl.setAttribute("transform",`translate(${x2svg(cx)} 0)`);
-          svginfo.innerHTML=`<p>a=${ax}=c if c<sup>2</sup>&lt;2</p><p>b=${bx}=c if c<sup>2</sup>&gt;2</p><p>c=${cx}=(a+b)/2</p><p>c<sup>2</sup>=${cx*cx}</p>`;
-        }
-        updatesvg();
-
-        function svgstep(){
-          if(cx*cx>2) {bx=cx} else {ax=cx}
-          cx=(ax+bx)/2;
-          updatesvg();
-        }
-
-      </script>
-    </div>
   </article>
   <script src="/js/footer.js"></script>
 </body>
