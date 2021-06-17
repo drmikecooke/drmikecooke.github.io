@@ -13,78 +13,13 @@
   <style type="text/css">
     .shrink {font-size:0.95em}
     *{box-sizing:border-box;}
-    .lineContainer {
-      font-size:0px;
-      display:block;
-      background-color:lightgreen;
-      height:8px;
-    }
-    .line {
-      float:left;
-      border-top: 1px solid blue;
-      border-right: 1px solid red;
-      width: 20px;
-      Height: 8px;
-      margin: 0;
-      padding: 0;
-    }
-    .lineLeftEnd {
-      float:left;
-      border-top: 1px solid blue;
-      border-right: 1px solid red;
-      border-left: 1px solid red;
-      width: 20px;
-      Height: 8px;
-      margin: 0;
-      padding: 0;
-    }
-    .numberContainer {
-      display:block;
-      margin: auto;
-      border-left:1px solid red;
-      background-color: lightblue;
-      padding: 0;
-      height:30px;
-    }
-    .number {
-      float:left;
-      width: 20px;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .numberLeftEnd {
-      width: 10px;
-      Height: 5px;
-      float:left;
-      margin: 0;
-      padding: 0;
-    }
-    #upper {
-      display:block;
-      background-color:beige;
-      text-align:right;
-      height:30px;
-    }
-    .val {
-      display:inline-block;
-    }
-    #lower {
-      display:block;
-      background-color:beige;
-      text-align:left;
-      height:30px;
-    }
-    .cursor {display:block;position:absolute;width:20px;text-align:center;}
-    .cursorline {display:block;width:2px;margin:auto;height:100px;border-left:2px solid black;}
   </style>
 </head>
 
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-
+<div class="pointer"><a href="0.html">◀ Previous</a></div>
   <article>
     <h1>Rooted 1</h1>
     <p class="noindent">So let's start with considering \(\sqrt 2\). This is a supposed (positive) number that multiplied by itself gives 2.</p>
@@ -92,76 +27,7 @@
     <p class="indent">Starting from these limits, we can do a binary search by looking at the square of the intermediate value: \(1.5^2=2.25\). This is greater than 2, so we now know that \(1&lt;\sqrt 2&lt;1.5\), and we can bring in the upper limit of our approximation. The step button below does this, and sets up the next step:</p>
     <div class="arial text-center">
       <h4>Square root of 2 — binary search</h4>
-      <div style="margin:auto;height:150px">
-        <div style="width:200px;margin:auto;position:relative;">
-          <div id="upper">
-            <div id="valup" class="val"></div>
-            <div style="border-top:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:bottom;border-right:1px solid red;"></div>
-          </div>
 
-          <div id="line" class="lineContainer"><div class="lineLeftEnd"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
-
-          <div class="numberContainer"><div class="numberLeftEnd"></div><div class="number">1</div><div class="number">2</div><div class="number">3</div><div class="number">4</div><div class="number">5</div><div class="number">6</div><div class="number">7</div><div class="number">8</div><div class="number">9</div></div>
-
-          <div id="lower">
-            <div style="border-bottom:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:top;border-left:1px solid red;"></div><div id="vallo" class="val"></div>
-          </div>
-
-          <div id="aline" class="cursor"><div class="cursorline"></div><div>a</div></div>
-          <div id="bline" class="cursor"><div class="cursorline"></div><div>b</div></div>
-          <div id="cline" class="cursor"><div class="cursorline" style="border-color: red;"></div><div>c</div></div>
-
-        </div>
-      </div>
-      <div style="text-align:center">
-        <div style="display:inline-block">
-          <br/>
-          <div id="info"></div>
-          <button onclick="step()">Step</button>
-        </div>
-      </div>
-
-      <script>
-        var upper=2,lower=1;
-        var va=1,b=2;
-        var c=(va+b)/2;
-        var valup=document.getElementById("valup");
-        var vallo=document.getElementById("vallo");
-        var info=document.getElementById("info");
-        var aline=document.getElementById("aline");
-        var bline=document.getElementById("bline");
-
-        function uplimits(){
-          valup.innerText=upper;
-          vallo.innerText=lower+'.';
-        }
-
-        uplimits();
-
-        function scale(x){return (x-lower)/(upper-lower)}
-
-        function updatecurs() {
-          aline.style.left=`${200*scale(va)-10}px`;
-          aline.style.top="0px";
-          bline.style.top="0px";
-          bline.style.left=`${200*scale(b)-10}px`;
-          cline.style.top="0px";
-          cline.style.left=`${200*scale(c)-10}px`;
-          info.innerHTML=`<p>a=${va}=c if c<sup>2</sup>&lt;2</p><p>b=${b}=c if c<sup>2</sup>&gt;2</p><p>c=${c}=(a+b)/2</p><p>c<sup>2</sup>=${c*c}</p>`;
-        }
-
-        updatecurs();
-
-        function step() {
-          if(c*c>2) {b=c} else {va=c}
-          c=(va+b)/2;
-          updatecurs();
-        }
-      </script>
-    </div>
-    <p class="indent">You can continue stepping. Sometimes, the upper limit is brought in, at others, the lower limit. The cursor lines pretty quickly overlap and then are indistinguishable. If you have the patience to keep on, you eventually find a lower limit of 1.414213562373095 and the upper side is 1.4142135623730951. After that no more improvement. This is an artefact of javascript’s internal representation of numbers that use the 64-bit IEEE 754 binary floating point structure. The number is represented with a sign bit, 11-bit exponent, and 53-bit mantissa (the significant bits). The leading bit of the mantissa is always 1, and is missed out in the computer representation, allowing the 53 bits to be recorded in 52.</p>
-
-    <div class="arial text-center">
       <svg viewBox="-10 0 320 125" width="50%" style="display:block;margin:auto;">
         <defs>
           <line id="tick" x1="0" y1="0" x2="0" y2="10" stroke="red" stroke-width="1" />
@@ -223,7 +89,9 @@
 
       </script>
     </div>
+    <p class="indent">You can continue stepping. Sometimes, the upper limit is brought in, at others, the lower limit. The cursor lines pretty quickly overlap and then are indistinguishable. If you have the patience to keep on, you eventually find a lower limit of 1.414213562373095 and the upper side is 1.4142135623730951. After that no more improvement. This is an artefact of javascript’s internal representation of numbers that use the 64-bit IEEE 754 binary floating point structure. The number is represented with a sign bit, 11-bit exponent, and 53-bit mantissa (the significant bits). The leading bit of the mantissa is always 1, and is missed out in the computer representation, allowing the 53 bits to be recorded in 52.</p>
   </article>
+<div class="pointer"><a href="2.html" class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
 </body>
 </html>

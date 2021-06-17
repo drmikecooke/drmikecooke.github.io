@@ -48,6 +48,9 @@ var rooted=[];
 rooted.push(['/converge/rooted/0.html','0 - A journey to infinity . . .']);
 rooted.push(['/converge/rooted/1.html','1 - Binary search']);
 rooted.push(['/converge/rooted/2.html','2 - Decimal search']);
+rooted.push(['/converge/rooted/3.html','3 - Realizing root 2']);
+rooted.push(['/converge/rooted/4.html','4 - Dedekind cuts']);
+rooted.push(['/converge/rooted/5.html','5 - Cauchy sequences']);
 menu.appendChild(details("Rooted",rooted))
 navpanel.appendChild(menu)
 

@@ -13,147 +13,105 @@
   <style type="text/css">
     .shrink {font-size:0.95em}
     *{box-sizing:border-box;}
-    .lineContainer {
-      font-size:0px;
-      display:block;
-      background-color:lightgreen;
-      width:400px;
-      height:8px;
-    }
-    .line {
-      float:left;
-      border-top: 1px solid blue;
-      border-right: 1px solid red;
-      width: 40px;
-      Height: 8px;
-      margin: 0;
-      padding: 0;
-    }
-    .lineLeftEnd {
-      float:left;
-      border-top: 1px solid blue;
-      border-right: 1px solid red;
-      border-left: 1px solid red;
-      width: 40px;
-      Height: 8px;
-      margin: 0;
-      padding: 0;
-    }
-    .numberContainer {
-      display:block;
-      margin: auto;
-      border-left:1px solid red;
-      background-color: lightblue;
-      padding: 0;
-      width:400px;
-      height:30px;
-    }
-    .number {
-      float:left;
-      width: 40px;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .numberLeftEnd {
-      width: 20px;
-      Height: 5px;
-      float:left;
-      margin: 0;
-      padding: 0;
-    }
-    #upper {
-      display:block;
-      background-color:beige;
-      text-align:right;
-    }
-    .val {
-      display:inline-block;
-    }
-    #lower {
-      display:block;
-      background-color:beige;
-      text-align:left;
-    }
-    .cursor {display:block;position:absolute;width:20px;text-align:center;}
-    .cursorline {display:block;width:2px;margin:auto;height:150px;border-left:2px solid black;}
   </style>
 </head>
 
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-
+<div class="pointer"><a href="1.html">◀ Previous</a></div>
   <article>
     <h1>Rooted 2</h1>
     <p class="noindent">Since the previous attempt terminated due to the finite nature of the IEEE 754 floating point structure, here we use the new javascript BigInt data type to allow a decimal expansion of \(\sqrt 2\). BigInt is similar is behaviour to that of normal integers in Python 3 — that is one can continue increasing their size, theoretically, without limit, practically, dependent on the characteristics of one’s computer/mobile equipment.</p>
     <p class="indent"><em>But hold on a minute . . . you’re using integers? But these are fractions you are talking about.</em></p>
-    <p class="indent">What I'm doing is rescaling by a factor of 10 on each step, creating an equivalent integer problem, and looking for the next digit to add to my bracketing numbers. At a certain point the numbers break the bounds of the boxes, but the calculation continues . . .</p>
+    <p class="indent">What I'm doing is rescaling by a factor of 10 on each step, creating an equivalent integer problem, and looking for the next digit to add to my bracketing numbers. At a certain point the numbers break the bounds of the boxes and disappear, but the calculation continues . . . until the stepper (you) or computer fails to go on.</p>
     <div class="arial text-center">
       <h4>Square root of 2 — decimal search</h4>
-      <div style="width:400px;margin:auto;position:relative;">
-        <div id="upper">
-          <div id="valup" class="val"></div>
-          <div style="border-top:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:bottom;border-right:1px solid red;"></div>
-        </div>
-
-        <div id="line" class="lineContainer"><div class="lineLeftEnd"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
-
-        <div class="numberContainer"><div class="numberLeftEnd"></div><div class="number">1</div><div class="number">2</div><div class="number">3</div><div class="number">4</div><div class="number">5</div><div class="number">6</div><div class="number">7</div><div class="number">8</div><div class="number">9</div></div>
-
-        <div id="lower">
-          <div style="border-bottom:1px solid blue;width:30px;display:inline-block;height:20px;vertical-align:top;border-left:1px solid red;"></div><div id="vallo" class="val"></div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <div style="display:inline-block">
-        <br/>
-        <div id="info"></div>
-        <button onclick="update()">Step</button>
-      </div>
-
+      <svg viewBox="-10 0 320 100" width="50%" style="display:block;margin:auto;">
+        <defs>
+          <line id="tick" x1="0" y1="0" x2="0" y2="10" stroke="green" stroke-width="1" />
+        </defs>
+        <rect y="0" width="300" height="30" fill="beige"></rect>
+        <rect y="30" width="300" height="10" fill="green"></rect>
+        <rect id="blue" y="30" width="0" height="10" fill="blue"></rect>
+        <rect id="red" x="150" y="30" width="10" height="10" fill="red"></rect>
+        <rect y="40" width="300" height="30" fill="lightblue"></rect>
+        <rect y="70" width="300" height="30" fill="beige"></rect>
+        <line x1="0" y1="30" x2="0" y2="85" stroke="red" stroke-width="1" />
+        <line x1="300" y1="40" x2="300" y2="15" stroke="red" stroke-width="1" />
+        <text id="uppersvg" x="285" y="23" text-anchor="end"></text>
+        <text id="lowersvg" x="15" y="92" text-anchor="start"></text>
+        <use xlink:href="#tick" x="30" y="30"></use>
+        <text x="30" y="62"  text-anchor="middle">1</text>
+        <use xlink:href="#tick" x="60" y="30"></use>
+        <text x="60" y="62"  text-anchor="middle">2</text>
+        <use xlink:href="#tick" x="90" y="30"></use>
+        <text x="90" y="62"  text-anchor="middle">3</text>
+        <use xlink:href="#tick" x="120" y="30"></use>
+        <text x="120" y="62"  text-anchor="middle">4</text>
+        <use xlink:href="#tick" x="150" y="30"></use>
+        <text x="150" y="62"  text-anchor="middle">5</text>
+        <use xlink:href="#tick" x="180" y="30"></use>
+        <text x="180" y="62"  text-anchor="middle">6</text>
+        <use xlink:href="#tick" x="210" y="30"></use>
+        <text x="210" y="62"  text-anchor="middle">7</text>
+        <use xlink:href="#tick" x="240" y="30"></use>
+        <text x="240" y="62"  text-anchor="middle">8</text>
+        <use xlink:href="#tick" x="270" y="30"></use>
+        <text x="270" y="62"  text-anchor="middle">9</text>
+        <line x1="0" y1="30" x2="300" y2="30" stroke="blue" stroke-width="1" />
+        <line x1="0" y1="85" x2="15" y2="85" stroke="blue" stroke-width="1" />
+        <line x1="300" y1="15" x2="285" y2="15" stroke="blue" stroke-width="1" />
+      </svg>
+      <div id="svginfo"></div>
+      <button onclick="svgupdate()">Step</button>
       <script>
-        var va=BigInt(1),base=BigInt(10);
+        function x2svg(x){return 300*(x-1)}
+        var axs=BigInt(1),base=BigInt(10);
         var f=BigInt(0),r2=BigInt(2);
         var bigOne=BigInt(1);
+        var unit=BigInt(30);
 
-        var valup=document.getElementById("valup");
-        var vallo=document.getElementById("vallo");
-        var info=document.getElementById("info");
-        var lineblocks = document.getElementById("line").children;
+        var uppersvg=document.getElementById("uppersvg");
+        var lowersvg=document.getElementById("lowersvg");
+        var blue=document.getElementById("blue");
+        var red=document.getElementById("red");
+        var svginfo=document.getElementById("svginfo");
 
-        vallo.innerText='1.';
-        valup.innerText='2';
+        lowersvg.textContent='1.';
+        uppersvg.textContent='2';
 
-        step();
+
+        svgstep();
         console.log(`new lower bound: 1.${f}`);
         console.log('');
         console.log(`new upper bound: 1.${f+bigOne}`);
         console.log('');
 
-        function step() {
-          va*=base;
+        function svgstep() {
+          axs*=base;
           f*=base;
           r2*=base*base;
           for(var k=BigInt(0);k<base;k+=bigOne) {
-            if ((va+f+k+bigOne)*(va+f+k+bigOne)>r2){break;}
-            lineblocks[k].style="background-color:green;";
+            if ((axs+f+k+bigOne)*(axs+f+k+bigOne)>r2){break;}
           }
           f+=k
-          lineblocks[k].style="background-color:lightgreen;";
-          for(var r=k+bigOne;r<base;r+=bigOne){lineblocks[r].style="background-color:red;"}
+          blue.setAttribute("width",`${k*unit}`);
+          red.setAttribute("x",`${(k+bigOne)*unit}`);
+          red.setAttribute("width",`${(BigInt(9)-k)*unit}`)
         }
 
-        function update() {
-          vallo.innerText=`1.${f}`;
-          valup.innerText=`1.${f+bigOne}`;
-          step();
+        function svgupdate() {
+          lowersvg.textContent=`1.${f}`;
+          uppersvg.textContent=`1.${f+bigOne}`;
+          svginfo.innerHTML=`<p>lower limit: 1.${f}</p><p>upper limit: 1.${f+bigOne}</p>`
+          svgstep();
         }
+
       </script>
     </div>
   </article>
+<div class="pointer"><a href="3.html" class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
 </body>
 </html>
