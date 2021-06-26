@@ -51,7 +51,11 @@ rooted.push(['/converge/rooted/2.html','2 - Decimal search']);
 rooted.push(['/converge/rooted/3.html','3 - Realizing root 2']);
 rooted.push(['/converge/rooted/4.html','4 - Dedekind cuts']);
 rooted.push(['/converge/rooted/5.html','5 - Cauchy sequences']);
+rooted.push(['/converge/rooted/6.html','6 - Axiomatic binding']);
 menu.appendChild(details("Rooted",rooted))
+var equivalence=[];
+equivalence.push(['/converge/equivalence/0.html','0 - Same difference']);
+menu.appendChild(details("Equivalence",equivalence))
 navpanel.appendChild(menu)
 
 document.body.appendChild(navpanel);
