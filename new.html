@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/cards.css">
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Mike Cooke’s projects</title>
+  <style>
+
+    nav {
+      position: relative;
+    }
+    input
+    {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left:5px;
+      top:5px;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+    }
+    .bar {
+      background-color: #1E1E23;
+      padding: 10px;
+      cursor: pointer;
+    }
+    nav a:hover{background-color:#333;color:white;}
+    nav a {display:block;padding:5px;}
+
+    #menupanel {
+      font-family:Franklin;
+      font-size:18px;
+      position: absolute;
+      box-shadow: 0 0 10px #85888C;
+      padding:10px;
+      background-color: #F5F6FA;
+      transform-origin: 0% 0%;
+      z-index:1;
+      display:none;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      top:5px;
+      left: 5px;
+    }
+
+    input:checked ~ #menupanel {display:block}
+input:checked ~ .blocker {display:block}
+ .blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+display:none;
+  }
+  </style>
+
+</head>
+<body>
+  <header style="font-family:Franklin;font-size:8vw;padding:10px;text-align:center;background:white;">Mike Cooke’s projects</header>
+  <nav role="navigation">
+    <div class="bar">
+      <svg viewBox="0 0 70 60" width="30px">
+        <rect width="70" height="10" rx="8" fill="white"></rect>
+        <rect y="25" width="70" height="10" rx="8" fill="white"></rect>
+        <rect y="50" width="70" height="10" rx="8" fill="white"></rect>
+      </svg>
+    </div>
+
+    <input id="chkr" type="checkbox" />
+<div class="blocker" onclick="hidePopup()"></div>
+    <div id="menupanel">
+      <svg viewBox="0 0 80 80" width="40" height="40">
+        <line x1="10" y1="10" x2="40" y2="40" stroke="red" stroke-linecap="round" stroke-width="10" />
+        <line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-linecap="round" stroke-width="10" />
+      </svg>
+      <a href="/">Base</a>
+      <a href="/eT"><span class="exponential">e<em><sup>x</sup>ponential</em></span> Times</a>
+      <a href="/ST">Semiconductor Today</a>
+      <a href="/Other">Website experiments</a>
+      <a href="/converge">Convergence</a>
+    </div>
+  </nav>
+
+  <div id="container" class="container">
+    <script src="/js/lpanel.js"></script>
+    <script src="/js/rpanel.js"></script>
+  </div>
+
+  <script src="/js/footer.js"></script>
+
+<script>
+function hidePopup() {
+  document.getElementById("chkr").checked = false;
+}
+</script>
+
+</body>
+</html>
