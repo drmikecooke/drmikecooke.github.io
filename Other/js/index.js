@@ -66,6 +66,10 @@ function cbAddNav(e) {
   navbar.innerHTML += '<a onclick="goto(\''+ url +'\')">' + loads.title + '</a>';
 }
 
+function hidePopup() {
+  document.getElementById("chkr").checked = false;
+}
+
 var navbar = document.getElementById("menupanel");
 addNav("cards/cards.json");
 addNav("tests/width.json");

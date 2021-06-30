@@ -11,6 +11,10 @@ function details(title,list){
   return element
 }
 
+function hidePopup() {
+  document.getElementById("chkr").checked = false;
+}
+
 var navstyle = document.createElement("style");
 navstyle.innerText = "nav{position: relative;}";
 navstyle.innerText += "input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
@@ -20,6 +24,8 @@ navstyle.innerText += "nav a:hover{background-color:#333;color:white;}";
 navstyle.innerText += "nav a{display:block;padding:5px;}";
 navstyle.innerText += "#menupanel{font-family:Franklin;font-size:18px;position:absolute;box-shadow:0 0 10px #85888C;padding:10px;background-color:#F5F6FA;transform-origin:0% 0%;z-index:1;display:none;transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);top:5px;left:5px;}";
 navstyle.innerText += "input:checked~#menupanel{display:block}";
+navstyle.innerText += "input:checked ~ .blocker {display:block}";
+navstyle.innerText += ".blocker{position:fixed;top:0;left:0;bottom:0;right:0;content:' ';background:rgba(0,0,0,.5);display:none;}";
 document.body.appendChild(navstyle);
 
 var navpanel=document.createElement("nav");
@@ -30,7 +36,7 @@ bars.setAttribute("width","30px");
 bars.innerHTML+=bar(0)+bar(25)+bar(50);
 navpanel.appendChild(bars);
 
-navpanel.innerHTML+='<input type="checkbox" />';
+navpanel.innerHTML+='<input id="chkr" type="checkbox" /><div class="blocker" onclick="hidePopup()"></div>';
 
 var menu=document.createElement("div");
 menu.id="menupanel";

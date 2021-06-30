@@ -47,6 +47,17 @@
     }
 
     input:checked ~ #menupanel {display:block}
+input:checked ~ .blocker {display:block}
+ .blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+display:none;
+  }
   </style>
 
 </head>
@@ -60,7 +71,9 @@
         <rect y="50" width="70" height="10" rx="8" fill="white"></rect>
       </svg>
     </div>
-    <input type="checkbox" />
+
+    <input id="chkr" type="checkbox" />
+<div class="blocker" onclick="hidePopup()"></div>
     <div id="menupanel">
       <svg viewBox="0 0 80 80" width="40" height="40">
         <line x1="10" y1="10" x2="40" y2="40" stroke="red" stroke-linecap="round" stroke-width="10" />
@@ -80,6 +93,12 @@
   </div>
 
   <script src="/js/footer.js"></script>
+
+<script>
+function hidePopup() {
+  document.getElementById("chkr").checked = false;
+}
+</script>
 
 </body>
 </html>

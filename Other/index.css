@@ -67,6 +67,18 @@ nav a:hover{background-color:#333;color:white;}
 }
 nav input:checked ~ #menupanel {display:block}
 
+nav input:checked ~ .blocker {display:block}
+nav .blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+display:none;
+  }
+
 .article {
   background-color: beige;
   text-align:center;
