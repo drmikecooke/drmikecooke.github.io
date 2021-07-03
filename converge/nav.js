@@ -26,6 +26,8 @@ navstyle.innerText += "#menupanel{font-family:Franklin;font-size:18px;position:a
 navstyle.innerText += "input:checked~#menupanel{display:block}";
 navstyle.innerText += "input:checked ~ .blocker {display:block}";
 navstyle.innerText += ".blocker{position:fixed;top:0;left:0;bottom:0;right:0;content:' ';background:rgba(0,0,0,.5);display:none;}";
+navstyle.innerText += "nav details{background-color:#aaa;margin:9px 0;}";
+navstyle.innerText += "nav summary{background-color:#ccc; padding:3px;}";
 document.body.appendChild(navstyle);
 
 var navpanel=document.createElement("nav");
