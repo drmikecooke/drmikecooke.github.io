@@ -21,7 +21,8 @@
   <script src="../nav.js"></script>
 <div class="pointer"><a href="0.html">◀ Previous</a></div>
   <article>
-    <h1>Rooted 1</h1>
+    <div class="tag">Rooted 1</div>
+<h2>Binary</h2>
     <p class="noindent">So let's start with considering \(\sqrt 2\). This is a supposed (positive) number that multiplied by itself gives 2.</p>
     <p class="indent">One way to approximate this number is to find (rational) numbers that are closer and closer. Where can we start? We notice firstly that the square of 1 is 1 and the square of 2 is 4. We will take it as obvious (for the time being) that the squaring function increases strictly monotonically (for positive numbers). This means that bigger numbers have bigger squares: \(a &lt; b \implies a^2 &lt; b^2\). In fact, the implication goes both ways: \(a &lt; b \iff a^2 &lt; b^2\). Applying this to our preliminary observations: \(1 &lt; 2 &lt; 4 \implies 1 &lt; \sqrt 2 &lt; 2\).</p>
     <p class="indent">Starting from these limits, we can do a binary search by looking at the square of the intermediate value: \(1.5^2=2.25\). This is greater than 2, so we now know that \(1&lt;\sqrt 2&lt;1.5\), and we can bring in the upper limit of our approximation. The step button below does this, and sets up the next step:</p>

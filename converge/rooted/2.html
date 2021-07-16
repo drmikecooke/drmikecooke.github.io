@@ -21,7 +21,8 @@
   <script src="../nav.js"></script>
 <div class="pointer"><a href="1.html">◀ Previous</a></div>
   <article>
-    <h1>Rooted 2</h1>
+    <div class="tag">Rooted 2</div>
+<h2>Decimal</h2>
     <p class="noindent">Since the previous attempt terminated due to the finite nature of the IEEE 754 floating point structure, here we use the new javascript BigInt data type to allow a decimal expansion of \(\sqrt 2\). BigInt is similar is behaviour to that of normal integers in Python 3 — that is one can continue increasing their size, theoretically, without limit, practically, dependent on the characteristics of one’s computer/mobile equipment.</p>
     <p class="indent"><em>But hold on a minute . . . you’re using integers? But these are fractions you are talking about.</em></p>
     <p class="indent">What I'm doing is rescaling by a factor of 10 on each step, creating an equivalent integer problem, and looking for the next digit to add to my bracketing numbers. At a certain point the numbers break the bounds of the boxes and disappear, but the calculation continues . . . until the stepper (you) or computer fails to go on.</p>

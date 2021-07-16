@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>Lorentz group: Rotations 0</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+  <header>Lorentz group</header>
+  <script src="../nav.js"></script>
+
+  <article>
+    <div id="rotations-0" class="tag">Rotations 1</div>
+<h2 id="talkin-bout-my-generation">Talkin’ ’bout my generation</h2>
+<p>We have loosely considered “infinitesimal” rotations generated on the definitional n-dimensional space by <span class="math inline">\(\Omega\)</span>. These small rotations can be compounded to give finite ones in the limit, much as one can view exponentials as a product of increasingly small linear displacements: <span class="math display">\[\exp(x)=\lim_{n\rightarrow\infty}\left(1+\frac x n\right)^n\]</span></p>
+<p>To do this it is useful to separate off the parameterization of the rotation group from those arising from the base space in which the rotations are envisaged as acting. There are a number of reasons for this as will become apparent as we proceed.</p>
+<p>As our finite-izable parameters we will use the antisymmetric set <span class="math inline">\(\omega_{ab}\)</span>. That they are group parameters, we indicate with subscripts in the early part of the alphabet. For the action on (Euclidean) space, we have a set of generators, <span class="math inline">\((\mathrm J^{ab})^i_j\)</span>, with the super-/sub-scripts near to <span class="math inline">\(i\)</span> indicating their reference to space (or later representation) co-ordinates.</p>
+<p>The finite group action is given by <span class="math display">\[\exp\left(\frac 1 2\omega_{ab}\mathrm J^{ab}\right)=\lim_{n\rightarrow\infty}\left(\mathrm I+\frac {\omega_{ab}\mathrm J^{ab}} {2n}\right)^n.\]</span> The factor of <span class="math inline">\(\frac 1 2\)</span> accounts for the double counting arising from the antisymmetry of the parameters. Since <span class="math inline">\(\omega\)</span> projects out the antisymmetric part of <span class="math inline">\(\mathrm J\)</span>, only <span class="math inline">\(\mathrm J^{ab}=-\mathrm J^{ba}\)</span> is meaningful for the group, and hence the double counting.</p>
+<p>The product is taken in the sense of matrix multiplication with <span class="math inline">\((\mathrm I)^i_j = \delta^i_j\)</span> and <span class="math inline">\((\mathrm J^{ab})^i_j\)</span>. Initially we will do this in the base space. Occasionally we may slip and write <span class="math inline">\(1\)</span> for <span class="math inline">\(\mathrm I\)</span>. I hope you will be able to correct in your head for these and other such, errors.</p>
+<p>We now want to work out what the <span class="math inline">\(\mathrm J^{ab}\)</span> generators actually are. We start from <span class="math inline">\(\frac 1 2\omega_{ab}(\mathrm J^{ab})^i_j=\omega^i_j.\)</span> We also need from the previous page, expressed with <span class="math inline">\(a,b\)</span> subscripts: <span class="math display">\[\omega_{ab}=\omega^k_a\eta_{kb}\implies \omega^i_j=\omega_{ab}\eta^{bi}\delta^a_j.\]</span></p>
+<p>Taking our equation we get: <span class="math display">\[\frac 1 2\omega_{ab}(\mathrm J^{ab})^i_j=\omega_{ab}\eta^{bi}\delta^a_j=\frac 1 2\omega_{ab}(\eta^{bi}\delta^a_j-\eta^{ai}\delta^b_j)\]</span></p>
+<p>This gives us: <span class="math display">\[(\mathrm J^{ab})^i_j=\eta^{bi}\delta^a_j-\eta^{ai}\delta^b_j.\]</span></p>
+<p>The Lie algebra is found by making commutators, <span class="math inline">\([\mathrm J^{ab},\mathrm J^{cd}]=\mathrm J^{ab}\mathrm J^{cd}-\mathrm J^{cd}\mathrm J^{ab}.\)</span> An example term of the product <span class="math inline">\(\mathrm J^{ab}\mathrm J^{cd}\)</span> is <span class="math inline">\(\eta^{bi}\delta^a_k\eta^{dk}\delta^c_j=\eta^{da}\eta^{bi}\delta^c_j.\)</span> One finds after brute-force calculation or using antisymmetry arguments (I did a combination): <span class="math display">\[[\mathrm J^{ab},\mathrm J^{cd}]=\eta^{bd}\mathrm J^{ac}-\eta^{ad}\mathrm J^{bc}-\eta^{bc}\mathrm J^{ad}+\eta^{ac}\mathrm J^{bd}.\]</span> We note that the result is a linear combination of generators, as expected for a Lie group. We could even create an expression for the structure constants, but I’m not sure that would be useful at this stage.</p>
+  </article>
+<div class="pointer"><a href="1.html" class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+</body>
+</html>
