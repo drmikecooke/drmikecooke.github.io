@@ -6,21 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" media="screen" href="../screen.css" />
   <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
-  <title>Lorentz group: Rotations 0</title>
-  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <title>Lorentz group: Rotations</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16"/>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <style type="text/css">
-
-  </style>
+  <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 
 <body>
   <header>Lorentz group</header>
   <script src="../nav.js"></script>
-<div class="pointer"><a href="0.html">◀ Previous</a></div>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div id="rotations-0" class="tag">Rotations 1</div>
+    <div id="tag" class="tag">Rotations</div>
 <h2 id="talkin-bout-my-generation">Talkin’ ’bout my generation</h2>
 <p>We have loosely considered “infinitesimal” rotations generated on the definitional n-dimensional space by <span class="math inline">\(\Omega\)</span>. These small rotations can be compounded to give finite ones in the limit, much as one can view exponentials as a product of increasingly small linear displacements: <span class="math display">\[\exp(x)=\lim_{n\rightarrow\infty}\left(1+\frac x n\right)^n\]</span></p>
 <p>To do this it is useful to separate off the parameterization of the rotation group from those arising from the base space in which the rotations are envisaged as acting. There are a number of reasons for this as will become apparent as we proceed.</p>
@@ -32,7 +29,8 @@
 <p>This gives us: <span class="math display">\[(\mathrm J^{ab})^i_j=\eta^{bi}\delta^a_j-\eta^{ai}\delta^b_j.\]</span></p>
 <p>The Lie algebra is found by making commutators, <span class="math inline">\([\mathrm J^{ab},\mathrm J^{cd}]=\mathrm J^{ab}\mathrm J^{cd}-\mathrm J^{cd}\mathrm J^{ab}.\)</span> An example term of the product <span class="math inline">\(\mathrm J^{ab}\mathrm J^{cd}\)</span> is <span class="math inline">\(\eta^{bi}\delta^a_k\eta^{dk}\delta^c_j=\eta^{da}\eta^{bi}\delta^c_j.\)</span> One finds after brute-force calculation or using antisymmetry arguments (I did a combination): <span class="math display">\[[\mathrm J^{ab},\mathrm J^{cd}]=\eta^{bd}\mathrm J^{ac}-\eta^{ad}\mathrm J^{bc}-\eta^{bc}\mathrm J^{ad}+\eta^{ac}\mathrm J^{bd}.\]</span> We note that the result is a linear combination of generators, as expected for a Lie group. We could even create an expression for the structure constants, but I’m not sure that would be useful at this stage.</p>
   </article>
-<div class="pointer"><a href="1.html" class="pointright">Next ▶</a></div>
+<div id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
 </body>
 </html>
