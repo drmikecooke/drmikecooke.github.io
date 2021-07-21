@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
+  <title>Lorentz group: Flatland</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header>Lorentz group</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Flatland</div>
+<h2 id="complex-flatness">Complex flatness</h2>
+<p>So we want the 1-dimensional representations of <span class="math display">\[\mathrm R(\omega_{12})=\exp(\omega_{12}\mathrm J^{12})=\cos(\omega_{12})\mathrm I+\sin(\omega_{12})\mathrm J^{12}=\begin{pmatrix}\cos(\omega_{12})&amp;\sin(\omega_{12})\\-\sin(\omega_{12})&amp;\cos(\omega_{12})\end{pmatrix}\]</span></p>
+<p>The matrix is normal, since it commutes with its Hermitean conjugate (<span class="math inline">\(\mathrm R^\dagger=-\mathrm R\)</span>), and hence diagonalizable (a derivative of “diagonalize”, which the Oxford English Dictionary tells me was complained of by no less a personage than Lord Tennyson, or at least one of his characters, in the 1884 play <em>Becket</em>: “II. ii: [<span style="font-variant: small-caps">Walter Map</span>.]  His Holiness, pushed one way by the Empire and another by England, if he move at all, Heaven stay him, is fain to diagonalise. <span style="font-variant: small-caps">Herbert</span>. Diagonalise! thou art a word-monger! Our Thomas never will diagonalise.”). The matrix diagonalization procedure is to find the <span class="math inline">\(\lambda\)</span>-roots (eigenvalues of <span class="math inline">\(\mathrm R\)</span>) of: <span class="math display">\[\det(\mathrm R-\lambda\mathrm I)=(\cos (\omega_{12})-\lambda)^2+\sin^2(\omega_{12})=0\]</span> We can simplify: <span class="math display">\[\lambda^2-2\lambda\cos(\omega_{12})+1=0\]</span> This has solutions <span class="math inline">\(\lambda=\cos(\omega_{12})\pm i\sin(\omega_{12})=\exp(\pm i\omega_{12}).\)</span> These are complex representations. Next we seek the (unit) eigenvectors (and dropping the <span class="math inline">\(\mathrm I\)</span>): <span class="math display">\[(\mathrm R-\exp(\pm i\omega_{12}))\mathbf e_\pm=0\]</span> Unpacking: <span class="math display">\[(\mathrm R-\exp(\pm i\omega_{12}))\mathbf e_\pm=\begin{pmatrix}\cos(\omega_{12})-\exp(\pm i\omega_{12})&amp;\sin(\omega_{12})\\-\sin(\omega_{12})&amp;\cos(\omega_{12})-\exp(\pm i\omega_{12})\end{pmatrix}\begin{pmatrix}x_\pm\\y_\pm\end{pmatrix}=0\]</span> giving, up to a unit modulus factor: <span class="math display">\[\mathbf e_\pm=\frac 1 {\sqrt 2}\begin{pmatrix}1\\\mp i\end{pmatrix}\]</span></p>
+<p>We’ve played a bit fast-and-loose here. First, strictly the bold-face letters represent abstract vectors, while the column vector assumes a basis, so what this is really telling us is that: <span class="math display">\[\mathbf e_\pm=\frac 1 {\sqrt 2}(\mathbf e_x\mp i\mathbf e_y)\]</span> Second, what does an imaginary or even complex component mean? Is there some restriction? Finally (I think), what is the scalar product? I have assumed a scalar product analagous to the Hermitean scalar product in quantum mechanics, so that: <span class="math display">\[\mathbf r\cdot \mathbf s=(r_i)^*s^i=\eta_{ij}(r^j)^*s^i\]</span> where the asterisk represents complex conjugation. In terms of matrices, the <span class="math inline">\(\mathbf x\)</span> vector is the Hermitean conjugate, or the complex conjugate transpose (or a row vector). We also assume the standard Euclidean metric, <span class="math inline">\(\eta_{ij}=\delta_{ij}.\)</span></p>
+<p>So we’ve gone some way off the reservation here, and we’re about to be arrested by the maths (or math, since we’re going with a US metaphor) sheriff.</p>
+<p>Let’s see what our vectors look like in the new basis, being a bit loose again: <span class="math display">\[\begin{pmatrix}x\\ y\end{pmatrix}=x\mathbf e_x+y\mathbf e_y\]</span> We have: <span class="math display">\[\mathbf e_x=\frac 1 {\sqrt 2}(\mathbf e_++\mathbf e_-),\mathbf e_y=\frac i {\sqrt 2}(\mathbf e_+-\mathbf e_-).\]</span></p>
+<p>Hence: <span class="math display">\[x\mathbf e_x+y\mathbf e_y=(x+iy)\frac{\mathbf e_+}{\sqrt 2}+(x-iy)\frac{\mathbf e_-}{\sqrt 2}\]</span> We note that the projections on the new unit vectors can be read off: <span class="math display">\[\mathbf x=(x+iy)\frac{\mathbf e_+}{\sqrt 2}+(x-iy)\frac{\mathbf e_-}{\sqrt 2}=x^+\mathbf e_++x^-\mathbf e_-\]</span> The components for a real vector satisfy <span class="math inline">\(x^+=(x^-)^*\)</span>. Thus the complex components consisting of two real numbers each are restricted back to two effective real parameters. Assuming <span class="math inline">\(\mathbf e_x,\mathbf e_y\)</span>, real, we also have <span class="math inline">\(\mathbf e_+=(\mathbf e_-)^*.\)</span> If we felt minded, we could write: <span class="math display">\[\mathbf x=x^+\mathbf e_++(x^+\mathbf e_+)^*\]</span></p>
+  </article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+<script src="../number.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

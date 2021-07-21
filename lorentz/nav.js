@@ -1,4 +1,4 @@
-var menuItems = {'Rotations': [['/lorentz/rotation/0.html', '0 — Set up'], ['/lorentz/rotation/1.html', '1 — Talkin’ ’bout my generation'], ['/lorentz/rotation/2.html', '2 — Flatland']]}
+var menuItems = {'Rotations': [['/lorentz/rotation/0.html', '0 — Set up'], ['/lorentz/rotation/1.html', '1 — Talkin’ ’bout my generation']], 'Flatland': [['/lorentz/flatland/0.html', '0 — Introduction'], ['/lorentz/flatland/1.html', '1 — Complex flatness']]}
 
 function anchor(url,text){return `<a href="${url}">${text}</a>`}
 
