@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Lorentz group: Flatland</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header>Lorentz group</header>
+  <hr class="rule"/>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Flatland</div>
+    <h2 id="times-up">Time’s up</h2>
+<p>Here, we look at the Lorentz group, SO(1,1), for 1+1 time+space. We will use the “high-energy physics“ signature <span class="math inline">\(\eta_{00}=-\eta_{11}=1\)</span>, with the other two entries zero. This gives as length “squared” <span class="math inline">\(x_ix^i=t^2-x^2,\)</span> with <span class="math inline">\(x^0=t\)</span> being the time variable. This invariant can take positive “time-like”, negative “space-like”, zero ”light-like” values.</p>
+<p>Again there is only one group parameter, <span class="math inline">\(\omega_{01}=-\omega_{10}\)</span>. The generator matrix is: <span class="math display">\[\mathrm J^{01}=-\mathrm J^{10}=\eta^{1i}\delta^0_j-\eta^{0i}\delta^1_j=\begin{pmatrix}0&amp;-1\\-1&amp;0\end{pmatrix}.\]</span></p>
+<p>This flips the sign on one of the entries in the matrix relative to that for SO(2). The square of this object is the identity matrix, which means that the exponentiation, <span class="math inline">\(\exp (\omega_{01}\mathrm J^{01}),\)</span> will be more like <span class="math inline">\(\exp(\theta)\)</span> than <span class="math inline">\(\exp(i\theta).\)</span> We will see that this implies some profound changes.</p>
+<p>As before we can diagonalize the generator, but this time we find that the eigenvalues are real, <span class="math inline">\(\pm 1\)</span> in fact. If we define new basis vectors: <span class="math display">\[\mathbf e_{\pm}=\frac 1 {\sqrt 2}(\mathbf e_{t}\mp \mathbf e_{x})\]</span> we get corresponding coordinates: <span class="math display">\[x^{\pm}=\frac 1 {\sqrt 2}(t\mp x)\]</span> from: <span class="math display">\[\mathbf x=t\mathbf e_t+x\mathbf e_x=x^+\mathbf e_++x^-\mathbf e_-.\]</span></p>
+<p>The effect of the generator on these new coordinates is: <span class="math display">\[\mathrm J^{01}x^\pm=\pm x^\pm\]</span> so exponentiating to give the Lorentz transformation: <span class="math display">\[\mathrm L(\omega_{01}) x^\pm=\exp(\omega_{01}\mathrm J^{01})x^\pm=exp(\pm\omega_{01})x^\pm.\]</span></p>
+<p>The square “length” is <span class="math inline">\(2x^+x^-\)</span>, so the non-zero components of the metric are <span class="math inline">\(\eta_{+-}=\eta_{-+}=1.\)</span> The Lorentz tranformation on one coordinate is cancelled by the effect on the other coordinate. In the original <span class="math inline">\((t,x)\)</span> coodinates: <span class="math display">\[\mathrm L(\omega_{01})=\begin{pmatrix}\cosh(\omega_{01})&amp;-\sinh(\omega_{01})\\-\sinh(\omega_{01})&amp;\cosh(\omega_{01})\end{pmatrix}.\]</span> We note that the first order correction to the identity in <span class="math inline">\(\omega_{01}\)</span> is <span class="math inline">\(\mathrm J^{01}.\)</span></p>
+</article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+<script src="../number.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>
