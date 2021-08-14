@@ -4,9 +4,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
-  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
-  <title>Rooted 2</title>
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Rooted</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -19,9 +19,9 @@
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-<div class="pointer"><a href="1.html">◀ Previous</a></div>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div class="tag">Rooted 2</div>
+    <div id="tag" class="tag">Rooted</div>
 <h2>Decimal</h2>
     <p class="noindent">Since the previous attempt terminated due to the finite nature of the IEEE 754 floating point structure, here we use the new javascript BigInt data type to allow a decimal expansion of \(\sqrt 2\). BigInt is similar is behaviour to that of normal integers in Python 3 — that is one can continue increasing their size, theoretically, without limit, practically, dependent on the characteristics of one’s computer/mobile equipment.</p>
     <p class="indent"><em>But hold on a minute . . . you’re using integers? But these are fractions you are talking about.</em></p>
@@ -112,7 +112,8 @@
       </script>
     </div>
   </article>
-<div class="pointer"><a href="3.html" class="pointright">Next ▶</a></div>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
 </body>
 </html>

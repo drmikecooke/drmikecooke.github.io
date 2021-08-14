@@ -4,9 +4,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
-  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
-  <title>Rooted 6</title>
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Rooted</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -19,10 +19,10 @@
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-<div class="pointer"><a href="5.html">◀ Previous</a></div>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div class="tag">Rooted 6</div>
-    <h3>Axiomatic binding</h3>
+    <div id="tag" class="tag">Rooted</div>
+    <h2>Axiomatic binding</h2>
     <p class="noindent">I have layed out three possible ways to create real numbers from rationals (decimals, Dedekind, Cauchy). There are other ways, which I am only vaguely aware of from statements in books and papers. Although they seem different, they are found to be essentially the same through the “axiomatic method”. The way it works is to find a set of features (“axioms”) that the constructions share, and then prove that any systems that share these features are mathematically the same, or “isomorphic” as it’s called in the trade. The choice of axioms is based on a number of criteria that include taste, minimality, obviousness, simplicity, and so on. The criteria clash to some extent, and the choice is often dictated by history and hence the mood of the time of their creation, along with evolution and simplifications according to prevailing fashion.</p>
     <p class="indent">Most text books settle on preserving the mathematical features of the rational numbers in terms of addition, multiplication, order, learned in secondary school. These features can be axiomatized but they are not “categorical”, which means that they do not lead to the systems that satisfy them being isomorphic. In fact, there is a whole range of “fields”, as these systems are called (in physics this word refers to something very different), between the rationals and the reals. If the ordering requirements are dropped, there are further fields, such as the complex numbers and ones with just a finite number of elements (“Galois fields”). Relaxing the multiplication axioms, so that for some elements \(ab \neq ba\), expands the possibilities to include “quaternions”. . . .</p>
     <p class="indent">The important addition for reals, as already mentioned, is the least upper bound property. The constuctions show the existence of systems that satisfy the proposed axioms (given only in sketch form here). Uniqueness is shown by constucting isomorphisms between any two systems.</p>
@@ -30,6 +30,8 @@
     <p class="indent">The capstone is to relate the irrationals using the least upper bound property. In any particular system, the set of rationals less than a given element has a corresponding set of rationals in the other: \(D(r)=\{q\in \mathbb Q: q\lt r\}\rightarrow\{q'\}\subset\mathbb Q'\). The least upper bound of the source set is \(r\), and there is a unique least upper bound of the target set, which we can label \(r'\), such that \(r\rightarrow r'\), completeing the isomorphism.</p>
     <p class="indent">A final point that may or not worry the reader is how the rationals seem to be categorical, but their characterization as an ordered field does not lead to this. In fact, there is an added condition that makes the rationals categorical — they are the <em>minimal</em> ordered field or “prime field” contained in \(\mathbb R\).</p>
   </article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+<script src="../number.js"></script>
   <script src="/js/footer.js"></script>
 </body>
 </html>

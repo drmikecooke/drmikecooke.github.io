@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Euler-Maclaurin</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Euler-Maclaurin</div>
+<h2 id="first-steps">First steps</h2>
+<p>[This is a topic that may be related to Convergence through applications.]</p>
+<p>Discrete sums may be related to an integral through various processes. Indeed most methods of numerical evaluation of integrals do this. In the reverse direction, it enables analysis and evaluation of some summations, particularly to infinity, of functions with easy integrals.</p>
+<p>Here we look at an early technique for this and many other applications. It depends on the function being integrated or summed being differentiable a number of times.</p>
+<p>The Euler-Maclaurin technique depends on the fundamental theorem of calculus, and through the differentiation of products, on integration by parts.</p>
+<p>The fundamental theorem of calculus is: <span class="math display">\[\int\limits_a^b\frac{df}{dx}dx=[f(x)]_a^b=f(b)-f(a)\]</span> Differentiation of products is: <span class="math display">\[\frac{d}{dx}[fg]=f\frac{dg}{dx}+\frac{df}{dx}g\]</span> This leads to integration by parts: <span class="math display">\[\int\limits_a^b\frac{df}{dx}gdx=[fg]_a^b-\int\limits_a^bf\frac{dg}{dx}dx\]</span></p>
+<p>We start by looking at the effect when <span class="math inline">\(g(x)=x-1/2\)</span> and the limits are 0, 1: <span class="math display">\[\int\limits_0^1\frac{df}{dx}\left(x-\frac 1 2\right)dx=\left[f(x)\left(x-\frac 1 2\right)\right]_0^1-\int\limits_0^1f(x)dx\]</span> remembering that <span class="math inline">\(dg/dx=1\)</span>. Evaluating the surface terms (the square bracket with limits): <span class="math display">\[\int\limits_0^1\frac{df}{dx}\left(x-\frac 1 2\right)dx=\frac 1 2\left[f(0)+f(1)\right]-\int\limits_0^1f(x)dx\]</span></p>
+<p>If we now shift the limits to 1, 2, and use instead <span class="math inline">\(g(x)=x-3/2\)</span>: <span class="math display">\[\int\limits_1^2\frac{df}{dx}\left(x-\frac 3 2\right)dx=\frac 1 2\left[f(1)+f(2)\right]-\int\limits_0^1f(x)dx\]</span></p>
+<p>We can continue: <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_n^{n+1}\frac{df}{dx}\left(x-n-\frac 1 2\right)dx=\sum\limits_{n=0}^{N-1}\frac 1 2\left[f(n)+f(n+1)\right]-\int\limits_0^Nf(x)dx\]</span></p>
+<p>An interesting application is for <span class="math inline">\(f(x)=x\)</span>. The left hand side is then zero since <span class="math inline">\(df/dx=1\)</span> and: <span class="math display">\[\int\limits_n^{n+1}\frac{df}{dx}\left(x-n-\frac 1 2\right)dx=\left[\frac 1 2\left(x-n-\frac 1 2\right)^2\right]_n^{n+1}=\frac 1 8-\frac 1 8=0\]</span></p>
+<p>On the right hand side the integral is <span class="math inline">\(N^2/2\)</span>, while the sum is: <span class="math display">\[\sum\limits_{n=0}^Nn -N/2-N^2/2=0\]</span></p>
+<p>Rearranged, we get the well-known formula: <span class="math display">\[\sum\limits_{n=0}^Nn =\frac{N(N+1)}2\]</span></p>
+<p>We can consider the left hand side to be: <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_n^{n+1}\frac{df}{dx}\left(x-n-\frac 1 2\right)dx=\int\limits_0^N\frac{df}{dx} P_1(x)dx\]</span> where <span class="math inline">\(P_1(x)=g(\{x\})\)</span>, where <span class="math inline">\(\{x\}=x-\lfloor x\rfloor\)</span> is the fractional part of <span class="math inline">\(x\)</span>, remembering that <span class="math inline">\(\lfloor x\rfloor\)</span> is the integer part or “floor” function. This gives the sawtooth function with an integral between any two integers of zero.</p>
+<figure>
+<img src="P1.svg" title="Periodized sawtooth" alt="P1" /><figcaption>\(P_1(x)\)</figcaption>
+</figure>
+<p>Hence our formula is now: <span class="math display">\[\int\limits_0^N\frac{df}{dx} P_1(x)dx=\sum\limits_{n=0}^{N-1}\frac 1 2\left[f(n)+f(n+1)\right]-\int\limits_0^Nf(x)dx\]</span></p>
+<p>We now have to be somewhat careful in our consideration of integration by parts since our function <span class="math inline">\(P_1\)</span> contains discontinuities, creating problems when we want to differentiate. Loosely, the discontinuities become negative “Dirac delta functions” at integer values of the argument. These give the summation, along with the surface terms. In fact the sum can be simplied by noticing that apart from the endpoints, each term appears twice: <span class="math display">\[\int\limits_0^N\frac{df}{dx} P_1(x)dx=\sum\limits_{n=0}^Nf(n)-\frac{f(0)+f(N)}2-\int\limits_0^Nf(x)dx\]</span></p>
+<p>The function <span class="math inline">\(P_1\)</span> is the periodized version of the first Bernoulli polynomial <span class="math inline">\(B_1(x)=x-1/2\)</span>. The zeroth polynomial is <span class="math inline">\(B_0(x)=1\)</span>. We will see that there are higher orders that allow us to (possibly) improve the connection between integrals and sums.</p>
+ </article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

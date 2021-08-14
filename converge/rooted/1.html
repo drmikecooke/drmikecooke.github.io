@@ -4,9 +4,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
-  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
-  <title>Rooted 1</title>
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Rooted</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -19,9 +19,9 @@
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-<div class="pointer"><a href="0.html">◀ Previous</a></div>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div class="tag">Rooted 1</div>
+    <div id="tag" class="tag">Rooted</div>
 <h2>Binary</h2>
     <p class="noindent">So let's start with considering \(\sqrt 2\). This is a supposed (positive) number that multiplied by itself gives 2.</p>
     <p class="indent">One way to approximate this number is to find (rational) numbers that are closer and closer. Where can we start? We notice firstly that the square of 1 is 1 and the square of 2 is 4. We will take it as obvious (for the time being) that the squaring function increases strictly monotonically (for positive numbers). This means that bigger numbers have bigger squares: \(a &lt; b \implies a^2 &lt; b^2\). In fact, the implication goes both ways: \(a &lt; b \iff a^2 &lt; b^2\). Applying this to our preliminary observations: \(1 &lt; 2 &lt; 4 \implies 1 &lt; \sqrt 2 &lt; 2\).</p>
@@ -92,7 +92,8 @@
     </div>
     <p class="indent">You can continue stepping. Sometimes, the upper limit is brought in, at others, the lower limit. The cursor lines pretty quickly overlap and then are indistinguishable. If you have the patience to keep on, you eventually find a lower limit of 1.414213562373095 and the upper side is 1.4142135623730951. After that no more improvement. This is an artefact of javascript’s internal representation of numbers that use the 64-bit IEEE 754 binary floating point structure. The number is represented with a sign bit, 11-bit exponent, and 53-bit mantissa (the significant bits). The leading bit of the mantissa is always 1, and is missed out in the computer representation, allowing the 53 bits to be recorded in 52.</p>
   </article>
-<div class="pointer"><a href="2.html" class="pointright">Next ▶</a></div>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
 </body>
 </html>

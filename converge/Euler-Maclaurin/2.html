@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Euler-Maclaurin</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Euler-Maclaurin</div>
+<h2 id="bernoulli-extension-unit-interval">Bernoulli extension — unit interval</h2>
+<p>Our basic Euler-Maclaurin formula was, in terms of the first Bernoulli polynomial: <span class="math display">\[\int\limits_0^1\frac{df}{dx}B_1(x)dx=\frac 1 2\left[f(0)+f(1)\right]-\int\limits_0^1f(x)dx\]</span></p>
+<p>The left hand side gives the error in approximating the integral by the average of the function at the end points; a standard, crude method of numerical integration (or quadrature as it is often called in textbooks). We can (perhaps) improve it by remembering that <span class="math inline">\(B_1=B_2&#39;/2\)</span>, and integrating by parts again: <span class="math display">\[\int\limits_0^1\frac{df}{dx}B_1(x)dx=\int\limits_0^1\frac{df}{dx}\frac{B_2&#39;(x)}2dx=\left[\frac{df}{dx}\frac{B_2(x)}2\right]_0^1-\int\limits_0^1\frac{d^2f}{dx^2}\frac{B_2(x)}2dx\]</span> Now <span class="math inline">\(B_2(x)=x^2-x+1/6\)</span>, and substituting we find <span class="math inline">\(B_2(0)=B_2(1)=1/6\)</span>.</p>
+<p>Let us apply this to <span class="math inline">\(f_n(x)=(x+n)^2\)</span>. This gives, conveniently, <span class="math inline">\(d^2f/dx^2=0\)</span>. Therefore: <span class="math display">\[\int\limits_0^1\frac{df_n}{dx}B_1(x)dx=\left[\frac{df_n}{dx}\frac{B_2(x)}2\right]_0^1=\frac 1 6\]</span></p>
+<p>We can use this to get the sum of squares of integers: <span class="math display">\[\sum\limits_{n=0}^Nn^2=\sum\limits_{n=0}^Nf_n(0)=\frac 1 2\sum\limits_{n=0}^{N-1}[f_n(0)+f_n(1)]+\frac 1 2[f_0(0)+f_{N-1}(1)]\]</span></p>
+<p>Using <span class="math display">\[\frac 1 2\left[f_n(0)+f_n(1)\right]=\int\limits_0^1f_n(x)dx+\frac 1 6\]</span> we get <span class="math display">\[\sum\limits_{n=0}^Nn^2=\sum\limits_{n=0}^{N-1}[\int\limits_0^1f_n(x)dx+\frac 1 6]+\frac 1 2[f_0(0)+f_{N-1}(1)]\]</span> But <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_0^1f_n(x)dx=\int\limits_0^Nf_0(x)dx=\frac {N^3} 3\]</span> and <span class="math display">\[\sum\limits_{n=0}^{N-1}\frac 1 6=\frac N6\]</span> Further <span class="math inline">\(f_0(0)=0\)</span> and <span class="math inline">\(f_{N-1}(1)=N^2\)</span>. Combining the bits we get <span class="math display">\[\sum\limits_{n=0}^Nn^2=\frac{N^3}3+\frac N6+\frac{N^2}2=\frac 16(2N+1)(N+1)N\]</span></p>
+<p>For polynomials, one can continue integrating by parts to eventually get a zero correction term since eventually there is a high order differential that is zero. But this is only true for polynomials, so for other functions one might not even have an appropriate differential, or the differentials could continue to be non-zero to infinite order.</p>
+</article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

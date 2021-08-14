@@ -1,0 +1,209 @@
+@font-face {
+font-family: Franklin;
+src: url("/fonts/fb.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f1f1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Header */
+header {
+  font-family: Franklin;
+  font-size: 10vw;
+  font-weight: bold;
+  text-align: center;
+  background: white;
+  padding: 10px;
+}
+
+.rule{display:block;border-top:6px solid black;}
+
+.flex-center { display:flex; justify-content:center; }
+
+.plot-box { width:50%; margin:auto; }
+
+/* Prevent line-height variation */
+sup, sub {
+  font-size:75%;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub { top: 0.4em; }
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  margin: 10px;
+}
+
+p { line-height: 1.4em; margin-top: 10px; }
+
+input { background-color: #ddd; }
+
+.math a{font-style:revert;font-family:revert;}
+.tag{display:block;float:right;background-color:black;margin:-20px;padding:10px;color:white;font-family:Arial, Helvetica, sans-serif;font-weight:bold;}
+
+article {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  line-height: 1.4em;
+  background-color: white;
+  padding: 20px;
+  border: 20px solid;
+  border-color: #ddd;
+}
+
+article h1, article h2, article h3, article h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+article h1 { font-size: 2.4em; text-align: center; line-height: 1.4em; margin: 0.4em 0; }
+article h2 { font-size: 1.8em; text-align: left; line-height: 1.4em; margin: 0.4em 0; }
+article h3 { font-size: 1.5em; text-align: center; line-height: 1.4em; margin: 0.4em 0; }
+article h4 { font-size: 1.3em; text-align: center; line-height: 1.4em; margin: 0.4em 0; }
+
+article th, td {
+  padding: 3px;
+}
+
+article a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 0.9em;
+  color: black;
+}
+
+article img {
+  display: inline-block;
+  width: 45%;
+}
+
+article img.center {
+  display: block;
+  margin: auto;
+  width: 45%;
+}
+
+.center{text-align:center;}
+
+.italic{font-style:italic;}
+
+article .arialblack { font-family: Franklin; }
+
+article .arial { font-family: Arial, Helvetica, sans-serif; }
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 0.9em;
+}
+
+figure {
+  display: inline-block;
+  font-size: 1.3em;
+  background-color: white;
+  height: 250px;
+  padding: 20px;
+  margin: 10px;
+  vertical-align: top;
+}
+
+figcaption {
+  margin-bottom: 10px;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+tr { vertical-align: baseline; }
+
+tr td {
+  text-align: right;
+}
+
+tr th {
+  text-align: center;
+}
+
+article figure {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+article figcaption {
+  font-size: 0.6em;
+}
+
+article p+p{text-indent:2em;}
+
+.right { text-align: right; }
+
+.pointer { display:flex; width:100%; overflow: auto; }
+
+.pointer a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 21px;
+  color: black;
+  padding: 6px;
+}
+
+.pointer a:hover {
+  background-color: #ddd;
+}
+
+
+/* show/hide all tabs*/
+.pointright { margin-left:auto; }
+
+/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+  article figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
+  article figure img { width: 100%; }
+  /*article img { width: 90%; margin:0.25em; }*/
+  article {font-size:18px; border: none; }
+  footer a {font-size:18px; }
+  svg { width: 100% }
+  embed { width: 100% }
+  article img.center { width: 100%; }
+  .flex-center { flex-direction: column; margin: auto; }
+  .plot-box { width: 100%; }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, reduce text */
+@media screen and (max-width: 400px) {
+  article { font-size: 12px; }
+}

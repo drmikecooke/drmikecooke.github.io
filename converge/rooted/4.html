@@ -4,9 +4,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" media="screen" href="/eT/css/eT.css" />
-  <link rel="stylesheet" media="print" href="/eT/css/eTp.css" />
-  <title>Rooted 4</title>
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Rooted</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -19,10 +19,10 @@
 <body>
   <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
   <script src="../nav.js"></script>
-<div class="pointer"><a href="3.html">◀ Previous</a></div>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div class="tag">Rooted 4</div>
-    <h3>Dedekind cuts</h3>
+    <div id="tag" class="tag">Rooted</div>
+    <h2>Dedekind cuts</h2>
     <p class="noindent">I start with Dedekind’s version, as being slightly easier to comprehend, with real numbers consisting of sets of rational numbers, rather than sets of sets (Cauchy).</p>
     <p class="indent">A “Dedekind cut” consists of splitting the set of rational numbers (\(\mathbb Q\)) into two non-empty sets, \(A\) and \(B\) (i.e. \(A \cup B=\mathbb Q, A \cap B=\varnothing\)), with all the numbers of \(A\) less than those of \(B.\) Further \(A\) does not contain a greatest element. If we just focus on \(A\), and using logical abbreviations (\(\forall\) “for all”, \(\land\) “and”, \(\implies\) “implies”/“if . . . then . . .”):</p>
     <div class="center">
@@ -38,7 +38,8 @@
     <p class="indent">But the set of upper bounds of a bounded set of Dedekind cuts (\(\mathscr D=\{(A_i,B_i)\}\)), does have a least element. One has to exclude unbounded sets, to avoid ending up with \(A=\mathbb Q\), which is <em>not</em> a cut. But when bounded, one can take the cut defined by \(A=\bigcup_iA_i\), which is the union of all the \(A_i\) sets. DeMorgan’s theorem connecting unions and intersections of sets and complements gives the complementary partner \(B=\bigcap_iB_i\), the intersection of all the \(B_i\).</p>
     <p class="indent">A totally ordered system has the least upper bound property, if every bounded subset has a least upper bound. Dedekind cuts have this property, and if as I have loosely suggested each Dedekind cut can be uniquely associated with a real number, then the set of reals \((\mathbb R)\) has the same property.</p>
   </article>
-<div class="pointer"><a href="5.html" class="pointright">Next ▶</a></div>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+<script src="../number.js"></script>
   <script src="/js/footer.js"></script>
 </body>
 </html>

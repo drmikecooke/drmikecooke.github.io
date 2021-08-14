@@ -1,5 +1,3 @@
-var menuItems = {'Rooted': [['rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['rooted/1.html', '1 — Binary'], ['rooted/2.html', '2 — Decimal'], ['rooted/3.html', '3 — Realizing root 2'], ['rooted/4.html', '4 — Dedekind cuts'], ['rooted/5.html', '5 — Cauchy sequences'], ['rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['Euler-Maclaurin/0.html', '0 — First steps'], ['Euler-Maclaurin/1.html', '1 — Bernoulli polynomials'], ['Euler-Maclaurin/2.html', '2 — Bernoulli extension — unit interval'], ['Euler-Maclaurin/3.html', '3 — Bernoulli symmetry interlude'], ['Euler-Maclaurin/4.html', '4 — Bernoulli extension — extended interval']], 'Equivalence': [['equivalence/0.html', '0 — Same difference']]}
-
 function anchor(url,text){return `<a href="${url}">${text}</a>`}
 
 function bar(y){return `<rect y="${y}" width="70" height="10" rx="8" fill="white"></rect>`}
@@ -9,7 +7,7 @@ function details(title,list){
   var summary=document.createElement("summary");
   summary.innerText=title;
   element.appendChild(summary);
-  for (var item of list)element.innerHTML+=anchor('/converge/'+item[0],item[1])
+  for (var item of list)element.innerHTML+=anchor(...item)
   return element
 }
 
@@ -53,11 +51,19 @@ cross.innerHTML+='<line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-line
 menu.appendChild(cross);
 
 menu.innerHTML+=anchor('/','Base');
-menu.innerHTML+=anchor('/converge','Convergence'); // Section base
-for(var menuItem in menuItems) {
-    menu.appendChild(details(menuItem,menuItems[menuItem]))
-}
-
+menu.innerHTML+=anchor('/converge','C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span>');
+var rooted=[];
+rooted.push(['/converge/rooted/0.html','0 - A journey to infinity . . .']);
+rooted.push(['/converge/rooted/1.html','1 - Binary search']);
+rooted.push(['/converge/rooted/2.html','2 - Decimal search']);
+rooted.push(['/converge/rooted/3.html','3 - Realizing root 2']);
+rooted.push(['/converge/rooted/4.html','4 - Dedekind cuts']);
+rooted.push(['/converge/rooted/5.html','5 - Cauchy sequences']);
+rooted.push(['/converge/rooted/6.html','6 - Axiomatic binding']);
+menu.appendChild(details("Rooted",rooted))
+var equivalence=[];
+equivalence.push(['/converge/equivalence/0.html','0 - Same difference']);
+menu.appendChild(details("Equivalence",equivalence))
 navpanel.appendChild(menu)
 
 document.body.appendChild(navpanel);

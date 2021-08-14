@@ -1,4 +1,4 @@
-var menuItems = {'Rooted': [['rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['rooted/1.html', '1 — Binary'], ['rooted/2.html', '2 — Decimal'], ['rooted/3.html', '3 — Realizing root 2'], ['rooted/4.html', '4 — Dedekind cuts'], ['rooted/5.html', '5 — Cauchy sequences'], ['rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['Euler-Maclaurin/0.html', '0 — First steps'], ['Euler-Maclaurin/1.html', '1 — Bernoulli polynomials'], ['Euler-Maclaurin/2.html', '2 — Bernoulli extension — unit interval'], ['Euler-Maclaurin/3.html', '3 — Bernoulli symmetry interlude'], ['Euler-Maclaurin/4.html', '4 — Bernoulli extension — extended interval']], 'Equivalence': [['equivalence/0.html', '0 — Same difference']]}
+var menuItems = {'Rooted': [['./rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['./rooted/1.html', '1 — Binary'], ['./rooted/2.html', '2 — Decimal'], ['./rooted/3.html', '3 — Realizing root 2'], ['./rooted/4.html', '4 — Dedekind cuts'], ['./rooted/5.html', '5 — Cauchy sequences'], ['./rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['./Euler-Maclaurin/0.html', '0 — First steps'], ['./Euler-Maclaurin/1.html', '1 — Bernoulli polynomials'], ['./Euler-Maclaurin/2.html', '2 — Bernoulli extension — unit interval'], ['./Euler-Maclaurin/3.html', '3 — Bernoulli symmetry interlude'], ['./Euler-Maclaurin/4.html', '4 — Bernoulli extension — extended interval']], 'Equivalence': [['./equivalence/0.html', '0 — Same difference']]}
 
 function anchor(url,text){return `<a href="${url}">${text}</a>`}
 
@@ -9,7 +9,7 @@ function details(title,list){
   var summary=document.createElement("summary");
   summary.innerText=title;
   element.appendChild(summary);
-  for (var item of list)element.innerHTML+=anchor('/converge/'+item[0],item[1])
+  for (var item of list)element.innerHTML+=anchor(...item)
   return element
 }
 
@@ -53,10 +53,14 @@ cross.innerHTML+='<line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-line
 menu.appendChild(cross);
 
 menu.innerHTML+=anchor('/','Base');
-menu.innerHTML+=anchor('/converge','Convergence'); // Section base
+menu.innerHTML+=anchor('/lorentz','Lorentz group'); // Section base
 for(var menuItem in menuItems) {
     menu.appendChild(details(menuItem,menuItems[menuItem]))
 }
+//var rotations=[];
+//rotations.push(['/lorentz/rotation/0.html','0 - Set up']);
+//rotations.push(['/lorentz/rotation/1.html','1 - Talkin’ ’bout my generation']);
+//menu.appendChild(details("Rotations",rotations))
 
 navpanel.appendChild(menu)
 
