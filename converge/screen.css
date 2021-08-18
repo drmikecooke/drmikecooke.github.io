@@ -61,7 +61,7 @@ button {
 
 p { line-height: 1.4em; margin-top: 10px; }
 
-input { background-color: #ddd; }
+article input { background-color: #ddd; }
 
 .math a{font-style:revert;font-family:revert;}
 #tag{display:block;float:right;background-color:black;margin:-20px;padding:10px;color:white;font-family:Arial, Helvetica, sans-serif;font-weight:bold;}

@@ -1,4 +1,4 @@
-var menuItems = {'Rooted': [['rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['rooted/1.html', '1 — Binary'], ['rooted/2.html', '2 — Decimal'], ['rooted/3.html', '3 — Realizing root 2'], ['rooted/4.html', '4 — Dedekind cuts'], ['rooted/5.html', '5 — Cauchy sequences'], ['rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['Euler-Maclaurin/0.html', '0 — First steps'], ['Euler-Maclaurin/1.html', '1 — Unit interval'], ['Euler-Maclaurin/2.html', '2 — Extended interval']], 'Bernoulli polynomials': [['Bernoulli/0.html', '0 — From definition to generator'], ['Bernoulli/1.html', '1 — Recurring extraction'], ['Bernoulli/2.html', '2 — Symmetry interlude'], ['Bernoulli/3.html', '3 — Fourier series']], 'Equivalence': [['equivalence/0.html', '0 — Same difference']]}
+var menuItems = {'Rooted': [['rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['rooted/1.html', '1 — Binary'], ['rooted/2.html', '2 — Decimal'], ['rooted/3.html', '3 — Realizing root 2'], ['rooted/4.html', '4 — Dedekind cuts'], ['rooted/5.html', '5 — Cauchy sequences'], ['rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['Euler-Maclaurin/0.html', '0 — First steps'], ['Euler-Maclaurin/1.html', '1 — Unit interval'], ['Euler-Maclaurin/2.html', '2 — Extended interval']], 'Bernoulli polynomials': [['Bernoulli/0.html', '0 — From definition to generator'], ['Bernoulli/1.html', '1 — Recurring extraction'], ['Bernoulli/2.html', '2 — Symmetry interlude'], ['Bernoulli/3.html', '3 — Fourier series'], ['Bernoulli/4.html', '4 — Numerology'], ['Bernoulli/5.html', '5 — Shift work']], 'Equivalence': [['equivalence/0.html', '0 — Same difference']]}
 
 function anchor(url,text){return `<a href="${url}">${text}</a>`}
 
@@ -19,7 +19,7 @@ function hidePopup() {
 
 var navstyle = document.createElement("style");
 navstyle.innerText = "nav{position: relative;}";
-navstyle.innerText += "input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
+navstyle.innerText += "nav input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
 navstyle.innerText += ".bars{background-color:#1E1E23;padding:10px;cursor:pointer;}";
 navstyle.innerText += ".bars svg{width:auto;}";
 navstyle.innerText += "nav a:hover{background-color:#333;color:white;}";

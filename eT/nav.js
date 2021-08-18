@@ -7,7 +7,7 @@ function details(title,list){
   var summary=document.createElement("summary");
   summary.innerText=title;
   element.appendChild(summary);
-  for (var item of list)element.innerHTML+=anchor(...item)
+  for (var item of list)element.innerHTML+=anchor("/eT/"+item[0],item[1]);
   return element
 }
 
@@ -17,7 +17,7 @@ function hidePopup() {
 
 var navstyle = document.createElement("style");
 navstyle.innerText = "nav{position: relative;}";
-navstyle.innerText += "input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
+navstyle.innerText += "nav input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
 navstyle.innerText += ".bars{background-color:#1E1E23;padding:10px;cursor:pointer;}";
 navstyle.innerText += ".bars svg{width:auto;}";
 navstyle.innerText += "nav a:hover{background-color:#333;color:white;}";
@@ -110,11 +110,6 @@ var sums=[];
 sums.push(["maths/sum/0.html","Introduction"]);
 sums.push(["maths/sum/1.html","Bernoulli link"]);
 
-var bern=[]
-bern.push(["maths/bernoulli/0.html","Shift work"]);
-bern.push(["maths/bernoulli/1.html","Numerology"]);
-bern.push(["maths/bernoulli/2.html","Odd bods"]);
-
 var geo=[]
 geo.push(["maths/geometric/0.html","Introduction"]);
 geo.push(["maths/geometric/1.html","Derived sums"]);
@@ -132,11 +127,10 @@ mathss.innerText="Maths bits";
 mathse.appendChild(mathss);
 mathse.appendChild(details("Polynomials",poly));
 mathse.appendChild(details("Power sums",sums));
-mathse.appendChild(details("Bernoulli",bern));
 mathse.appendChild(details("Geometric",geo));
-mathse.innerHTML+=anchor("maths/geopower/0.html","Geometric-power sums");
-mathse.innerHTML+=anchor("maths/eulerian/0.html","Eulerian");
-mathse.innerHTML+=anchor("maths/union/0.html","Union strength");
+mathse.innerHTML+=anchor("/eT/maths/geopower/0.html","Geometric-power sums");
+mathse.innerHTML+=anchor("/eT/maths/eulerian/0.html","Eulerian");
+mathse.innerHTML+=anchor("/eT/maths/union/0.html","Union strength");
 mathse.appendChild(details("Wigner",wig));
 menu.appendChild(mathse)
 

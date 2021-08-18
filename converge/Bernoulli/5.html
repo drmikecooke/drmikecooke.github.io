@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Bernoulli polynomials</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.js" integrity="sha512-I0P+l8NrgTsaftmvg7m946nCfUNRc+UrMlfwiJSERXXmcnofik9gqOsG9PpsUNjqPH4KFXY+XNwmxsnlzmG/Mg==" crossorigin="anonymous"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag">Bernoulli polynomials</div>
+   <h2>Shift work</h2>
+    <p>Another way to get an idea of the Bernoulli polynomials is by using simple properties of the exponential function and expanding the generating function: \[\frac{t e^{(z+h)t}}{e^t-1} = \sum\limits_{n=0}^\infty B_n(z+h) \frac{t^n}{n!}\]</p>
+    <p class="indent">Alternatively: \[e^{ht}\frac{t e^{zt}}{e^t-1} = \sum\limits_{m=0}^\infty \sum\limits_{p=0}^\infty h^m \frac{t^m}{m!} B_p(z) \frac{t^p}{p!}\]</p>
+    <p class="indent">Since the two expressions are equal, we collect and equate equal powers of \(t\), resulting in: \[B_n(z+h)=\sum \limits_{m=0}^n h^m B_{n-m}(z) \frac{n!}{m!(n-m)!} = \sum \limits_{m=0}^n \binom{n}{m} h^m B_{n-m}(z)\]</p>
+    <p class="indent">We have inserted the symbol for the binomial coefficient in the last form. A particular choice for \(z,h\) of 0 and \(x\), respectively, gives: \[B_n(x)= \sum \limits_{m=0}^n \binom{n}{m} x^m B_{n-m}(0)\]</p>
+    <p class="indent">This last form shows that the polynomials are indeed such of degree n. Replacing \(B_n^-=B_n(0)\), we have: \[B_n(x)= \sum \limits_{m=0}^n \binom{n}{m} x^m B_{n-m}^-\]</p>
+</article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

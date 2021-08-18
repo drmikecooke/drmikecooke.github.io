@@ -17,7 +17,7 @@ function hidePopup() {
 
 var navstyle = document.createElement("style");
 navstyle.innerText = "nav{position: relative;}";
-navstyle.innerText += "input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
+navstyle.innerText += "nav input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
 navstyle.innerText += ".bars{background-color:#1E1E23;padding:10px;cursor:pointer;}";
 navstyle.innerText += ".bars svg{width:auto;}";
 navstyle.innerText += "nav a:hover{background-color:#333;color:white;}";
