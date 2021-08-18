@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Bernoulli polynomials</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Bernoulli polynomials</div>
+<h2 id="bernoulli-polynomials">Recurring extraction</h2>
+<p>By multiplying the exponential generating function by the denominator and comparing terms we get a useful recurrence relation between polynomials: <span class="math display">\[G(x,t)(\exp(t)-1)=\sum\limits_{k=0,l=1}^\infty \frac{t^k}{k!}B_k\frac{t^l}{l!}\]</span> The <span class="math inline">\(l=0\)</span> in the exponential expansion is skipped because it cancels against the <span class="math inline">\(-1\)</span>. Defining <span class="math inline">\(l+k=n+1\)</span> and using this to replace the <span class="math inline">\(l\)</span> sum and collect terms: <span class="math display">\[G(x,t)(\exp(t)-1)=\sum\limits_{n=0}^\infty \frac{t^{n+1}}{(n+1)!}\sum\limits_{k=0}^n \frac{(n+1)!B_k}{k!(n-k+1)!}\]</span> Remembering the binomial expansion symbol: <span class="math display">\[G(x,t)(\exp(t)-1)=\sum\limits_{n=0}^\infty \frac{t^{n+1}}{(n+1)!}\sum\limits_{k=0}^n \binom{n+1}kB_k\]</span></p>
+<p>Looking at our formula for the generating function, this must equal: <span class="math display">\[t\exp(xt)=\sum\limits_{n=0}^\infty \frac{x^nt^{n+1}}{n!}\]</span> Making the suitable equation and comparing terms in <span class="math inline">\(t^{n+1}\)</span>: <span class="math display">\[(n+1)x^n=\sum\limits_{k=0}^n \binom{n+1}kB_k\]</span> We can separate out the <span class="math inline">\(B_n\)</span> term to give it terms of the previous polynomials: <span class="math display">\[\binom{n+1}{n}B_n=(n+1)B_n=(n+1)x^n-\sum\limits_{k=0}^{n-1} \binom{n+1}kB_k\]</span> We note that the leading term of <span class="math inline">\(B_n\)</span> is <span class="math inline">\(x^n\)</span>, since the other polynomials are lower order. Tidying: <span class="math display">\[B_n=x^n-\sum\limits_{k=0}^{n-1} \binom{n+1}k\frac{B_k}{n+1}\]</span></p>
+<p>We plot the <span class="math inline">\(B_n\)</span> between 0 and 1, with \(n\) up to 13:</p>
+<img src="Bn.svg" alt="Bn" class="center"/>
+<p>I will show that the polynomials tend for large \(n\) to unit-period trigonometric functions (sine/cosine) in the interval \([0,1]\), multiplied by a large and increasing factor. From the plot, this looks plausible. Also when periodized into \(P_n(x)=B_n(\{x\})\) the resulting functions and their derivatives are smooth, except for \(P_1,P_2\). Initially for small \(n\), the function maxima reduce up to \(n=6\) and then start increasing.</p>
+</article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

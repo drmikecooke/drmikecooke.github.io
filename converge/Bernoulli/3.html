@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" media="screen" href="../screen.css" />
   <link rel="stylesheet" media="print" href="../print.css" />
-  <title>Euler-Maclaurin</title>
+  <title>Bernoulli polynomials</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -20,9 +20,9 @@
   <script src="../nav.js"></script>
 <div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div id="tag" class="tag">Euler-Maclaurin</div>
+    <div id="tag">Bernoulli polynomials</div>
 <h2 id="fourier-series">Fourier series</h2>
-<p>I was thinking about how I would show that the Bernoulli polynomials become sines and cosines asymptotically. As one does, one thinks “saddle-point?”, “Cauchy-integrate around the origin?”, “Hayman method?”, and so on. After a couple of failures to come up with something simple, I was flicking through Abramowitz and Stegun, and I noticed that the Fourier series of the polynomials for the range <span class="math inline">\(0\lt x\lt1\)</span> is what is needed. The other technique might be interesting to implement, but are not direct.</p>
+<p>I was thinking about how I would show that the Bernoulli polynomials become sines and cosines asymptotically. As one does, one thinks “saddle-point?”, “Cauchy-integrate around the origin?”, “Hayman method?”, and so on. After a couple of failures to come up with something simple, I was flicking through Abramowitz and Stegun, and I noticed that the Fourier series of the polynomials for the range <span class="math inline">\(0\lt x\lt1\)</span> is what is needed. The other techniques might be interesting to implement, but are not direct.</p>
 <p>So let’s begin. For a function <span class="math display">\[f\sim \sum\limits_k a_k \exp(2\pi ikx)\]</span> (the tilde/wavy line indicates that the series may not be uniformly convergent), we have: <span class="math display">\[a_k=\int\limits_0^1f(x)\exp(-2\pi ikx)dx\]</span></p>
 <p>We want to apply this to the generating function for Bernoulli polynomials: <span class="math display">\[G(x,t)=\frac {t\exp(xt)}{\exp(t)-1}\]</span></p>
 <p>We get: <span class="math display">\[\begin{aligned}
@@ -34,9 +34,12 @@ a_k(t)=&amp;\int\limits_0^1G(x,t)\exp(-2\pi ikx)dx\\
 <p>So we have: <span class="math display">\[G(x,t)\sim\sum\limits_k\frac{t\exp(2\pi ikx)}{t-2\pi ik}\]</span> It is wise to separate out the <span class="math inline">\(k=0\)</span> term (in fact this is <span class="math inline">\(B_0(x)\)</span>): <span class="math display">\[G(x,t)\sim1+\sum\limits_{k\neq0}\frac{t\exp(2\pi ikx)}{t-2\pi ik}\]</span></p>
 <p>There are a number of ways to approach this formula. The first thing to remember is that we are looking for the powers of <span class="math inline">\(t\)</span>. Thus we want to expand the factor <span class="math inline">\(t/(t-2\pi ik)\)</span> as a power series using: <span class="math display">\[\frac1{1+z}=\sum\limits_{n=0}^\infty(-z)^n\]</span></p>
 <p>Extracting the polynomials: <span class="math display">\[B_n(x)\sim-n!\sum\limits_{k\neq0}\frac{\exp(2\pi ikx)}{(2\pi ik)^n}\]</span></p>
-<p>For even <span class="math inline">\(n=2m\)</span>: <span class="math display">\[B_{2m}(x)\sim\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\sum\limits_{k=1}^\infty\frac{\cos(2\pi kx)}{k^{2m}}\]</span> Since <span class="math inline">\(\cos(0)=1\)</span>, the even Bernoulli numbers are: <span class="math display">\[B_{2m}=B_{2m}(0)=\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\sum\limits_{k=1}^\infty\frac1 {k^{2m}}=\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\zeta(2m)\]</span> This shows a relation between the Bernoulli numbers and the (in)famous Riemann zeta function: <span class="math display">\[\zeta(s)=\sum\limits_{k=1}^\infty\frac1 {k^s}\]</span> We have removed the tilde/wavy line since the series is absolutely convergent. We could also have done this for the Bernoulli polynomials since they are also absolutely convergent for <span class="math inline">\(m&gt;0\)</span>, and we have already extracted <span class="math inline">\(B_0(x)=1\)</span> from consideration.</p>
+<p>For even <span class="math inline">\(n=2m\)</span>: <span class="math display">\[B_{2m}(x)\sim\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\sum\limits_{k=1}^\infty\frac{\cos(2\pi kx)}{k^{2m}}\]</span> Since <span class="math inline">\(\cos(0)=1\)</span>, the even Bernoulli numbers are: <span class="math display">\[B_{2m}=B_{2m}(0)=\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\sum\limits_{k=1}^\infty\frac1 {k^{2m}}=\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\zeta(2m)\]</span> This shows a relation between the Bernoulli numbers and the (in)famous Riemann zeta function: <span class="math display">\[\zeta(s)=\sum\limits_{k=1}^\infty\frac1 {k^s}\]</span> We have removed the tilde/wavy line since the series are absolutely convergent. We could also have done this for the even-subscript Bernoulli polynomials since they are also absolutely convergent for <span class="math inline">\(m&gt;0\)</span>, and we have already extracted <span class="math inline">\(B_0(x)=1\)</span> from consideration, which as a constant is trivially absolutely convergent.</p>
 <p>For odd <span class="math inline">\(n=2m+1\)</span>: <span class="math display">\[B_{2m+1}(x)\sim\frac{2(2m+1)!(-1)^{m+1}}{(2\pi)^{2m+1}}\sum\limits_{k=1}^\infty\frac{\sin(2\pi kx)}{k^{2m+1}}\]</span> The tilde can be removed for <span class="math inline">\(m&gt;0\)</span> since the series are also absolutely convergent. However, for <span class="math inline">\(m=0\)</span>, the tilde must stay since the series is only pointwise convergent for <span class="math inline">\(0\lt x\lt1\)</span>, but not at the limits. This arises because the values at the limits are not the same, <span class="math inline">\(B_1(0)=-1/2\)</span> and <span class="math inline">\(B_1(1)=+1/2\)</span> , and the periodization is discontinuous. I won’t go into more detail here since convergence of Fourier series is a complex topic.</p>
-<p>Thus these Fourier series represent the periodization of the Bernoulli polynomials, <span class="math inline">\(P_n(x)=B_n({x})\)</span>, and converge uniformly when <span class="math inline">\(n\gt1\)</span>.</p>
+<p>Thus these Fourier series represent the periodization of the Bernoulli polynomials, <span class="math inline">\(P_n(x)=B_n(\{x\})\)</span>, and converge uniformly when <span class="math inline">\(n\gt1\)</span>.</p>
+<p>We note that the \(k=1\) term dominates both expressions for large \(m\). Hence, asymptotically the polynomials become unit-period cosines or sines of increasing amplitude:
+\[B_{2m}(x)\sim\frac{2(2m)!(-1)^{m+1}}{(2\pi)^{2m}}\cos(2\pi x)\]
+\[B_{2m+1}(x)\sim\frac{2(2m+1)!(-1)^{m+1}}{(2\pi)^{2m+1}}\sin(2\pi x)\]</p>
 </article>
 <div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>

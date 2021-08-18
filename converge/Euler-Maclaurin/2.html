@@ -21,13 +21,23 @@
 <div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
     <div id="tag" class="tag">Euler-Maclaurin</div>
-<h2 id="bernoulli-extension-unit-interval">Bernoulli extension — unit interval</h2>
-<p>Our basic Euler-Maclaurin formula was, in terms of the first Bernoulli polynomial: <span class="math display">\[\int\limits_0^1\frac{df}{dx}B_1(x)dx=\frac 1 2\left[f(0)+f(1)\right]-\int\limits_0^1f(x)dx\]</span></p>
-<p>The left hand side gives the error in approximating the integral by the average of the function at the end points; a standard, crude method of numerical integration (or quadrature as it is often called in textbooks). We can (perhaps) improve it by remembering that <span class="math inline">\(B_1=B_2&#39;/2\)</span>, and integrating by parts again: <span class="math display">\[\int\limits_0^1\frac{df}{dx}B_1(x)dx=\int\limits_0^1\frac{df}{dx}\frac{B_2&#39;(x)}2dx=\left[\frac{df}{dx}\frac{B_2(x)}2\right]_0^1-\int\limits_0^1\frac{d^2f}{dx^2}\frac{B_2(x)}2dx\]</span> Now <span class="math inline">\(B_2(x)=x^2-x+1/6\)</span>, and substituting we find <span class="math inline">\(B_2(0)=B_2(1)=1/6\)</span>.</p>
-<p>Let us apply this to <span class="math inline">\(f_n(x)=(x+n)^2\)</span>. This gives, conveniently, <span class="math inline">\(d^2f/dx^2=0\)</span>. Therefore: <span class="math display">\[\int\limits_0^1\frac{df_n}{dx}B_1(x)dx=\left[\frac{df_n}{dx}\frac{B_2(x)}2\right]_0^1=\frac 1 6\]</span></p>
-<p>We can use this to get the sum of squares of integers: <span class="math display">\[\sum\limits_{n=0}^Nn^2=\sum\limits_{n=0}^Nf_n(0)=\frac 1 2\sum\limits_{n=0}^{N-1}[f_n(0)+f_n(1)]+\frac 1 2[f_0(0)+f_{N-1}(1)]\]</span></p>
-<p>Using <span class="math display">\[\frac 1 2\left[f_n(0)+f_n(1)\right]=\int\limits_0^1f_n(x)dx+\frac 1 6\]</span> we get <span class="math display">\[\sum\limits_{n=0}^Nn^2=\sum\limits_{n=0}^{N-1}[\int\limits_0^1f_n(x)dx+\frac 1 6]+\frac 1 2[f_0(0)+f_{N-1}(1)]\]</span> But <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_0^1f_n(x)dx=\int\limits_0^Nf_0(x)dx=\frac {N^3} 3\]</span> and <span class="math display">\[\sum\limits_{n=0}^{N-1}\frac 1 6=\frac N6\]</span> Further <span class="math inline">\(f_0(0)=0\)</span> and <span class="math inline">\(f_{N-1}(1)=N^2\)</span>. Combining the bits we get <span class="math display">\[\sum\limits_{n=0}^Nn^2=\frac{N^3}3+\frac N6+\frac{N^2}2=\frac 16(2N+1)(N+1)N\]</span></p>
-<p>For polynomials, one can continue integrating by parts to eventually get a zero correction term since eventually there is a high order differential that is zero. But this is only true for polynomials, so for other functions one might not even have an appropriate differential, or the differentials could continue to be non-zero to infinite order.</p>
+<h2 id="bernoulli-extension-extended-interval">Extended interval</h2>
+<p>Rather than dragging back the function of interest, we can define a periodized Bernoulli polynomial <span class="math inline">\(P_k(x)=B_k(\{x\})\)</span>, according to the fractional part of <span class="math inline">\(x\)</span>, <span class="math inline">\(\{x\}\)</span>: <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_n^{n+1}\frac{df}{dx}P_1(x)dx=\frac 12\sum\limits_{n=0}^{N-1}\left[f(n)+f(n+1)\right]-\int\limits_0^Nf(x)dx\]</span></p>
+<p>We now want to analyze the left hand side better. We start with the integration by parts using <span class="math inline">\(P_2&#39;(x)=2P_1(x)\)</span>, but in case there are nasty suprizes like with the original integration by parts that got us this far, we keep the integrals exploded into a sum of parts over unit-length intervals for now: <span class="math display">\[\sum\limits_{n=0}^{N-1}\int\limits_n^{n+1}\frac{df}{dx}\frac{P_2&#39;(x)}2dx=\sum\limits_{n=0}^{N-1} \left[ \left[\frac{df}{dx}\frac{P_2(x)}2\right]_n^{n+1}-\int\limits_n^{n+1}\frac{d^2f}{dx^2}\frac{P_2}2dx\right]\]</span> For integer values <span class="math inline">\(P_2(n)=B_2(0)=B_2^-=1/6\)</span>. The non-integral part is thus: <span class="math display">\[\sum\limits_{n=0}^{N-1}\left[\frac{df}{dx}\frac{P_2(x)}2\right]_n^{n+1}=\frac 1{12}\sum\limits_{n=0}^{N-1}\left[\frac{df}{dx}(n+1)-\frac{df}{dx}(n)\right]\]</span> The inner parts cancel, and one is left with the surface terms: <span class="math display">\[\sum\limits_{n=0}^{N-1}\left[\frac{df}{dx}\frac{P_2(x)}2\right]_n^{n+1}=\frac 1{12}\left[\frac{df}{dx}(N)-\frac{df}{dx}(0)\right]\]</span> Therefore we can compactify the integrals: <span class="math display">\[\int\limits_0^N\frac{df}{dx}\frac{P_2&#39;(x)}2dx=\left[\frac{df}{dx}\frac{P_2(x)}2\right]_0^N-\int\limits_0^N\frac{d^2f}{dx^2}\frac{P_2}2dx\]</span></p>
+<p>Combining the bits: <span class="math display">\[
+\begin{aligned}
+\sum\limits_{n=0}^Nf(n)=&amp;\int\limits_0^Nf(x)dx+\frac{f(0)+f(N)}2\\
+&amp;+\frac1{12}\left[\frac{df}{dx}(N)-\frac{df}{dx}(0)\right]\\
+&amp;-\int\limits_0^N\frac{d^2f}{dx^2}\frac{P_2}2dx
+\end{aligned}
+\]</span></p>
+<p>If we continue integrating by parts, remembering that the odd Bernoulli numbers are zero: <span class="math display">\[
+\begin{aligned}
+\sum\limits_{n=0}^Nf(n)=&amp;\int\limits_0^Nf(x)dx+\frac{f(0)+f(N)}2\\
+&amp;+\sum\limits_{m=0}^M\left[\frac{B_{2m}^-}{(2m)!}\left[\frac{d^{2m-1}f}{dx^{2m-1}}(N)-\frac{d^{2m-1}f}{dx^{2m-1}}(0)\right]\right]\\
+&amp;-\int\limits_0^N\frac{d^{2M}f}{dx^{2M}}\frac{P_{2M}}{(2M)!}
+\end{aligned}
+\]</span> While useful, this expression must be treated with care since the Bernoulli numbers and polynomials become large for large <span class="math inline">\(M\)</span>.</p>
 </article>
 <div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>

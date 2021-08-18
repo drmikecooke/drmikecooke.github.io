@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" media="screen" href="../screen.css" />
   <link rel="stylesheet" media="print" href="../print.css" />
-  <title>Euler-Maclaurin</title>
+  <title>Bernoulli polynomials</title>
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -20,12 +20,12 @@
   <script src="../nav.js"></script>
 <div id="prev" class="pointer"><a>◀ Previous</a></div>
   <article>
-    <div id="tag" class="tag">Euler-Maclaurin</div>
-<h2 id="bernoulli-symmetry-interlude">Bernoulli symmetry interlude</h2>
+    <div id="tag" class="tag">Bernoulli polynomials</div>
+<h2 id="bernoulli-symmetry-interlude">Symmetry interlude</h2>
 <p>Remembering the generating function: <span class="math display">\[G(x,t)=\sum\limits_{k=0}^\infty \frac{t^k}{k!}B_k=\frac {t\exp(xt)}{\exp(t)-1}\]</span> what happens when we make the substitution <span class="math inline">\(t\rightarrow -t\)</span>? <span class="math display">\[G(x,-t)=\sum\limits_{k=0}^\infty (-1)^k\frac{t^k}{k!}B_k=\frac {-t\exp(-xt)}{\exp(-t)-1}\]</span> Multiplying the numerator and denominator of the last equation by <span class="math inline">\(\exp(t)\)</span> and rearranging: <span class="math display">\[G(x,-t)=\sum\limits_{k=0}^\infty (-1)^k\frac{t^k}{k!}B_k(x)=\frac {t\exp[(1-x)t]}{\exp(t)-1}=\sum\limits_{k=0}^\infty \frac{t^k}{k!}B_k(1-x)\]</span> Comparing powers of <span class="math inline">\(t\)</span>: <span class="math display">\[(-1)^kB_k(x)=B_k(1-x)\]</span> These polynomials are even/odd about <span class="math inline">\(x=1/2\)</span> according as <span class="math inline">\(k\)</span> is even/odd.</p>
-<p>We define the Bernoulli numbers <span class="math inline">\(B_k=B_k(0)\)</span>. From now on the polynomials will be distinguished by including the argument to show that a function is meant. We can collapse the generating function: <span class="math display">\[G(t)=G(0,t)=\sum\limits_{k=0}^\infty \frac{t^k}{k!}B_k=\frac {t}{\exp(t)-1}\]</span></p>
-<p>A final piece of the Bernoulli symmetry picture needs the removal of the term for <span class="math inline">\(B_1=-1/2\)</span>: <span class="math display">\[G(t)+\frac t2=\frac t2\frac{\exp(t)+1}{\exp(t)-1}=\frac t2\frac{\cosh(t/2)}{\sinh(t/2)}\]</span></p>
-<p>This is an even function of <span class="math inline">\(t\)</span> so that its power series expansion consists of even powers. The upshot is that the odd order Bernoulli numbers are zero, apart from <span class="math inline">\(B_1\)</span>.</p>
+<p>We define the Bernoulli numbers <span class="math inline">\(B_k^-=B_k(0)\)</span>. The minus-superscript will be explained in a moment. We can collapse the generating function: <span class="math display">\[G(t)=G(0,t)=\sum\limits_{k=0}^\infty \frac{t^k}{k!}B_k^-=\frac {t}{\exp(t)-1}\]</span></p>
+<p>A final piece of the Bernoulli symmetry picture needs the removal of the term for <span class="math inline">\(B_1^-=-1/2\)</span>: <span class="math display">\[G(t)+\frac t2=\frac t2\frac{\exp(t)+1}{\exp(t)-1}=\frac t2\frac{\cosh(t/2)}{\sinh(t/2)}\]</span></p>
+<p>This is an even function of <span class="math inline">\(t\)</span> so that its power series expansion consists of even powers. The upshot is that the odd order Bernoulli numbers are zero, apart from <span class="math inline">\(B_1^-\)</span>. We could also have defined the Bernoulli numbers through \(B_n^+=B_n(1)\). Since \((-1)^kB_k(x)=B_k(1-x)\), \(B_{2m}^+=B_{2m}^+\). We have just shown that \(B_{2m+1}^\pm=0, m\gt0\). Finally, we have \(B_1^+=+1/2=-B_1^-\), explaining the superscript.</p>
 </article>
 <div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
   <script src="/js/footer.js"></script>
