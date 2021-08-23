@@ -193,7 +193,7 @@ article p+p{text-indent:2em;}
 /* show/hide all tabs*/
 .pointright { margin-left:auto; }
 
-/* Responsive layout - when the screen is less than 900px wide, make the navigation links stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 900px wide*/
 @media screen and (max-width: 900px) {
   article figure { display: inline-block; font-size: 1.3em; background-color: white; width: 95%; padding: 20px; margin: 10px; vertical-align: top; }
   article figure img { width: 100%; }

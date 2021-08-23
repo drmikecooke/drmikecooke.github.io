@@ -19,19 +19,18 @@ function hidePopup() {
 
 var navstyle = document.createElement("style");
 navstyle.innerText = "nav{position: relative;}";
+navstyle.innerText += "nav.bars{background-color:#1E1E23;padding:10px;cursor:pointer;}";
+navstyle.innerText += "nav.bars svg{width:auto;}";
 navstyle.innerText += "nav input{width:40px;height:40px;position:absolute;left:5px;top:5px;cursor:pointer;opacity:0;z-index:2;}";
-navstyle.innerText += ".bars{background-color:#1E1E23;padding:10px;cursor:pointer;}";
-navstyle.innerText += ".bars svg{width:auto;}";
+navstyle.innerText += "nav input:checked~#menupanel{display:block}";
+navstyle.innerText += "nav input:checked ~ .blocker {display:block}";
 navstyle.innerText += "nav a:hover{background-color:#333;color:white;}";
 navstyle.innerText += "nav a{display:block;padding:5px;}";
-navstyle.innerText += "#menupanel{font-family:Franklin;font-size:18px;position:absolute;box-shadow:0 0 10px #85888C;padding:10px;background-color:#F5F6FA;transform-origin:0% 0%;z-index:1;display:none;transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);top:5px;left:5px;}";
-navstyle.innerText += "input:checked~#menupanel{display:block}";
-navstyle.innerText += "input:checked ~ .blocker {display:block}";
-navstyle.innerText += ".blocker{position:fixed;top:0;left:0;bottom:0;right:0;content:' ';background:rgba(0,0,0,.5);display:none;}";
+navstyle.innerText += "nav #menupanel{font-family:Franklin;font-size:18px;position:absolute;box-shadow:0 0 10px #85888C;padding:10px;background-color:#F5F6FA;transform-origin:0% 0%;z-index:1;display:none;transition:transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);top:5px;left:5px;}";
+navstyle.innerText += "nav .blocker{position:fixed;top:0;left:0;bottom:0;right:0;content:' ';background:rgba(0,0,0,.5);display:none;}";
 navstyle.innerText += "nav details{background-color:#aaa;margin:9px 0;}";
 navstyle.innerText += "nav summary{background-color:#ccc; padding:3px;}";
 document.body.appendChild(navstyle);
-
 var navpanel=document.createElement("nav");
 navpanel.className="bars";
 var bars=document.createElementNS("http://www.w3.org/2000/svg", "svg");

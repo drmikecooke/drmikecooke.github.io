@@ -10,7 +10,6 @@
   <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.1.0/math.js" integrity="sha512-I0P+l8NrgTsaftmvg7m946nCfUNRc+UrMlfwiJSERXXmcnofik9gqOsG9PpsUNjqPH4KFXY+XNwmxsnlzmG/Mg==" crossorigin="anonymous"></script>
   <style type="text/css">
     .shrink {font-size:0.95em}
 
@@ -18,7 +17,6 @@
     .popup {
       position: relative;
       display: block;
-      cursor: pointer;
       text-align: center;
       user-select: none;
     }
@@ -35,18 +33,8 @@
       position: absolute;
       z-index: 1;
       bottom: 125%;
-    }
-
-    /* Popup arrow */
-    .popup .popuptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
+      overflow:hidden;
+margin:0;
     }
 
     /* Toggle this class - hide and show the popup */
@@ -59,7 +47,17 @@
       from {opacity: 0;}
       to {opacity:1 ;}
     }
-
+.tip{
+visibility: hidden;
+    display:block;
+    width:0px;
+    height:5px;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-top: 10px solid #555;
+    margin:auto;
+padding:0;
+}
     input {font-size: 1em;}
   </style>
 </head>
@@ -73,60 +71,78 @@
 <h2>Numerology</h2>
     <p class="indent">We repeat the recurrence relation specialized to \(B_n^-=B_n(0)\): \[B_n^-=-\sum\limits_{m=0}^{n-1} \binom{n+1}{m}\frac{B_m^-}{n+1} \]</p>
     <p class="indent">The first few Bernoulli numbers arise fairly easily: \[B_0^-=1,B_1^-=-\frac{1}{2}, B_2^-=\frac{1}{6}, B_3^-=0, B_4^-=-\frac{1}{30}, B_5^-=0\]</p>
-    <div  class="popup"><span id="has-math" class="popuptext"></span></div>
+    <div id="poppy" class="popup"><span id="has-math" class="popuptext"></span></div><div id="tip" class='tip'></div>
     <div  style="text-align:center;">
-     <p> \(B_n\) list up to n = <input id="bernlim" value="5"/></p>
+     <p> \(B_n\) list up to n = <input id="bernlim" value="5" style="width:2em;"/></p>
 
      <p> <button onclick="goBn()">Go</button><button onclick="rmv()">Remove</button></p>
 
     </div>
-    <p>[The code here is limited to \(n&lt;30\), due to the number sizes becoming excessive for accurate integer/fraction representation. I could completely rewrite using the “BigInt” javascript objects that have recently become available. Not minded to at the moment.]</p>
+<p>This widget has been implemented using “BigInt” objects, which may not work in browsers that are not up-to-date. An old version is available <a href="4old.html">here</a>.
 </article>
 <script type="text/javascript">
 
-    // Configure the default type of number: 'number' (default), 'BigNumber', or 'Fraction'
-    math.config({number: 'Fraction'});
-    function extend(B) {
-      var sum=B[0];
-      var p=math.fraction(B.length,1);
-      for (var m=1;m<p;m++) {
-        sum=math.add(sum,math.multiply(math.combinations(p+1,m),B[m]));
-      }
-      B.push(negate(math.divide(sum,p+1)));
+    // BigInt version
+    
+    var gcd=(a,b)=>!b?a:gcd(b, a % b)
+var fadd=(a,b)=>new Fraction(a.numerator*b.denominator+a.denominator*b.numerator,a.denominator*b.denominator);
+var fmul=(a,b)=>new Fraction(a.numerator*b.numerator,a.denominator*b.denominator)
+
+function Fraction(numerator,denominator) {
+    var g=gcd(numerator,denominator)
+    this.numerator=numerator/g;
+    this.denominator=denominator/g;
+}
+
+function extend(B){
+    var p=B.length;
+    var sum=new Fraction(-(BigInt(0)**BigInt(p)),BigInt(1));// 1 if B empty, 0 else
+    var binom=BigInt(1);
+    for (var m=0;m<p;m++) {
+        sum=fadd(sum,fmul(B[m],new Fraction(binom,BigInt(1))));  
+        binom=binom*(BigInt(p+1)-BigInt(m))/BigInt(m+1);
     }
+    sum.numerator=-sum.numerator;
+    B.push(fmul(sum,new Fraction(BigInt(1),binom)))
+}
 
-    function negate(n) {return math.multiply(-1,n)}
-
-    function Blist(n) {
-      var Bern=[math.fraction(1,1)];
-      for(var m=1;m<n+1;m++) {
+function Blist(n) {
+    var Bern=[];
+    for(var m=0;m<n+1;m++) {
         extend(Bern);
-      }
-      return Bern
     }
+    return Bern
+}
+
+function ftex(fraction){
+    var string="";
+    if(fraction.numerator*fraction.denominator>0){string="+"}
+    if(fraction.numerator*fraction.denominator<0){string="-"}
+    if(fraction.denominator==1){return `\\(${string}${fraction.numerator}\\)`}
+    if(fraction.numerator<0){fraction.numerator=-fraction.numerator}
+    if(fraction.denominator<0){fraction.denominator=-fraction.denominator}
+    return `\\(${string}\\frac\{${fraction.numerator}\}\{${fraction.denominator}\}\\)`
+}
 
     const node = document.getElementById('has-math');
+const tip=document.getElementById('tip');
 
-    function goBn(){
+function goBn(){
       var Blim=Number(document.getElementById("bernlim").value);
       var Bern=Blist(Blim);
       var str="";
 
-      for(var m=0;m<Bern.length;m++) {str+=", \\(B_{"+m+"}^-=\\)"+ftex(math.format(Bern[m]));}
+      for(var m=0;m<Bern.length;m++) {str+=", \\(B_{"+m+"}^-=\\)"+ftex(Bern[m]);}
 
       node.innerHTML=str.slice(2);
       MathJax.typeset([node]);
       node.classList.add("show");
+tip.style.visibility="visible";
+let rect=node.offsetHeight;
+if(rect>300){node.style.overflow="scroll";node.style.height="300px";}else{node.style.overflow="hidden";node.style.height="auto";}
     }
 
-    function rmv() {node.classList.remove("show");}
-
-    function ftex(str) {
-      var sstring=str.split('/');
-      if(sstring[1]=='1') {return "\\("+sstring[0]+"\\)"}
-      if(Number(sstring[0])<0) {return "\\(-\\frac{"+sstring[0].slice(1)+"}{"+sstring[1]+"}\\)"}
-      return "\\(\\frac{"+sstring[0]+"}{"+sstring[1]+"}\\)"
-    }
+    function rmv() {console.log(node.parentNode.clientHeight);node.classList.remove("show");tip.style.visibility="hidden";}
 
   </script>
 <div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
