@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <h1 id="gamma-function">Gamma function</h1>
+<h2 id="introduction">Introduction</h2>
+<p>I first came across this function it must have been in the early 1980s when I was surprizingly much younger than I am now. I have often used it to centre my thoughts on convergence, asymptotic series, and many more mathematical muddles.</p>
+<p>So what is the gamma function (<span class="math inline">\(\Gamma\)</span>)? Briefly it is a function that on positive integer values is related to the factorial function, <span class="math inline">\(\Gamma(n)=(n-1)!\)</span>. In case you don’t know, <span class="math inline">\(2!=2\times1\)</span>, <span class="math inline">\(3!=3\times2\times1\)</span>, and so on. Symbolically: <span class="math display">\[n!=\prod\limits_{m=1}^nm\]</span> Just to be cheeky, we also define <span class="math inline">\(0!=1\)</span>.</p>
+<p>So why not stick with the factorial function. Well, <span class="math inline">\(\Gamma\)</span> is so much more. First, it is not just defined on positive integers. For example, <span class="math inline">\(\Gamma(1/2)=\sqrt\pi\)</span>. In fact, it is defined for all finite values apart from at the negative integers and zero. For those familar with the complex plane, <span class="math inline">\(\Gamma\)</span> is defined there too, and is “analytic” (again with the caveat for negative/zero integers).</p>
+<p>We start with a definition that allows us to determine, or at least approximate, <span class="math inline">\(\Gamma\)</span> for <span class="math inline">\(x\gt0\)</span> [and, incidentally, at complex <span class="math inline">\(z\)</span> with <span class="math inline">\(\mathrm{Re}(z)\gt0\)</span>]: <span class="math display">\[\Gamma(x)=\int\limits_0^\infty t^{x-1}\exp(-t)dt\]</span></p>
+<p>We note that the integral becomes singular at <span class="math inline">\(t=0\)</span> when <span class="math inline">\(0&lt;x&lt;1\)</span>. Technically this makes the integral “improper”. I’m not 100% clear whether the infinite limit also makes the integral improper. Something to explore at another time.</p>
+<p>A key relation is <span class="math inline">\(\Gamma(x+1)=x\Gamma(x)\)</span>, which is the source, among other things, of the equation <span class="math inline">\(\Gamma(n)=(n-1)!\)</span>. We can derive this using integration by parts: <span class="math display">\[\begin{aligned}
+\Gamma(x+1) =&amp; \int\limits_0^\infty t^x\exp(-t)dt \\
+=&amp; [-t^x\exp(-t)]_0^\infty + x\int\limits_0^\infty t^{x-1}\exp(-t)dt \\
+=&amp;x\Gamma(x)
+\end{aligned}\]</span> The integrated parts are zero at the two limits (for <span class="math inline">\(x&gt;0\)</span>). We also note: <span class="math display">\[\Gamma(1) = \int\limits_0^\infty \exp(-t)dt=[-\exp(-t)]_0^\infty = -\exp(-\infty)+\exp(0)=1\]</span></p>
+<p>The “key” relation allows us to continue into negative territory, using <span class="math inline">\(\Gamma(x)=\Gamma(x+1)/x\)</span>. This is well-defined for <span class="math inline">\(x&gt;-1\)</span>, except for <span class="math inline">\(x=0\)</span>. And onwards, <span class="math inline">\(\Gamma(x)=\Gamma(x+2)/[(x+1)x]\)</span>, defined for <span class="math inline">\(x&gt;-2\)</span>, except for <span class="math inline">\(x=0,-1\)</span>. Und so weiter, as the Germans would say.</p>
+</article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

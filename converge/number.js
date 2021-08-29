@@ -27,7 +27,8 @@ urlbits=urlbits.split('.')[0];
 if(!isNaN(urlbits)){
 urlbits=Number(urlbits);
 document.title+=' '+urlbits;
-document.getElementById('tag').innerText+=' '+urlbits;
+if(document.getElementById('tag')){document.getElementById('tag').innerText+=' '+urlbits;}
+if(document.getElementsByTagName('h1').length){document.getElementsByTagName('h1')[0].innerText+=' '+urlbits;}
 setPointer((urlbits-1)+'.html',"prev");
 setPointer((urlbits+1)+'.html',"next");
 }
