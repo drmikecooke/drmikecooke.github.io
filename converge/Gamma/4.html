@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="digamma">Digamma</h2>
+<p>The digamma function <span class="math inline">\(\psi\)</span> is the derivative of <span class="math inline">\(\ln\Gamma(z)\)</span>:</p>
+<p><span class="math display">\[\psi(z)=\lim_{n\rightarrow\infty}\ln(n)-\sum\limits_{m=0}^n\frac{1}{(m+z)}\]</span></p>
+<p>The sum can be transformed into an integral using: <span class="math display">\[\sum\limits_{m=0}^n\frac{1}{(m+z)}=\sum\limits_{m=0}^n\int\limits_0^\infty\exp(-[m+z]t)dt\]</span> Since the sum is finite we can perform it first, inside the integral: <span class="math display">\[\int\limits_0^\infty\sum\limits_{m=0}^n\exp(-[m+z]t)dt=\int\limits_0^\infty\exp(-zt)\sum\limits_{m=0}^n\exp(-mt)dt\]</span> The sum can be seen to be geometric, and therefore we get: <span class="math display">\[\int\limits_0^\infty\exp(-zt)\frac{1-\exp(-
+[n+1]t)}{1-\exp(-t)}dt\]</span> Combining with our logarithmic interlude: <span class="math display">\[\psi(z)=\lim_{n\rightarrow\infty}\int\limits_0^\infty\frac{\exp(-t)-\exp(-tn)}t- \\ \exp(-zt)\frac{1-\exp(-
+[n+1]t)}{1-\exp(-t)}dt\]</span> For <span class="math inline">\(\mathrm{Re}(z)&gt;0\)</span>, all the integrals converge as <span class="math inline">\(t\rightarrow\infty\)</span>. However, the <span class="math inline">\(t\rightarrow0\)</span> limit is more ticklish. As the integral stands, the integrand consists of two components that tend to finite limits at <span class="math inline">\(t=0\)</span>. The bit from the logarithmic interlude tends to <span class="math inline">\(n-1\)</span> and that from the sum to <span class="math inline">\(-(n+1)\)</span>. We note that the combination tends to <span class="math inline">\(-2\)</span>. We want to rearrange the integrand to parts that tend to finite values as <span class="math inline">\(t\rightarrow0\)</span> and <span class="math inline">\(n\rightarrow\infty\)</span>. We propose: <span class="math display">\[\psi(z)=\lim_{n\rightarrow\infty}\int\limits_0^\infty\left[\frac{\exp(-t)}t-\frac{\exp(-zt)}{1-\exp(-t)}\right]+ \\ \left[\frac{\exp(-
+[z+n+1]t)}{1-\exp(-t)}-\frac{\exp(-nt)}t\right]dt\]</span> We note that the first bracket does not depend on <span class="math inline">\(n\)</span>. The second bracket looks as if it will tend to zero as <span class="math inline">\(n\rightarrow\infty\)</span>. Hooray! The integral of the first bracket will be our (first?) integral form.</p>
+<p>To show that this partition is meaningful, we need the Bernoulli expansion: <span class="math display">\[\begin{aligned}
+\frac t{1-\exp(-t)} &amp;= \frac{t\exp(t)}{\exp(t)-1} \\ &amp;=B_0(1)+B_1(1)t+O(t^2) \\ &amp;=1+\frac12t+O(t^2)
+\end{aligned} \]</span></p>
+<p>Using the Bernoulli expansion, we find that as <span class="math inline">\(t\rightarrow0\)</span>, <span class="math inline">\(n\)</span>-independent bracket tends to <span class="math inline">\(z-3/2\)</span>. The <span class="math inline">\(n\)</span>-dependent limit is <span class="math inline">\(-z-1/2\)</span>. Adding these together gives <span class="math inline">\(-2\)</span>, as before.</p>
+<p>We look at the <span class="math inline">\(n\)</span>-dependent part: <span class="math display">\[\lim_{n\rightarrow\infty}\int\limits_0^\infty\left[\frac{\exp(-
+[z+n+1]t)}{1-\exp(-t)}-\frac{\exp(-tn)}t\right]dt\]</span> We can rearrange: <span class="math display">\[\lim_{n\rightarrow\infty}\int\limits_0^\infty\exp(-nt)\left[\frac{\exp(-zt)}{\exp(t)-1}-\frac{1}t\right]dt\]</span></p>
+<p>From the well known inequality <span class="math inline">\(\exp(t)-1\ge t\)</span> we deduce that positive first term in the bracket is always less than the term after the minus sign. The bracket is thus always less than zero. It also tends to zero as <span class="math inline">\(t\rightarrow\infty\)</span>. The bracket is clearly continuous on <span class="math inline">\((0,\infty)\)</span>. We can extend the continuity to 0, where the bracket tends to <span class="math inline">\(-z-1/2\)</span> by a previous argument. The function is therefore bounded on <span class="math inline">\([0,1]\)</span>, and for <span class="math inline">\((1,\infty)\)</span> is in the range <span class="math inline">\((-1,0)\)</span>. So the bracket is bounded below by some negative constant <span class="math inline">\(-K\)</span>. This allows us to show: <span class="math display">\[\begin{aligned}
+\lim_{n\rightarrow\infty}\left|\int\limits_0^\infty\exp(-nt)\left[\frac{\exp(-zt)}{\exp(t)-1}-\frac{1}t\right]dt\right|&amp;\lt \lim_{n\rightarrow\infty}\int\limits_0^\infty\exp(-nt)Kdt\\&amp;=\lim_{n\rightarrow\infty}\frac K n=0
+\end{aligned}\]</span></p>
+We can now assert: <span class="math display">\[\psi(z)=\int\limits_0^\infty\left[\frac{\exp(-t)}t-\frac{\exp(-zt)}{1-\exp(-t)}\right]dt\]</span> a formula derived by Gauss.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

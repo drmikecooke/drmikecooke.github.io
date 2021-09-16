@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="reflective-interlude">Reflective interlude</h2>
+<p>There is an important principle linking <span class="math inline">\(\Gamma\)</span> to its reflection in the point <span class="math inline">\(z=1/2\)</span>. What this means is that <span class="math inline">\(z-1/2\rightarrow-(z-1/2)\)</span>. Even more explicitly, <span class="math inline">\(z'-1/2=-(z-1/2)\)</span>, which rearranged is <span class="math inline">\(z'=1-z\)</span>. This is another way to extend the integral definition from <span class="math inline">\(\mathrm{Re}(z)\gt0\)</span> to <span class="math inline">\(\mathrm{Re}(z)\lt1\)</span>. Note that there is an overlap strip.</p>
+<p>The principle we are referring to gives a simple expression for the product <span class="math inline">\(\Gamma(z)\Gamma(1-z)\)</span>. For the overlap strip <span class="math inline">\(0\lt\mathrm{Re}(z)\lt1\)</span>, we obtain the double integral: <span class="math display">\[\int\limits_0^\infty\int\limits_0^\infty t^{z-1}s^{-z}\exp(-(t+s))dtds\]</span> Changing variables to <span class="math inline">\(u=t+s\)</span> and <span class="math inline">\(v=t/s\)</span>, one finds <span class="math inline">\(dtds/t=dudv/v(1+v)\)</span>, and hence: <span class="math display">\[\Gamma(z)\Gamma(1-z)=\int\limits_0^\infty\int\limits_0^\infty \frac{v^{z-1}}{1+v}\exp(-u)dudv\]</span> Since the <span class="math inline">\(u\)</span> integral is straightforward: <span class="math display">\[\int\limits_0^\infty\exp(-u)du=1\]</span> we are left with: <span class="math display">\[\Gamma(z)\Gamma(1-z)=\int\limits_0^\infty \frac{v^{z-1}}{1+v}dv\]</span> This is an improper integral, since the lower limit is singular for <span class="math inline">\(0\lt z\lt1\)</span>. A well-known way to evaluate it is to use complex integration around a contour:</p>
+<figure>
+<img alt="contour" src="6.svg"/><figcaption style="font-size:36px;font-family:sans;">Contour</figcaption>
+</figure>
+<p>The integrand has a pole at <span class="math inline">\(-1\)</span>, which is marked in the diagram with a red dot. Another feature of the integrand is that <span class="math inline">\(v^{z-1}\)</span> is not single valued in the complex plane. This is the source of the other red feature — a branch cut along the real axis, denoted by a red dashed line in the diagram. These are not bugs but features that will allow us to evaluate our improper integral.</p>
+<p>Our contour contains just one pole, which means that the integration around the blue, arrowed contour is <span class="math inline">\(2\pi i\)</span>, the residue at <span class="math inline">\(v=-1\)</span>: <span class="math display">\[\oint \frac{v^{z-1}}{1+v}dv=2\pi i(-1)^{z-1}
+\]</span> This is <em>not</em> our integral. If we take the upper side of the branch cut as real, our integral is given by <span class="math inline">\(C_1\)</span> when <span class="math inline">\(r\rightarrow0\)</span> and <span class="math inline">\(R\rightarrow\infty\)</span>. In the same limit, it is also related to the integral along <span class="math inline">\(C_2\)</span> by a complex factor.</p>
+<p>This choice of values on the branch cut means that <span class="math inline">\(-1=\exp(i\pi)\)</span>, and thus <span class="math inline">\(2\pi i(-1)^{z-1}=2\pi i\exp(\pi(z-1)i)\)</span>.</p>
+<p>We take the parts of the contour in turns.</p>
+<p>Starting with our desired integral, as already mentioned: <span class="math display">\[\lim_{\begin{smallmatrix}r\rightarrow0 &amp;\\ R\rightarrow\infty\end{smallmatrix}}\int_{C_1}\frac{v^{z-1}}{1+v}dv=\int\limits_0^\infty \frac{v^{z-1}}{1+v}dv\]</span></p>
+<p>Moving on: <span class="math display">\[\lim_{R\rightarrow\infty}\left|\int_{C_R}\frac{v^{z-1}}{1+v}dv\right|\lt\lim_{R\rightarrow\infty}R^{z-2}2\pi R=0\]</span> We specified previously that <span class="math inline">\(z\lt1\)</span>. The <span class="math inline">\(R^{z-2}\)</span> bit is an upper bound for the integrand, and <span class="math inline">\(2\pi R\)</span> is the circumference length of <span class="math inline">\(C_R\)</span>.</p>
+<p>Now the crux: <span class="math display">\[\lim_{\begin{smallmatrix}r\rightarrow0 &amp;\\ R\rightarrow\infty\end{smallmatrix}}\int_{C_2}\frac{v^{z-1}}{1+v}dv=-\int\limits_0^\infty \frac{(v\exp(2\pi i))^{z-1}}{1+v}dv\]</span> The minus sign comes from the arrow direction on <span class="math inline">\(C_2\)</span>. Although one could add the <span class="math inline">\(\exp(2\pi i)\)</span> to the other <span class="math inline">\(v\)</span> terms, only the part with a fractional power is truly affected. So <span class="math inline">\(C_2\)</span> gives our improper integral muliplied by <span class="math inline">\(-\exp(2\pi(z-1)i)\)</span>.</p>
+<p>And finally: <span class="math display">\[\lim_{r\rightarrow0}\left|\int_{C_r}\frac{v^{z-1}}{1+v}dv\right|\rightarrow\lim_{r\rightarrow0}r^{z-1}2\pi r=0\]</span> This time we use that in the overlap strip <span class="math inline">\(z\gt0\)</span> to get a zero limit.</p>
+<p>Adding the non-zero bits and equating with the residue:</p>
+<p><span class="math display">\[(1-\exp(2\pi(z-1)i))\int\limits_0^\infty \frac{v^{z-1}}{1+v}dv=2\pi i\exp(\pi(z-1)i)\]</span> Dividing through by <span class="math inline">\(2i\exp(\pi(z-1)i)\)</span>: <span class="math display">\[-\sin(\pi(z-1))\int\limits_0^\infty \frac{v^{z-1}}{1+v}dv=\pi\]</span> Noting that <span class="math inline">\(-\sin(\pi(z-1))=\sin(\pi z)\)</span>: <span class="math display">\[\Gamma(z)\Gamma(1-z)=\frac\pi{\sin(\pi z)}\]</span>This formula continues to the rest of the complex plane.</p>
+<p>A simple application is to evaluate: <span class="math display">\[\Gamma(\tfrac12)^2=\frac{\pi}{\sin(\pi/2)}=\pi\implies\Gamma(\tfrac12)=\sqrt\pi\]</span>. This result can also be found by the traditional method of squaring a Gaussian: <span class="math display">\[\Gamma(\tfrac12)=\int\limits_0^\infty\frac{\exp(-t)}{\sqrt t}dt=2\int\limits_0^\infty\exp(-x^2)dx\]</span> Squaring the Gaussian: <span class="math display">\[\left[\int\limits_0^\infty\exp(-x^2)dx\right]^2= \\ \int\limits_0^\infty\int\limits_0^\infty\exp(-[x^2+y^2])dxdy= \\ \frac{\pi}2\int\limits_0^\infty\exp(-r^2)rdr=\frac{\pi}4\]</span> Combining the two gives the same result as the reflection calculation.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
