@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="binet-1">Binet 1</h2>
+<p>We now propose to integrate the digamma function <span class="math inline">\(\psi\)</span> to get <span class="math inline">\(\ln\Gamma\)</span>: <span class="math display">\[\ln\Gamma(z)=\int\limits_1^z\psi(s)ds\]</span></p>
+<p>We extract from before:</p>
+<p><span class="math display">\[\psi(z)=\ln(z)-\frac1{2z}+ \\
+\int\limits_0^\infty\left[\frac{1}t-\frac1 2-\frac{1}{\exp(t)-1}\right]\exp(-zt)dt\]</span></p>
+<p>We note: <span class="math display">\[\int\limits_1^z\frac{ds}s=\left[\ln(s)\right]_1^z=\ln(z)\]</span> since <span class="math inline">\(\ln(1)=0\)</span>. Next, integrating by parts: <span class="math display">\[\int\limits_1^z\ln(s)ds=\left[s\ln(s)\right]_1^z-\int\limits_1^z\frac{sds}s=z\ln(z)-z+1\]</span></p>
+<p>Finally, the harder part: <span class="math display">\[\int\limits_1^z\int\limits_0^\infty\left[\frac{1}t-\frac1 2-\frac{1}{\exp(t)-1}\right]\exp(-st)dtds\]</span> The <span class="math inline">\(s\)</span> integral only affects the <span class="math inline">\(\exp(-st)\)</span> factor, for which we use: <span class="math display">\[\int\limits_1^z\exp(-st)ds=\left[\frac{\exp(-st)}{-t}\right]_1^z=\frac{\exp(-t)-\exp(-zt)}{t}\]</span> Thus the integral becomes: <span class="math display">\[\int\limits_0^\infty\left[\frac{1}t-\frac1 2-\frac{1}{\exp(t)-1}\right]\frac{\exp(-t)-\exp(-zt)}{t}dt\]</span> We define: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\frac1 2-\frac1t+\frac{1}{\exp(t)-1}\right]\frac{\exp(-zt)}{t}dt\]</span> We have reversed the sign of the square bracket to make it positive. As <span class="math inline">\(t\rightarrow0\)</span>, the square bracket varies as <span class="math inline">\(B_2t/2=t/12\)</span>, where the Bernoulli number <span class="math inline">\(B_2=1/6\)</span>. The function varies from 0 to 1/2 as <span class="math inline">\(t\rightarrow\infty\)</span>:</p>
+<figure>
+<img alt="\frac1 2-\frac1t+\frac{1}{\exp(t)-1}" src="7.svg"/><figcaption><span class="math inline">\(\frac1 2-\frac1t+\frac{1}{\exp(t)-1}\)</span></figcaption>
+</figure>
+<p>Combining the bits: <span class="math display">\[\ln\Gamma(z)=z\ln(z)-z+1-\frac12\ln(z)+I(z)-I(1)\]</span> The completion will come with the evaluation of the constant term <span class="math inline">\(1-I(1)\)</span>. . . .</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
