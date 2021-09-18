@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="riemann-zeta-connection">Riemann zeta connection</h2>
+<p>An interesting connection between the <span class="math inline">\(\Gamma\)</span> and the Riemann zeta function, <span class="math inline">\(\zeta\)</span>, arises from: <span class="math display">\[\int\limits_0^\infty t^{z-1}\exp(-\alpha t)dt=\frac{\Gamma(z)}{\alpha^z}\]</span></p>
+<p>If we combine this with: <span class="math display">\[\zeta(z)=\sum\limits_{n=1}^\infty \frac1{n^z}\]</span> we get: <span class="math display">\[\zeta(z)\Gamma(z)=\sum\limits_{n=1}^\infty \int\limits_0^\infty t^{z-1}\exp(-n t)dt \\
+=\int\limits_0^\infty \frac{t^{z-1}}{\exp(t)-1}dt\]</span></p>
+<p>This sketch using geometric summation needs some restrictions on <span class="math inline">\(z\)</span>. The zeta function definition restricts this, for now, to <span class="math inline">\(\mathrm{Re}(z)&gt;1\)</span>. The <span class="math inline">\(\Gamma\)</span> definition is, of course, slightly more expansive.</p>
+<p>We can use a contour to increase the range of definition: <img alt="Contour" src="9.svg"/></p>
+<p>This is similar to the contour we used in our Reflective interlude, except for the direction, and we have not included <span class="math inline">\(C_R\)</span>, the big circle. Also the integration variable is <span class="math inline">\(t\)</span>, not <span class="math inline">\(v\)</span>.</p>
+<p>Let us assume for now that <span class="math inline">\(z\)</span> is real and consider: <span class="math display">\[\int\limits_C \frac{t^{z-1}}{\exp(t)-1}dt\]</span> where <span class="math inline">\(C=C_1+C_r+C_2\)</span>. We make the integral around the real axis tight enough to exclude the poles arising from zeros of the denominator at <span class="math inline">\(2\pi ik, k\ne0,k\in\mathbb Z\)</span>.</p>
+<p>The <span class="math inline">\(C_1\)</span> integral is <span class="math inline">\(-\zeta(z)\Gamma(z)\)</span>, while that of <span class="math inline">\(C_2\)</span> is <span class="math inline">\(\exp(2\pi(z-1))\zeta(z)\Gamma(z)\)</span>, assuming we can let <span class="math inline">\(r\rightarrow0\)</span>. The integral around <span class="math inline">\(C_r\)</span> is less than <span class="math inline">\(r^{z-2}2\pi r\)</span>. This goes to zero as <span class="math inline">\(r\rightarrow0\)</span> so long as <span class="math inline">\(z&gt;1\)</span>. So in this region: <span class="math display">\[\int\limits_C \frac{t^{z-1}}{\exp(t)-1}dt=2i\exp(i\pi z)\sin(\pi z)\zeta(z)\Gamma(z)\]</span></p>
+<p>Using the Reflective interlude: <span class="math display">\[\zeta(z)=\frac{\exp(-i\pi z)\Gamma(1-z)}{2\pi i}\int\limits_C \frac{t^{z-1}}{\exp(t)-1}dt\]</span> This well defined for all <span class="math inline">\(z\)</span>, except at the poles of <span class="math inline">\(\Gamma\)</span>. These are at <span class="math inline">\(1-z\le0,1-z\in \mathbb Z\)</span>. But the <span class="math inline">\(\zeta\)</span> is well defined for <span class="math inline">\(\mathrm{Re}(z)&gt;1\)</span>, so the only possible singularity must be at <span class="math inline">\(z=1\)</span>. [The apparent poles for <span class="math inline">\(z=2,3,\dots\)</span> must be cancelled by zeros of the contour integral.]</p>
+<p>In fact the contour integral at <span class="math inline">\(z=1\)</span> has no branch cut (<span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> cancel against each other), so one is just left with <span class="math inline">\(C_r\)</span>: <span class="math display">\[\int\limits_{C_r} \frac{t^{1-1}}{\exp(t)-1}dt\rightarrow\int\limits_{C_r} \frac{dt}t=2\pi i\]</span> At the same time, <span class="math inline">\(\Gamma(1-z)\rightarrow1/(1-z)\)</span>, so the singularity is a simple pole with <span class="math inline">\(-1\)</span> Cauchy residue. This means that <span class="math inline">\(\zeta(z)\rightarrow-1/(1-z)\)</span>, which has residue <span class="math inline">\(+1\)</span>.</p>
+We can evaluate <span class="math inline">\(\zeta\)</span> at non-positive integers using, again, Cauchy residue calculus. The Bernoulli numbers are defined: <span class="math display">\[\frac t{\exp(t)-1}=\sum\limits_{n=0}^\infty \frac{B_n}{n!}t^n\]</span> For non-positive <span class="math inline">\(k\in\mathbb Z\)</span>: <span class="math display">\[\int\limits_{C_r} \frac{t^{k-1}}{\exp(t)-1}dt\rightarrow\int\limits_{C_r} t^{k-2}\sum\limits_{n=0}^\infty \frac{B_n}{n!}t^ndt\]</span> The integral residue comes from the term <span class="math inline">\(1/t\)</span>, i.e. only if <span class="math inline">\(k-2+n=-1\)</span> or <span class="math inline">\(k=1-n\)</span>, giving <span class="math inline">\(2\pi iB_n/n!\)</span>. Hence: <span class="math display">\[\zeta(1-n)=(-1)^{n-1}\Gamma(n)\frac{B_n}{n!}=(-1)^{n-1}\frac{B_n}n\]</span> since <span class="math inline">\(\Gamma(n)=(n-1)!\)</span>. The <span class="math inline">\(n=0\)</span> case is infinite, as expected from <span class="math inline">\(\zeta(1)\)</span> being a pole. We can evaluate the analytic continuation <span class="math inline">\(\zeta(0)=B_1=-1/2\)</span>. For <span class="math inline">\(m\gt0\)</span>, <span class="math display">\[\zeta(-2m)=(-1)^{2m}\frac{B_{2m+1}}{2m+1}=0\]</span> from a well-known property of Bernoulli numbers. By contrast <span class="math display">\[\zeta(-(2m+1))=-\frac{B_{2m+2}}{2m+2},m\ge0\]</span> is non-zero.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="on-more-reflection">On more reflection</h2>
+<p>We are going to look more generally at the integral <span class="math display">\[\int \frac{t^{z-1}}{\exp(t)-1}dt\]</span></p>
+<p>The contour is going to be along the lines of:</p>
+<figure>
+<img alt="Square contour" src="10.svg"/><figcaption>Square contour</figcaption>
+</figure>
+<p>In this diagram we have only enclosed the poles closest to the origin. Eventually we are going to grow the square part of the contour to enclose more and more poles, show that the sum of residues plus the integral from the last section equal zero, and hence the integral will be the sum of the residues. It will also be seen that this sum is related to <span class="math inline">\(\zeta\)</span>.</p>
+<p>The integrals for <span class="math inline">\(C_{1,2}\)</span> are truncated versions of those from the last section, but carried out in the opposite sense, giving a minus sign. The <span class="math inline">\(C_r\)</span> integral is also in the opposite sense from that in the last section. It excludes the nasty (for non-integral <span class="math inline">\(z\)</span>) branch cut along the real axis.</p>
+<p>That leaves the square, <span class="math inline">\(C_S\)</span>. We want to minimize its contribution and find values of <span class="math inline">\(z\)</span> for which it goes to zero at infinity. We want first <span class="math inline">\(1/|\exp(t)-1|\)</span> to be bounded along the path, and also <span class="math inline">\(|t^{z-1}|\)</span> to be small. The latter will occur if <span class="math inline">\(\mathrm{Re}(z)\)</span> is less than a certain value.</p>
+<p>For the situation in the diagram we propose to go along the square enclosed by the pairs of lines <span class="math inline">\(\mathrm{Re}(t)=\pm3\pi\)</span> and <span class="math inline">\(\mathrm{Im}(t)=\pm3\pi\)</span>. This encloses the two residues shown. The poles of <span class="math inline">\(1/|\exp(t)-1|\)</span> are at <span class="math inline">\(\pm2\pi i\)</span>, giving residues for the <span class="math inline">\(t^{z-1}\)</span> factor of <span class="math inline">\((2\pi i)^{z-1}\)</span> and <span class="math inline">\((-2\pi i)^{z-1}\)</span>, respectively: <span class="math display">\[\oint \frac{t^{z-1}}{\exp(t)-1}dt=2\pi i[(2\pi i)^{z-1}+(-2\pi i)^{z-1}
+]\]</span></p>
+<p>Since we want the integral (and sum) to go to zero at infinity <span class="math inline">\(t\)</span>, we expect that <span class="math inline">\(z\)</span> will be limited to negative values.</p>
+<p>We look at <span class="math inline">\(|1/(\exp(t)-1)|\)</span> at <span class="math inline">\(\mathrm{Re}(t)=-3\pi\)</span> with the imaginary part varying between <span class="math inline">\(\pm3\pi\)</span>:</p>
+<figure>
+<img alt="x" src="10x.svg"/><figcaption>\(|1/(\exp(t)-1)|\) for \(\mathrm{Re}(t)=-3\pi\)</figcaption>
+</figure>
+<p>This oscillates around 1 since the exponential is close to zero. The behaviour for <span class="math inline">\(\mathrm{Re}(t)=+3\pi\)</span> is similar but oscillating near 0, since the exponential now dominates over 1. For larger values of <span class="math inline">\(|\mathrm{Re}(t)|\)</span>, the oscillations near 1 and zero become even smaller, so on the vertical sides of the square, <span class="math inline">\(|1/(\exp(t)-1)|\)</span> is bounded.</p>
+<p>The horizontal sides of the square, i.e. <span class="math inline">\(\mathrm{Im}(t)=\pm3\pi\)</span>, give a smooth monotonic join from ~1 to ~0:</p>
+<figure>
+<img alt="y" src="10y.svg"/><figcaption>\(|1/(\exp(t)-1)|\) for \(\mathrm{Im}(t)=\pm3\pi\)</figcaption>
+</figure>
+<p>It is important for this that one passes between the poles, since if the path approached nearer them, one would see a blip.</p>
+<p>Anyway the moral is that <span class="math inline">\(|1/(\exp(t)-1)|\)</span> is bounded around the square, and is actually less than 2, say. A rigorous argument would confirm this.</p>
+<p>The length of the perimeter <span class="math inline">\(8\times3\pi\)</span>. The <span class="math inline">\(|t^{z-1}|\)</span> factor is less than <span class="math inline">\((3\pi)^{\mathrm{Re}(z)-1}\)</span>, so long as <span class="math inline">\(\mathrm{Re}(z)\lt1\)</span>. So the integral around <span class="math inline">\(C_S\)</span> is less than <span class="math inline">\(2\times8\times3\pi(3\pi)^{\mathrm{Re}(z)-1}=16(3\pi)^{\mathrm{Re}(z)}\)</span>.</p>
+<p>We propose to include more and more poles of <span class="math inline">\(1/(\exp(t)-1)\)</span> by expanding the square in steps of <span class="math inline">\(2\pi\)</span>: <span class="math inline">\(3\pi,5\pi,\dots,(2m+1)\pi,\dots\)</span> The integral around the square is bounded by <span class="math inline">\(16((2m+1)\pi)^{\mathrm{Re}(z)}\)</span>, which goes to zero as <span class="math inline">\(m\rightarrow\infty\)</span>, if <span class="math inline">\(\mathrm{Re}(z)&lt;0\)</span>.</p>
+<p>Now for the sum of residues:</p>
+<p><span class="math display">\[\sum\limits_{m=0}^\infty2\pi i[((2m)\pi i)^{z-1}+(-(2m)\pi i)^{z-1}]\]</span></p>
+<p>We can separate this into the product of two factors. The sum: <span class="math display">\[\sum\limits_{m=0}^\infty m^{z-1}=\zeta(1-z)\]</span> and: <span class="math display">\[2\pi i[(2\pi i)^{z-1}+(-2\pi i)^{z-1}]=(2\pi)^z[(i)^z-(-i)^z]\]</span> Replacing <span class="math inline">\(i=\exp(i\pi/2)\)</span> and <span class="math inline">\(-i=\exp(3i\pi/2)\)</span>, the factor becomes <span class="math inline">\(-(2\pi)^z2i\exp(i\pi z)\sin(\pi z/2)\)</span>.</p>
+<p>From the last section: <span class="math display">\[\zeta(z)=\frac{\exp(-i\pi z)\Gamma(1-z)}{2\pi i}\int\limits_C \frac{t^{z-1}}{\exp(t)-1}dt\]</span> where <span class="math inline">\(C=-C_1-C_r-C_2\)</span>. Equating to minus the residue sum: <span class="math display">\[\zeta(z)=\frac{\exp(-i\pi z)\Gamma(1-z)}{2\pi i}(2\pi)^z2i\exp(i\pi z)\sin(\pi z/2)\zeta(1-z) \\
+=2^z(\pi)^{z-1}\sin(\pi z/2)\Gamma(1-z)\zeta(1-z)\]</span> The functional relation relates the value of <span class="math inline">\(\zeta\)</span> to its value reflected in the point <span class="math inline">\(z=1/2\)</span>. The usual analytic continuation argument allows us to extend this to all, except for the singularities. One finds with a bit of thought that there is only one singularity, the pole at <span class="math inline">\(z=1\)</span>.</p>
+<p>The <a href="6.html">Reflective interlude</a>:</p>
+<p><span class="math display">\[\Gamma(z)\Gamma(1-z)=\frac\pi{\sin(\pi z)}\]</span></p>
+<p>and <span class="math inline">\(\sin(\pi z)=2\sin(\pi z/2)\cos(\pi z/2)\)</span> allows us to recast as: <span class="math display">\[\zeta(z)=\frac{(2\pi)^z}{2\cos(\pi z/2)\Gamma(z)}\zeta(1-z)\]</span></p>
+<p>In particular: <span class="math display">\[\zeta(2m)=\frac{(2\pi)^{2m}}{2\cos(\pi m)\Gamma(2m)}\zeta(1-2m)\]</span></p>
+From the last section: <span class="math display">\[\zeta(-(2m+1))=-\frac{B_{2m+2}}{2m+2},m\ge0\]</span> or: <span class="math display">\[\zeta(1-2m)=\zeta(-(2(m-1)+1))=-\frac{B_{2m}}{2m}\]</span> giving: <span class="math display">\[\zeta(2m)=(-1)^{m+1}(2\pi)^{2m}\frac{B_{2m}}{2(2m)!}\]</span>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
