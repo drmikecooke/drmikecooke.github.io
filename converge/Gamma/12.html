@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="binet-1-and-zeta">Binet 1 and <span class="math inline">\(\zeta\)</span></h2>
+<p>We note from section 10: <span class="math display">\[\zeta(2m)=(-1)^{m+1}(2\pi)^{2m}\frac{B_{2m}}{2(2m)!}\]</span></p>
+<p>Putting this in (the somewhat dubious): <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{m=1}^\infty\frac{B_{2m}}{(2m)!}t^{2m}\right]\frac{\exp(-zt)}{t^2}dt\]</span> we get: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{m=1}^\infty(-1)^{m+1}2\zeta(2m)\left(\frac t{2\pi}\right)^{2m}\right]\frac{\exp(-zt)}{t^2}dt\]</span></p>
+<p>Remembering: <span class="math display">\[\zeta(s)=\sum\limits_{k=1}^\infty\frac1{k^s}\]</span> and inserting: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{m,k=1}^\infty(-1)^{m+1}2\left(\frac t{2\pi k}\right)^{2m}\right]\frac{\exp(-zt)}{t^2}dt\]</span></p>
+<p>We can do the <span class="math inline">\(m\)</span> sum by using geometric summation: <span class="math display">\[\sum\limits_{m=1}^\infty-(-\alpha)^m=\frac\alpha{1+\alpha}\]</span> This gives: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{k=1}^\infty2\frac {(t/2\pi k)^2}{1+(t/2\pi k)^2}\right]\frac{\exp(-zt)}{t^2}dt\]</span></p>
+<p>Absorbing <span class="math inline">\(2\pi k\)</span> into <span class="math inline">\(t\)</span>: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{k=1}^\infty\frac 1{1+t^2}\frac{\exp(-2\pi kzt)}{\pi k}dt\right]\]</span></p>
+<p>We note the sum can be determined by: <span class="math display">\[\sum\limits_{k=0}^\infty\frac{a^k}k=-\ln(1-a)\]</span> to give: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\frac 1{1+t^2}\frac{(-\ln(1-\exp(-2\pi zt))}{\pi }dt\right]\]</span> I have checked by numerical integration that this gives sensible results. [I used the quad function in the scipy Python module.] The upper limit converges better than <span class="math inline">\(1/t^2\)</span>. The lower limit has an (improper) integrable <span class="math inline">\(\ln(t)\)</span> singularity. So the dubious formula with Bernoulli numbers has ended up with something that seems to work, i.e. I seem to have reassembled the asymptotic integral into something convergent. I have some other thoughts, but for the moment I will pass on to another slightly different approach. . . .</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

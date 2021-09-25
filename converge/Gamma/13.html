@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Gamma function</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="gamma-function">Gamma function</h1>
+<h2 id="binet-1-and-e_1">Binet 1 and <span class="math inline">\(E_1\)</span></h2>
+<p>In representation: <span class="math display">\[I(z)=\int\limits_0^\infty\left[\sum\limits_{k=1}^\infty\frac 1{1+t^2}\frac{\exp(-2\pi kzt)}{\pi k}\right]dt\]</span> we can separate out: <span class="math display">\[J(z)=\int\limits_0^\infty\exp(-zt)\frac {dt}{1+t^2}\]</span> The <span class="math inline">\(1/(1+t^2)\)</span> can be variously viewed as a Cauchy, Lorentzian or Breit-Wigner function. Our <span class="math inline">\(J(z)\)</span> is its Laplace transform. I’ve not been able to find much in the way of simple descriptions of its behaviour. The Fourier transform is relatively straightforward, if non-analytic, involving the exponential of the absolute value of the (real) frequency argument multiplied by a suitable factor depending on the detailed definition of transform used.</p>
+<p>Before looking in detail at <span class="math inline">\(J\)</span>, I will just note: <span class="math display">\[I(z)=\sum\limits_{k=1}^\infty \frac{J(2\pi kz)}{\pi k}\]</span> assuming this expression converges.</p>
+<p>Let’s explode the denominator in <span class="math inline">\(J\)</span> using a partial fraction decomposition: <span class="math display">\[J(z)=\int\limits_0^\infty\exp(-zt)\frac1{2i}\left[\frac1{t-i}-\frac1{t+i}\right]dt\]</span></p>
+<p>Now the <span class="math inline">\(E_1\)</span> “exponential integral” is defined: <span class="math display">\[E_1(z)=\int\limits_z^\infty\exp(-t)\frac{dt}t\]</span></p>
+<p>Using a shift and rescaling the integration variable: <span class="math display">\[\int\limits_0^\infty\frac{\exp(-zt)}{t+a}dt=\exp(az)\int\limits_a^\infty\frac{\exp(-zt)}tdt \\
+=\exp(az)\int\limits_{az}^\infty\frac{\exp(-t)}tdt \\
+=\exp(az)E_1(az)\]</span></p>
+<p>Analytically continuing to <span class="math inline">\(a=\pm i\)</span>: <span class="math display">\[J(z)=\frac1{2i}\left[\exp(-iz)E_1(-iz)-\exp(iz)E_1(iz)\right]\]</span></p>
+From: <span class="math display">\[J(z)=\int\limits_0^\infty\exp(-zt)\frac {dt}{1+t^2}\]</span> it is easy to see that, for real <span class="math inline">\(z\)</span> at least, <span class="math inline">\(J(z)\lt1/z\)</span>. This allows us to deterimine that: <span class="math display">\[I(z)=\sum\limits_{k=1}^\infty \frac{J(2\pi kz)}{\pi k}\]</span> is bounded by the sum: <span class="math display">\[\sum\limits_{k=1}^\infty \frac1{2\pi^2 k^2z}=\frac{\zeta(2)}{2\pi^2z}=\frac{B_2}{2z}\]</span> so it is convergent for all z. Numerical experiments using scipy.special.exp1 suggest that the series does indeed converge (eventually) to Binet 1’s <span class="math inline">\(I(z)\)</span>.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
