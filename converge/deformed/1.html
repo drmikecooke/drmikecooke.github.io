@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Deformed algebras</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="deformed-algebras">Deformed algebras</h1>
+<h2 id="standard-usage">Standard usage</h2>
+<h3 id="fermions">Fermions</h3>
+<p>The simplest structure has <span class="math inline">\(\Phi(0)=\Phi(1)=0\)</span>, which is an isolated “vacuum state”, <span class="math inline">\(|0\rangle\)</span>. Slightly more complicated is the Fermi state pair <span class="math inline">\(|0\rangle,|1\rangle\)</span>. The operators <span class="math inline">\(a,a^\dagger\)</span> annihilate these states, respectively. Hence <span class="math inline">\(\Phi(0)=\Phi(2)=0\)</span>. The standard Fermi-Dirac anticommutator, <span class="math inline">\(\{a,a^\dagger\}=1\)</span> gives <span class="math inline">\(\Phi(1)=1\)</span>.</p>
+<h3 id="bosons">Bosons</h3>
+<p>The function <span class="math inline">\(\Phi(n)=n\)</span> gives the normal harmonic oscillator states and commutation relations: <span class="math inline">\([a,a^\dagger]=1\)</span>.</p>
+<h3 id="angular-momentum-and-spin">Angular momentum and spin</h3>
+<p>It is also well known that angular momentum and spin have a creation/annihilation structure, but with the set of commuting observables consisting of the angular momentum/spin in a given direction, e.g. (<span class="math inline">\(L_z,S_z\)</span>), and the squared modulus of the respective vector (<span class="math inline">\(L^2,S^2\)</span>). The remaining operator components are reassembled into “raising/lowering” operators for <span class="math inline">\(L_z,S_z\)</span>, e.g. <span class="math inline">\([L_z,L_+]=L_+,[L_z,L_-]=-L_-\)</span>. These operators also commute with <span class="math inline">\(L^2\)</span>, which we can (will?) therefore assume is fixed (and positive, since it represents a square). Using the standard commutators (with <span class="math inline">\(\hbar=1\)</span>), we find:</p>
+<p><span class="math display">\[L_+L_-=L^2-L_z^2+L_z,L_-L_+=L^2-L_z^2-L_z\]</span></p>
+<p>We note that <span class="math inline">\(\Phi(L_z)=L^2-L_z^2+L_z\)</span> and <span class="math inline">\(\Phi(L_z+1)=L^2-L_z^2-L_z\)</span>, as required, making the suitable replacements of <span class="math inline">\(N,a,a^\dagger\)</span> by <span class="math inline">\(L_z,L_+,L_-\)</span>. The angular momentum states are constrained by the requirement that <span class="math inline">\(\Phi(L_z)\ge0\)</span>.</p>
+<p>For the maximum <span class="math inline">\(L_z\)</span>, <span class="math inline">\(L_+|l_z^+\rangle=0\)</span> gives to <span class="math inline">\(\Phi(L_z+1)|l_z^+\rangle=0\)</span> or <span class="math inline">\(l_z^{+2}+l_z^+=L^2\)</span>. It is traditional (and useful) to express <span class="math inline">\(L^2\)</span> as <span class="math inline">\(l(l+1)\)</span>, with <span class="math inline">\(l\)</span> positive. Working through, the eigenvalue <span class="math inline">\(l_z^+=l\)</span>, the maximum of the two solutions to the quadratic equation.</p>
+<p>Similarly, <span class="math inline">\(\Phi(L_z)|l_z^-\rangle=0\)</span> or <span class="math inline">\(l_z^{-2}-l_z^-=l(l+1)\)</span>. To avoid a solution greater than <span class="math inline">\(l_z^+\)</span>, we must have <span class="math inline">\(l_z^-=-l\)</span>. Hence the eigenvalues of <span class="math inline">\(L_z\)</span> are restricted by the condition <span class="math inline">\(|l_z|\le l\)</span>. if we allowed <span class="math inline">\(l_z\)</span> outside this range, <span class="math inline">\(\Phi\)</span> would enter negative, “unphysical” territory.</p>
+<p>There is a further constraint from the integar separation of the <span class="math inline">\(l_z\)</span>: we must have <span class="math inline">\(l_z^+-l_z^-=(+l)-(-l)=2l\)</span> an integer. Hence the allowed values of <span class="math inline">\(l\)</span> are half-integral. When applied physically, one finds orbital angular momentum is restricted to integral <span class="math inline">\(l\)</span>. But spin, famously, is allowed to explore the spooky half-integral values. In fact, the Fermi-Dirac operators above have the same structure as for spin-1/2, somewhat shifted (back by a 1/2): <span class="math inline">\(\Phi(-1/2)=0,\Phi(+1/2)=1,\Phi(+3/2)=0\)</span>. Also our isolated vacuum state is merely spin-0.</p>
+<h3 id="hamiltonian">Hamiltonian</h3>
+<p>We want to connect to the “real” world, and that usually comes through probing with some external system, like a radiation field (light, visible or otherwise). The probing reveals more or less differences in energy of the target system. The weaker the probe coupling, the better we can determine the properties (energy levels) of the target as an isolated system; for example, line-widths tend to be narrower, showing the energy differences more precisely and accurately. Generally, we want <span class="math inline">\(N\)</span> eigenstates to also be energy eigenstates, so that <span class="math inline">\(H|n\rangle=\varepsilon_n|n\rangle\)</span>. So we have in effect <span class="math inline">\(H=E(N)\)</span>.</p>
+<p>The Hamiltonian also is connected with time-dependence through the Schödinger or Heisenberg equations.</p>
+A common choice for the deformed oscillator Hamiltonian is: <span class="math display">\[H=\frac12[aa^\dagger+a^\dagger a]=\frac12[\Phi(N+1)+\Phi(N)].\]</span> One could also ignore the zero point energy, and use just <span class="math inline">\(H=\Phi(N)\)</span>.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

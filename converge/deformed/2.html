@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Deformed algebras</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="deformed-algebras">Deformed algebras</h1>
+<h2 id="naïve-q-deformed-oscillator">Naïve q-deformed oscillator</h2>
+<p>There are various routes to q/Q-deformations. Although these are often referred to as “quantum-deformations”, this seems to be partly a muddling of the history. These deformations were originally studied in classical number theory and so on. I have the impression that once the ideas were applied to quantum-like systems, and the fact that the letter “q” or its uppercase version were used as the parameter, which also is the first letter of “quantum”, and voilà.</p>
+<p>Here we will start from a deformation of the boson commutator: <span class="math inline">\([a,a^\dagger]_q=aa^\dagger-qa^\dagger a=1\)</span>. In terms of the function <span class="math inline">\(\Phi\)</span>, one gets a recurrence relation: <span class="math inline">\(\Phi(N+1)-q\Phi(N)=1\)</span>. [Some researchers use an upper-case “Q” to disguish it from the q-parameter for the slightly different q-deformed commutator, to be considered in the next section.] If we assume <span class="math inline">\(\Phi(0)=0\)</span>, so the states are bounded from below, the recurrence leads to a sum for the states: <span class="math display">\[\Phi(n)=\sum\limits_{k=0}^{n-1}q^k=\frac{q^n-1}{q-1},\]</span> since this is our old friend, the geometric sum. The value for \(q=1\), the normal boson/harmonic oscillator case, is a bit tricky in this format, since the expression has a pole at this point. However, expressing it as \[\Phi(n)=\frac{(1+\Delta q)^n-1}{\Delta q}\approx n\] in the limit \(\Delta q\rightarrow0\), returns the expected \(\Phi\) function.</p>
+<p>We plot \(\Phi\) at values representative of \(q\) less and greater than 1.</p>
+<figure>
+  <img alt="q=1/2" src="2.1.svg"/>
+  <figcaption><span class="math inline">\(q=1/2\)</span></figcaption>
+</figure>
+<figure>
+<img alt="q=3/2" src="2.2.svg"/>
+<figcaption><span class="math inline">\(q=3/2\)</span></figcaption>
+</figure>
+<p>When \(q\lt1\), the \(\Phi\) function is bounded above. When \(q\ge1\), there is no bound. Further, for \(q\gt1\), \(\Phi\) tends to exponential behaviour.</p>
+<p>It may be of interest to consider negative <span class="math inline">\(q\)</span> (difficult to graph for non-integer <span class="math inline">\(n\)</span> as values of <span class="math inline">\(q^n\)</span> become complex).</p>
+<table>
+<caption>\(\Phi\)</caption>
+<tr><th>n\\q</th><th>-1.5</th><th>-1.0</th><th>-0.5</th><th>0.0</th><th>0.5</th><th>1.0</th><th>1.5</th></tr>
+<tr><th>0</th><td>-0.000000</td><td>-0.000000</td><td>-0.000000</td><td>-0.000000</td><td>-0.000000</td><td>0</td><td>0.000000</td></tr>
+<tr><th>1</th><td>1.000000</td><td>1.000000</td><td>1.000000</td><td>1.000000</td><td>1.000000</td><td>1</td><td>1.000000</td></tr>
+<tr><th>2</th><td>-0.500000</td><td>-0.000000</td><td>0.500000</td><td>1.000000</td><td>1.500000</td><td>2</td><td>2.500000</td></tr>
+<tr><th>3</th><td>1.750000</td><td>1.000000</td><td>0.750000</td><td>1.000000</td><td>1.750000</td><td>3</td><td>4.750000</td></tr>
+<tr><th>4</th><td>-1.625000</td><td>-0.000000</td><td>0.625000</td><td>1.000000</td><td>1.875000</td><td>4</td><td>8.125000</td></tr>
+<tr><th>5</th><td>3.437500</td><td>1.000000</td><td>0.687500</td><td>1.000000</td><td>1.937500</td><td>5</td><td>13.187500</td></tr>
+<tr><th>6</th><td>-4.156250</td><td>-0.000000</td><td>0.656250</td><td>1.000000</td><td>1.968750</td><td>6</td><td>20.781250</td></tr>
+<tr><th>7</th><td>7.234375</td><td>1.000000</td><td>0.671875</td><td>1.000000</td><td>1.984375</td><td>7</td><td>32.171875</td></tr>
+<tr><th>8</th><td>-9.851562</td><td>-0.000000</td><td>0.664062</td><td>1.000000</td><td>1.992188</td><td>8</td><td>49.257812</td></tr>
+<tr><th>9</th><td>15.777344</td><td>1.000000</td><td>0.667969</td><td>1.000000</td><td>1.996094</td><td>9</td><td>74.886719</td></tr>
+<tr><th>10</th><td>-22.666016</td><td>-0.000000</td><td>0.666016</td><td>1.000000</td><td>1.998047</td><td>10</td><td>113.330078</td></tr>
+</table>
+<p>We sweep through <span class="math inline">\(q\)</span> values in the range <span class="math inline">\([-1.5,1.5]\)</span>. For <span class="math inline">\(q\ge1\)</span> the <span class="math inline">\(\Phi\)</span> values increase without limit. For q in the open range <span class="math inline">\((-1,1)\)</span> <span class="math inline">\(\Phi\)</span> has values between 0 and a bound of <span class="math inline">\(1/(1-q)\)</span>. For positive <span class="math inline">\(q\)</span> the <span class="math inline">\(\Phi\)</span> values increase steadily to this limit. For <span class="math inline">\(q\lt0\)</span> the progress is not monotonic. For <span class="math inline">\(q\lt-1\)</span> the value of <span class="math inline">\(\Phi\)</span> is <em>not</em> bounded above or below. And the negative values are “unphysical”, since they represent the value of <span class="math inline">\(a^\dagger a\)</span> on <span class="math inline">\(|n\rangle\)</span>, which must be positive for the Born probability interpretation, as explained earlier. For <span class="math inline">\(q=-1\)</span> we have another old friend, the Fermi-Dirac anticommutator. The Bose-Einstein commutator is, of course, <span class="math inline">\(q=1\)</span>. By considering \(\Phi(2)=1+q), we can see that \(q\) is required to be real in this case.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
