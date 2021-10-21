@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Deformation</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+  <h1 id="deformed-algebras">Deformed algebras</h1>
+<h2 id="su2-deformation">su(2)-deformation</h2>
+<p>Here we look at commutators <span class="math inline">\([J_0,J_\pm]=\pm J_\pm\)</span>, in other words angular momentum/spin (3 dimensions) or the Lie algebra for the special unitary group in 2 dimensions, su(2). In the standard theory, one adds the commutator <span class="math inline">\([J_+,J_-]=2J_0\)</span>. For deformation, we want to restrict to an finite integer-spaced series of <span class="math inline">\(J_0\)</span> eigenstates, symmetric about 0, as in the standard theory. We also want mutual adjointness: <span class="math inline">\(J_+^\dagger=J_-,J_-^\dagger=J_+\)</span>. We also define <span class="math inline">\(J_+J_-=\Psi(J_0)\)</span>, since this combination commutes with <span class="math inline">\(J_0\)</span>. Also <span class="math inline">\(J_-J_+=\Psi(J_0+1)\)</span>, as before.</p>
+<p>We assume, as for standard su(2), that there is a state <span class="math inline">\(|J\rangle\)</span> for which <span class="math inline">\(J_+|J\rangle=0\)</span>. We have a series of integer-separated states <span class="math inline">\(|M\rangle\propto J_-^{J-M}|J\rangle\)</span>. Normally the su(2) structure leads to <span class="math inline">\(J_-|-J\rangle=0\)</span>, so that the states are integer spaced and symmetrically placed about zero, leading to the half-integer condition on <span class="math inline">\(J\)</span>.</p>
+<p>Using <span class="math inline">\(\Psi\)</span> on these extreme states, <span class="math inline">\(\Psi(J+1)=0\)</span> and <span class="math inline">\(\Psi(-J)=0\)</span>. We would like to define a new function that gives <span class="math inline">\(\Psi\)</span> a variable that increases the number of states as it increases. On the basis of the literature we suggest <span class="math inline">\(\Psi(J_0)=C-\Phi(J_0(J_0-1))\)</span>. The condition <span class="math inline">\(\Psi(J+1)=0\)</span> gives <span class="math inline">\(C=\Phi(J(J+1))\)</span>. Also, <span class="math inline">\(\Psi(-J)=0\)</span> gives <span class="math inline">\(C=\Phi(-J(-J-1))=\Phi(J(J+1))\)</span>. Phew! It would have been a real pain if they had not been the same.</p>
+<p>In fact the operator <span class="math inline">\(C=J_+J_-+\Phi(J_0(J_0-1))=J_-J_++\Phi(J_0(J_0+1))\)</span> serves as an analogue to the <span class="math inline">\(J^2\)</span> Casimir operator of undeformed su(2). It commutes with all the operators <span class="math inline">\(J_0,J_+,J_-\)</span>. We now have <span class="math inline">\(\Psi(J_0)=\Phi(J(J+1))-\Phi(J_0(J_0-1))\)</span>. We note that <span class="math inline">\(J(J\pm1)\ge-1/4\)</span> with the minimums occurring according to sign at <span class="math inline">\(J=\mp1/2\)</span>. Otherwise the value is positive for half-integral <span class="math inline">\(J\)</span>.</p>
+<figure>
+<img alt="The functions j(j+1) and j(j-1)." src="4.1.svg"/><figcaption>The functions <span class="math inline">\(j(j+1)\)</span> and <span class="math inline">\(j(j-1)\)</span>.</figcaption>
+</figure>
+<p>If we take <span class="math inline">\(\Phi_q(J_0(J_0-1))\)</span> as <span class="math inline">\([J_0]_q[J_0-1]_q\)</span>, where <span class="math inline">\([n]_q=(q^n-1/q^n)/(q-1/q)=\sinh(\tau n)/\sinh(\tau)=\sin(\theta n)/\sin(\theta)\)</span>, depending on whether <span class="math inline">\(q\)</span> is real or complex, one derives <span class="math inline">\([J_+,J_-]=[2J_0]_q\)</span>.</p>
+<figure>
+<img alt="\Psi for q=1,J=10 as in standard quantum mechanics" src="4.2.svg"/><figcaption><span class="math inline">\(\Psi\)</span> for <span class="math inline">\(q=1,J=10\)</span> as in standard quantum mechanics</figcaption>
+</figure>
+<figure>
+<img alt="\Psi for q=1.5,J=10" src="4.3.svg"/><figcaption><span class="math inline">\(\Psi\)</span> for <span class="math inline">\(q=1.5,J=10\)</span></figcaption>
+</figure>
+<p>Moving on to complex <span class="math inline">\(q\)</span>, we find the standard form is <span class="math inline">\(\theta=0\)</span>. For non-zero <span class="math inline">\(\theta\)</span> we find oscillations:</p>
+<figure>
+<img alt="J=5/2,\theta=1" src="4.4.svg"/><figcaption><span class="math inline">\(J=5/2,\theta=1\)</span></figcaption>
+</figure>
+<p>This leads to “non-physical” negative (square) norm states. Either the <span class="math inline">\(J_+,J_-\)</span> operators are <em>not</em> mutual adjoints, or the Hilbert space (squared) norm is not positive definite.</p>
+<h3 id="some-concluding-remarks">Some concluding remarks</h3>
+<p>I am stopping this work for the time being, until I come across a compelling application of these ideas that doesn’t seem as artificial as what I’ve covered. I hear tell of use in deriving Yang-Baxter type results that are of use in exact solutions of statistical mechanics problems (e.g. 2-dimensional Ising model). There may be applications where the negative (square) norm states may be used, e.g. special/general relativity. In quantum contexts, one usually needs to avoid these “ghost” states. For example, much effort needs to be applied in gauge theory, where the naïve theory tends to produce ghosts. These ghosts cancel out some of the positive norm states (e.g. longitudinal “photons”, leaving transverse states).</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

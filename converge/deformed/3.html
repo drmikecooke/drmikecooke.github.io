@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Deformation</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+  <h1 id="deformed-algebras">Deformed algebras</h1>
+<h2 id="standard-q-deformation">Standard q-deformation</h2>
+<p>An alternative, more standard approach enables <span class="math inline">\(q\)</span> to start exploring some complex values. This maintains the <span class="math inline">\(q\)</span>-commutator, but alters its value dependent on <span class="math inline">\(N\)</span>: <span class="math inline">\([a,a^\dagger]_q=aa^\dagger-qa^\dagger a=q^{-N}\)</span>. This devolves to the ordinary Einstein-Boson form when <span class="math inline">\(q=1\)</span>. It almost gives the Fermi-Dirac form at <span class="math inline">\(q=-1\)</span> — but there are some further considerations needed in this case, which we won’t go into in detail.</p>
+<p>We now need to evaluate <span class="math inline">\(\Phi\)</span>. The recurrence is <span class="math inline">\(\Phi(n+1)=q\Phi(n)+q^{-n}\)</span>, starting from <span class="math inline">\(\Phi(0)=0\)</span>. If we define <span class="math inline">\(\Phi(n)=f(n)/q^{n-1}\)</span>, we find the recurrence relation <span class="math inline">\(f(n+1)=q^2f(n)+1\)</span> or, using the previous (naïve) work, <span class="math inline">\(f(n)=(q^{2n}-1)/(q^2-1)\)</span>. Hence, <span class="math inline">\(\Phi(n)=f(n)/q^{n-1}=(q^n-q^{-n})/(q-q^{-1})\)</span>.</p>
+<figure>
+<img alt="q=1.5" src="3.1.svg"/><figcaption><span class="math inline">\(q=1.5\)</span></figcaption>
+</figure>
+<figure>
+<img alt="q=0.5" src="3.2.svg"/><figcaption><span class="math inline">\(q=0.5\)</span></figcaption>
+</figure>
+<p>We notice a reciprocal symmetry in <span class="math inline">\(q\)</span>: <span class="math inline">\(\Phi_q(n)=\Phi_{1/q}(n).\)</span> Therefore, <span class="math inline">\(q=1.5=3/2\)</span> gives the same curve as <span class="math inline">\(q=2/3\)</span>. Similarly, the <span class="math inline">\(q=0.5=1/2\)</span> curve is the same as <span class="math inline">\(\Phi_2\)</span>. With <span class="math inline">\(q=\exp(\tau)\)</span>, one can rewrite: <span class="math inline">\(\Phi_\tau(n)=\sinh(\tau n)/\sinh(\tau)\)</span>. The <span class="math inline">\(q\leftrightarrow1/q\)</span> becomes <span class="math inline">\(\tau\leftrightarrow-\tau\)</span>; <span class="math inline">\(\Phi_\tau\)</span> is even in <span class="math inline">\(\tau\)</span>.</p>
+<p>The function <span class="math inline">\(\Phi\)</span> is also real if <span class="math inline">\(q\bar{q}=1\)</span>. This allows complex <span class="math inline">\(q=\exp(i\theta)\)</span> of modulus 1. One finds <span class="math inline">\(\Phi_\theta(n)=\sin(n\theta)/\sin(\theta)\)</span>.</p>
+<figure>
+<img alt="\theta=1" src="3.3.svg"/><figcaption><span class="math inline">\(\theta=1\)</span></figcaption>
+</figure>
+<p>The state progression terminates only if <span class="math inline">\(\Phi(m)=0\)</span> for some integer <span class="math inline">\(m\)</span>. This occurs for <span class="math inline">\(\theta=\pi/m\)</span>. For other values of <span class="math inline">\(\theta\)</span>, there will be negative values of <span class="math inline">\(\Phi\)</span> before the sequence terminates. For irrational <span class="math inline">\(\theta/\pi\)</span>, the state progression will not terminate.</p>
+<figure>
+<img alt="\theta=\pi/2" src="3.4.svg"/><figcaption><span class="math inline">\(\theta=\pi/2\)</span></figcaption>
+</figure>
+<p>This is the Fermi-Dirac <span class="math inline">\(\Phi\)</span>.</p>
+<figure>
+<img alt="\theta=\pi/10" src="3.5.svg"/><figcaption><span class="math inline">\(\theta=\pi/10\)</span></figcaption>
+</figure>
+<p>A final question: are there any other values of <span class="math inline">\(q\)</span> that give a real <span class="math inline">\(\Phi\)</span>? Again <span class="math inline">\(\Phi_q(2)=(q^2-1/q^2)/(q-1/q)=q+1/q\)</span>. For this to be a real number <span class="math inline">\(a\)</span>, we need <span class="math inline">\(q^2-aq+1=0\)</span>. The quadratic has solution <span class="math inline">\(q=a/2\pm\sqrt{a^2/4-1}\)</span>. The is real for <span class="math inline">\(|a|\ge2\)</span>, but complex for <span class="math inline">\(|a|\lt2\)</span>. In the latter case, one finds <span class="math inline">\(q\bar q=1\)</span>, so we have all the cases leading to real <span class="math inline">\(\Phi\)</span>.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
