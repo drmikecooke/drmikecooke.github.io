@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Möbius transformations</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Lorentz group</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="möbius-transformations">Möbius transformations</h1>
+<h2 id="projections">Projections</h2>
+<p>The Möbius transform is defined for complex z: <span class="math display">\[z'=\frac{az+b}{cz+d}\]</span></p>
+<p>In this form it is somewhat difficult to unpack. In a handwaving way one can see that the “point” at infinity is transformed to <span class="math inline">\(a/c\)</span>. Conversely, the point <span class="math inline">\(-d/c\)</span> goes to infinity. A small improvement is to view the transformation as acting on the “Riemann sphere” consisting of the union of the complex plane, <span class="math inline">\(\mathbb C\)</span>, and <span class="math inline">\(\{\infty\}\)</span>, i.e. <span class="math inline">\(\mathbb{\hat C}=\mathbb C \cup\{\infty\}\)</span>. There are ways of making this sphericity more obvious with projections and so forth.</p>
+<p>The inverse transformation is also a Möbius transform, as is the composition of two Möbius transformations. This, therefore forms a Möbius transformation group. However, the form of the composition and inverse are rather complex looking.</p>
+<p>Things become clearer by expressing <span class="math inline">\(\mathbb{\hat C}\)</span> as the complex projective line <span class="math inline">\(\mathbb{CP}^1\)</span>. There are various ways to express the “points” of <span class="math inline">\(\mathbb{CP}^1\)</span>.</p>
+<p>The basic representation of projective geometry is as the one-dimensional subspaces of some vector space. With the one-dimensional subspaces (lines through the origin) regarded as points, the projective space has one less dimension than vector space used to represent it.</p>
+<p>There are ways to define projective geometry outside this paradigm, but in dimensions greater than 2, it can be shown to be isomorphic to it. The dimension-2 projective planes include the one-dimensional subspaces of 3-dimensional vector space, along with a slew of others. From what I remember, the projective line doesn’t really fit into the general axiomatic framework and is usually used to describe the one-dimensional subspaces of a dimension-2 vector space.</p>
+<p>Here we are interested in 2-dimensional complex vector spaces and the resulting projective line. The standard coordinate respresentation of the vector space is using pairs of complex number, <span class="math inline">\((z_1,z_2)\in\mathbb C^2\)</span>. The one-dimensional subspaces are given by lines through the origin. In “homogeneous” coordinates these lines are <span class="math inline">\([z_1:z_2]=\{c(z_1,z_2):c\in\mathbb C-\{0\}\}\)</span>. We also restrict to at least one of <span class="math inline">\(z_1,z_2\)</span> being non-zero. These conditions exclude the origin from the lines to ensure that these sets of <span class="math inline">\(\mathbb C^2\)</span> points are disjoint. The definition partitions <span class="math inline">\(\mathbb C^2-\{(0,0)\}\)</span> into lines/dimension-1 subspaces.</p>
+<p>From the definition we see <span class="math inline">\([z_1:z_2]=[cz_1:cz_2]\)</span> for any <span class="math inline">\(c\in\mathbb C-\{0\}\)</span>. One can transition to a unique 1-dimensional coordinate <span class="math inline">\(z=z_1/z_2\)</span> from <span class="math inline">\(c=1/z_2\)</span> giving <span class="math inline">\([z_1:z_2]=[z_1/z_2:1]\)</span>. This works for all lines except <span class="math inline">\([z,0]\)</span>, which is essentially “infinity”.</p>
+<p>This sort of projectivity is seen particularly in quantum mechanics.</p>
+<p>So how does the Möbius transformation fit into this perspective? Well, going to homogeneous coordinates:</p>
+<p><span class="math display">\[[z':1]=\left[\frac{az+b}{cz+d}:1\right]=[az+b:cz+d]\]</span></p>
+<p>Writing <span class="math inline">\(z=z_1/z_2\)</span> and similarly for <span class="math inline">\(z'\)</span>, we get after suitable rescalings:</p>
+<p><span class="math display">\[[z'_1:z'_2]=[az_1+b_2z_2:cz_1+dz_2]\]</span></p>
+<p>We can view this as a matrix/linear transformation in the vector space. Linear transformations take lines to lines, including the 1-dimensional subspaces, since the origin is fixed. Hence, the linear transformation goes to a well-defined transformation of the projective line.</p>
+<p>The linear transformations of <span class="math inline">\(\mathbb C^2\)</span> form the general linear transformation group of 2-dimensional complex vectors space, <span class="math inline">\(\mathrm{GL}(2,\mathbb C)\)</span>.</p>
+<p>These transformations correspond to transformations of the projective line. We now want to investigate this homomorphism.</p>
+<p>The first task is to look for the <span class="math inline">\(\mathrm{GL}(2,\mathbb C)\)</span> elements that correspond to the identity on the projective line. This is called the <em>kernel</em>. These are the dilations from the origin by some complex factor: in matrix terms, the identity multiplied by a non-zero complex number. The homomorphism theorems of group theory give an isomorphism between the quotient group <span class="math inline">\(\mathrm{GL}(2,\mathbb C)/\mathbb C^*\)</span>, where <span class="math inline">\(\mathbb C^*\)</span> is the multiplicative group of non-zero complex numbers, and the Möbius transformations, which we symbolize as <span class="math inline">\(\mathrm{PGL}(2,\mathbb C)\)</span>.</p>
+<p>Dividing a matrix by a square root of its determinant gives a matrix of determinant 1, a member of the special linear group, <span class="math inline">\(\mathrm{SL}(2,\mathbb C)\)</span>. Unfortunately this transformation is not well-defined due to the sign ambiguity of the square root.</p>
+<p>A determinant 1 matrix does correspond to a transformation of the projective line. This time the kernel is the identity multiplied by a non-zero complex number. However the determinant 1 condition forces the square of the complex number to be 1. In other words <span class="math inline">\(\pm1\)</span>. We symbolize multiplicative group on <span class="math inline">\(\{+1,-1\}\)</span> as <span class="math inline">\(\mathbb Z_2\)</span>. We have the isomorphism <span class="math inline">\(\mathrm{SL}(2,\mathbb C)/\mathbb Z_2\cong\mathrm{PGL}(2,\mathbb C)\)</span>, once we show the homomorphism to be onto (surjective). This can be done by choosing one of the two <span class="math inline">\(\mathrm{SL}(2,\mathbb C)\)</span> projections of <span class="math inline">\(\mathrm{GL}(2,\mathbb C)\)</span> matrix each of which leads to the same <span class="math inline">\(\mathrm{PGL}(2,\mathbb C)\)</span> transformation.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Lorentz group: Rotations</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+
+<body>
+  <header>Lorentz group</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+  <article>
+    <div id="tag" class="tag">Rotations</div>
+<h2>Set up</h2>
+<p>We start by reviewing the three-dimensional rotation group, where the metric is simple:</p>
+<p><span class="math display">\[\eta_{ij}=\delta_{ij}\]</span></p>
+<p>Distances from the origin are measured using the Pythagoras theorem:</p>
+<p><span class="math display">\[r^2=x^i x^j\eta_{ij}=x^1x^1+x^2x^2+x^3x^3=x^2+y^2+z^2 \tag{1}\label{eq1}\]</span></p>
+<p>The above formula sequence involves illegal overloading of the <span class="math inline">\(x\)</span>-variable, and further confusion between a component label and squaring. I present it to show the connection of labeled variables and the usual <span class="math inline">\(x,y,z\)</span> co-ordinates relative to orthogonal axes, and I hope there is no confusion due to ambiguities.</p>
+<p>We can look at vectors <span class="math inline">\(\mathbf{r}=x^i\mathbf{e}_i\)</span> as co-ordinate independent objects with the co-ordinates arising when cast onto an orthogonal frame of unit vectors <span class="math inline">\(\{\mathbf{e}_i\}\)</span>.</p>
+<p>Orthogonality is defined in terms of the scalar product <span class="math inline">\(\mathbf{e}_i\cdot \mathbf{e}_j=\eta_{ij}\)</span>, which gives, using the usual bilinear properties, <span class="math inline">\(r^2=\mathbf{r}\cdot \mathbf{r}=x^i x^j\eta_{ij}\)</span>, as expected. Taking the scalar product with the axes vectors, <span class="math inline">\(\mathbf{r}\cdot \mathbf{e}_i=x^j\eta_{ij}\)</span>, or <span class="math inline">\(x^i=\eta^{ij}\mathbf{r}\cdot \mathbf{e}_j\)</span>, where we define <span class="math inline">\(\eta^{ij}\)</span> as the inverse of <span class="math inline">\(\eta_{ij}\)</span>, i.e. <span class="math inline">\(\eta^{ik}\eta_{kj}=\delta^i_j.\)</span></p>
+<p>Anyway, a rotation of the axes leads to a new rendering of the co-ordinates (passive view of rotations): <span class="math inline">\(x&#39;^i=R^i_jx^j.\)</span> We want the distance from the origin to be unchanged: <span class="math display">\[r^2=x&#39;^ix&#39;^j\eta_{ij}=x^ix^j\eta_{ij}.\]</span></p>
+<p>Rotations also conserve angles, meaning the scalar product of two general vectors should also be invariant: <span class="math display">\[\mathbf{r}\cdot\mathbf{s}=x&#39;^iy&#39;^j\eta_{ij}=x^iy^j\eta_{ij}.\]</span></p>
+<p>This allows us to disentangle the defining characteristics of rotation matrices: <span class="math display">\[x^iR_i^ky^jR_j^l\eta_{kl}=x^iy^j\eta_{ij} \implies R_i^kR_j^l\eta_{kl}=\eta_{ij}\]</span></p>
+<p>We want to explore the region of rotations around the identity, so we express <span class="math inline">\(\mathrm{R}=\mathrm{I}+\Omega\)</span> or, in components, <span class="math inline">\(R^i_j=\delta^i_j+\omega^i_j.\)</span> Plugging this into the defining characteristic for the rotations: <span class="math display">\[R_i^kR_j^l\eta_{kl}=(\delta^k_i+\omega^k_i)(\delta^l_j+\omega^l_j)\eta_{kl}=\eta_{ij}+(\omega^k_i\eta_{kj}+\omega^l_j\eta_{il})+\omega^k_i\omega^l_j\eta_{kl}\]</span></p>
+<p>If we assume <span class="math inline">\(\omega^i_j\)</span> is “small”, we need concern ourselves only with the bracketed term, which tends to zero if the above expression is to equal <span class="math inline">\(\eta_{ij}\)</span> and the last term is ignored: <span class="math display">\[\omega^k_i\eta_{kj}+\omega^l_j\eta_{il}=0\]</span></p>
+<p>We can clarify, perhaps, what is going on by lowering the indices, <span class="math inline">\(\omega_{ij}=\omega^k_i\eta_{kj}\)</span>, to give <span class="math inline">\(\omega_{ij}+\omega_{ji}=0.\)</span> The <span class="math inline">\(\omega\)</span> with lowered inidices is anti-symmetric in them.</p>
+<p>Another thing to notice is that: <span class="math display">\[\eta^{ij}[\omega^k_i\eta_{kj}+\omega^l_j\eta_{il}]=2\mathrm{Tr}[\Omega]=0\]</span></p>
+<p>The consequence of this is that the deterimant of <span class="math inline">\(\mathrm R\)</span> is unchanged relative to <span class="math inline">\(\mathrm{det}[\mathrm I]=1.\)</span> To justifiy these statements requires differential calculus on matrices/linear operators, which I won’t get into here.</p>
+<p>There are pseudo-rotations that include reflections, which also conserve scalar products, but have determinant of <span class="math inline">\(-1\)</span>. These cannot be reached smoothly from the identity.</p>
+<p>Apart from the second formula above <span class="math inline">\((\ref{eq1})\)</span>, we have not really used the three-dimensional nature we are aiming at (for now), so much of the above can be implemented in a space of arbitrary dimension. Further the use of <span class="math inline">\(\eta\)</span> rather than going straight to <span class="math inline">\(\delta\)</span> allows a fairly direct transfer of knowledge to pseudo-metrics like that needed for Lorentz transformations.</p>
+  </article>
+<div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

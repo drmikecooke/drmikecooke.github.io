@@ -114,7 +114,7 @@ article img.center {
 article .arialblack { font-family: Franklin; }
 
 article .arial { font-family: Arial, Helvetica, sans-serif; }
-
+article h1 { font-size: 24px; display:block;float:right;background-color:black;margin:-20px;padding:10px;color:white;font-family:Arial, Helvetica, sans-serif;font-weight:bold;}
 blockquote {
   display: block;
   margin-top: 1em;

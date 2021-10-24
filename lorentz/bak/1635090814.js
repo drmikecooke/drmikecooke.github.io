@@ -1,4 +1,4 @@
-var menuItems = {'Möbius transformations': [['mobius/0.html', '0 — Projections']], 'Rotations': [['rotation/0.html', '0 — Set up'], ['rotation/1.html', '1 — Talkin’ ’bout my generation']], 'Flatland': [['flatland/0.html', '0 — Introduction'], ['flatland/1.html', '1 — Complex flatness'], ['flatland/2.html', '2 — Joining the unitarians'], ['flatland/3.html', '3 — Time’s up']]}
+var menuItems = {'Rooted': [['rooted/0.html', '0 — A journey to infinity and beyond . . . the first steps'], ['rooted/1.html', '1 — Binary'], ['rooted/2.html', '2 — Decimal'], ['rooted/3.html', '3 — Realizing root 2'], ['rooted/4.html', '4 — Dedekind cuts'], ['rooted/5.html', '5 — Cauchy sequences'], ['rooted/6.html', '6 — Axiomatic binding']], 'Euler-Maclaurin': [['Euler-Maclaurin/0.html', '0 — First steps'], ['Euler-Maclaurin/1.html', '1 — Unit interval'], ['Euler-Maclaurin/2.html', '2 — Extended interval']], 'Bernoulli polynomials': [['Bernoulli/0.html', '0 — From definition to generator'], ['Bernoulli/1.html', '1 — Recurring extraction'], ['Bernoulli/2.html', '2 — Symmetry interlude'], ['Bernoulli/3.html', '3 — Fourier series'], ['Bernoulli/4.html', '4 — Numerology'], ['Bernoulli/5.html', '5 — Shift work']], 'Equivalence': [['equivalence/0.html', '0 — Same difference']], 'Gamma function': [['Gamma/0.html', '0 — Introduction'], ['Gamma/1.html', '1 — Euler product'], ['Gamma/2.html', '2 — ln Γ — product to sum'], ['Gamma/3.html', '3 — Logarithmic interlude'], ['Gamma/4.html', '4 — Digamma'], ['Gamma/5.html', '5 — An extraction'], ['Gamma/6.html', '6 — Reflective interlude'], ['Gamma/7.html', '7 — Binet 1'], ['Gamma/8.html', '8 — Binet 1 constant'], ['Gamma/9.html', '9 — Riemann zeta connection'], ['Gamma/10.html', '10 — On more reflection'], ['Gamma/11.html', '11 — Binet 1 Stirling series'], ['Gamma/12.html', '12 — Binet 1 and \\(\\zeta\\)'], ['Gamma/13.html', '13 — Binet 1 and \\(E_1\\)'], ['Gamma/14.html', '14 — Binet 2']], 'Deformed algebras': [['deformed/0.html', '0 — Creation and annihilation'], ['deformed/1.html', '1 — Standard usage'], ['deformed/2.html', '2 — Naïve q-deformed oscillator'], ['deformed/3.html', '3 — Standard q-deformation'], ['deformed/4.html', '4 — su(2)-deformation']]}
 
 function anchor(url,text){return `<a href="${url}">${text}</a>`}
 
@@ -9,7 +9,7 @@ function details(title,list){
   var summary=document.createElement("summary");
   summary.innerText=title;
   element.appendChild(summary);
-  for (var item of list)element.innerHTML+=anchor('/lorentz/'+item[0],item[1])
+  for (var item of list)element.innerHTML+=anchor('/converge/'+item[0],item[1])
   return element
 }
 
@@ -53,7 +53,7 @@ cross.innerHTML+='<line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-line
 menu.appendChild(cross);
 
 menu.innerHTML+=anchor('/','Base');
-menu.innerHTML+=anchor('/lorentz','Lorentz group'); // Section base
+menu.innerHTML+=anchor('/converge','Convergence'); // Section base
 for(var menuItem in menuItems) {
     menu.appendChild(details(menuItem,menuItems[menuItem]))
 }

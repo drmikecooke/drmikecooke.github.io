@@ -53,7 +53,7 @@ cross.innerHTML+='<line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-line
 menu.appendChild(cross);
 
 menu.innerHTML+=anchor('/','Base');
-menu.innerHTML+=anchor('/lorentz','Lorentz group'); // Section base
+menu.innerHTML+=anchor('/converge','Convergence'); // Section base
 for(var menuItem in menuItems) {
     menu.appendChild(details(menuItem,menuItems[menuItem]))
 }
