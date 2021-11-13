@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Convolution type</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="convolution-type">Convolution type</h1>
+<h2 id="convolution-and-binomial-type">Convolution and binomial type</h2>
+<p>A sequence of polynomials <span class="math inline">\(\{q_n\}\)</span> with the property:
+<span class="math display">\[q_n(x+y)=\sum\limits_{k=0}^nq_k(x)q_{n-k}(y)\]</span>
+is said to be of <em>convolution type</em>. This can be converted to a sequence <span class="math inline">\(\{p_n\}\)</span> of <em>binomial type</em>:
+<span class="math display">\[p_n(x+y)=\sum\limits_{k=0}^n\binom nk p_k(x)p_{n-k}(y)\]</span>
+by defining <span class="math inline">\(p_n=n!q_n\)</span>.</p>
+<p>If <span class="math inline">\(q_0\ne0\)</span>, then <span class="math inline">\(q_0(x+y)=q_0(x)q_0(y)\)</span>. If the order of <span class="math inline">\(q_0(x)=\sum a_kx^k\)</span> is <span class="math inline">\(n\)</span>, the highest orders in <span class="math inline">\(x\)</span> on both sides are <span class="math inline">\(a_nx^n=a_nx^nq_0(y)\)</span>, and so <span class="math inline">\(q_0(x)=1\)</span>.</p>
+<p>We note that the order of <span class="math inline">\(q_0\)</span> is 0. If there were polynomials in the sequence <span class="math inline">\(q_n\)</span> whose order was greater than <span class="math inline">\(n\)</span>, there would be a polynomial of smallest index <span class="math inline">\(m\)</span> whose order was greater than <span class="math inline">\(m\)</span>. For this polynomial, we have <span class="math inline">\(q_m(x)=a_Mx^M+\dots\)</span> with <span class="math inline">\(M&gt;m\)</span>. Applying the convolution equation:</p>
+<p><span class="math display">\[q_m(x+x)=a_M(2x)^M+\dots\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+q_m(x+x)&amp;=\sum\limits_{k=0}^mq_k(x)q_{m-k}(x) \\
+&amp;=2q_m(x)+\dots=2a_Mx^M+\dots
+\end{aligned}\]</span></p>
+<p>The second equation results from <span class="math inline">\(q_0(x)=1\)</span>. The dots indicate terms which we know have order less than <span class="math inline">\(M\)</span>. In the case of the second equation, the convolution terms <span class="math inline">\(q_k(x)q_{m-k}(x)\)</span> for <span class="math inline">\(k\ne0,m\)</span> have leading terms of order less than or equal to <span class="math inline">\(m\lt M\)</span>, since <span class="math inline">\(m\)</span> is the least value for which this condition is violated.</p>
+<p>Hence we must have <span class="math inline">\(a_M2^M=2a_M\)</span>, and since we are assuming <span class="math inline">\(a_M\ne0\)</span>, <span class="math inline">\(2^M=2\implies M=1\)</span>. But we already know that <span class="math inline">\(m&gt;0\)</span>, so <span class="math inline">\(M&gt;m\ge1\)</span>, a contradiction. Hence, the order of <span class="math inline">\(q_m\)</span> is always less than or equal to <span class="math inline">\(m\)</span>.</p>
+<p>A final observation gives <span class="math inline">\(q_m(0)=0\)</span> for <span class="math inline">\(m&gt;0\)</span>. First</p>
+<p><span class="math display">\[q_1(0)=q_0(0)q_1(0)+q_1(0)q_0(0)=2q_1(0)\implies q_1(0)=0\]</span>
+since <span class="math inline">\(q_0=1\)</span>. If there were an <span class="math inline">\(n&gt;0\)</span> for which <span class="math inline">\(q_n(0)\ne0\)</span>, there would be one of least index <span class="math inline">\(m\)</span>. But then we would have again
+<span class="math display">\[q_m(0)=q_0(0)q_m(0)+q_m(0)q_0(0)=2q_m(0)\implies q_m(0)=0\]</span>
+since the other terms of the convolution are all zero with <span class="math inline">\(m\)</span> supposedly the least non-zero term. The contradiction gives our final observation.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

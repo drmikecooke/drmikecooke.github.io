@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Central difference operator</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="central-difference-operator">Central difference operator</h1>
+<h2 id="start">Start</h2>
+<p>The central difference operator <span class="math inline">\(\delta f(x)=f(x+1/2)-f(x-1/2)\)</span> has convolution-type basic series:</p>
+<p><span class="math display">\[\delta q_n=q_{n-1}\]</span></p>
+<p>starting from <span class="math inline">\(q_0(x)=1\)</span> and <span class="math inline">\(q_n(0)=0\)</span>, <span class="math inline">\(n&gt;1\)</span>.</p>
+<p>Table test:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align:right;width:1em;"><span class="math inline">\(x\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^0y'}{1}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^1y'}{2}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^2y'}{12}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^3y'}{24}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^4y'}{720}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^5y'}{1440}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^6y'}{60480}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^7y'}{120960}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^8y'}{3628800}\)</span></th>
+<th style="text-align:right;width:5em;"><span class="math inline">\(\frac{\nabla^9y'}{7257600}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align:right;width:1em;">1</td>
+<td style="text-align:right;width:5em;">1</td>
+<td style="text-align:right;width:5em;">1</td>
+<td style="text-align:right;width:5em;">5</td>
+<td style="text-align:right;width:5em;">9</td>
+<td style="text-align:right;width:5em;">251</td>
+<td style="text-align:right;width:5em;">475</td>
+<td style="text-align:right;width:5em;">19087</td>
+<td style="text-align:right;width:5em;">36799</td>
+<td style="text-align:right;width:5em;">1070017</td>
+<td style="text-align:right;width:5em;">2082753</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">863</td>
+<td style="text-align: right;">1375</td>
+<td style="text-align: right;">33953</td>
+<td style="text-align: right;">57281</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">592</td>
+<td style="text-align: right;">1024</td>
+<td style="text-align: right;">26656</td>
+<td style="text-align: right;">46656</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">-27</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">783</td>
+<td style="text-align: right;">1215</td>
+<td style="text-align: right;">29889</td>
+<td style="text-align: right;">50625</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">-80</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">-224</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">512</td>
+<td style="text-align: right;">1024</td>
+<td style="text-align: right;">27392</td>
+<td style="text-align: right;">48128</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">-175</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">-2125</td>
+<td style="text-align: right;">475</td>
+<td style="text-align: right;">1375</td>
+<td style="text-align: right;">1375</td>
+<td style="text-align: right;">30625</td>
+<td style="text-align: right;">50625</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-6</td>
+<td style="text-align: right;">-6</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">-324</td>
+<td style="text-align: right;">576</td>
+<td style="text-align: right;">-8856</td>
+<td style="text-align: right;">4752</td>
+<td style="text-align: right;">-17712</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">23328</td>
+<td style="text-align: right;">46656</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-7</td>
+<td style="text-align: right;">-7</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">-539</td>
+<td style="text-align: right;">1225</td>
+<td style="text-align: right;">-26117</td>
+<td style="text-align: right;">22491</td>
+<td style="text-align: right;">-216433</td>
+<td style="text-align: right;">36799</td>
+<td style="text-align: right;">57281</td>
+<td style="text-align: right;">57281</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">-832</td>
+<td style="text-align: right;">2304</td>
+<td style="text-align: right;">-62848</td>
+<td style="text-align: right;">74752</td>
+<td style="text-align: right;">-1160192</td>
+<td style="text-align: right;">471040</td>
+<td style="text-align: right;">-1012736</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

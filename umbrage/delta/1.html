@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Delta force</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="delta-force">Delta force</h1>
+<h2 id="basic-training">Basic training</h2>
+<p>We define a derivative of shift-invariant operators, first given by Pincherle:
+<span class="math display">\[S'=[S,\mathbf x]\]</span>
+where <span class="math inline">\(\mathbf x\)</span> is the multiplication by <span class="math inline">\(x\)</span> operator, <span class="math inline">\(\mathbf x p(x)=xp(x)\)</span>. Clearly, <span class="math inline">\((S_1+S_2)'=S_1'+S_2'\)</span>.</p>
+<p>We have <span class="math inline">\(D'=1\)</span>. From commutator theory,</p>
+<p><span class="math display">\[[S_1S_2,S_3]=S_1S_2S_3-S_3S_1S_2=S_1[S_2,S_3]+S_1S_3S_2-S_3S_1S_2=S_1[S_2,S_3]+[S_1,S_3]S_2\]</span></p>
+<p>Thus <span class="math inline">\((S_1S_2)'=S_1S_2'+S_1'S_2\)</span>, giving a <em>derivation</em> (Leibnitz rule). Applying to <span class="math inline">\((D^k)'=D^{k-1}+D(D^{k-1})'\)</span>, an inductive proof shows <span class="math inline">\((D^k)'=kD^{k-1}\)</span>. A shift-invariant operator is expressible in terms of <span class="math inline">\(D\)</span>, its derivative is also, and is shift-invariant too.</p>
+<p>The derivative of a delta operator, <span class="math inline">\(Q'\)</span> has non-zero constant part in terms of <span class="math inline">\(D\)</span>. This implies that it is invertible.</p>
+<p>Further
+<span class="math display">\[Q=\sum\limits_{k=1}^\infty b_kD^k=D\sum\limits_{k=0}^\infty b_{k+1}D^k=DU\]</span>
+where <span class="math inline">\(U\)</span> is an invertible operator.</p>
+<p>We look at <span class="math inline">\(p_n(x)=Q'U^{-n-1}x^n/n!\)</span>. Remembering shift-invariant operators commute,
+<span class="math display">\[Qp_n(x)=DUQ'U^{-n-1}\frac{x^n}{n!}=Q'U^{-n}D\frac{x^n}{n!}=Q'U^{-n}\frac{x^{n-1}}{(n-1)!}=p_{n-1}(x)\]</span></p>
+<p>To show that <span class="math inline">\(p_n\)</span> is the basic sequence for <span class="math inline">\(Q\)</span>, we need to find its evaluations at 0.</p>
+<p>For this we look at alternative expresssions. We start from <span class="math inline">\(Q'=(DU)'=D'U+DU'=U+DU'\)</span> since <span class="math inline">\(D'=1\)</span>.</p>
+<p><span class="math display">\[p_n(x)=Q'U^{-n-1}\frac{x^n}{n!}=U^{-n}\frac{x^n}{n!}+U'U^{-n-1}\frac{x^{n-1}}{(n-1)!}\]</span></p>
+<p>When <span class="math inline">\(n=0\)</span>,the second term is zero, so <span class="math inline">\(p_0(x)=U^0x^0/0!=1\)</span>.</p>
+<p>Also we have <span class="math inline">\((U^n)'=nU'U^{n-1}\)</span>. In our case we are interested in <span class="math inline">\(U'U^{-n-1}=-(U^{-n})'/n\)</span>, giving
+<span class="math display">\[p_n(x)=U^{-n}\frac{x^n}{n!}-(U^{-n})'\frac{x^{n-1}}{n!}\]</span></p>
+<p>Remembering the Pincherle derivative is the commutator with <span class="math inline">\(\mathbf x\)</span>:
+<span class="math display">\[p_n(x)=U^{-n}\frac{x^n}{n!}-[U^{-n},\mathbf x]\frac{x^{n-1}}{n!}=\mathbf xU^{-n}\frac{x^{n-1}}{n!}\]</span></p>
+<p>This shows that <span class="math inline">\(p_n(0)=0\)</span>, at least for <span class="math inline">\(n&gt;0\)</span>. Completing the proof that <span class="math inline">\(p_n=q_n\)</span>, the basic sequence of <span class="math inline">\(Q\)</span>.</p>
+<p>So making the replacement:</p>
+<ol class="incremental" type="1">
+<li><p><span class="math inline">\(q_n(x)=Q'U^{-n-1}\dfrac{x^n}{n!}\)</span></p></li>
+<li><p><span class="math inline">\(q_n(x)=U^{-n}\dfrac{x^n}{n!}-(U^{-n})'\frac{x^{n-1}}{n!}\)</span></p></li>
+<li><p><span class="math inline">\(q_n(x)=\mathbf xU^{-n}\dfrac{x^{n-1}}{n!}\)</span></p></li>
+</ol>
+<p>Remembering that <span class="math inline">\(Q'\)</span> is invertible:
+<span class="math display">\[\frac{x^{n-1}}{(n-1)!}=Q'^{-1}U^nq_{n-1}\]</span>
+giving</p>
+<ol class="incremental" start="4" type="1">
+<li><span class="math inline">\(q_n(x)=\mathbf x Q'^{-1}\dfrac{q_{n-1}}{n}\)</span></li>
+</ol>
+<p>From the polynomial expansion formula:</p>
+<p><span class="math display">\[\frac{q_n(x)}x=\sum\limits_{k=0}^n\left[Q^k\frac{q_n(x)}x\right](0)q_k(x)\]</span></p>
+<p><span class="math display">\[\frac{q_n(x)}x=\sum\limits_{k=0}^n\left[Q^kQ'^{-1}\dfrac{q_{n-1}}{n}\right](0)q_k(x)\]</span></p>
+<p><span class="math display">\[\frac{q_n(x)}x=\sum\limits_{k=0}^n\left[Q'^{-1}\dfrac{q_{n-1-k}}{n}\right](0)q_k(x)\]</span></p>
+<p><span class="math display">\[\frac{q_n(x)}x=\sum\limits_{k=0}^n\left[(n-k)\dfrac{q_{n-k}}{nx}\right](0)q_k(x)\]</span></p>
+<p>The value of <span class="math inline">\(q_n/x\)</span> at zero is <span class="math inline">\(q_n'(0)\)</span>, which is also given by the convolution-type coefficient sequence <span class="math inline">\(\alpha_n=q_n'(0)\)</span>.</p>
+<ol class="incremental" start="5" type="1">
+<li><span class="math inline">\(q_n(x)=\dfrac xn\sum\limits_{k=1}^{n-1}k\alpha_k q_{n-k}(x)\)</span></li>
+</ol>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

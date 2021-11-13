@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Convolution type</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="convolution-type">Convolution type</h1>
+<h2 id="interlude">Interlude</h2>
+<p>We indicate convolution of sequences by:</p>
+<p><span class="math display">\[(\alpha*\beta)_n=\sum\limits_{k=0}^n\alpha_k\beta_{n-k}\]</span></p>
+<p>We assume the indexes are always non-negative (or <span class="math inline">\(\alpha_n=0\)</span> for <span class="math inline">\(n&lt;0\)</span>). Repeated convolution of a single sequence is shown by: <span class="math inline">\(\alpha^{n*}=\alpha^{(n-1)*}*\alpha\)</span>, starting from <span class="math inline">\((\alpha^{0*})_0=1\)</span>, and <span class="math inline">\((\alpha^{0*})_n=0\)</span> otherwise. We are tempted to indicate this sequence as <span class="math inline">\(\alpha^{0*}=\varepsilon\)</span>, inspired by group theory where the identity is often denoted as <span class="math inline">\(e\)</span>. The <span class="math inline">\(\varepsilon\)</span> sequence is an identity for convolution. We avoid the Kronecker-delta, since we are using <span class="math inline">\(\delta\)</span> for the central difference elsewhere in <em>Umbrage</em>.</p>
+<p>We can consider formal power series <span class="math inline">\(a(z)=\sum\alpha_kz^k\)</span>. Taking a power <span class="math inline">\(n\)</span>, we find <span class="math inline">\(a(z)^n=\sum \alpha_k^{n*}z^k\)</span>, where we abbreviate <span class="math inline">\(\alpha_k^{n*}=(\alpha^{n*})_k\)</span>.</p>
+<p>We can rewrite the convolution as</p>
+<p><span class="math display">\[(\alpha*\beta)_n=\sum\limits_{k+l=n}\alpha_k\beta_{l}\]</span></p>
+<p>We also find in this way:</p>
+<p><span class="math display">\[[(\alpha*\beta)*\gamma]_n=\sum\limits_{k+l+m=n}\alpha_k\beta_l\gamma_m\]</span></p>
+<p>The last indicates that the operation is associative, besides being commutative (penultimate equation).</p>
+<p>Associativity gives <span class="math inline">\(\alpha^{k*}*\alpha^{l*}=\alpha^{(k+l)*}\)</span></p>
+<p>We will be interested in sequences with the condition <span class="math inline">\(\alpha_0=0\)</span>. The terms of <span class="math inline">\(\alpha_k^{n*}\)</span> are products of <span class="math inline">\(n\)</span> terms each with index greater than zero, if the result is to be non-zero. But this is impossible if the required sum of indexes <span class="math inline">\(k&lt;n\)</span>.</p>
+<p>If <span class="math inline">\(k=n\)</span>, all the terms must have index 1, hence <span class="math inline">\(\alpha_n^{n*}=\alpha_1^n\)</span> from the single non-zero term.</p>
+<p>When <span class="math inline">\(k&gt;n\)</span>, the maximum index <span class="math inline">\(\alpha_m\)</span> that can contribute to <span class="math inline">\(\alpha_k^{n*}\)</span> is when <span class="math inline">\(n-1\)</span> <span class="math inline">\(\alpha_1\)</span>’s combine with it. Thus <span class="math inline">\(n-1+m=k\implies m=k-n+1\)</span>.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

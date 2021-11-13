@@ -1,0 +1,45 @@
+## Convoluted generating functions
+
+We consider $p_n(x)=\sum\gamma_n^{k*}x^k/k!$ for some sequence $\gamma$ with $\gamma_0=0$. We note:
+
+$$p_n(x+y)=\sum\gamma_n^{k*}(x+y)^k/k!=\sum\gamma_n^{(k+l)*}\frac{x^k}{k!}\frac{y^l}{l!}=\sum p_k(x)p_{n-k}(y)$$
+
+from using $\gamma^{k*}*\gamma^{l*}=\gamma^{(k+l)*}$. The sequence $p_n$ is of convolution type. 
+
+When we start from a $q_n$ of convolution type can we get a sequence $\alpha$ giving $q_n(x)=\sum\alpha_n^{k*}x^k/k!$?
+
+From $\alpha^{0*}=\varepsilon$, we get $q_0(x)=1$, which doesn’t fix anything, but is needed for consistency.
+
+Since $q_1(0)=0$ and is at most first order, we have $q_1(x)=q_1(1)x$.
+
+We also have $q_1(x)=\alpha^{0*}_1+\alpha^{1*}_1x$.
+
+But $\alpha^{0*}_1=0$ and $\alpha^{1*}_1=\alpha_1$, giving $\alpha_1=q_1(1)$
+
+If for $n>1$, we have a sequence $\{\alpha_1\dots\alpha_{n-1}\}$ that gives $q_m(x)=\sum\alpha_m^{k*}x^k/k!$ for $m<n$:
+
+$$q_n(x+y)-q_n(x)-q_n(y)=\sum\limits_{k=1}^{n-1}q_k(x)q_{n-k}(x)$$
+
+We consider the function $p(x)=\sum\alpha_n^{k*}x^k/k!$. At the upper limit, $k=n$, $\alpha_n^{n*}$ consists of $\alpha_1$’s, which we already know. The lower limit is for $k=1$, our unknown $\alpha_n$. For any value of this unknown we have:
+
+$$p(x+y)-p(x)-p(y)=\sum\limits_{k=1}^{n-1}q_k(x)q_{n-k}(x)$$
+
+since the $q_k$ are already expressed in terms of our $\alpha$ sequence under construction.
+
+We thus have $q_n(x+y)-q_n(x)-q_n(y)=p(x+y)-p(x)-p(y)$. The combination $q_n-p$ satisfies Cauchy’s functional equation:
+
+$$f(x+y)=f(x)+f(y)$$
+
+In the context of polynomials, or more generally continuous functions, there is only one possible solution form, $f(x)=cx$ for some constant $c$. Hence $q_n(x)=p(x)+cx$. Since we have left the linear term of $p$ arbitrary, we can absorb $c$ into $\alpha_n$, which is now the linear part of our $q_n$ that can be found by differentiating and evaluating at 0:
+
+$$\alpha_n=q_n'(0)$$
+
+Thus for any convolution-type polynomial sequence we can construct a sequence that gives:
+
+$$q_n(x)=\sum\alpha_n^{k*}\frac{x^k}{k!}$$
+
+We can make a generating function:
+
+$$\sum q_n(x)t^n=\sum\alpha_n^{k*}\frac{x^k}{k!}t^n=\sum \frac{(a(t)x)^k}{k!}=\exp(a(t)x)$$
+
+with $a(t)=\sum\alpha_nt^n$.

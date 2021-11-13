@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Difference operators</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="difference-operators">Difference operators</h1>
+<h2 id="central">Central</h2>
+<p>The central difference operator <span class="math inline">\(\delta=T^{+1/2}-T^{-1/2}\)</span> is not as tractable. I have been unable to get an elegant formulation. Rather I have worked up from the small order convolution-type basic polynomials to be able to guess from there the sequence with the property <span class="math inline">\(\delta q_n=q_{n-1}\)</span>, starting from <span class="math inline">\(q_0(x)=1\)</span> and <span class="math inline">\(q_n(0)=0\)</span>, <span class="math inline">\(n&gt;1\)</span>.</p>
+<p>We know that <span class="math inline">\(q_1\)</span> is linear in <span class="math inline">\(x\)</span>, <span class="math inline">\(q_1(0)=0\)</span>, and <span class="math inline">\(\delta q_1=q_0=1\)</span>. In fact, these factors determine that <span class="math inline">\(q_1(x)=x\)</span>.</p>
+<p>Moving to <span class="math inline">\(q_2\)</span>, a quadratic without constant term such that <span class="math inline">\(\delta q_2=q_1=x\)</span>. We note that <span class="math inline">\(\delta x^2=2x=2q_1\)</span>. This gives <span class="math inline">\(q_2(x)=x^2/2\)</span>.</p>
+<p>For <span class="math inline">\(q_3\)</span>, it is useful to know <span class="math inline">\(\delta x^3=3x^2+1/4\)</span>. This gives <span class="math inline">\(q_3(x)=x(x^2-1/4)/3!\)</span>.</p>
+<p>For me the penny dropped when I calculated <span class="math inline">\(q_4\)</span>. From <span class="math inline">\(\delta x^4=4x^3+x\)</span>, I determined that <span class="math inline">\(q_4(x)=(x^4-x^2)/4!\)</span>.</p>
+<p>To get the general formula it is useful to remember <span class="math inline">\(x^2-b^2=(x+b)(x-b)\)</span> to factorize <span class="math display">\[q_3(x)=x(x+1/2)(x-1/2)/3!\]</span></p>
+<p><span class="math display">\[q_4(x)=x^2(x+1)(x-1)\]</span></p>
+<p>This suggests a general formula with product of integral steps between half-integral limits, and taking the value as 1 for an empty range (i.e. for <span class="math inline">\(k=1\)</span>) <span class="math display">\[q_k(x)=\frac x{k!}\prod\limits_{n=-(k-2)/2}^{+(k-2)/2}(x+n)\]</span></p>
+<p>The <span class="math inline">\(x/k!\)</span> part takes care of the condition <span class="math inline">\(q_k(0)=0\)</span>. We need to check <span class="math inline">\(\delta q_k=q_{k-1}\)</span>. We note <span class="math display">\[q_k(x+1/2)=\frac {x+1/2}{k!}\prod\limits_{n=-(k-3)/2}^{+(k-1)/2}(x+n)\]</span></p>
+<p><span class="math display">\[q_k(x-1/2)=\frac {x-1/2}{k!}\prod\limits_{n=-(k-1)/2}^{+(k-3)/2}(x+n)\]</span></p>
+<p>Extracting the common factors <span class="math display">\[\begin{aligned}
+\delta q_k(x)=&amp;\frac1{k!}[(x+(k-1)/2)(x+1/2)- \\
+&amp;(x-(k-1)/2)(x-1/2)]\prod\limits_{n=-(k-3)/2}^{+(k-3)/2}(x+n)\end{aligned}\]</span></p>
+<p>The square bracket works out at <span class="math inline">\(kx\)</span>, giving <span class="math inline">\(\delta q_k=q_{k-1}\)</span>.</p>
+<p>Some people define a pseudo-power notation, <span class="math inline">\(q_k(x)=x^{[k]}/k!\)</span>.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

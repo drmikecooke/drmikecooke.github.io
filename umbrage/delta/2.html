@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Delta force</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="delta-force">Delta force</h1>
+<h2 id="expansions">Expansions</h2>
+<h3 id="polynomial">Polynomial</h3>
+<p>We know that a polynomial of degree n can be expanded:</p>
+<p><span class="math display">\[p(x)=\sum\limits_{k=0}^na_kq_k(x)\]</span></p>
+<p>Operating:</p>
+<p><span class="math display">\[[Q^rp](x)=\sum\limits_{k=r}^na_kq_{k-r}(x)\]</span></p>
+<p>But evaluating at zero:</p>
+<p><span class="math display">\[[Q^rp](0)=\sum\limits_{k=r}^na_kq_{k-r}(0)=a_r\]</span></p>
+<p>Hence:</p>
+<p><span class="math display">\[p(x)=\sum\limits_{k=0}^n[Q^kp](0)q_k(x)\]</span></p>
+<h3 id="operator">Operator</h3>
+<p>For a shift-invariant <span class="math inline">\(S\)</span>, we operate on a polynomial <span class="math inline">\(p\)</span> of order <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[ST^yp=\sum\limits_{k=0}^n[Q^kT^yp](0)Sq_k=\sum\limits_{k=0}^n[Q^kp](y)Sq_k\]</span></p>
+<p>Also:</p>
+<p><span class="math display">\[[Sp](y)=[T^ySp](0)=[ST^yp](0)=\sum\limits_{k=0}^n[Q^kp](y)[Sq_k](0)\]</span></p>
+<p>Removing the <span class="math inline">\((y)\)</span> argument, and generalising for all polynomials, we have the operator expansion:</p>
+<p><span class="math display">\[S=\sum[Sq_k](0)Q^k\]</span></p>
+<p>The limits on <span class="math inline">\(k\)</span> run from 0 to the order of the polynomial. Above that, the effect of <span class="math inline">\(Q^k\)</span> is to give zero. The expansion formula generalise the expressions for <span class="math inline">\(Q=D\)</span> differentiation, basic sequence <span class="math inline">\(q_n(x)=x^n/n!\)</span>:</p>
+<p><span class="math display">\[S=\sum\limits_{k=0}^\infty\left[S\frac{x^k}{k!}\right](0)D^k\]</span></p>
+<p>The corresponding polynomial formula:
+<span class="math display">\[p(x)=\sum\limits_{k=0}^n[D^kp](0)\frac{x^k}{k!}\]</span>
+is the Taylor expansion of <span class="math inline">\(p\)</span> about 0.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

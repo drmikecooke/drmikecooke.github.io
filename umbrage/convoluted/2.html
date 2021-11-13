@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Convolution type</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="convolution-type">Convolution type</h1>
+<h2 id="generating-functions">Generating functions</h2>
+<p>We consider <span class="math inline">\(p_n(x)=\sum\gamma_n^{k*}x^k/k!\)</span> for some sequence <span class="math inline">\(\gamma\)</span> with <span class="math inline">\(\gamma_0=0\)</span>. We note:
+<span class="math display">\[p_n(x+y)=\sum\gamma_n^{k*}(x+y)^k/k!=\sum\gamma_n^{(k+l)*}\frac{x^k}{k!}\frac{y^l}{l!}=\sum p_k(x)p_{n-k}(y)\]</span>
+from using <span class="math inline">\(\gamma^{k*}*\gamma^{l*}=\gamma^{(k+l)*}\)</span>. The sequence <span class="math inline">\(p_n\)</span> is of convolution type.</p>
+<p>When we start from a <span class="math inline">\(q_n\)</span> of convolution type can we get a sequence <span class="math inline">\(\alpha\)</span> giving <span class="math inline">\(q_n(x)=\sum\alpha_n^{k*}x^k/k!\)</span>?</p>
+<p>From <span class="math inline">\(\alpha^{0*}=\varepsilon\)</span>, we get <span class="math inline">\(q_0(x)=1\)</span>, which doesn’t fix anything, but is needed for consistency.</p>
+<p>Since <span class="math inline">\(q_1(0)=0\)</span> and is at most first order, we have <span class="math inline">\(q_1(x)=q_1(1)x\)</span>.</p>
+<p>We also have <span class="math inline">\(q_1(x)=\alpha^{0*}_1+\alpha^{1*}_1x\)</span>.</p>
+<p>But <span class="math inline">\(\alpha^{0*}_1=0\)</span> and <span class="math inline">\(\alpha^{1*}_1=\alpha_1\)</span>, giving <span class="math inline">\(\alpha_1=q_1(1)\)</span></p>
+<p>If for <span class="math inline">\(n&gt;1\)</span>, we have a sequence <span class="math inline">\(\{\alpha_1\dots\alpha_{n-1}\}\)</span> that gives <span class="math inline">\(q_m(x)=\sum\alpha_m^{k*}x^k/k!\)</span> for <span class="math inline">\(m&lt;n\)</span>:</p>
+<p><span class="math display">\[q_n(x+y)-q_n(x)-q_n(y)=\sum\limits_{k=1}^{n-1}q_k(x)q_{n-k}(x)\]</span></p>
+<p>We consider the function <span class="math inline">\(p(x)=\sum\alpha_n^{k*}x^k/k!\)</span>. At the upper limit, <span class="math inline">\(k=n\)</span>, <span class="math inline">\(\alpha_n^{n*}\)</span> consists of <span class="math inline">\(\alpha_1\)</span>’s, which we already know. The lower limit is for <span class="math inline">\(k=1\)</span>, our unknown <span class="math inline">\(\alpha_n\)</span>. For any value of this unknown we have:
+<span class="math display">\[p(x+y)-p(x)-p(y)=\sum\limits_{k=1}^{n-1}q_k(x)q_{n-k}(x)\]</span>
+since the <span class="math inline">\(q_k\)</span> are already expressed in terms of our <span class="math inline">\(\alpha\)</span> sequence under construction.</p>
+<p>We thus have:</p>
+<p><span class="math display">\[q_n(x+y)-q_n(x)-q_n(y)=p(x+y)-p(x)-p(y)\]</span></p>
+<p>The combination <span class="math inline">\(q_n-p\)</span> satisfies Cauchy’s functional equation:</p>
+<p><span class="math display">\[f(x+y)=f(x)+f(y)\]</span></p>
+<p>In the context of polynomials, or more generally continuous functions, there is only one possible solution form, <span class="math inline">\(f(x)=cx\)</span> for some constant <span class="math inline">\(c\)</span>. Hence <span class="math inline">\(q_n(x)=p(x)+cx\)</span>. Since we have left the linear term of <span class="math inline">\(p\)</span> arbitrary, we can absorb <span class="math inline">\(c\)</span> into <span class="math inline">\(\alpha_n\)</span>, which is now the linear part of our <span class="math inline">\(q_n\)</span> that can be found by differentiating and evaluating at 0:</p>
+<p><span class="math display">\[\alpha_n=q_n'(0)\]</span></p>
+<p>Thus for any convolution-type polynomial sequence we can construct a sequence that gives:</p>
+<p><span class="math display">\[q_n(x)=\sum\alpha_n^{k*}\frac{x^k}{k!}\]</span></p>
+<p>We can make a generating function:
+<span class="math display">\[\sum q_n(x)t^n=\sum\alpha_n^{k*}\frac{x^k}{k!}t^n=\sum \frac{(a(t)x)^k}{k!}=\exp(a(t)x)\]</span>
+with <span class="math inline">\(a(t)=\sum\alpha_nt^n\)</span>.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Shift operations</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="shift-operations">Shift operations</h1>
+<h2 id="introduction">Introduction</h2>
+<p>One of the basic class of operations of Umbral calculus is <span class="math inline">\(T^a\)</span>, the shift-<span class="math inline">\(a\)</span> operator <span class="math inline">\([T^ap](x)=p(x+a)\)</span>. We use round brackets (“parentheses”) to indicate evaluation. The square bracket encloses the polynomial <em>after</em> the <span class="math inline">\(T^a\)</span> operation.</p>
+<p>We define a class of <em>shift-invariant</em> operators as those which <em>commute</em> with <span class="math inline">\(T^a\)</span>: <span class="math inline">\(ST^a=T^aS\)</span>. The shift operators commute with each other: <span class="math inline">\(T^aT^b=T^{a+b}=T^bT^a\)</span>. The use of exponential notation indicates these features.</p>
+<p><em>Any</em> shift-invariant linear operator <span class="math inline">\(S\)</span> can be expanded in the differential operator, <span class="math inline">\(D\)</span>, when operating on polynomials. We first look at the effect on monomials, <span class="math inline">\(x^n\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}\\
+[Sx^n](a)&amp;=[T^aSx^n](0)\\
+&amp;=[ST^ax^n](0)\\
+&amp;=[S(x+a)^n](0)\\
+&amp;=\sum\limits_{k=0}^n\binom nk a^{n-k}[Sx^k](0)\end{aligned}\]</span></p>
+<p>We note:</p>
+<p><span class="math display">\[D^kx^n=\frac{n!}{(n-k)!}x^{n-k}\]</span></p>
+<p>It can be shown using normal calculus that <span class="math inline">\(D\)</span> is itself shift-invariant: <span class="math inline">\([DT^ap](x)=[Dp](x+a)=[T^aDp](x)\)</span>.</p>
+<p>Therefore</p>
+<p><span class="math display">\[[Sx^n](a)=\sum\limits_{k=0}^n\left[\frac{D^kx^n}{k!}\right](a)[Sx^k](0)\]</span></p>
+<p>Finally we can write the operator <span class="math inline">\(S\)</span> in terms of <span class="math inline">\(D\)</span>:</p>
+<p><span class="math display">\[S=\sum\limits_{k=0}^\infty\left[S\frac{x^k}{k!}\right](0)D^k\]</span></p>
+<p>We can take the upper limit to infinity because we operate on polynomials for which only a finite number of <span class="math inline">\(D\)</span> operations are non-zero. Since the operator is linear, we generalise from the effect on the monomials.</p>
+<p>Applying <span class="math inline">\(T^a\)</span> as translation by <span class="math inline">\(a\)</span>, we have <span class="math inline">\(T^ax^n(0)=a^n\)</span>, which give Taylor’s theorem in operator form: <span class="math inline">\(T^a=\sum (aD)^k/k!\)</span>.</p>
+<p>The expansion tells us that <span class="math inline">\(S=\sum b_kD^k\)</span> for some sequence. The operator is not invertible if <span class="math inline">\(b_0=0\)</span> since <span class="math inline">\(D\)</span> reduces the order of a polynomial by 1. If <span class="math inline">\(k\)</span> is the lowest index for <span class="math inline">\(b_k\ne0\)</span>, the order of the polynomial is reduced by k. The null space of <span class="math inline">\(S\)</span> is then all polynomials of degree less than <span class="math inline">\(k\)</span>.</p>
+<p>An interesting class of operators has <span class="math inline">\(b_0=0\)</span>, but <span class="math inline">\(b_1\ne0\)</span>. These <em>delta</em> operators, notionally indicated by using the letter <span class="math inline">\(Q\)</span>, are such that <span class="math inline">\(Qx\)</span> is a constant.</p>
+<p><em>Difference operators</em> are variously symbolized using delta characters: <span class="math inline">\(\Delta,\delta, \nabla\)</span>. It is found that <span class="math inline">\(\Delta x=\delta x=\nabla x=1\)</span>, so delta by name, delta by nature.</p>
+The expansions in terms of <span class="math inline">\(D\)</span> also tells us that any two shift-invariant operators commute.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

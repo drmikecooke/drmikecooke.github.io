@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Delta force</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="delta-force">Delta force</h1>
+<h2 id="introduction">Introduction</h2>
+<p>To recap delta operators are shift invariant, reduce constants to zero and linear polynomials to a constant. Further <span class="math inline">\(Q\)</span> reduces the degree of polynomials by 1.</p>
+<p>We define a basic sequence of polynomials for <span class="math inline">\(Q\)</span>:</p>
+<ol class="incremental" type="1">
+<li><p><span class="math inline">\(q_0(x)=1\)</span></p></li>
+<li><p><span class="math inline">\(q_n(0)=0,n&gt;0\)</span></p></li>
+<li><p><span class="math inline">\(Qq_n=q_{n-1},n&gt;0\)</span></p></li>
+</ol>
+<p>These conditions show that <span class="math inline">\(q_n\)</span> has degree <span class="math inline">\(n\)</span>.</p>
+<p>We can construct the sequence, starting from <span class="math inline">\(q_0(x)=1\)</span>.</p>
+<p>With <span class="math inline">\(Q=\sum b_kD^k\)</span>, with <span class="math inline">\(b_0=0\)</span>, <span class="math inline">\(b_1\ne0\)</span>, and <span class="math inline">\(q_n(x)=\sum\beta_{nl}x^l\)</span>:</p>
+<p><span class="math display">\[Qq_n(x)=\sum b_k\beta_{nl}D^kx^l=\sum b_k\beta_{nl}\frac{l!}{(l-k)!}x^{l-k}\]</span></p>
+<p>We need to collect the terms and equate to <span class="math inline">\(q_{n-1}\)</span>:</p>
+<p><span class="math display">\[\beta_{(n-1)l}=\sum\limits_{k=1}^{n-l}\frac{(l+k)!}{l!}b_k\beta_{n(l+k)}\]</span></p>
+<p>We get immediately <span class="math inline">\(\beta_{(n-1)(n-1)}=nb_1\beta_{nn}\)</span>.</p>
+<p>Inserting in the equation for <span class="math inline">\(\beta_{(n-1)(n-2)}\)</span> determines <span class="math inline">\(\beta_{n(n-1)}\)</span> and so on, giving a polynomial <span class="math inline">\(q_n\)</span> uniquely determined from <span class="math inline">\(q_{n-1}\)</span>.</p>
+<p>The basic sequence is of convolution type:</p>
+<ol class="incremental" type="1">
+<li><p><span class="math inline">\(q_0(x)=1\)</span></p></li>
+<li><p>If <span class="math inline">\(f(x)=q_{n}(x+y)-\sum q_k(x)q_{n-k}(y)\)</span>, then <span class="math inline">\([Qf](x)=q_{n-1}(x+y)-\sum q_k(x)q_{n-1-k}(y)\)</span>, shifting the <span class="math inline">\(k\)</span> index by 1. <span class="math inline">\([Qq_n(x+y)=T^yQq_n(x)=T^yq_{n-1}(x)=q_{n-1}(x+y)\)</span> since <span class="math inline">\(Q\)</span> is shift invariant.]</p></li>
+</ol>
+<p>If the sequence satisfies the convolution identity for <span class="math inline">\(q_{n-1}\)</span>, we have <span class="math inline">\(Qf=0\)</span>. This means that <span class="math inline">\(f\)</span> is a constant, since <span class="math inline">\(Q\)</span> is a delta operator. But <span class="math inline">\(f(0)=q_n(y)-q_n(y)=0\)</span>, since <span class="math inline">\(q_n\)</span> is a basic sequence. Hence the constant is zero, and <span class="math inline">\(q_n\)</span> also satisfies the convolution identity.</p>
+<p>To complete the inductive proof, we just note that <span class="math inline">\(q_0(x+y)=q_0(x)q_0(y)=1\)</span> trivially satisfies the convolution identity.</p>
+<p>A convolution sequence can be used to define a delta operator via <span class="math inline">\(Qq_n=q_{n-1}\)</span>. The convolution property provides shift-invariance.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Interpolation</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="interpolation">Interpolation</h1>
+<h2 id="lagrange-polynomials">Lagrange polynomials</h2>
+<p>Let us imagine that we want to approximate a function for which we know a few values for intermediate points, say <span class="math inline">\(\sin x\)</span> between 0 and <span class="math inline">\(\pi\)</span>.</p>
+<p>We know <span class="math inline">\(\sin x\)</span> for a number of significant values. From the off, we know <span class="math inline">\(\sin0=\sin\pi=0\)</span>, and <span class="math inline">\(\sin (\pi/2)=1\)</span>.</p>
+<p>The simplest polynomial that satisfies these three constraints is <span class="math inline">\(4x(1-x/\pi)/\pi\)</span>, a quadratic. We can draw a graph:</p>
+<figure>
+<img alt="Quadratic and sin" src="0.0.svg"/><figcaption>Quadratic and sin</figcaption>
+</figure>
+<p>If we plot the difference:</p>
+<figure>
+<img alt="Quadratic-sin" src="0.1.svg"/><figcaption>Quadratic-sin</figcaption>
+</figure>
+<p>We note that the biggest differences come around <span class="math inline">\(x=0.5,2.5\)</span>. You may remember from early trigonometry that <span class="math inline">\(\sin30°=1/2\)</span> (this can be derived from half an equilateral triangle). Of course, for general function theory, radians are a better measure of angles so we need to multiply the degree values by <span class="math inline">\(2\pi/360)\)</span>, to give <span class="math inline">\(\sin(\pi/6)=1/2\)</span>. Standard arguments lead us to believe also <span class="math inline">\(\sin(5\pi/6)=1/2\)</span> too.</p>
+<p>The lowest order polynomial that can fit five general points is a quartic, i.e. the highest power of <span class="math inline">\(x\)</span> is four. One can do a brute force method writing out the various equations the polynomial coefficients need to statisfy and solving the (linear) equations. One finds the use of Vandermonde matrices, determinants, and inverses simplifies this a bit. I have some python code to do this. I would publish, after some tidying up, if anyone was interested.</p>
+<p>Lagrange hit on a simpler route. Notice that our previous solution was 1 at <span class="math inline">\(\pi/2\)</span> and 0 at <span class="math inline">\(0,\pi\)</span>. Lagrange polynomials generalise this behaviour.</p>
+<p>Given a set of (distinct) values where our function is defined, <span class="math inline">\(\{x_i\}\)</span>, we define:</p>
+<p><span class="math display">\[l_i(x)=\frac{\prod\limits_{j\ne i} (x-x_j)}{\prod\limits_{j\ne i} (x_i-x_j)}\]</span></p>
+<p>The thing to notice is that <span class="math inline">\(l_i(x_j)=0\)</span> so long as <span class="math inline">\(i\ne j\)</span>. But there is more: <span class="math inline">\(l_i(x_i)=1\)</span>.</p>
+<p>Using this we can construct an interpolation:</p>
+<p><span class="math display">\[Lf(x)=\sum\limits_i f(x_i)l_i(x)\]</span></p>
+<p>If there are <span class="math inline">\(N\)</span> fixed coordinates, <span class="math inline">\(\{(x_i,f(x_i))\}\)</span>, the polynomial has degree <span class="math inline">\(N-1\)</span>. Imagine we have another polynomial going through these points. Take the difference. We then have an <span class="math inline">\(N-1\)</span> order polynomial with <span class="math inline">\(N\)</span> zeros. The only such polynomial is the zero polynomial. [E.g. a non-zero quartic polynomial can have at most four zeros.]</p>
+<p>In our case, adding in the <span class="math inline">\(\pi/6,5\pi/6\)</span> points, we end up with the graph:</p>
+<figure>
+<img alt="quartic and sin" src="0.2.svg"/><figcaption>quartic and sin</figcaption>
+</figure>
+<p>The quartic curve is hiding behind the “real” function (i.e. the values given by the maths processing unit/modules, which in their turn use better interpolations or approximations).</p>
+<p>We disentangle by taking the difference again:</p>
+<figure>
+<img alt="quartic-sin" src="0.3.svg"/><figcaption>quartic-sin</figcaption>
+</figure>
+<p>The accuracy has been increased from two decimals to three. We could improve by adding further points.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

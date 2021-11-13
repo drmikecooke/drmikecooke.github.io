@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Difference operators</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 3px;
+  margin: 3px
+}
+dt {
+  float: left;
+  width: 7%;
+  /* adjust the width; make sure the total of both is 100% */
+  padding: 0;
+  font-weight:bold;
+}
+dd {
+  float: left;
+  width: 93%;
+  /* adjust the width; make sure the total of both is 100% */
+  padding: 0;
+  margin: 0
+}
+</style>
+</head>
+<body>
+  <header>Umbrage</header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="difference-operators">Difference operators</h1>
+<h2 id="intro">Intro</h2>
+<p>Difference operators are usually defined in terms of translation operators. We use a unit step difference, often denoted <span class="math inline">\(h=1\)</span>. Other step sizes can be accomodated through scaling <span class="math inline">\(x\)</span>.</p>
+<p>There are three main types of difference operators, where \(\mathbb1=T^0\), the identity operator:</p>
+<dl>
+<dt>Backward:</dt><dd> <span class="math inline">\(\nabla=\mathbb1-T^{-1}\)</span></dd>
+<dt>Central:</dt><dd> <span class="math inline">\(\delta=T^{1/2}-T^{-1/2}\)</span></dd>
+<dt>Forward:</dt><dd> <span class="math inline">\(\Delta=T^1-\mathbb1\)</span></dd>
+</dl>
+<p>For interpolation, and other numerical analysis problems such as solving differential equations, we actually want to find <span class="math inline">\(T^a\)</span> in terms of these difference operators.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+## Convolution and binomial type
+
+A sequence of polynomials $\{q_n\}$ with the property:
+
+$$q_n(x+y)=\sum\limits_{k=0}^nq_k(x)q_{n-k}(y)$$
+
+is said to be of _convolution type_. This can be converted to a sequence $\{p_n\}$ of _binomial type_:
+
+$$p_n(x+y)=\sum\limits_{k=0}^n\binom nk p_k(x)p_{n-k}(y)$$
+
+by defining $p_n=n!q_n$.
+
+If $q_0\ne0$, then $q_0(x+y)=q_0(x)q_0(y)$. If the order of $q_0(x)=\sum a_kx^k$ is $n$, the highest orders in $x$ on both sides are $a_nx^n=a_nx^nq_0(y)$, and so $q_0(x)=1$.
+
+We note that the order of $q_0$ is 0. If there were polynomials in the sequence $q_n$ whose order was greater than $n$, there would be a polynomial of smallest index $m$ whose order was greater than $m$. For this polynomial, we have $q_m(x)=a_Mx^M+\dots$ with $M>m$. Applying the convolution equation:
+
+$$q_m(x+x)=a_M(2x)^M+\dots$$
+
+$$q_m(x+x)=\sum\limits_{k=0}^mq_k(x)q_{m-k}(x)=2q_m(x)+\dots=2a_Mx^M+\dots$$
+
+The second equation results from $q_0(x)=1$. The dots indicate terms which we know have order less than $M$. In the case of the second equation, the convolution terms $q_k(x)q_{m-k}(x)$ for $k\ne0,m$ have leading terms of order less than of equal to $m\lt M$, since $m$ is the least value for which this condition is violated.
+
+Hence we must have $a_M2^M=2a_M$, and since we are assuming $a_M\ne0$, $2^M=2\implies M=1$. But we already know that $m>0$, so $M>m\ge1$, a contradiction. Hence, the order of $q_m$ is always less than or equal to $m$.
+
+A final observation gives $q_m(0)=0$ for $m>0$. First 
+
+$$q_1(0)=q_0(0)q_1(0)+q_1(0)q_0(0)=2q_1(0)\implies q_1(0)=0$$
+
+
+since $q_0=1$. If there were an $n>0$ for which $q_n(0)\ne0$, there would be one of least index $m$. But then we would have again
+
+$$q_m(0)=q_0(0)q_m(0)+q_m(0)q_0(0)=2q_m(0)\implies q_m(0)=0$$
+
+since the other terms of the convolution are all zero with $m$ supposedly the least non-zero term. The contradiction gives our final observation.
