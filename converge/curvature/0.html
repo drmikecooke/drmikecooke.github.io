@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Curvature</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="curvature">Curvature</h1>
+<h2 id="problem">Problem</h2>
+<p>For the moment I am just recording some calculations concerning the radius of curvature of a path.</p>
+<p>In the radius of curvature problem, one wants to compare a path with a circle near some point. If the path <span class="math inline">\(\mathbf r\)</span> is parameterized by <span class="math inline">\(t\)</span>, we can Taylor expand about any time <span class="math inline">\(t_0\)</span>:</p>
+<p><span class="math display">\[\mathbf r(t)\approx\mathbf r(t_0)+\mathbf{\dot r}(t_0)(t-t_0)+\frac 12\mathbf{\ddot r}(t_0)(t-t_0)^2\dots\]</span></p>
+<p>We expand to second order since first order just gives a straight line. We use dots to abbreviate derivatives with respect to <span class="math inline">\(t\)</span>.</p>
+<p>We choose a 2-dimensional frame with <span class="math inline">\(\mathbf r(t_0)\)</span> as the origin, and a vector basis in the plane of the velocity <span class="math inline">\(\mathbf{\dot r}\)</span> and acceleration <span class="math inline">\(\mathbf{\ddot r}\)</span> (we explicate as if <span class="math inline">\({t}\)</span> is time, but it could be a spatial parameter).</p>
+<p>[<strong>Aside</strong>: We are assuming that <span class="math inline">\(\mathbf{\dot r}\)</span> and <span class="math inline">\(\mathbf{\ddot r}\)</span> are not parallel. In the case that they are parallel, one has to Taylor expand to higher order. If the vectors are parallel to all orders, the curve is a straight line, at least in the neighbourhood of <span class="math inline">\(t_0\)</span>.]</p>
+<p>We define a unit vector parallel to <span class="math inline">\(\mathbf{\dot r}\)</span>, <span class="math inline">\(\mathbf{i}=\mathbf{\dot r}/\dot r\)</span>. A perpendicular vector is given by <span class="math inline">\(\mathbf{\ddot r}_\perp=\mathbf{\ddot r}-(\mathbf{i}.\mathbf{\ddot r})\mathbf{i}\)</span>. The length of this vector is given by <span class="math inline">\(\ddot r_\perp^2=\ddot r^2-(\mathbf{i}.\mathbf{\ddot r})^2\)</span>. The corresponding unit vector is <span class="math inline">\(\mathbf j=\mathbf{\ddot r}_\perp/\ddot r_\perp\)</span>. This frame will change with <span class="math inline">\(t_0\)</span>.</p>
+<p>Our Taylor expansion in this frame is:</p>
+<p><span class="math display">\[\mathbf r(t)\approx\mathbf{i}\left[\dot r(t_0)(t-t_0)+\frac 12(\mathbf{i.\ddot r})(t_0)(t-t_0)^2\right]+\mathbf j\frac 12\ddot r_\perp(t_0)(t-t_0)^2\dots\]</span></p>
+<p>We now propose to use complex variable theory to relate this decomposition to a circular motion.</p>
+<p>A circular path in the complex plane is given by <span class="math inline">\(z(t)=c+\rho e^{i\theta(t)}\)</span>. [Euler has given us that <span class="math inline">\(e^{i\theta}=\cos(\theta)+i\sin(\theta)\)</span>.] Taylor expanding:</p>
+<p><span class="math display">\[z(t)\approx c+\rho e^{i\theta(t_0)}[1+i\dot \theta(t_0)(t-t_0)+\frac 12(i\ddot \theta(t_0))-\dot \theta(t_0)^2(t-t_0)^2]\]</span></p>
+<p>I can see a number of ways to extract the information we need. We will assume that <span class="math inline">\(\theta(t_0)=0\)</span>. This essentially orients the plane so that the circle centre is on the real axis. We also want the initial point <span class="math inline">\(z(t_0)=0\)</span>. These assumptions give <span class="math inline">\(c+\rho=0\)</span>. Hence:</p>
+<p><span class="math display">\[z(t)\approx \rho[i\dot \theta(t_0)(t-t_0)+\frac 12(i\ddot \theta(t_0))-\dot \theta(t_0)^2(t-t_0)^2]\]</span></p>
+<p>The imaginary direction is the same as our unit vector <span class="math inline">\(\mathbf i\)</span>. Hence we read off:</p>
+<p><span class="math display">\[\rho[\dot \theta(t_0)(t-t_0)+\frac 12\ddot \theta(t_0)(t-t_0)^2]=\dot r(t_0)(t-t_0)+\frac 12(\mathbf{i.\ddot r})(t_0)(t-t_0)^2\]</span></p>
+<p>Even further:</p>
+<p><span class="math display">\[\rho\dot \theta(t_0)=\dot r(t_0)\]</span></p>
+<p><span class="math display">\[\rho\ddot \theta(t_0)=\mathbf{i.\ddot r}(t_0)\]</span></p>
+<p>In the real direction:</p>
+<p><span class="math display">\[-\frac 12\rho\dot \theta(t_0)^2(t-t_0)^2=-\frac 12\ddot r_\perp(t_0)(t-t_0)^2\]</span></p>
+<p>Here the unit vector <span class="math inline">\(\mathbf j\)</span> is in the negative real direction, towards the centre of the circle at <span class="math inline">\(-\rho\)</span>. Anyhow, stripping the Taylor detritus:</p>
+<p><span class="math display">\[\rho\dot \theta(t_0)^2=\ddot r_\perp(t_0)\]</span></p>
+<p>We can determine <span class="math inline">\(\dot \theta(t_0)=[\ddot r_\perp/\dot r](t_0)\)</span> and <span class="math inline">\(\rho(t_0)=[\dot r^2/\ddot r_\perp](t_0)\)</span>. We note the space and time (dot) dimensions tally with the angular velocity and radius.</p>
+<p>We are now ready to re-/un-wind these results to scalar products. The sticking point is <span class="math inline">\(\ddot r_\perp\)</span>. Looking back, <span class="math inline">\(\ddot r_\perp^2=\ddot r^2-(\mathbf{i}.\mathbf{\ddot r})^2\)</span> with <span class="math inline">\(\mathbf{i}=\mathbf{\dot r}/\dot r\)</span>. Making the substitution, <span class="math inline">\(\ddot r_\perp^2=\ddot r^2-(\mathbf{\dot r.\ddot r})^2/\dot r^2\)</span>.</p>
+<p>Assuming evaluation at <span class="math inline">\(t_0\)</span>:</p>
+<p><span class="math display">\[\dot \theta=\frac {\sqrt{(\dot r\ddot r)^2-(\mathbf{\dot r.\ddot r})^2}}{\dot r^2}\]</span></p>
+<p><span class="math display">\[\rho=\frac{\dot r^3}{\sqrt{(\dot r\ddot r)^2-(\mathbf{\dot r.\ddot r})^2}}\]</span></p>
+<p>In three dimensions the object under the square root can be expressed more compactly in terms of the cross product, but this does not easily generalize to other dimensions:</p>
+<p><span class="math display">\[(\mathbf{\dot r\times \ddot r})^2=\dot r^2\ddot r^2-(\mathbf{\dot r.\ddot r})^2\]</span></p>
+<p>We note that the length of this object (expressed as a cross product or not, as appropriate) is zero when the velocity and acceleration are parallel. The radius of curvature is then infinite.</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
