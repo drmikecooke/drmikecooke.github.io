@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Curvature</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="curvature">Curvature</h1>
+<h2 id="simple-bending">Simple bending</h2>
+<p>We attempt to extract the “leading order” behaviour. If the <span class="math inline">\(x\)</span>-direction is along the beam for small deformations we expect <span class="math inline">\(x'=dx/dx_0\approx1\)</span> and <span class="math inline">\(y'\approx0\)</span>. We expand according to the “small” quantities <span class="math inline">\(u=x'-1\)</span> and <span class="math inline">\(y'\)</span>. We find:</p>
+<p><span class="math display">\[r'\approx 1+u+y'^2/2\approx1+u+\dots\]</span></p>
+<p><span class="math display">\[(r''/r')^2-(\mathbf{r'.r''}/r'^2)^2\approx y''^2+\dots\]</span></p>
+<p>Hence the strain energy is:</p>
+<p><span class="math display">\[V\approx\int E \frac{Au^2+Iy''^2}{2}dx_0\]</span></p>
+<p>Minimizing and integrating by parts in my head, I see that the differential equation in <span class="math inline">\(y\)</span> is fourth order. Suitable boundary conditions, I need to think about . . .</p>
+<p>One would justify this brutal approach as being probably the best one could do in this context given the uncertainties of the applicability of the Euler-Bernoulli assumptions (Timoshenko, etc.).</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

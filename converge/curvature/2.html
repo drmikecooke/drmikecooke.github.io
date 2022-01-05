@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Curvature</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="curvature">Curvature</h1>
+<h2 id="euler-bernoulli-bending">Euler-Bernoulli bending</h2>
+<p>So far we have just done linear strain in a straight line. Euler has been barely mentioned (in conjunction with Lagrange), and Bernoulli only nodded to. Also the differential equations have only been to second, not fourth order. It is bending that produces the higher orders.</p>
+<p>The Euler-Bernoulli assumption is that the beam is reasonably well defined by its <span class="math inline">\(x_0\)</span> parameter, along with a judicious lumping together of transverse characteristics in slices.</p>
+<p>We imagine a slice originally at <span class="math inline">\(x_0\)</span> transported to <span class="math inline">\(\mathbf r(x_0)\)</span>. The slice may be rotated and/or scrunched/stretched.</p>
+<p>The slice is bounded by planes at <span class="math inline">\(x_0\)</span> and <span class="math inline">\(x_0+\Delta x\)</span>. We assume the deformed slice is also bounded by planes that are perpendicular to <span class="math inline">\(\mathbf r'(x_0)\)</span> and <span class="math inline">\(\mathbf r'(x_0+\Delta x)\)</span>, respectively. [Timoshenko beam theory relaxes/removes the perpendicularity assumption.]</p>
+<p>Here is where <em>curvature</em> plays a role. With these assumptions is relatively easy (i.e. not easy, but easier than without the assumptions) to deduce the non-uniform strain energy contributions in the transverse direction.</p>
+<p>We assume <span class="math inline">\(\mathbf r'(x_0)\)</span> and <span class="math inline">\(\mathbf r'(x_0+\Delta x)\)</span> are in the same plane as <span class="math inline">\(\mathbf r''(x_0)\)</span>, which is almost true as <span class="math inline">\(\Delta x\rightarrow0\)</span>.</p>
+<p>Since I am making this up as I go along, I will consider a 2-dimensional beam with co-ordinate parameter <span class="math inline">\(y_0\)</span> in the transverse direction and no deformation in the third dimension. The deformed slice is a wedge approximately bending in a circle with the centre of curvature as given in the introduction to this work. The portions closer to the centre of curvature will be less extended/more compressed compared with those further away. We take the strain as being given by the extra length of arc relative to no strain.</p>
+<p>We use a local coordinate system where <span class="math inline">\(\mathbf r(x_0,y_0)=(0,y_0)\)</span> and <span class="math inline">\(\mathbf r(x_0+\Delta x,y_0)=(x(y_0),y_0)\)</span>. The strain energy of the slice will be:</p>
+<p><span class="math display">\[\int Ew \frac{(x(y_0)-\Delta x)^2}{2\Delta x^2}dy_0\Delta x\]</span></p>
+<p>where <span class="math inline">\(w\)</span> is the beam width in the third dimension. It could be dependent on <span class="math inline">\(y_0\)</span>. If the radius of curvature <span class="math inline">\(\rho\)</span> and angular change <span class="math inline">\(\theta'\)</span> are given for <span class="math inline">\(y_0=0\)</span>, we have <span class="math inline">\(x\approx (\rho-y_0)\theta'\Delta x\)</span>, giving an energy</p>
+<p><span class="math display">\[\int Ew \frac{((\rho-y_0)\theta'-1)^2}{2}dy_0\Delta x\]</span></p>
+<p>Our Euler-Bernoulli assumptions mean that <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\theta'\)</span> do not depend on <span class="math inline">\(y_0\)</span>. We can notionally do the transverse integrations. First, <span class="math inline">\(\int w dy_0=A\)</span>. We can shift the origin so that <span class="math inline">\(\int wy_0 dy_0=0\)</span>. Finally, <span class="math inline">\(\int w y_0^2dy_0=I\)</span>, the second moment of area of the cross-section (sometimes referred to as moment of inertia, which more strictly requires a mass) about <span class="math inline">\(y_0=0\)</span>, the centroid.</p>
+<p>So we have strain energy:</p>
+<p><span class="math display">\[E \frac{A(\rho\theta'-1)^2+I\theta'^2}{2}\Delta x\]</span></p>
+<p>The first term is the stretching/compression of the element. The second term is the bending energy. From the introduction, and integrating over the length of the beam:</p>
+<p><span class="math display">\[\int E \frac{A(r'-1)^2+I((r''/r')^2-(\mathbf{r'.r''}/r'^2)^2)}{2}dx_0\]</span></p>
+One could substitute components for the vectors and scalars to get what looks to be an even more complicated formula.
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>

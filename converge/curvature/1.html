@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" media="screen" href="../screen.css" />
+  <link rel="stylesheet" media="print" href="../print.css" />
+  <title>Curvature</title>
+  <link rel="icon" href="/images/mike.ico" type="image/ico" sizes="16x16">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style type="text/css">
+    .shrink {font-size:0.95em}
+  </style>
+</head>
+<body>
+  <header>C<span class="shrink">o<span class="shrink">n<span class="shrink">v<span class="shrink">e<span class="shrink">r<span class="shrink">g<span class="shrink">e<span class="shrink">n<span class="shrink">c<span class="shrink">e</span></span></span></span></span></span></span></span></span></span></header>
+  <script src="../nav.js"></script>
+<div id="prev" class="pointer"><a>◀ Previous</a></div>
+<article>
+<h1 id="curvature">Curvature</h1>
+<h2 id="euler-bernoulli-beaming">Euler-Bernoulli beaming</h2>
+<p>I started this section as a result of trying to understand Euler-Bernoulli beams from an energy/action perspective (i.e. avoiding Newtonian force analysis, at least to begin with). [It involves curvature, in case you are wondering.] I remember at school brief contact with the mechanics of cantilevers (beams fixed at one end), either dynamically or statically. This ended with fourth order differential equations. I was either too stupid, or the teacher (physics? maths?) mumbled during this part, but I never was really clear how this worked. So almost 50 years later . . .</p>
+<p>We are used to materials having varying elasticity. This means that if we prod or pull things, they deform a little or a lot. For the Euler-Bernoulli beam, we assume that the material is “linear” with Young’s modulus, <span class="math inline">\(E\)</span>. We avoid all the complications that can arise: directionality, transverse effects (Poisson’s ratio), etc.</p>
+<p>When we stretch an object it pulls back (tension), trying to get back to its “normal” shape. If we compress it, it pushes back (compression).</p>
+<p>The amount an object is extended or compressed is called the <em>strain</em>, <span class="math inline">\(\varepsilon\)</span>. Stretching gives positive strain, compression negative. Strain is measured relative to the underformed object, a bit like growth/recession when expressed as a percentage.</p>
+<p>The force set up by a strain acts across an area like pressure. It acts in the opposite direction to the strain. This force (per unit area) is called the <em>stress</em>, <span class="math inline">\(\sigma\)</span>.</p>
+<p>At the simple level we are using, <span class="math inline">\(\sigma=E\varepsilon\)</span>.</p>
+<p>A beam in simple terms has a length, <span class="math inline">\(L\)</span>, and cross-sectional area, <span class="math inline">\(A\)</span>. For a beam, we tend to assume <span class="math inline">\(A\lt L^2\)</span>, or better <span class="math inline">\(A\ll L^2\)</span>. In some situations, we can assume with caveats that <span class="math inline">\(A\)</span> varies a little along <span class="math inline">\(L\)</span>.</p>
+<p>We stretch the beam to <span class="math inline">\(L'\)</span>. The strain is <span class="math inline">\((L'-L)/L\)</span>. The stress, <span class="math inline">\(\sigma=E(L'-L)/L=T/A\)</span>, where <span class="math inline">\(T\)</span> is tension. We are still in the world of Newton. We want to simplify our/my life by going to an energy prespective.</p>
+<p>The work done in stretching the beam by <span class="math inline">\(dL'\)</span> is <span class="math inline">\(TdL'=AL\sigma d\varepsilon\)</span>. Since <span class="math inline">\(AL\)</span> is the volume of the beam, we see that <span class="math inline">\(\sigma d\varepsilon\)</span> is the work done per unit volume. We can integrate this as <span class="math inline">\(\int\sigma d\varepsilon=\int E\varepsilon d\varepsilon=E\varepsilon^2/2\)</span>, the strain potential energy per unit volume. We have taken this energy to be zero at zero strain.</p>
+<p>We now look to extending the horizon of beam problems we can tackle. We don’t just want to extend along the length of the beam, we want to also be able to bend it (at least in our minds). And yeah, I split infinitives since I am not writing Latin.</p>
+<p>So we split the beam into chunks <span class="math inline">\(d\tau=dxdydz=dLdA\)</span>. A chunk is deformed from <span class="math inline">\(\mathbf r_0\)</span> to <span class="math inline">\(\mathbf r(\mathbf r_0)\)</span>. We use positions in the undeformed beam to label the deformed chunks.</p>
+<p>We will start with 1-dimensional problems with the cross-section <span class="math inline">\(A\)</span> staying constant, and the length <span class="math inline">\(x\)</span> of the chunk expanding or contracting. The beam is fixed at <span class="math inline">\(x_0=x(x_0)=0\)</span>.</p>
+<p>We first repeat what was done above and stretch the beam from <span class="math inline">\(L\)</span> to <span class="math inline">\(x(L)=L'\)</span>. The strain in a chunk <span class="math inline">\(\Delta x\)</span> from <span class="math inline">\(x_0\)</span> is <span class="math inline">\(\varepsilon(x_0)=(x(x_0+\Delta x)-x(x_0)-\Delta x)/\Delta x=x'(x_0)-1\)</span>, where the prime symbol is differentiation by <span class="math inline">\(x_0\)</span>. So we have:</p>
+<p><span class="math display">\[V=\int EA \frac{(x'-1)^2}2dx_0\]</span></p>
+<p>We ignore the slight ambiguity in whether we are using the undeformed or deformed volume.</p>
+<p>The calculus of variations enables us to determine the function <span class="math inline">\(x(x_0)\)</span> that minimizes the potential energy. The Euler-Lagrange equations give us <span class="math inline">\(x''=0\)</span>, so <span class="math inline">\(x(x_0)=ax_0+b\)</span>. The boundary conditions are <span class="math inline">\(x(0)=0\)</span> and <span class="math inline">\(x(L)=L'\)</span>; thus, <span class="math inline">\(x(x_0)=L'x_0/L\)</span>. Not a surprizing result.</p>
+<p>We note that the strain is the same at all <span class="math inline">\(x_0\)</span> in the beam, <span class="math inline">\(L'/L\)</span>. In this case it matters not if we attribute the strain to the whole beam or in a point-like fashion. This will not be true in more complicated situations.</p>
+<p>Let us look at a beam with constant density <span class="math inline">\(\rho\)</span> hanging in a uniform gravity field, <span class="math inline">\(g\)</span>. Again we stipulate <span class="math inline">\(x(0)=0\)</span>. The vertical direction is <span class="math inline">\(x\)</span> pointing down. Gravitation potential energy is given by <span class="math inline">\(mgh\)</span>, where <span class="math inline">\(m\)</span> is the mass, and <span class="math inline">\(h\)</span> is the height lifted above some point.</p>
+<p>The potential is <span class="math inline">\(V=\int [E(x'-1)^2/2-\rho gx]Adx_0\)</span>. If we vary the deformation function, <span class="math inline">\(\delta x\)</span>, and integrate the first term by parts:</p>
+<p><span class="math display">\[\delta V=[E(x'-1)\delta x]_0^L-\int [Ex''+\rho g]\delta x Adx_0=0\]</span></p>
+<p>For this to be an extremum, the boundary term gives <span class="math inline">\(x'(L)=1\)</span>. The zero boundary has <span class="math inline">\(\delta x=0\)</span> since <span class="math inline">\(x(x_0)=x_0=0\)</span>. The integrand must be zero for arbitrary variations: <span class="math inline">\(Ex''+\rho g=0\)</span>.</p>
+<p>The boundary condition at <span class="math inline">\(L\)</span> gives <span class="math inline">\(x'(x_0)=1+\rho g(L-x_0)/E\)</span>. The boundary condition <span class="math inline">\(x(0)=0\)</span> gives <span class="math inline">\(x(x_0)=x_0+\rho g(Lx_0-x_0^2/2)/E\)</span>. The elongation <span class="math inline">\(L'-L=x(L)-L=\rho gL^2/2E\)</span>.</p>
+<p>We could go through the same sort of considerations to get the compression of a beam/post standing upright. Essentially the only change is in the direction of gravity so <span class="math inline">\(x(x_0)=x_0-\rho g(Lx_0-x_0^2/2)/E\)</span>. The post shortens by <span class="math inline">\(L-L'=L-x(L)=\rho gL^2/2E\)</span>.</p>
+<p>Within this context, fairly simple extensions could lead to beams of varying cross-section and/or material composition (affecting elasticity/density).</p>
+</article><div  id="next" class="pointer"><a class="pointright">Next ▶</a></div>
+  <script src="/js/footer.js"></script>
+<script src="../number.js"></script>
+</body>
+</html>
