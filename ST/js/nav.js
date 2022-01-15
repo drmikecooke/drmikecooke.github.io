@@ -48,6 +48,7 @@ cross.innerHTML='<line x1="10" y1="10" x2="40" y2="40" stroke="red" stroke-linec
 cross.innerHTML+='<line x1="10" y1="40" x2="40" y2="10" stroke="red" stroke-linecap="round" stroke-width="10" />';
 menu.appendChild(cross);
 menu.innerHTML += '<a href="/">Base</a>';
+menu.innerHTML += anchor("2022");
 menu.innerHTML += anchor("2021");
 menu.innerHTML += anchor("2020");
 menu.innerHTML += anchor("2019");
