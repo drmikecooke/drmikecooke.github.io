@@ -27,7 +27,7 @@ def inputST(d):
     return addSTitem(d,month,STitem(caption,img,href,ref))
 
 if __name__ == "__main__":
-	j=get('2024.json')
-	put(j,'2024.json.bak')
+	j=get('2025.json')
+	put(j,'2025.json.bak')
 	j=inputST(j)
-	put(j,'2024.json')
+	put(j,'2025.json')
